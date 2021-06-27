@@ -1,0 +1,5 @@
+D:\Programming\SharpLog\bin\Debug\SharpLog.dll
+D:\Programming\SharpLog\bin\Debug\SharpLog.pdb
+D:\Programming\SharpLog\obj\Debug\SharpLog.csproj.CoreCompileInputs.cache
+D:\Programming\SharpLog\obj\Debug\SharpLog.dll
+D:\Programming\SharpLog\obj\Debug\SharpLog.pdb

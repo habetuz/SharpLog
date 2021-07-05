@@ -5,6 +5,7 @@ With SharpLog you are able to make organized logs when building a large project.
 ## Getting started
 
 Install [the package from nuget](https://www.nuget.org/packages/MarvinFuchs.SharpLog/).
+
 ---
 
 ### Logger

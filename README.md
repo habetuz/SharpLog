@@ -36,9 +36,9 @@ Note that you don't have to pass ``LoggerType.Debug`` if you want to log on debu
 Also note that the default settings are:
 - ``Ident = "NoName"``
 - ``LogDebug = false``
-- ``LogInfo = false``
-- ``LogWarning = false``
-- ``LogError = false``
+- ``LogInfo = true``
+- ``LogWarning = true``
+- ``LogError = true``
 
 ### MassLogger
 
@@ -98,6 +98,6 @@ Note that the default settings are:
 - ``Ident = "NoName"``
 - ``InfoLogText = ""``
 - ``LogDebug = false``
-- ``LogInfo = false``
-- ``LogWarning = false``
-- ``LogError = false``
+- ``LogInfo = true``
+- ``LogWarning = true``
+- ``LogError = true``

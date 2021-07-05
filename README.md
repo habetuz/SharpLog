@@ -1,9 +1,10 @@
+[![Build Status](https://img.shields.io/nuget/v/MarvinFuchs.SharpLog.svg)](https://www.nuget.org/packages/MarvinFuchs.SharpLog)
 # SharpLog
 With SharpLog you are able to make organized logs when building a large project. 
 
 ## Getting started
-Install [the package from nuget](https://www.nuget.org/packages/MarvinFuchs.SharpLog/).
 
+Install [the package from nuget](https://www.nuget.org/packages/MarvinFuchs.SharpLog/).
 ---
 
 ### Logger

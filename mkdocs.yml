@@ -1,0 +1,22 @@
+site_name: SharpLog
+site_url: https://example.com/
+repo_url: https://github.com/habetuz/SharpLog
+theme:
+  features:
+      - navigation.tabs
+  name: material
+  palette:
+    scheme: slate
+    primary: black
+    accent: light blue
+  font:
+    text: Montserrat
+markdown_extensions:
+  - toc:
+      permalink: true
+  - meta
+  - pymdownx.details
+  - pymdownx.highlight:
+      linenums: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite

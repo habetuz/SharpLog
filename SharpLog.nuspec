@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>MarvinFuchs.SharpLog</id>
+    <version>1.0.1</version>
+    <title>$title$</title>
+    <authors>Marvin Fuchs</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/habetuz/SharpLog</projectUrl>
+    <repository type="git" url="https://github.com/habetuz/SharpLog" branch="master" commit="01de9d93bff7fe0f77111bf80452a6bbf490de89" />
+    <description>A small logger for big projects</description>
+    <releaseNotes>
+      Change:
+      ~ Source URL
+    </releaseNotes>
+    <copyright>$copyright$</copyright>
+    <tags>Logger</tags>
+  </metadata>
+</package>

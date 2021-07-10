@@ -14,7 +14,7 @@ namespace SharpLog
     using System.Collections.Generic;
 
     /// <summary>
-    /// Extends <see cref="Logger"/> to log a massive amount of info logs. It does that by collecting info logs and logging them together and compressed at specific times.
+    /// Extends <see cref="Logger"/> to log a massive amount of info logs. It does that by collecting info logs and logging them together and compressed at specific intervals.
     /// </summary>
     public class MassLogger : Logger
     {

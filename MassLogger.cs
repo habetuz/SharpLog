@@ -60,7 +60,7 @@ namespace SharpLog
         /// </summary>
         /// <param name="text">The text to be logged</param>
         /// <param name="type">The type of the log. <see cref="LoggerType.Info"/> does not get logged instant. It gets collected and logged after some time. Add true to log instant."/></param>
-        public new void Log(string text, LoggerType type)
+        public new void Log(string text, LoggerType type = LoggerType.Debug)
         {
             if (type != LoggerType.Info)
             {

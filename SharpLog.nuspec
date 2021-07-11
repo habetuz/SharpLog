@@ -7,8 +7,8 @@
     <authors>Marvin Fuchs</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
-    <projectUrl>https://github.com/habetuz/SharpLog</projectUrl>
-    <repository type="git" url="https://github.com/habetuz/SharpLog" branch="master" commit="01de9d93bff7fe0f77111bf80452a6bbf490de89" />
+    <projectUrl>https://habetuz.github.io/SharpLog/</projectUrl>
+    <repository type="git" url="https://github.com/habetuz/SharpLog" branch="master"/>
     <description>A small logger for big projects</description>
     <releaseNotes>
       Change:

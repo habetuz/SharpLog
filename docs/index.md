@@ -1,7 +1,5 @@
 ---
 title: Home
-hide:
-    - toc
 ---
 
 # Welcome to SharpLog

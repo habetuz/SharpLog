@@ -36,13 +36,13 @@ Log to the console.
 ```c#
 MyLogger.Log("Test", LoggerType.Debug);
 ```
-??? Tip "Debug is optional"
-    When the `level` argument is left blank the logger automatically logs on level `#!c# LoggerType.Debug`
-
 ??? example "Output"
     ```
     [04-07-2021 | 12:53:34.372] [Debug] [Test]: Test
     ```
+
+??? Tip "Debug is optional"
+    When the `level` argument is left blank the logger automatically logs on level `#!c# LoggerType.Debug`
 
 ### [MassLogger](../Reference/MassLogger/)
 This is a special logger that is able to log a large quantity of logs compressed into a single log. Use it when logging the same type of info many times (like keyboard inputs or many server requests).
@@ -59,7 +59,9 @@ MassLogger MyMassLogger = new MassLogger(30000)
     LogError = true
 };
 ```
+
 The `30000` specify that the logger prints his info logs every `30000` milliseconds.
+
 ??? Info "Default settings"
     ```c#
     Ident = "NoName",
@@ -74,13 +76,14 @@ You can log `debug`, `warning` and `error` just like the normal [logger](#logger
 ```c#
 MyLogger.Log("Test", LoggerType.Debug);
 ```
-??? Tip "Debug is optional"
-    Again, when the `level` argument is left blank the logger automatically logs on level `#!c# LoggerType.Debug`
-
 ??? example "Output"
     ```
     [04-07-2021 | 12:53:34.372] [Debug] [Test]: Test
     ```
+
+??? Tip "Debug is optional"
+    Again, when the `level` argument is left blank the logger automatically logs on level `#!c# LoggerType.Debug`
+
 
 **Info-logs are special. Take this example:**
 

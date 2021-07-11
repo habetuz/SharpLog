@@ -9,7 +9,7 @@
       
       
       
-        <link rel="canonical" href="https://example.com/Getting%20started/">
+        <link rel="canonical" href="https://sharplog.marvin-fuchs.de/Getting%20started/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
@@ -36,11 +36,13 @@
       
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,700%7C&display=fallback">
-        <style>:root{--md-text-font-family:"Montserrat";--md-code-font-family:""}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Montserrat";--md-code-font-family:"Roboto Mono"}</style>
       
     
     
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
     
       
@@ -222,7 +224,9 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="SharpLog" class="md-nav__button md-logo" aria-label="SharpLog" data-md-component="logo">
       
@@ -386,6 +390,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../Reference/LoggerType/" class="md-nav__link">
+        LoggerType
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Reference/MassLogger/" class="md-nav__link">
         MassLogger
       </a>
@@ -406,71 +422,12 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    Installation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    Usage
-  </a>
-  
-    <nav class="md-nav" aria-label="Usage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#logger" class="md-nav__link">
-    Logger
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#masslogger" class="md-nav__link">
-    MassLogger
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/habetuz/SharpLog/edit/master/docs/Getting started.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/habetuz/SharpLog/edit/main/docs/Getting started.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -482,14 +439,7 @@
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <h3 id="logger"><a href="../Reference/Logger/">Logger</a><a class="headerlink" href="#logger" title="Permanent link">&para;</a></h3>
 <p>Create a new logger.
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Logger</span> <span class="n">MyLogger</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Logger</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="n">Logger</span> <span class="n">MyLogger</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Logger</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="n">Ident</span> <span class="p">=</span> <span class="s">&quot;Test&quot;</span><span class="p">,</span>
     <span class="n">LogDebug</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
@@ -497,42 +447,26 @@
     <span class="n">LogWarning</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
     <span class="n">LogError</span> <span class="p">=</span> <span class="k">true</span>
 <span class="p">};</span>
-</code></pre></div>
-</td></tr></table></p>
-<details class="info"><summary>Default settings</summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Ident</span> <span class="p">=</span> <span class="s">&quot;NoName&quot;</span><span class="p">,</span>
+</code></pre></div></p>
+<details class="info"><summary>Default settings</summary><div class="highlight"><pre><span></span><code><span class="n">Ident</span> <span class="p">=</span> <span class="s">&quot;NoName&quot;</span><span class="p">,</span>
 <span class="n">LogDebug</span> <span class="p">=</span> <span class="k">false</span><span class="p">,</span>
 <span class="n">LogInfo</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
 <span class="n">LogWarning</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
 <span class="n">LogError</span> <span class="p">=</span> <span class="k">true</span>
 </code></pre></div>
-</td></tr></table>
 </details>
 <p>Log to the console.
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">MyLogger</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&quot;Test&quot;</span><span class="p">,</span> <span class="n">LoggerType</span><span class="p">.</span><span class="n">Debug</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="n">MyLogger</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&quot;Test&quot;</span><span class="p">,</span> <span class="n">LoggerType</span><span class="p">.</span><span class="n">Debug</span><span class="p">);</span>
+</code></pre></div></p>
+<details class="example"><summary>Output</summary><div class="highlight"><pre><span></span><code>[04-07-2021 | 12:53:34.372] [Debug] [Test]: Test
 </code></pre></div>
-</td></tr></table></p>
-<details class="tip"><summary>Debug is optional</summary><p>When the <code>level</code> argument is left blank the logger automatically logs on level <code class="highlight"><span class="n">LoggerType</span><span class="p">.</span><span class="n">Debug</span></code></p>
 </details>
-<details class="example"><summary>Output</summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[04-07-2021 | 12:53:34.372] [Debug] [Test]: Test
-</code></pre></div>
-</td></tr></table>
+<details class="tip"><summary>Debug is optional</summary><p>When the <code>level</code> argument is left blank the logger automatically logs on level <code class="highlight"><span class="n">LoggerType</span><span class="p">.</span><span class="n">Debug</span></code></p>
 </details>
 <h3 id="masslogger"><a href="../Reference/MassLogger/">MassLogger</a><a class="headerlink" href="#masslogger" title="Permanent link">&para;</a></h3>
 <p>This is a special logger that is able to log a large quantity of logs compressed into a single log. Use it when logging the same type of info many times (like keyboard inputs or many server requests).</p>
 <p>Create a new logger.
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">MassLogger</span> <span class="n">MyMassLogger</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MassLogger</span><span class="p">(</span><span class="m">30000</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">MassLogger</span> <span class="n">MyMassLogger</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MassLogger</span><span class="p">(</span><span class="m">30000</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">Ident</span> <span class="p">=</span> <span class="s">&quot;MassTest&quot;</span><span class="p">,</span>
     <span class="n">InfoLogText</span> <span class="p">=</span> <span class="s">&quot;Keyboard inputs:&quot;</span>
@@ -541,47 +475,30 @@
     <span class="n">LogWarning</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
     <span class="n">LogError</span> <span class="p">=</span> <span class="k">true</span>
 <span class="p">};</span>
-</code></pre></div>
-</td></tr></table>
-The <code>30000</code> specify that the logger prints his info logs every <code>30000</code> milliseconds.</p>
-<details class="info"><summary>Default settings</summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Ident</span> <span class="p">=</span> <span class="s">&quot;NoName&quot;</span><span class="p">,</span>
+</code></pre></div></p>
+<p>The <code>30000</code> specify that the logger prints his info logs every <code>30000</code> milliseconds.</p>
+<details class="info"><summary>Default settings</summary><div class="highlight"><pre><span></span><code><span class="n">Ident</span> <span class="p">=</span> <span class="s">&quot;NoName&quot;</span><span class="p">,</span>
 <span class="n">InfoLogText</span> <span class="p">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
 <span class="n">LogDebug</span> <span class="p">=</span> <span class="k">false</span><span class="p">,</span>
 <span class="n">LogInfo</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
 <span class="n">LogWarning</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
 <span class="n">LogError</span> <span class="p">=</span> <span class="k">true</span>
 </code></pre></div>
-</td></tr></table>
 </details>
 <p>You can log <code>debug</code>, <code>warning</code> and <code>error</code> just like the normal <a href="#logger">logger</a>.
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">MyLogger</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&quot;Test&quot;</span><span class="p">,</span> <span class="n">LoggerType</span><span class="p">.</span><span class="n">Debug</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="n">MyLogger</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&quot;Test&quot;</span><span class="p">,</span> <span class="n">LoggerType</span><span class="p">.</span><span class="n">Debug</span><span class="p">);</span>
+</code></pre></div></p>
+<details class="example"><summary>Output</summary><div class="highlight"><pre><span></span><code>[04-07-2021 | 12:53:34.372] [Debug] [Test]: Test
 </code></pre></div>
-</td></tr></table></p>
-<details class="tip"><summary>Debug is optional</summary><p>Again, when the <code>level</code> argument is left blank the logger automatically logs on level <code class="highlight"><span class="n">LoggerType</span><span class="p">.</span><span class="n">Debug</span></code></p>
 </details>
-<details class="example"><summary>Output</summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[04-07-2021 | 12:53:34.372] [Debug] [Test]: Test
-</code></pre></div>
-</td></tr></table>
+<details class="tip"><summary>Debug is optional</summary><p>Again, when the <code>level</code> argument is left blank the logger automatically logs on level <code class="highlight"><span class="n">LoggerType</span><span class="p">.</span><span class="n">Debug</span></code></p>
 </details>
 <p><strong>Info-logs are special. Take this example:</strong></p>
 <p>We want to log every key press on our keyboard, we can use the <a href="../Reference/MassLogger/">MassLogger</a>.
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">MyLogger</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="n">Keyboard</span><span class="p">.</span><span class="n">pressedKey</span><span class="p">(),</span> <span class="n">LoggerType</span><span class="p">.</span><span class="n">Info</span><span class="p">);</span>
-</code></pre></div>
-</td></tr></table></p>
+<div class="highlight"><pre><span></span><code><span class="n">MyLogger</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="n">Keyboard</span><span class="p">.</span><span class="n">pressedKey</span><span class="p">(),</span> <span class="n">LoggerType</span><span class="p">.</span><span class="n">Info</span><span class="p">);</span>
+</code></pre></div></p>
 <details class="example"><summary>Output</summary><p>Every <code>30000</code> milliseconds:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[04-07-2021 | 12:55:34.372] [Info] [MassTest]: Keyboard inputs:
+<div class="highlight"><pre><span></span><code>[04-07-2021 | 12:55:34.372] [Info] [MassTest]: Keyboard inputs:
 63x Left
 16x Return
 39x LShiftKey
@@ -589,20 +506,17 @@ The <code>30000</code> specify that the logger prints his info logs every <code>
 39x Back
 28x Space
 36x LControlKey
-</code></pre></div>
-</td></tr></table></p>
+</code></pre></div></p>
 </details>
 <details class="note"><summary>Note</summary><p>Note that we set <code class="highlight"><span class="n">InfoLogText</span></code> as <code>Keyboard inputs:</code> in the constructor.</p>
 </details>
 <details class="info"><summary>Counter</summary><p>The counters of the logs get reset after every log.</p>
 </details>
 <p>When you want to log a info log instantly set the <code>instant</code> argument as <code class="highlight"><span class="k">true</span></code>.
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">MyLogger</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&quot;Instant info&quot;</span><span class="p">,</span> <span class="n">LoggerType</span><span class="p">.</span><span class="n">Info</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="n">MyLogger</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&quot;Instant info&quot;</span><span class="p">,</span> <span class="n">LoggerType</span><span class="p">.</span><span class="n">Info</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+</code></pre></div></p>
+<details class="example"><summary>Output</summary><div class="highlight"><pre><span></span><code>[04-07-2021 | 12:53:34.372] [Info] [MassTest]: Instant info
 </code></pre></div>
-</td></tr></table></p>
-<details class="example"><summary>Output</summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[04-07-2021 | 12:53:34.372] [Info] [MassTest]: Instant info
-</code></pre></div>
-</td></tr></table>
 </details>
                 
                   
@@ -616,6 +530,10 @@ The <code>30000</code> specify that the logger prints his info logs every <code>
             </article>
           </div>
         </div>
+        
+          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
         
       </main>
       
@@ -676,7 +594,7 @@ The <code>30000</code> specify that the logger prints his info logs every <code>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.82b56eb2.min.js"></script>

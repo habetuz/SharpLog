@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://example.com/</loc>
-         <lastmod>2021-07-10</lastmod>
+         <loc>https://sharplog.marvin-fuchs.de/</loc>
+         <lastmod>2021-07-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/Getting%20started/</loc>
-         <lastmod>2021-07-10</lastmod>
+         <loc>https://sharplog.marvin-fuchs.de/Getting%20started/</loc>
+         <lastmod>2021-07-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/Reference/Logger/</loc>
-         <lastmod>2021-07-10</lastmod>
+         <loc>https://sharplog.marvin-fuchs.de/Reference/Logger/</loc>
+         <lastmod>2021-07-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/Reference/MassLogger/</loc>
-         <lastmod>2021-07-10</lastmod>
+         <loc>https://sharplog.marvin-fuchs.de/Reference/LoggerType/</loc>
+         <lastmod>2021-07-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://sharplog.marvin-fuchs.de/Reference/MassLogger/</loc>
+         <lastmod>2021-07-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

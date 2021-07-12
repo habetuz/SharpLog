@@ -2,17 +2,18 @@
 <package >
   <metadata>
     <id>MarvinFuchs.SharpLog</id>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <title>$title$</title>
     <authors>Marvin Fuchs</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
-    <projectUrl>https://habetuz.github.io/SharpLog/</projectUrl>
+    <projectUrl>https://sharplog.marvin-fuchs.de</projectUrl>
     <repository type="git" url="https://github.com/habetuz/SharpLog" branch="master"/>
     <description>A small logger for big projects</description>
     <releaseNotes>
       Change:
-      ~ Source URL
+      ~ MassLogger: Default for "logPause" in constructor.
+      ~ MassLogger: Collapse the two log functions into one universal.
     </releaseNotes>
     <copyright>$copyright$</copyright>
     <tags>Logger</tags>

@@ -423,6 +423,19 @@
     MassLogger
   </a>
   
+    <nav class="md-nav" aria-label="MassLogger">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -463,12 +476,18 @@
     Log
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Log">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#log_1" class="md-nav__link">
-    Log
+  <a href="#parameters_1" class="md-nav__link">
+    Parameters
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -614,17 +633,69 @@
 <h3 id="masslogger_1"><code>MassLogger</code><a class="headerlink" href="#masslogger_1" title="Permanent link">&para;</a></h3>
 <p><a href="https://github.com/habetuz/SharpLog/blob/main/MassLogger.cs#L27"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5 3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></span> Source</a></p>
 <p><code class="highlight"><span class="k">public</span> <span class="nf">MassLogger</span><span class="p">(</span><span class="kt">int</span> <span class="n">logPause</span><span class="p">)</span></code></p>
+<p>Initializes a new instance of the class.</p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int</code></td>
+<td><code>logPause</code></td>
+<td>The interval time of the logger</td>
+<td><code>30000</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
 <h2 id="properties_1">Properties<a class="headerlink" href="#properties_1" title="Permanent link">&para;</a></h2>
 <h3 id="infologtext"><code>InfoLogText</code><a class="headerlink" href="#infologtext" title="Permanent link">&para;</a></h3>
 <p><a href="https://github.com/habetuz/SharpLog/blob/main/MassLogger.cs#L38"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5 3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></span> Source</a></p>
 <p><code class="highlight"><span class="k">public</span> <span class="kt">string</span> <span class="n">InfoLogText</span> <span class="p">{</span><span class="k">set</span><span class="p">;}</span></code></p>
+<p>Gets or sets the text that is displayed before the info log.</p>
+<hr />
 <h2 id="methods_1">Methods<a class="headerlink" href="#methods_1" title="Permanent link">&para;</a></h2>
 <h3 id="log"><code>Log</code><a class="headerlink" href="#log" title="Permanent link">&para;</a></h3>
 <p><a href="https://github.com/habetuz/SharpLog/blob/main/MassLogger.cs#L46"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5 3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></span> Source</a></p>
 <p><code class="highlight"><span class="k">public</span> <span class="k">void</span> <span class="nf">Log</span><span class="p">(</span><span class="kt">string</span> <span class="n">text</span><span class="p">,</span></code> <a href="/Reference/LoggerType/"><code>LoggerType</code></a> <code>type, bool instant)</code></p>
-<h3 id="log_1"><code>Log</code><a class="headerlink" href="#log_1" title="Permanent link">&para;</a></h3>
-<p><a href="https://github.com/habetuz/SharpLog/blob/main/MassLogger.cs#L63"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5 3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></span> Source</a></p>
-<p><code class="highlight"><span class="k">public</span> <span class="k">void</span> <span class="nf">Log</span><span class="p">(</span><span class="kt">string</span> <span class="n">text</span><span class="p">,</span></code> <a href="/Reference/LoggerType/"><code>LoggerType</code></a> <code>type =</code> <a href="/Reference/LoggerType/"><code>LoggerType</code></a><code>.Debug)</code></p>
+<p>Logs to the console with time, origin and type information.</p>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>string</code></td>
+<td><code>text</code></td>
+<td>The text to be logged</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="/Reference/LoggerType/"><code>LoggerType</code></a></td>
+<td><code>type</code></td>
+<td>The type of the log</td>
+<td><a href="/Reference/LoggerType/"><code>LoggerType</code></a><code>.Debug</code></td>
+</tr>
+<tr>
+<td><code>bool</code></td>
+<td>instant</td>
+<td>If true, every log, and especially <a href="/Reference/LoggerType/"><code>LoggerType</code></a><code>.Info</code>, gets logged instantly</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
                 
                   
                 

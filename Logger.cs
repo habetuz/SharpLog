@@ -24,7 +24,7 @@ namespace SharpLog
         private bool logError = true;
 
         /// <summary>
-        /// Sets identification of the logger.
+        /// Sets the identification-tag of the logger.
         /// </summary>
         public string Ident
         {
@@ -35,7 +35,7 @@ namespace SharpLog
         }
 
         /// <summary>
-        /// Sets a value indicating whether <see cref="Type.Debug"/> should be logged.
+        /// Sets a value indicating whether <see cref="LoggerType.Debug"/> should be logged.
         /// </summary>
         public bool LogDebug
         {
@@ -46,7 +46,7 @@ namespace SharpLog
         }
 
         /// <summary>
-        /// Sets a value indicating whether <see cref="Type.Info"/> should be logged.
+        /// Sets a value indicating whether <see cref="LoggerType.Info"/> should be logged.
         /// </summary>
         public bool LogInfo
         {
@@ -57,7 +57,7 @@ namespace SharpLog
         }
 
         /// <summary>
-        /// Sets a value indicating whether <see cref="Type.Warning"/> should be logged.
+        /// Sets a value indicating whether <see cref="LoggerType.Warning"/> should be logged.
         /// </summary>
         public bool LogWarning
         {
@@ -68,7 +68,7 @@ namespace SharpLog
         }
 
         /// <summary>
-        /// Sets a value indicating whether <see cref="Type.Error"/> should be logged.
+        /// Sets a value indicating whether <see cref="LoggerType.Error"/> should be logged.
         /// </summary>
         public bool LogError
         {
@@ -82,7 +82,7 @@ namespace SharpLog
         /// Logs to the console with time, origin and type information.
         /// </summary>
         /// <param name="text">The text to be logged</param>
-        /// <param name="type">The type of the log.</param>
+        /// <param name="type">The type of the log</param>
         public void Log(string text, LoggerType type = LoggerType.Debug)
         {
             switch (type)

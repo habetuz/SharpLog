@@ -2,4 +2,4 @@
 # Welcome to SharpLog
 A small logger for big projects.
 
-Check out the [documentation](habetuz.github.io/SharpLog/).
+Check out the [documentation](https://sharplog.marvin-fuchs.de).

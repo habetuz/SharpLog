@@ -24,7 +24,7 @@ namespace SharpLog
         /// Initializes a new instance of the <see cref="MassLogger"/> class.
         /// </summary>
         /// <param name="logPause">The pause between two info logs in milliseconds.</param>
-        public MassLogger(int logPause) : base()
+        public MassLogger(int logPause = 30000) : base()
         {
             System.Timers.Timer timer = new System.Timers.Timer(logPause);
             timer.Elapsed += this.Log;
@@ -42,8 +42,8 @@ namespace SharpLog
         /// </summary>
         /// <param name="text">The text to be logged</param>
         /// <param name="type">The type of the log. </param>
-        /// <param name="instant">If true event <see cref="LoggerType.Info"/> gets logged instant.</param>
-        public void Log(string text, LoggerType type, bool instant)
+        /// <param name="instant">If true, every log, and especially <see cref="LoggerType.Info"/>, gets logged instantly.</param>
+        public void Log(string text, LoggerType type = LoggerType.Debug, bool instant = false)
         {
             if (instant)
             {
@@ -51,30 +51,20 @@ namespace SharpLog
             }
             else
             {
-                this.Log(text, type);
-            }
-        }
+                if (type != LoggerType.Info)
+                {
+                    base.Log(text, type);
+                    return;
+                }
 
-        /// <summary>
-        /// Logs to the console with time, origin and type information.
-        /// </summary>
-        /// <param name="text">The text to be logged</param>
-        /// <param name="type">The type of the log. <see cref="LoggerType.Info"/> does not get logged instant. It gets collected and logged after some time. Add true to log instant."/></param>
-        public new void Log(string text, LoggerType type = LoggerType.Debug)
-        {
-            if (type != LoggerType.Info)
-            {
-                base.Log(text, type);
-                return;
-            }
-
-            if (this.pairs.ContainsKey(text))
-            {
-                this.pairs[text]++;
-            }
-            else
-            {
-                this.pairs.Add(text, 1);
+                if (this.pairs.ContainsKey(text))
+                {
+                    this.pairs[text]++;
+                }
+                else
+                {
+                    this.pairs.Add(text, 1);
+                }
             }
         }
 

@@ -57,7 +57,7 @@ Initializes a new instance of the class.
 ---
 ## Properties
 ### `InfoLogText`
-[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/MassLogger.cs#L38)
+[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/MassLogger.cs#L38) · :material-sign-direction: Default: `#!c# ""`
 
 `#!c# public string InfoLogText {set;}`
 

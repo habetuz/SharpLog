@@ -46,53 +46,43 @@ Default constructor for the logger.
 ---
 ## Properties
 ### `Ident`
-[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L29)
+[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L29) · :material-sign-direction: Default: `#!c# "NoName"`
 
 `#!c# public string Ident {set;}`
 
 Sets the identification-tag for the logger.
 
-`#!c# "NoName"` on default.
-
 ---
 ### `LogDebug`
-[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L40)
+[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L40) · :material-sign-direction: Default: `#!c# false`
 
 `#!c# public bool LogDebug {set;}`
 
 Sets a value indication whether [`Debug`](/Reference/LoggerType/) should be logged.
 
-`#!c# false` on default. 
-
 ---
 ### `LogInfo`
-[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L51)
+[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L51) · :material-sign-direction: Default: `#!c# true`
 
 `#!c# public bool LogInfo {set;}`
 
 Sets a value indication whether [`Info`](/Reference/LoggerType/) should be logged.
 
-`#!c# true` on default. 
-
 ---
 ### `LogWarning`
-[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L62)
+[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L62) · :material-sign-direction: Default: `#!c# true`
 
 `#!c# public bool LogWarning {set;}`
 
 Sets a value indication whether [`Warning`](/Reference/LoggerType/) should be logged.
 
-`#!c# true` on default. 
-
 ---
 ### `LogError`
-[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L73)
+[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L73) · :material-sign-direction: Default: `#!c# true`
 
 `#!c# public bool LogError {set;}`
 
 Sets a value indication whether [`Error`](/Reference/LoggerType/) should be logged.
-
-`#!c# true` on default. 
 
 ---
 ## Methods

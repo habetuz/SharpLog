@@ -1,4 +1,4 @@
-﻿// <copyright file="LoggerType.cs">
+﻿// <copyright file="LogType.cs">
 // Copyright (c) 2021. All Rights Reserved
 // </copyright>
 // <author>
@@ -10,11 +10,17 @@
 
 namespace SharpLog
 {
+    using System;
+
     /// <summary>
     /// Logging levels for <see cref="Logger"/> and <see cref="MassLogger"/>.
     /// </summary>
-    public enum LoggerType
+    [Flags]
+    public enum LogType
     {
-        Debug, Info, Warning, Error
+        Debug   = 1, 
+        Info    = 2, 
+        Warning = 4, 
+        Error   = 8,
     }
 }

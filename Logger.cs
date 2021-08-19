@@ -11,6 +11,8 @@
 namespace SharpLog
 {
     using System;
+    using System.Collections.Generic;
+    using SharpLog.Output;
 
     /// <summary>
     /// Class for uniformly and clear logging over the whole project.
@@ -18,10 +20,8 @@ namespace SharpLog
     public class Logger
     {
         private string ident = "NoName";
-        private bool logDebug = false;
-        private bool logInfo = true;
-        private bool logWarning = true;
-        private bool logError = true;
+        private LogType logFlags = LogType.Info | LogType.Warning | LogType.Error;
+        private List<IOutput> outputs = new List<IOutput>() { new OutputConsole() };
 
         /// <summary>
         /// Sets the identification-tag of the logger.
@@ -34,107 +34,122 @@ namespace SharpLog
             }
         }
 
+        public List<IOutput> Outputs
+        {
+            set
+            {
+                this.outputs = value;
+            }
+
+            get
+            {
+                return this.outputs;
+            }
+        }
+
+        public LogType LogFlags
+        {
+            set
+            {
+                this.logFlags = value;
+            }
+
+            get
+            {
+                return this.logFlags;
+            }
+        }
+
         /// <summary>
-        /// Sets a value indicating whether <see cref="LoggerType.Debug"/> should be logged.
+        /// Sets a value indicating whether <see cref="LogType.Debug"/> should be logged.
         /// </summary>
         public bool LogDebug
         {
             set
             {
-                this.logDebug = value;
+                if (value)
+                {
+                    logFlags |= LogType.Debug;
+                }
+                else
+                {
+                    logFlags &= ~LogType.Debug;
+                }
             }
         }
 
         /// <summary>
-        /// Sets a value indicating whether <see cref="LoggerType.Info"/> should be logged.
+        /// Sets a value indicating whether <see cref="LogType.Info"/> should be logged.
         /// </summary>
         public bool LogInfo
         {
             set
             {
-                this.logInfo = value;
+                if (value)
+                {
+                    logFlags |= LogType.Info;
+                }
+                else
+                {
+                    logFlags &= ~LogType.Info;
+                }
             }
         }
 
         /// <summary>
-        /// Sets a value indicating whether <see cref="LoggerType.Warning"/> should be logged.
+        /// Sets a value indicating whether <see cref="LogType.Warning"/> should be logged.
         /// </summary>
         public bool LogWarning
         {
             set
             {
-                this.logWarning = value;
+                if (value)
+                {
+                    logFlags |= LogType.Warning;
+                }
+                else
+                {
+                    logFlags &= ~LogType.Warning;
+                }
             }
         }
 
         /// <summary>
-        /// Sets a value indicating whether <see cref="LoggerType.Error"/> should be logged.
+        /// Sets a value indicating whether <see cref="LogType.Error"/> should be logged.
         /// </summary>
         public bool LogError
         {
             set
             {
-                this.logError = value;
+                if (value)
+                {
+                    logFlags |= LogType.Error;
+                }
+                else
+                {
+                    logFlags &= ~LogType.Error;
+                }
             }
         }
 
         /// <summary>
         /// Logs to the console with time, origin and type information.
         /// </summary>
-        /// <param name="text">The text to be logged</param>
+        /// <param name="text">The log to be logged</param>
         /// <param name="type">The type of the log</param>
-        public void Log(string text, LoggerType type = LoggerType.Debug)
+        public void Log(object log, LogType type = LogType.Debug)
         {
-            switch (type)
+            if ((this.logFlags & type) != 0)
             {
-                case LoggerType.Debug:
-                    if (this.logDebug)
-                    {
-                        goto default;
-                    }
-                    else
-                    {
-                        return;
-                    }
-
-                case LoggerType.Info:
-                    if (this.logInfo)
-                    {
-                        goto default;
-                    }
-                    else
-                    {
-                        return;
-                    }
-
-                case LoggerType.Warning:
-                    if (this.logWarning)
-                    {
-                        goto default;
-                    }
-                    else
-                    {
-                        return;
-                    }
-
-                case LoggerType.Error:
-                    if (this.logError)
-                    {
-                        goto default;
-                    }
-                    else
-                    {
-                        return;
-                    }
-
-                default:
-                    Console.WriteLine(
-                        "[{0}] [{1}] [{2}]: {3}",
-                        DateTime.UtcNow.ToString("dd-MM-yyyy | HH:mm:ss.fff"),
-                        type.ToString(),
-                        this.ident,
-                        text);
-                    break;
+                string text = string.Format("[{0}] [{1}] [{2}]: {3}",
+                    DateTime.UtcNow.ToString("dd-MM-yyyy | HH:mm:ss.fff"),
+                    type.ToString(),
+                    this.ident,
+                    log);
+                outputs.ForEach(output =>
+                {
+                    output.Write(text, type);
+                });
             }
         }
     }

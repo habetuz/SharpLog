@@ -43,7 +43,7 @@ namespace SharpLog
         /// <param name="text">The text to be logged</param>
         /// <param name="type">The type of the log. </param>
         /// <param name="instant">If true, every log, and especially <see cref="LoggerType.Info"/>, gets logged instantly.</param>
-        public void Log(string text, LoggerType type = LoggerType.Debug, bool instant = false)
+        public void Log(string text, LogType type = LogType.Debug, bool instant = false)
         {
             if (instant)
             {
@@ -51,7 +51,7 @@ namespace SharpLog
             }
             else
             {
-                if (type != LoggerType.Info)
+                if (type != LogType.Info)
                 {
                     base.Log(text, type);
                     return;
@@ -70,13 +70,12 @@ namespace SharpLog
 
         private void Log(object source, System.Timers.ElapsedEventArgs e)
         {
-            base.Log(this.InfoLogText, LoggerType.Info);
+            string text = this.InfoLogText + "\n";
             foreach (KeyValuePair<string, int> entry in this.pairs)
             {
-                Console.WriteLine("{0}x {1}", entry.Value, entry.Key);
+                text += "| " + string.Format("{0}x {1}", entry.Value, entry.Key) + "\n";
             }
-
-            Console.WriteLine();
+            base.Log(text, LogType.Info);
             this.pairs.Clear();
         }
     }

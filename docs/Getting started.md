@@ -105,7 +105,7 @@ MyLogger.Log(Keyboard.pressedKey(), LoggerType.Info);
     36x LControlKey
     ```
 ??? note
-    Note that we set `#!c# InfoLogText` as `Keyboard inputs:` in the constructor.
+    Note that `#!c# InfoLogText` was set to `Keyboard inputs:` in the constructor.
 
 ??? info "Counter"
     The counters of the logs get reset after every log.

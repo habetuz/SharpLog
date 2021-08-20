@@ -11,6 +11,7 @@
 namespace SharpLog
 {
     using System;
+    using System.Linq;
     using System.Collections.Generic;
 
     /// <summary>
@@ -70,10 +71,13 @@ namespace SharpLog
 
         private void Log(object source, System.Timers.ElapsedEventArgs e)
         {
+            int[] values = (new List<int>(pairs.Values)).ToArray();
+            int maxLength = (values.Max() + "").Length;
             string text = this.InfoLogText + "\n";
             foreach (KeyValuePair<string, int> entry in this.pairs)
             {
-                text += "| " + string.Format("{0}x {1}", entry.Value, entry.Key) + "\n";
+                string value = (entry.Value + "").PadLeft(maxLength, ' ');
+                text += "| " + string.Format("{0}x {1}", value, entry.Key) + "\n";
             }
             base.Log(text, LogType.Info);
             this.pairs.Clear();

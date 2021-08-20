@@ -8,7 +8,7 @@ namespace SharpLog.Output
 {
     using System.Collections.Generic;
 
-    class OutputConsole : IOutput
+    public class ConsoleOutput : IOutput
     {
         private static readonly Dictionary<LogType, ConsoleColor> Colors = new Dictionary<LogType, ConsoleColor>()
         {

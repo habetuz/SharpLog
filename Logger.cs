@@ -21,7 +21,7 @@ namespace SharpLog
     {
         private string ident = "NoName";
         private LogType logFlags = LogType.Info | LogType.Warning | LogType.Error;
-        private List<IOutput> outputs = new List<IOutput>() { new OutputConsole() };
+        private List<IOutput> outputs = new List<IOutput>() { new ConsoleOutput() };
 
         /// <summary>
         /// Sets the identification-tag of the logger.

@@ -47,7 +47,8 @@
     <Compile Include="LogHandler.cs" />
     <Compile Include="MassLogger.cs" />
     <Compile Include="Output\IOutput.cs" />
-    <Compile Include="Output\OutputConsole.cs" />
+    <Compile Include="Output\ConsoleOutput.cs" />
+    <Compile Include="Output\FileOutput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

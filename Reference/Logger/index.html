@@ -199,7 +199,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../LogType/" class="md-tabs__link md-tabs__link--active">
         Reference
       </a>
     </li>
@@ -311,6 +311,18 @@
             
   
   
+  
+    <li class="md-nav__item">
+      <a href="../LogType/" class="md-nav__link">
+        LogType
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
     
   
   
@@ -365,38 +377,12 @@
     Properties
   </a>
   
-    <nav class="md-nav" aria-label="Properties">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#public" class="md-nav__link">
-    public
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
   <a href="#methods" class="md-nav__link">
     Methods
   </a>
-  
-    <nav class="md-nav" aria-label="Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#public_1" class="md-nav__link">
-    public
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -436,6 +422,20 @@
           <li class="md-nav__item">
   <a href="#ident" class="md-nav__link">
     Ident
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs" class="md-nav__link">
+    Outputs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logflags" class="md-nav__link">
+    LogFlags
   </a>
   
 </li>
@@ -519,8 +519,41 @@
   
   
     <li class="md-nav__item">
-      <a href="../LoggerType/" class="md-nav__link">
-        LoggerType
+      <a href="../MassLogger/" class="md-nav__link">
+        MassLogger
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      <label class="md-nav__link" for="__nav_3_4">
+        Output
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Output" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Output
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Output/ConsoleOutput/" class="md-nav__link">
+        ConsoleOutput
       </a>
     </li>
   
@@ -531,9 +564,27 @@
   
   
     <li class="md-nav__item">
-      <a href="../MassLogger/" class="md-nav__link">
-        MassLogger
+      <a href="../Output/FileOutput/" class="md-nav__link">
+        FileOutput
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Output/IOutput/" class="md-nav__link">
+        IOutput
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -565,6 +616,7 @@
 <p><a href="https://github.com/habetuz/SharpLog/blob/main/Logger.cs"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5 3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></span> Source</a></p>
 <p><code class="highlight"><span class="k">namespace</span> <span class="nn">SharpLog</span></code></p>
 <p><code class="highlight"><span class="k">public</span> <span class="k">class</span> <span class="nc">Logger</span></code></p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 15-6 6-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6z"/></svg></span> <a href=""><code>Logger</code></a></p>
 <hr />
 <p>Class for easy but clear logging.</p>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
@@ -582,7 +634,6 @@
 </tbody>
 </table>
 <h3 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h3>
-<h4 id="public"><code>public</code><a class="headerlink" href="#public" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -597,6 +648,18 @@
 <td><code>string</code></td>
 <td><a href="#ident"><code>Ident</code></a></td>
 <td></td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
+</tr>
+<tr>
+<td><code>List&lt;</code><a href="IOutput.md"><code>IOutput</code></a><code>&gt;</code></td>
+<td><a href="#outputs"><code>Outputs</code></a></td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
+</tr>
+<tr>
+<td><a href="../LogType/"><code>LogType</code></a></td>
+<td><a href="#logflags"><code>LogFlags</code></a></td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 <td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
 </tr>
 <tr>
@@ -626,7 +689,6 @@
 </tbody>
 </table>
 <h3 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h3>
-<h4 id="public_1"><code>public</code><a class="headerlink" href="#public_1" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -637,47 +699,57 @@
 <tbody>
 <tr>
 <td><code>void</code></td>
-<td><a href="#log"><code>Log</code></a><code>(string text,</code> <a href="/Reference/LoggerType/"><code>LoggerType</code></a> <code>type =</code> <a href="/Reference/LoggerType/"><code>LoggerType</code></a><code>.Debug)</code></td>
+<td><a href="#log"><code>Log</code></a><code>(object log,</code>  <a href="../LogType/"><code>LogType</code></a>  <code>type)</code></td>
 </tr>
 </tbody>
 </table>
 <h2 id="constructors_1">Constructors<a class="headerlink" href="#constructors_1" title="Permanent link">&para;</a></h2>
 <h3 id="logger_1"><code>Logger</code><a class="headerlink" href="#logger_1" title="Permanent link">&para;</a></h3>
-<p><a href="https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L18"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5 3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></span> Source</a></p>
+<p><a href="https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L20"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5 3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></span> Source</a></p>
 <p><code class="highlight"><span class="k">public</span> <span class="nf">Logger</span><span class="p">()</span></code></p>
-<p>Default constructor for the logger.</p>
+<p>Initializes a new instance of the <a href=""><code>Logger</code></a> class.</p>
 <hr />
 <h2 id="properties_1">Properties<a class="headerlink" href="#properties_1" title="Permanent link">&para;</a></h2>
 <h3 id="ident"><code>Ident</code><a class="headerlink" href="#ident" title="Permanent link">&para;</a></h3>
-<p><a href="https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L29"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5 3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></span> Source</a> · <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 12H3.5L6 9.5 3.5 7H11V3l1-1 1 1v4h5l2.5 2.5L18 12h-5v8a2 2 0 0 1 2 2H9a2 2 0 0 1 2-2v-8z"/></svg></span> Default: <code class="highlight"><span class="s">&quot;NoName&quot;</span></code></p>
+<p><a href="https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L40-L46"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5 3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></span> Source</a> · <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 12H3.5L6 9.5 3.5 7H11V3l1-1 1 1v4h5l2.5 2.5L18 12h-5v8a2 2 0 0 1 2 2H9a2 2 0 0 1 2-2v-8z"/></svg></span> Default: <code class="highlight"><span class="s">&quot;NoName&quot;</span></code></p>
 <p><code class="highlight"><span class="k">public</span> <span class="kt">string</span> <span class="n">Ident</span> <span class="p">{</span><span class="k">set</span><span class="p">;}</span></code></p>
-<p>Sets the identification-tag for the logger.</p>
+<p>Sets the identification-tag of the logger.</p>
+<hr />
+<h3 id="outputs"><code>Outputs</code><a class="headerlink" href="#outputs" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L51-L62"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5 3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></span> Source</a> · <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 12H3.5L6 9.5 3.5 7H11V3l1-1 1 1v4h5l2.5 2.5L18 12h-5v8a2 2 0 0 1 2 2H9a2 2 0 0 1 2-2v-8z"/></svg></span> Default: <code class="highlight"><span class="n">List</span><span class="p">&lt;</span></code><a href="IOutput.md"><code>IOutput</code></a><code class="highlight"><span class="p">&gt;</span> <span class="p">{</span> <span class="k">new</span></code>  <a href="ConsoleOutput.md"><code>ConsoleOutput</code></a>  <code class="highlight"><span class="p">}</span></code></p>
+<p><code class="highlight"><span class="k">public</span> <span class="n">List</span><span class="p">&lt;</span></code><a href="IOutput.md"><code>IOutput</code></a><code class="highlight"><span class="p">&gt;</span> <span class="n">Outputs</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span></code></p>
+<p>List with all output sources the logger should write to.</p>
+<hr />
+<h3 id="logflags"><code>LogFlags</code><a class="headerlink" href="#logflags" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L51-L62"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5 3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></span> Source</a> · <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 12H3.5L6 9.5 3.5 7H11V3l1-1 1 1v4h5l2.5 2.5L18 12h-5v8a2 2 0 0 1 2 2H9a2 2 0 0 1 2-2v-8z"/></svg></span> Default: <a href="../LogType/"><code>LogType</code></a><code class="highlight"><span class="p">.</span><span class="n">Info</span> <span class="p">|</span></code> <a href="LogType.de"><code>LogType</code></a><code class="highlight"><span class="p">.</span><span class="n">Warning</span> <span class="p">|</span></code> <a href="../LogType/"><code>LogType</code></a><code class="highlight"><span class="p">.</span><span class="n">Error</span></code></p>
+<p><code class="highlight"><span class="k">public</span></code>  <a href="../LogType/"><code>LogType</code></a>  <code>LogFlags { get; set; }</code></p>
+<p>List with all output sources the logger should write to.</p>
 <hr />
 <h3 id="logdebug"><code>LogDebug</code><a class="headerlink" href="#logdebug" title="Permanent link">&para;</a></h3>
-<p><a href="https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L40"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5 3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></span> Source</a> · <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 12H3.5L6 9.5 3.5 7H11V3l1-1 1 1v4h5l2.5 2.5L18 12h-5v8a2 2 0 0 1 2 2H9a2 2 0 0 1 2-2v-8z"/></svg></span> Default: <code class="highlight"><span class="k">false</span></code></p>
+<p><a href="https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L83-L96"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5 3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></span> Source</a> · <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 12H3.5L6 9.5 3.5 7H11V3l1-1 1 1v4h5l2.5 2.5L18 12h-5v8a2 2 0 0 1 2 2H9a2 2 0 0 1 2-2v-8z"/></svg></span> Default: <code class="highlight"><span class="k">false</span></code></p>
 <p><code class="highlight"><span class="k">public</span> <span class="kt">bool</span> <span class="n">LogDebug</span> <span class="p">{</span><span class="k">set</span><span class="p">;}</span></code></p>
-<p>Sets a value indication whether <a href="/Reference/LoggerType/"><code>Debug</code></a> should be logged.</p>
+<p>Sets a value indicating whether <a href="../LogType/"><code>Debug</code></a> should be logged.</p>
 <hr />
 <h3 id="loginfo"><code>LogInfo</code><a class="headerlink" href="#loginfo" title="Permanent link">&para;</a></h3>
-<p><a href="https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L51"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5 3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></span> Source</a> · <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 12H3.5L6 9.5 3.5 7H11V3l1-1 1 1v4h5l2.5 2.5L18 12h-5v8a2 2 0 0 1 2 2H9a2 2 0 0 1 2-2v-8z"/></svg></span> Default: <code class="highlight"><span class="k">true</span></code></p>
+<p><a href="https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L101-L114"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5 3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></span> Source</a> · <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 12H3.5L6 9.5 3.5 7H11V3l1-1 1 1v4h5l2.5 2.5L18 12h-5v8a2 2 0 0 1 2 2H9a2 2 0 0 1 2-2v-8z"/></svg></span> Default: <code class="highlight"><span class="k">true</span></code></p>
 <p><code class="highlight"><span class="k">public</span> <span class="kt">bool</span> <span class="n">LogInfo</span> <span class="p">{</span><span class="k">set</span><span class="p">;}</span></code></p>
-<p>Sets a value indication whether <a href="/Reference/LoggerType/"><code>Info</code></a> should be logged.</p>
+<p>Sets a value indicating whether <a href="../LogType/"><code>Info</code></a> should be logged.</p>
 <hr />
 <h3 id="logwarning"><code>LogWarning</code><a class="headerlink" href="#logwarning" title="Permanent link">&para;</a></h3>
-<p><a href="https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L62"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5 3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></span> Source</a> · <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 12H3.5L6 9.5 3.5 7H11V3l1-1 1 1v4h5l2.5 2.5L18 12h-5v8a2 2 0 0 1 2 2H9a2 2 0 0 1 2-2v-8z"/></svg></span> Default: <code class="highlight"><span class="k">true</span></code></p>
+<p><a href="https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L119-L132"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5 3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></span> Source</a> · <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 12H3.5L6 9.5 3.5 7H11V3l1-1 1 1v4h5l2.5 2.5L18 12h-5v8a2 2 0 0 1 2 2H9a2 2 0 0 1 2-2v-8z"/></svg></span> Default: <code class="highlight"><span class="k">true</span></code></p>
 <p><code class="highlight"><span class="k">public</span> <span class="kt">bool</span> <span class="n">LogWarning</span> <span class="p">{</span><span class="k">set</span><span class="p">;}</span></code></p>
-<p>Sets a value indication whether <a href="/Reference/LoggerType/"><code>Warning</code></a> should be logged.</p>
+<p>Sets a value indicating whether <a href="../LogType/"><code>Warning</code></a> should be logged.</p>
 <hr />
 <h3 id="logerror"><code>LogError</code><a class="headerlink" href="#logerror" title="Permanent link">&para;</a></h3>
-<p><a href="https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L73"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5 3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></span> Source</a> · <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 12H3.5L6 9.5 3.5 7H11V3l1-1 1 1v4h5l2.5 2.5L18 12h-5v8a2 2 0 0 1 2 2H9a2 2 0 0 1 2-2v-8z"/></svg></span> Default: <code class="highlight"><span class="k">true</span></code></p>
+<p><a href="https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L137-L150"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5 3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></span> Source</a> · <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 12H3.5L6 9.5 3.5 7H11V3l1-1 1 1v4h5l2.5 2.5L18 12h-5v8a2 2 0 0 1 2 2H9a2 2 0 0 1 2-2v-8z"/></svg></span> Default: <code class="highlight"><span class="k">true</span></code></p>
 <p><code class="highlight"><span class="k">public</span> <span class="kt">bool</span> <span class="n">LogError</span> <span class="p">{</span><span class="k">set</span><span class="p">;}</span></code></p>
-<p>Sets a value indication whether <a href="/Reference/LoggerType/"><code>Error</code></a> should be logged.</p>
+<p>Sets a value indicating whether <a href="../LogType/"><code>Error</code></a> should be logged.</p>
 <hr />
 <h2 id="methods_1">Methods<a class="headerlink" href="#methods_1" title="Permanent link">&para;</a></h2>
 <h3 id="log"><code>Log</code><a class="headerlink" href="#log" title="Permanent link">&para;</a></h3>
-<p><a href="https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L86"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5 3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></span> Source</a></p>
-<p><code class="highlight"><span class="k">public</span> <span class="k">void</span> <span class="nf">Log</span><span class="p">(</span><span class="kt">string</span> <span class="n">text</span><span class="p">,</span></code> <a href="/Reference/LoggerType/"><code>LoggerType</code></a> <code>type =</code> <a href="/Reference/LoggerType/"><code>LoggerType</code></a><code>.Debug)</code></p>
-<p>Logs to the console with time, origin and type information.</p>
+<p><a href="https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L157-L174"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5 3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></span> Source</a></p>
+<p><code class="highlight"><span class="k">public</span> <span class="k">void</span> <span class="nf">Log</span><span class="p">(</span><span class="kt">object</span> <span class="n">log</span><span class="p">,</span></code> <a href="../LogType/"><code>LogType</code></a> <code>type =</code> <a href="../LogType/"><code>LogType</code></a><code>.Debug)</code></p>
+<p>Logs to the outputs specified in <a href="#outputs"><code>Outputs</code></a> with time, origin and type information.</p>
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
@@ -690,16 +762,16 @@
 </thead>
 <tbody>
 <tr>
-<td><code>string</code></td>
-<td><code>text</code></td>
-<td>The text to be logged</td>
-<td>-</td>
+<td><code>object</code></td>
+<td><code>log</code></td>
+<td>The object to be logged</td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.75 2.5h10.5a.25.25 0 0 1 .25.25v10.5a.25.25 0 0 1-.25.25H2.75a.25.25 0 0 1-.25-.25V2.75a.25.25 0 0 1 .25-.25zM13.25 1H2.75A1.75 1.75 0 0 0 1 2.75v10.5c0 .966.784 1.75 1.75 1.75h10.5A1.75 1.75 0 0 0 15 13.25V2.75A1.75 1.75 0 0 0 13.25 1zm-2 7.75a.75.75 0 0 0 0-1.5h-6.5a.75.75 0 0 0 0 1.5h6.5z"/></svg></span></td>
 </tr>
 <tr>
-<td><a href="/Reference/LoggerType/"><code>LoggerType</code></a></td>
+<td><a href="../LogType/"><code>LogType</code></a></td>
 <td><code>type</code></td>
 <td>The type of the log</td>
-<td><a href="/Reference/LoggerType/"><code>LoggerType</code></a><code>.Debug</code></td>
+<td><a href="../LogType/"><code>LogType</code></a><code>.Debug</code></td>
 </tr>
 </tbody>
 </table>
@@ -728,7 +800,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../Getting%20started/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Getting started" rel="prev">
+        <a href="../LogType/" class="md-footer__link md-footer__link--prev" aria-label="Previous: LogType" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -737,20 +809,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Getting started
+              LogType
             </div>
           </div>
         </a>
       
       
         
-        <a href="../LoggerType/" class="md-footer__link md-footer__link--next" aria-label="Next: LoggerType" rel="next">
+        <a href="../MassLogger/" class="md-footer__link md-footer__link--next" aria-label="Next: MassLogger" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              LoggerType
+              MassLogger
             </div>
           </div>
           <div class="md-footer__button md-icon">

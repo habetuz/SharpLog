@@ -2,27 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://sharplog.marvin-fuchs.de/</loc>
-         <lastmod>2021-08-19</lastmod>
+         <lastmod>2021-08-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sharplog.marvin-fuchs.de/Getting%20started/</loc>
-         <lastmod>2021-08-19</lastmod>
+         <lastmod>2021-08-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://sharplog.marvin-fuchs.de/Reference/LogType/</loc>
+         <lastmod>2021-08-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sharplog.marvin-fuchs.de/Reference/Logger/</loc>
-         <lastmod>2021-08-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://sharplog.marvin-fuchs.de/Reference/LoggerType/</loc>
-         <lastmod>2021-08-19</lastmod>
+         <lastmod>2021-08-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sharplog.marvin-fuchs.de/Reference/MassLogger/</loc>
-         <lastmod>2021-08-19</lastmod>
+         <lastmod>2021-08-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://sharplog.marvin-fuchs.de/Reference/Output/ConsoleOutput/</loc>
+         <lastmod>2021-08-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://sharplog.marvin-fuchs.de/Reference/Output/FileOutput/</loc>
+         <lastmod>2021-08-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://sharplog.marvin-fuchs.de/Reference/Output/IOutput/</loc>
+         <lastmod>2021-08-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

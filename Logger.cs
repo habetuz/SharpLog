@@ -46,7 +46,7 @@ namespace SharpLog
         }
 
         /// <summary>
-        /// Gets or sets the list containing all output sources the logger should log to.
+        /// Gets or sets the list containing all output sources the logger should write to.
         /// </summary>
         public List<IOutput> Outputs
         {

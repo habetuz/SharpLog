@@ -29,15 +29,25 @@ namespace SharpLog.Output
         /// <summary>
         /// The name or path to the file the output should write to.
         /// </summary>
-        private readonly string fileName;
+        private string fileName;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="FileOutput"/> class.
         /// </summary>
-        /// <param name="fileName">The name or path to the file the output should write to</param>
-        public FileOutput(string fileName)
+        /// <param name="fileName">The name or path of the file the output should write to</param>
+        public FileOutput(string fileName = ".log")
         {
             this.fileName = fileName;
+        }
+
+        /// <summary>
+        /// Sets the name or path of the file the output should write to.
+        /// </summary>
+        public string FileName { 
+            set 
+            { 
+                this.fileName = value; 
+            } 
         }
 
         /// <summary>

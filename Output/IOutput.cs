@@ -11,12 +11,12 @@
 namespace SharpLog.Output
 {
     /// <summary>
-    /// Interface for outputs used by the logger.
+    /// Interface for outputs used by logger.
     /// </summary>
     public interface IOutput
     {
         /// <summary>
-        /// The write method that should write to the output.
+        /// Writes the text to the output.
         /// </summary>
         /// <param name="text">The text to be written</param>
         /// <param name="logType">The log level of the log</param>

@@ -43,30 +43,30 @@ namespace SharpLog
         /// <summary>
         /// Logs to the console with time, origin and type information.
         /// </summary>
-        /// <param name="text">The text to be logged</param>
+        /// <param name="log">The object to be logged</param>
         /// <param name="type">The type of the log. </param>
-        /// <param name="instant">If true, every log, and especially <see cref="LoggerType.Info"/>, gets logged instantly.</param>
-        public void Log(string text, LogType type = LogType.Debug, bool instant = false)
+        /// <param name="instant">If true, every log, and especially <see cref="LogType.Info"/>, gets logged instantly.</param>
+        public void Log(object log, LogType type = LogType.Debug, bool instant = false)
         {
             if (instant)
             {
-                base.Log(text, type);
+                base.Log(log, type);
             }
             else
             {
                 if (type != LogType.Info)
                 {
-                    base.Log(text, type);
+                    base.Log(log, type);
                     return;
                 }
 
-                if (this.pairs.ContainsKey(text))
+                if (this.pairs.ContainsKey(log.ToString()))
                 {
-                    this.pairs[text]++;
+                    this.pairs[log.ToString()]++;
                 }
                 else
                 {
-                    this.pairs.Add(text, 1);
+                    this.pairs.Add(log.ToString(), 1);
                 }
             }
         }

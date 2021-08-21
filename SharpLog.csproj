@@ -41,10 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Log.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="LogType.cs" />
-    <Compile Include="LogHandler.cs" />
     <Compile Include="MassLogger.cs" />
     <Compile Include="Output\IOutput.cs" />
     <Compile Include="Output\ConsoleOutput.cs" />

@@ -5,7 +5,7 @@
 // Marvin Fuchs
 // </author>
 // <summary>
-// Visit https://marvin-fuchs.de for more information
+// Visit https://sharplog.marvin-fuchs.de for more information
 // </summary>
 
 namespace SharpLog
@@ -19,8 +19,19 @@ namespace SharpLog
     /// </summary>
     public class Logger
     {
+        /// <summary>
+        /// The identification-tag of the logger.
+        /// </summary>
         private string ident = "NoName";
+
+        /// <summary>
+        /// Flags that indicate what logging levels should be logged.
+        /// </summary>
         private LogType logFlags = LogType.Info | LogType.Warning | LogType.Error;
+
+        /// <summary>
+        /// List with all output sources the logger should log to.
+        /// </summary>
         private List<IOutput> outputs = new List<IOutput>() { new ConsoleOutput() };
 
         /// <summary>
@@ -34,29 +45,35 @@ namespace SharpLog
             }
         }
 
+        /// <summary>
+        /// Gets or sets the list containing all output sources the logger should log to.
+        /// </summary>
         public List<IOutput> Outputs
         {
-            set
-            {
-                this.outputs = value;
-            }
-
             get
             {
                 return this.outputs;
             }
-        }
 
-        public LogType LogFlags
-        {
             set
             {
-                this.logFlags = value;
+                this.outputs = value;
             }
+        }
 
+        /// <summary>
+        /// Gets or sets the flags that indicate what logging levels the logger should log.
+        /// </summary>
+        public LogType LogFlags
+        {
             get
             {
                 return this.logFlags;
+            }
+
+            set
+            {
+                this.logFlags = value;
             }
         }
 
@@ -69,11 +86,11 @@ namespace SharpLog
             {
                 if (value)
                 {
-                    logFlags |= LogType.Debug;
+                    this.logFlags |= LogType.Debug;
                 }
                 else
                 {
-                    logFlags &= ~LogType.Debug;
+                    this.logFlags &= ~LogType.Debug;
                 }
             }
         }
@@ -87,11 +104,11 @@ namespace SharpLog
             {
                 if (value)
                 {
-                    logFlags |= LogType.Info;
+                    this.logFlags |= LogType.Info;
                 }
                 else
                 {
-                    logFlags &= ~LogType.Info;
+                    this.logFlags &= ~LogType.Info;
                 }
             }
         }
@@ -105,11 +122,11 @@ namespace SharpLog
             {
                 if (value)
                 {
-                    logFlags |= LogType.Warning;
+                    this.logFlags |= LogType.Warning;
                 }
                 else
                 {
-                    logFlags &= ~LogType.Warning;
+                    this.logFlags &= ~LogType.Warning;
                 }
             }
         }
@@ -123,11 +140,11 @@ namespace SharpLog
             {
                 if (value)
                 {
-                    logFlags |= LogType.Error;
+                    this.logFlags |= LogType.Error;
                 }
                 else
                 {
-                    logFlags &= ~LogType.Error;
+                    this.logFlags &= ~LogType.Error;
                 }
             }
         }
@@ -135,18 +152,19 @@ namespace SharpLog
         /// <summary>
         /// Logs to the console with time, origin and type information.
         /// </summary>
-        /// <param name="text">The log to be logged</param>
+        /// <param name="log">The object to be logged</param>
         /// <param name="type">The type of the log</param>
         public void Log(object log, LogType type = LogType.Debug)
         {
             if ((this.logFlags & type) != 0)
             {
-                string text = string.Format("[{0}] [{1}] [{2}]: {3}",
+                string text = string.Format(
+                    "[{0}] [{1}] [{2}]: {3}",
                     DateTime.UtcNow.ToString("dd-MM-yyyy | HH:mm:ss.fff"),
                     type.ToString(),
                     this.ident,
                     log);
-                outputs.ForEach(output =>
+                this.outputs.ForEach(output =>
                 {
                     output.Write(text, type);
                 });

@@ -5,7 +5,7 @@
 // Marvin Fuchs
 // </author>
 // <summary>
-// Visit https://marvin-fuchs.de for more information
+// Visit https://sharplog.marvin-fuchs.de for more information
 // </summary>
 
 namespace SharpLog
@@ -18,9 +18,9 @@ namespace SharpLog
     [Flags]
     public enum LogType
     {
-        Debug   = 1, 
-        Info    = 2, 
-        Warning = 4, 
-        Error   = 8,
+        Debug = 1,
+        Info = 2,
+        Warning = 4,
+        Error = 8,
     }
 }

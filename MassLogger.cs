@@ -5,20 +5,22 @@
 // Marvin Fuchs
 // </author>
 // <summary>
-// Visit https://marvin-fuchs.de for more information
+// Visit https://sharplog.marvin-fuchs.de for more information
 // </summary>
 
 namespace SharpLog
 {
-    using System;
-    using System.Linq;
     using System.Collections.Generic;
+    using System.Linq;
 
     /// <summary>
     /// Extends <see cref="Logger"/> to log a massive amount of info logs. It does that by collecting info logs and logging them together and compressed at specific intervals.
     /// </summary>
     public class MassLogger : Logger
     {
+        /// <summary>
+        /// A dictionary containing logs and how often they were logged.
+        /// </summary>
         private readonly Dictionary<string, int> pairs = new Dictionary<string, int>();
 
         /// <summary>
@@ -69,16 +71,22 @@ namespace SharpLog
             }
         }
 
+        /// <summary>
+        /// Method that gets executed every <see cref="logPause"/> milliseconds to log the logs in <see cref="pairs"/> as info log.
+        /// </summary>
+        /// <param name="source">The sender of the <see cref="System.Timers.Timer"/></param> event.
+        /// <param name="e">The <see cref="System.Timers.ElapsedEventArgs"/> given by the <see cref="System.Timers.Timer"/></param>
         private void Log(object source, System.Timers.ElapsedEventArgs e)
         {
-            int[] values = (new List<int>(pairs.Values)).ToArray();
-            int maxLength = (values.Max() + "").Length;
+            int[] values = (new List<int>(this.pairs.Values)).ToArray();
+            int maxLength = (values.Max() + string.Empty).Length;
             string text = this.InfoLogText + "\n";
             foreach (KeyValuePair<string, int> entry in this.pairs)
             {
-                string value = (entry.Value + "").PadLeft(maxLength, ' ');
+                string value = (entry.Value + string.Empty).PadLeft(maxLength, ' ');
                 text += "| " + string.Format("{0}x {1}", value, entry.Key) + "\n";
             }
+
             base.Log(text, LogType.Info);
             this.pairs.Clear();
         }

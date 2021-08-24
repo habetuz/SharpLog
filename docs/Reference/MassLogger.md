@@ -28,7 +28,7 @@ A logger to log a massive amount of similar info logs. It collects info logs and
 | ------------------ | ------------------------------ | ---------------- | ---------------- | 
 | `string`           | [`InfoLogText`](#infologtext)  |                  | :material-check: | 
 
-### Inherited properties
+### Inherited properties from [`Logger`](Logger.md)
 | Type                              | Property                             | Get              | Set              |
 | --------------------------------- | ------------------------------------ | ---------------- | ---------------- | 
 | `string`                          | [`Ident`](Logger.md#ident)           |                  | :material-check: | 

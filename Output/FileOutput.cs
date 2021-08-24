@@ -33,6 +33,8 @@ namespace SharpLog.Output
 
         private LogType logFlags = LogType.Debug | LogType.Info | LogType.Warning | LogType.Error;
 
+        private Thread writeThread;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="FileOutput"/> class.
         /// </summary>
@@ -40,6 +42,8 @@ namespace SharpLog.Output
         public FileOutput(string fileName = ".log")
         {
             this.fileName = fileName;
+            this.writeThread = new Thread(this.AsyncWrite);
+            this.writeThread.Start();
         }
 
         /// <summary>
@@ -70,6 +74,7 @@ namespace SharpLog.Output
         /// <param name="logType">The log level of the log</param>
         public void Write(string text, LogType logType)
         {
+            
             if((this.logFlags & logType) != 0)
             { 
                 new Thread(this.AsyncWrite).Start(text);
@@ -102,6 +107,12 @@ namespace SharpLog.Output
                 }
             } 
             while (!successfull);
+        }
+
+        private struct Log
+        {
+            public string Text;
+            public LogType LogType;
         }
     }
 }

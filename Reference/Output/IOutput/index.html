@@ -12,7 +12,7 @@
         <link rel="canonical" href="https://sharplog.marvin-fuchs.de/Reference/Output/IOutput/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.10">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
     
     
       
@@ -20,7 +20,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.1fe995fd.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ca7ac06f.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.f1a3b89f.min.css">
@@ -437,8 +437,35 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#methods" class="md-nav__link">
     Methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#properties_1" class="md-nav__link">
+    Properties
+  </a>
+  
+    <nav class="md-nav" aria-label="Properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logflags" class="md-nav__link">
+    LogFlags
   </a>
   
 </li>
@@ -526,6 +553,25 @@
 <hr />
 <p>Interface for outputs used by logger.</p>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<h3 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Property</th>
+<th>Get</th>
+<th>Set</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../LogType/"><code>LogType</code></a></td>
+<td><a href="#logflags"><code>LogFlags</code></a></td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
+</tr>
+</tbody>
+</table>
 <h3 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -541,10 +587,16 @@
 </tr>
 </tbody>
 </table>
+<h2 id="properties_1">Properties<a class="headerlink" href="#properties_1" title="Permanent link">&para;</a></h2>
+<h3 id="logflags"><code>LogFlags</code><a class="headerlink" href="#logflags" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/habetuz/SharpLog/blob/main/Output/IOutput.cs#L18"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5 3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></span> Source</a></p>
+<p><code class="highlight"><span class="k">public</span> <span class="kt">string</span> <span class="n">FileName</span> <span class="p">{</span><span class="k">set</span><span class="p">;}</span></code></p>
+<p>Sets or gets the <a href="../../LogType/"><code>LogType</code></a>'s the output should log. Should be set to all log types on default.</p>
+<hr />
 <h2 id="methods_1">Methods<a class="headerlink" href="#methods_1" title="Permanent link">&para;</a></h2>
 <h3 id="write"><code>Write</code><a class="headerlink" href="#write" title="Permanent link">&para;</a></h3>
 <p><a href="https://github.com/habetuz/SharpLog/blob/main/Output/IOutput.cs#L23"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5 3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></span> Source</a></p>
-<p><code class="highlight"><span class="k">void</span> <span class="nf">Write</span><span class="p">(</span><span class="kt">string</span> <span class="n">text</span><span class="p">,</span></code>  <a href="../../LogType/"><code>LogType</code></a>  <code>type)</code></p>
+<p><code class="highlight"><span class="n">LogType</span></code>  <a href="../../LogType/"><code>LogType</code></a>  <code>{ get; set; }</code></p>
 <p>Writes the text to the output.</p>
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <table>
@@ -568,6 +620,7 @@
 </tr>
 </tbody>
 </table>
+<hr />
                 
                   
                 
@@ -581,9 +634,8 @@
           </div>
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
-            Back to top
           </a>
         
       </main>
@@ -633,7 +685,7 @@
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.82b56eb2.min.js"></script>
       
     
   </body>

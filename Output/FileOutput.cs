@@ -33,8 +33,6 @@ namespace SharpLog.Output
 
         private LogType logFlags = LogType.Debug | LogType.Info | LogType.Warning | LogType.Error;
 
-        private Thread writeThread;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="FileOutput"/> class.
         /// </summary>
@@ -42,8 +40,6 @@ namespace SharpLog.Output
         public FileOutput(string fileName = ".log")
         {
             this.fileName = fileName;
-            this.writeThread = new Thread(this.AsyncWrite);
-            this.writeThread.Start();
         }
 
         /// <summary>
@@ -68,7 +64,7 @@ namespace SharpLog.Output
             }
         }
         /// <summary>
-        /// The write method that writes to the <see cref="fileName"/>.
+        /// The write method that writes to the <see cref="FileName"/>.
         /// </summary>
         /// <param name="text">The text to be written</param>
         /// <param name="logType">The log level of the log</param>
@@ -76,43 +72,28 @@ namespace SharpLog.Output
         {
             
             if((this.logFlags & logType) != 0)
-            { 
-                new Thread(this.AsyncWrite).Start(text);
-            }
-        }
-
-        /// <summary>
-        /// The write method that gets executed asynchronous in the <see cref="Write(string, LogType)"/> method.
-        /// </summary>
-        /// <param name="text">The text to be written</param>
-        private void AsyncWrite(object text)
-        {
-            bool successfull;
-            do
             {
-                successfull = true;
-
-                try
+                bool successfull;
+                do
                 {
-                    using (StreamWriter writer = File.AppendText(this.fileName))
+                    successfull = true;
+
+                    try
                     {
-                        writer.WriteLine(text);
+                        using (StreamWriter writer = File.AppendText(this.fileName))
+                        {
+                            writer.WriteLine(text);
+                        }
+                    }
+                    catch (IOException)
+                    {
+                        Logger.Log("Writing to " + this.fileName + " failed. Trying again...", LogType.Warning);
+                        Thread.Sleep(1000);
+                        successfull = false;
                     }
                 }
-                catch (IOException)
-                {
-                    Logger.Log("Writing to " + this.fileName + " failed. Trying again...", LogType.Warning);
-                    Thread.Sleep(1000);
-                    successfull = false;
-                }
-            } 
-            while (!successfull);
-        }
-
-        private struct Log
-        {
-            public string Text;
-            public LogType LogType;
+                while (!successfull);
+            }
         }
     }
 }

@@ -12,6 +12,9 @@ namespace SharpLog
 {
     using System;
     using System.Collections.Generic;
+    using System.Collections.Concurrent;
+    using System.Threading;
+    using System.Threading.Tasks;
     using SharpLog.Output;
 
     /// <summary>
@@ -29,10 +32,17 @@ namespace SharpLog
         /// </summary>
         private LogType logFlags = LogType.Info | LogType.Warning | LogType.Error;
 
+        private ConcurrentQueue<LogContainer> logQueue = new ConcurrentQueue<LogContainer>();
+
         /// <summary>
         /// List with all output sources the logger should log to.
         /// </summary>
         private List<IOutput> outputs = new List<IOutput>() { new ConsoleOutput() };
+
+        public Logger()
+        {
+            Task.Factory.StartNew(this.asyncLog, TaskCreationOptions.LongRunning);
+        }
 
         /// <summary>
         /// Sets the identification-tag of the logger.
@@ -156,19 +166,43 @@ namespace SharpLog
         /// <param name="type">The type of the log</param>
         public void Log(object log, LogType type = LogType.Debug)
         {
-            if ((this.logFlags & type) != 0)
+            this.logQueue.Enqueue(new LogContainer()
             {
-                string text = string.Format(
-                    "[{0}] [{1}] [{2}]: {3}",
-                    DateTime.UtcNow.ToString("dd-MM-yyyy | HH:mm:ss.fff"),
-                    type.ToString(),
-                    this.ident,
-                    log);
-                this.outputs.ForEach(output =>
+                Text    = log.ToString(),
+                LogType = type,
+            });
+        }
+
+        private void asyncLog()
+        {
+            for(; ; )
+            {
+                LogContainer log;
+                while(this.logQueue.TryDequeue(out log))
                 {
-                    output.Write(text, type);
-                });
+                    if ((this.logFlags & log.LogType) != 0)
+                    {
+                        string text = string.Format(
+                            "[{0}] [{1}] [{2}]: {3}",
+                            DateTime.UtcNow.ToString("dd-MM-yyyy | HH:mm:ss.fff"),
+                            log.LogType.ToString(),
+                            this.ident,
+                            log.Text);
+                        this.outputs.ForEach(output =>
+                        {
+                            output.Write(text, log.LogType);
+                        });
+                    }
+                }
+                Thread.Sleep(500);
+                
             }
+        }
+
+        private struct LogContainer
+        {
+            public string Text;
+            public LogType LogType;
         }
     }
 }

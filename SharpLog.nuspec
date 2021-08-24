@@ -11,6 +11,9 @@
     <repository type="git" url="https://github.com/habetuz/SharpLog" branch="master"/>
     <description>A small logger for big projects</description>
     <releaseNotes>
+      Change:
+      ~ SharpLog now loggs asynchronously
+      
       Add:
       + The possibility to restrict outputs to only some `LogType`'s
     </releaseNotes>

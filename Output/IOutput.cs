@@ -15,6 +15,8 @@ namespace SharpLog.Output
     /// </summary>
     public interface IOutput
     {
+        LogType LogFlags { get; set; }
+
         /// <summary>
         /// Writes the text to the output.
         /// </summary>

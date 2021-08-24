@@ -31,6 +31,8 @@ namespace SharpLog.Output
         /// </summary>
         private string fileName;
 
+        private LogType logFlags = LogType.Debug | LogType.Info | LogType.Warning | LogType.Error;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="FileOutput"/> class.
         /// </summary>
@@ -50,6 +52,17 @@ namespace SharpLog.Output
             } 
         }
 
+        public LogType LogFlags
+        {
+            get
+            {
+                return this.logFlags;
+            }
+            set
+            {
+                this.logFlags = value;
+            }
+        }
         /// <summary>
         /// The write method that writes to the <see cref="fileName"/>.
         /// </summary>
@@ -57,7 +70,10 @@ namespace SharpLog.Output
         /// <param name="logType">The log level of the log</param>
         public void Write(string text, LogType logType)
         {
-            new Thread(this.AsyncWrite).Start(text);
+            if((this.logFlags & logType) != 0)
+            { 
+                new Thread(this.AsyncWrite).Start(text);
+            }
         }
 
         /// <summary>

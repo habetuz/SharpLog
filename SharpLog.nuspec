@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>MarvinFuchs.SharpLog</id>
-    <version>2.2.0</version>
+    <version>2.3.0</version>
     <title>$title$</title>
     <authors>Marvin Fuchs</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -11,11 +11,8 @@
     <repository type="git" url="https://github.com/habetuz/SharpLog" branch="master"/>
     <description>A small logger for big projects</description>
     <releaseNotes>
-      Change:
-      ~ Use `object` instead of `string` in the log function of the MassLogger
-
       Add:
-      + Property `FileName`to the `FileOutput` class
+      + The possibility to restrict outputs to only some `LogType`'s
     </releaseNotes>
     <copyright>$copyright$</copyright>
     <tags>Logger</tags>

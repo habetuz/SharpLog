@@ -29,17 +29,8 @@ namespace SharpLog.Output
             { LogType.Error,    ConsoleColor.Red },
         };
 
-        private LogType logFlags = LogType.Debug | LogType.Info | LogType.Warning | LogType.Error;
+        public LogType LogFlags { get; set; } = LogType.Debug | LogType.Info | LogType.Warning | LogType.Error;
 
-        public LogType LogFlags { get
-            {
-                return this.logFlags;
-            }
-            set
-            {
-                this.logFlags = value;
-            }
-        }
 
         /// <summary>
         /// The write method that writes to the console.
@@ -48,7 +39,7 @@ namespace SharpLog.Output
         /// <param name="logType">The log level of the log</param>
         public void Write(string text, LogType logType)
         {
-            if((logType & this.logFlags) != 0)
+            if((logType & this.LogFlags) != 0)
             {
                 Console.ForegroundColor = Colors[logType];
                 Console.WriteLine(text);

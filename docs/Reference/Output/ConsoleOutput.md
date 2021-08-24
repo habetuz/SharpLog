@@ -19,9 +19,14 @@ Class for console outputs.
 
 ## Summary
 ### Constructors
-| Constructor                      |
-| -------------------------------- | 
+| Constructor                             |
+| --------------------------------------- | 
 | [`ConsoleOutput`](#consoleoutput_1)`()` | 
+
+### Implemented properties from [`IOutput`](IOutput.md)
+| Type                    | Property                          | Get              | Set              |
+| ----------------------- | --------------------------------- | ---------------- | ---------------- | 
+| [`LogType`](LogType.md) | [`LogFlags`](IOutput.md#logflags) | :material-check: | :material-check: | 
 
 ### Implemented methods from [`IOutput`](IOutput.md)
 | Type               | Method                                                                 |
@@ -39,7 +44,7 @@ Initializes a new instance of the [`ConsoleOutput`]() class.
 ---
 ## Methods
 ### `Write`
-[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Output/ConsoleOutput.cs#L37-L43)
+[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Output/ConsoleOutput.cs#L40-L50)
 
 `#!c# void Write(string text,`  [`LogType `](LogType.md)  `type)`
 

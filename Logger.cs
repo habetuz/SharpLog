@@ -72,7 +72,7 @@ namespace SharpLog
         }
 
         /// <summary>
-        /// Gets or sets the flags that indicate what logging levels the logger should log.
+        /// Sets or gets the <see cref="LogType"/> the logger should log.
         /// </summary>
         public LogType LogFlags
         {

@@ -28,6 +28,11 @@ Class for file outputs.
 | -------- | ----------------------- | ---------------- | ---------------- | 
 | `string` | [`FileName`](#filename) |                  | :material-check: | 
 
+### Implemented properties from [`IOutput`](IOutput.md)
+| Type                    | Property                          | Get              | Set              |
+| ----------------------- | --------------------------------- | ---------------- | ---------------- | 
+| [`LogType`](LogType.md) | [`LogFlags`](IOutput.md#logflags) | :material-check: | :material-check: | 
+
 ### Implemented methods from [`IOutput`](IOutput.md)
 | Type               | Method                                                                 |
 | ------------------ | ---------------------------------------------------------------------- |
@@ -49,7 +54,7 @@ Initializes a new instance of the [`FileOutput`]() class.
 ---
 ## Properties
 ### `FileName`
-[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Output/FileOutput.cs#L43-L48) · :material-sign-direction: Default: `#!c# "NoName"`
+[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Output/FileOutput.cs#L46-L51) · :material-sign-direction: Default: `#!c# "NoName"`
 
 `#!c# public string FileName {set;}`
 
@@ -58,7 +63,7 @@ Sets the name or path of the file the output should write to.
 ---
 ## Methods
 ### `Write`
-[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Output/FileOutput.cs#L55-L58)
+[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Output/FileOutput.cs#L60-L88)
 
 `#!c# void Write(string text,`  [`LogType `](LogType.md)  `type)`
 

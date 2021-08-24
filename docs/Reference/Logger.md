@@ -39,7 +39,7 @@ Class for easy but clear logging.
 
 ## Constructors
 ### `Logger`
-[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L20)
+[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Logger.cs##L42-L45)
 
 `#!c# public Logger()`
 
@@ -48,7 +48,7 @@ Initializes a new instance of the [`Logger`]() class.
 ---
 ## Properties
 ### `Ident`
-[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L40-L46) · :material-sign-direction: Default: `#!c# "NoName"`
+[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L50-L56) · :material-sign-direction: Default: `#!c# "NoName"`
 
 `#!c# public string Ident {set;}`
 
@@ -56,7 +56,7 @@ Sets the identification-tag of the logger.
 
 ---
 ### `Outputs`
-[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L51-L62) · :material-sign-direction: Default: `#!c# List<`[`IOutput`](IOutput.md)`#!c# > { new`  [`ConsoleOutput`](ConsoleOutput.md)  `#!c# }`
+[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L61-L72) · :material-sign-direction: Default: `#!c# List<`[`IOutput`](IOutput.md)`#!c# > { new`  [`ConsoleOutput`](ConsoleOutput.md)  `#!c# }`
 
 `#!c# public List<`[`IOutput`](IOutput.md)`#!c# > Outputs { get; set; }`
 
@@ -64,15 +64,15 @@ List with all output sources the logger should write to.
 
 ---
 ### `LogFlags`
-[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L51-L62) · :material-sign-direction: Default: [`LogType`](LogType.md)`#!c# .Info |` [`LogType`](LogType.md)`#!c# .Warning |` [`LogType`](LogType.md)`#!c# .Error`
+[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L77-L88) · :material-sign-direction: Default: [`LogType`](LogType.md)`#!c# .Info |` [`LogType`](LogType.md)`#!c# .Warning |` [`LogType`](LogType.md)`#!c# .Error`
 
 `#!c# public`  [`LogType`](LogType.md)  `LogFlags { get; set; }`
 
-List with all output sources the logger should write to.
+Sets or gets the [`LogType`](LogType.md)'s the logger should log.
 
 ---
 ### `LogDebug`
-[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L83-L96) · :material-sign-direction: Default: `#!c# false`
+[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L93-L106) · :material-sign-direction: Default: `#!c# false`
 
 `#!c# public bool LogDebug {set;}`
 
@@ -80,7 +80,7 @@ Sets a value indicating whether [`Debug`](LogType.md) should be logged.
 
 ---
 ### `LogInfo`
-[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L101-L114) · :material-sign-direction: Default: `#!c# true`
+[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L111-L124) · :material-sign-direction: Default: `#!c# true`
 
 `#!c# public bool LogInfo {set;}`
 
@@ -88,7 +88,7 @@ Sets a value indicating whether [`Info`](LogType.md) should be logged.
 
 ---
 ### `LogWarning`
-[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L119-L132) · :material-sign-direction: Default: `#!c# true`
+[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L129-L142) · :material-sign-direction: Default: `#!c# true`
 
 `#!c# public bool LogWarning {set;}`
 
@@ -96,7 +96,7 @@ Sets a value indicating whether [`Warning`](LogType.md) should be logged.
 
 ---
 ### `LogError`
-[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L137-L150) · :material-sign-direction: Default: `#!c# true`
+[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L147-L160) · :material-sign-direction: Default: `#!c# true`
 
 `#!c# public bool LogError {set;}`
 
@@ -105,7 +105,7 @@ Sets a value indicating whether [`Error`](LogType.md) should be logged.
 ---
 ## Methods
 ### `Log`
-[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L157-L174)
+[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L167-L174)
 
 `#!c# public void Log(object log,` [`LogType `](LogType.md) `type =` [`LogType `](LogType.md)`.Debug)`
 

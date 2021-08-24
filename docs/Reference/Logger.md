@@ -64,7 +64,7 @@ List with all output sources the logger should write to.
 
 ---
 ### `LogFlags`
-[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L51-L62) · :material-sign-direction: Default: [`LogType`](LogType.md)`#!c# .Info |` [`LogType`](LogType.de)`#!c# .Warning |` [`LogType`](LogType.md)`#!c# .Error`
+[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Logger.cs#L51-L62) · :material-sign-direction: Default: [`LogType`](LogType.md)`#!c# .Info |` [`LogType`](LogType.md)`#!c# .Warning |` [`LogType`](LogType.md)`#!c# .Error`
 
 `#!c# public`  [`LogType`](LogType.md)  `LogFlags { get; set; }`
 

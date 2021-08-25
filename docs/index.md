@@ -9,6 +9,12 @@ A small logger for big projects.
 
 Full documentation under [Reference](/Reference/Logger/).
 
+## Features
+- [x] Easy to use
+- [x] Asynchronous logging
+- [x] File and console outputs integrated
+- [x] Easy to implement custom outputs
+- [x] Easy toggling of log levels
 
 ## Example
 Example log from [GameSense](https://github.com/habetuz/GameSense).
@@ -33,14 +39,14 @@ Example log from [GameSense](https://github.com/habetuz/GameSense).
 [10-07-2021 | 12:19:43.484] [Info] [GameSense/Controller]: UpdateTimer ready.
 [10-07-2021 | 12:19:43.485] [Info] [GameSense/Controller]: Ready!
 [10-07-2021 | 12:24:42.590] [Info] [GameSense/InputManager]: Inputs
-16x Left
-3x Space
-1x Return
+| 16x Left
+|  3x Space
+|  1x Return
 
 [10-07-2021 | 12:24:42.734] [Info] [GameSense/Transmitter]: Transitions
-1x /game_metadata
-1x /bind_game_event
-8x /register_game_event
-4692x /multiple_game_events
-29x /game_heartbeat
+|    1x /game_metadata
+|    1x /bind_game_event
+|    8x /register_game_event
+| 4692x /multiple_game_events
+|   29x /game_heartbeat
 ```

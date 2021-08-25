@@ -21,6 +21,8 @@ markdown_extensions:
   - meta
   - pymdownx.details
   - attr_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - pymdownx.highlight:
       linenums: false
   - pymdownx.superfences

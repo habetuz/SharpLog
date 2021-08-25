@@ -341,6 +341,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#outputs" class="md-nav__link">
+    Outputs
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -500,87 +507,82 @@
 <p><a href="https://www.nuget.org/packages/MarvinFuchs.SharpLog"><img alt="Build Status" src="https://img.shields.io/nuget/v/MarvinFuchs.SharpLog.svg" /></a></p>
 <p>Install the package from <a href="https://www.nuget.org/packages/MarvinFuchs.SharpLog/">nuget</a>.</p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
-<h3 id="logger"><a href="../Reference/Logger/">Logger</a><a class="headerlink" href="#logger" title="Permanent link">&para;</a></h3>
+<h3 id="logger"><a href="../Reference/Logger/"><code>Logger</code></a><a class="headerlink" href="#logger" title="Permanent link">&para;</a></h3>
 <p>Create a new logger.
 <div class="highlight"><pre><span></span><code><span class="n">Logger</span> <span class="n">MyLogger</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Logger</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="n">Ident</span> <span class="p">=</span> <span class="s">&quot;Test&quot;</span><span class="p">,</span>
-    <span class="n">LogDebug</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
-    <span class="n">LogInfo</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
-    <span class="n">LogWarning</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
-    <span class="n">LogError</span> <span class="p">=</span> <span class="k">true</span>
+    <span class="n">Ident</span>      <span class="p">=</span> <span class="s">&quot;Test&quot;</span><span class="p">,</span>
+    <span class="n">LogFlags</span>   <span class="p">=</span> <span class="n">LogType</span><span class="p">.</span><span class="n">Debug</span> <span class="p">|</span> <span class="n">LogType</span><span class="p">.</span><span class="n">Info</span> <span class="p">|</span> <span class="n">LogType</span><span class="p">.</span><span class="n">Warning</span> <span class="p">|</span> <span class="n">LogType</span><span class="p">.</span><span class="n">Error</span><span class="p">,</span>
+    <span class="n">Outputs</span>    <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">IOutput</span><span class="p">&gt;()</span> <span class="p">{</span> <span class="k">new</span> <span class="n">ConsoleOutput</span><span class="p">()</span> <span class="p">}</span>
 <span class="p">};</span>
 </code></pre></div></p>
-<details class="info"><summary>Default settings</summary><div class="highlight"><pre><span></span><code><span class="n">Ident</span> <span class="p">=</span> <span class="s">&quot;NoName&quot;</span><span class="p">,</span>
-<span class="n">LogDebug</span> <span class="p">=</span> <span class="k">false</span><span class="p">,</span>
-<span class="n">LogInfo</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
-<span class="n">LogWarning</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
-<span class="n">LogError</span> <span class="p">=</span> <span class="k">true</span>
+<details class="info"><summary>Default settings</summary><div class="highlight"><pre><span></span><code><span class="n">Ident</span>      <span class="p">=</span> <span class="s">&quot;NoName&quot;</span><span class="p">,</span>
+<span class="n">LogFlags</span>   <span class="p">=</span> <span class="n">LogType</span><span class="p">.</span><span class="n">Info</span> <span class="p">|</span> <span class="n">LogType</span><span class="p">.</span><span class="n">Warning</span> <span class="p">|</span> <span class="n">LogType</span><span class="p">.</span><span class="n">Error</span><span class="p">,</span>
+<span class="n">Outputs</span>    <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">IOutput</span><span class="p">&gt;()</span> <span class="p">{</span> <span class="k">new</span> <span class="n">ConsoleOutput</span><span class="p">()</span> <span class="p">},</span>
 </code></pre></div>
 </details>
 <p>Log to the console.
-<div class="highlight"><pre><span></span><code><span class="n">MyLogger</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&quot;Test&quot;</span><span class="p">,</span> <span class="n">LoggerType</span><span class="p">.</span><span class="n">Debug</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="n">MyLogger</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&quot;Test&quot;</span><span class="p">,</span> <span class="n">LogType</span><span class="p">.</span><span class="n">Debug</span><span class="p">);</span>
 </code></pre></div></p>
 <details class="example"><summary>Output</summary><div class="highlight"><pre><span></span><code>[04-07-2021 | 12:53:34.372] [Debug] [Test]: Test
 </code></pre></div>
 </details>
-<details class="tip"><summary>Debug is optional</summary><p>When the <code>level</code> argument is left blank the logger automatically logs on level <code class="highlight"><span class="n">LoggerType</span><span class="p">.</span><span class="n">Debug</span></code></p>
+<details class="tip"><summary>Debug is optional</summary><p>When the <code>level</code> argument is left blank the logger automatically logs on level <code class="highlight"><span class="n">LogType</span><span class="p">.</span><span class="n">Debug</span></code></p>
 </details>
-<h3 id="masslogger"><a href="../Reference/MassLogger/">MassLogger</a><a class="headerlink" href="#masslogger" title="Permanent link">&para;</a></h3>
+<h3 id="masslogger"><a href="../Reference/MassLogger/"><code>MassLogger</code></a><a class="headerlink" href="#masslogger" title="Permanent link">&para;</a></h3>
 <p>This is a special logger that is able to log a large quantity of logs compressed into a single log. Use it when logging the same type of info many times (like keyboard inputs or many server requests).</p>
 <p>Create a new logger.
 <div class="highlight"><pre><span></span><code><span class="n">MassLogger</span> <span class="n">MyMassLogger</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MassLogger</span><span class="p">(</span><span class="m">30000</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">Ident</span> <span class="p">=</span> <span class="s">&quot;MassTest&quot;</span><span class="p">,</span>
     <span class="n">InfoLogText</span> <span class="p">=</span> <span class="s">&quot;Keyboard inputs:&quot;</span>
-    <span class="n">LogDebug</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
-    <span class="n">LogInfo</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
-    <span class="n">LogWarning</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
-    <span class="n">LogError</span> <span class="p">=</span> <span class="k">true</span>
+    <span class="n">LogFlags</span>   <span class="p">=</span> <span class="n">LogType</span><span class="p">.</span><span class="n">Debug</span> <span class="p">|</span> <span class="n">LogType</span><span class="p">.</span><span class="n">Info</span> <span class="p">|</span> <span class="n">LogType</span><span class="p">.</span><span class="n">Warning</span> <span class="p">|</span> <span class="n">LogType</span><span class="p">.</span><span class="n">Error</span><span class="p">,</span>
+    <span class="n">Outputs</span>    <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">IOutput</span><span class="p">&gt;()</span> <span class="p">{</span> <span class="k">new</span> <span class="n">ConsoleOutput</span><span class="p">()</span> <span class="p">}</span>
 <span class="p">};</span>
 </code></pre></div></p>
 <p>The <code>30000</code> specify that the logger prints his info logs every <code>30000</code> milliseconds.</p>
 <details class="info"><summary>Default settings</summary><div class="highlight"><pre><span></span><code><span class="n">Ident</span> <span class="p">=</span> <span class="s">&quot;NoName&quot;</span><span class="p">,</span>
 <span class="n">InfoLogText</span> <span class="p">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
-<span class="n">LogDebug</span> <span class="p">=</span> <span class="k">false</span><span class="p">,</span>
-<span class="n">LogInfo</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
-<span class="n">LogWarning</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
-<span class="n">LogError</span> <span class="p">=</span> <span class="k">true</span>
+<span class="n">LogFlags</span>   <span class="p">=</span> <span class="n">LogType</span><span class="p">.</span><span class="n">Info</span> <span class="p">|</span> <span class="n">LogType</span><span class="p">.</span><span class="n">Warning</span> <span class="p">|</span> <span class="n">LogType</span><span class="p">.</span><span class="n">Error</span><span class="p">,</span>
+<span class="n">Outputs</span>    <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">IOutput</span><span class="p">&gt;()</span> <span class="p">{</span> <span class="k">new</span> <span class="n">ConsoleOutput</span><span class="p">()</span> <span class="p">}</span>
 </code></pre></div>
 </details>
-<p>You can log <code>debug</code>, <code>warning</code> and <code>error</code> just like the normal <a href="#logger">logger</a>.
-<div class="highlight"><pre><span></span><code><span class="n">MyLogger</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&quot;Test&quot;</span><span class="p">,</span> <span class="n">LoggerType</span><span class="p">.</span><span class="n">Debug</span><span class="p">);</span>
+<p><a href="../Reference/LogType/"><code>LogType</code></a> <code>debug</code>, <code>warning</code> and <code>error</code> get logged just like the normal <a href="../Reference/Logger/"><code>Logger</code></a>.
+<div class="highlight"><pre><span></span><code><span class="n">MyMassLogger</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&quot;Test&quot;</span><span class="p">,</span> <span class="n">LogType</span><span class="p">.</span><span class="n">Debug</span><span class="p">);</span>
 </code></pre></div></p>
 <details class="example"><summary>Output</summary><div class="highlight"><pre><span></span><code>[04-07-2021 | 12:53:34.372] [Debug] [Test]: Test
 </code></pre></div>
 </details>
-<details class="tip"><summary>Debug is optional</summary><p>Again, when the <code>level</code> argument is left blank the logger automatically logs on level <code class="highlight"><span class="n">LoggerType</span><span class="p">.</span><span class="n">Debug</span></code></p>
+<details class="tip"><summary>Debug is optional</summary><p>Again, when the <code>level</code> argument is left blank the logger automatically logs on level <code class="highlight"><span class="n">LogType</span><span class="p">.</span><span class="n">Debug</span></code></p>
 </details>
 <p><strong>Info-logs are special. Take this example:</strong></p>
-<p>We want to log every key press on our keyboard, we can use the <a href="../Reference/MassLogger/">MassLogger</a>.
-<div class="highlight"><pre><span></span><code><span class="n">MyLogger</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="n">Keyboard</span><span class="p">.</span><span class="n">pressedKey</span><span class="p">(),</span> <span class="n">LoggerType</span><span class="p">.</span><span class="n">Info</span><span class="p">);</span>
+<p>We want to log every key press on our keyboard, we can use the <a href="../Reference/MassLogger/"><code>MassLogger</code></a>.
+<div class="highlight"><pre><span></span><code><span class="n">MyLogger</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="n">Keyboard</span><span class="p">.</span><span class="n">pressedKey</span><span class="p">(),</span> <span class="n">LogType</span><span class="p">.</span><span class="n">Info</span><span class="p">);</span>
 </code></pre></div></p>
 <details class="example"><summary>Output</summary><p>Every <code>30000</code> milliseconds:
 <div class="highlight"><pre><span></span><code>[04-07-2021 | 12:55:34.372] [Info] [MassTest]: Keyboard inputs:
-63x Left
-16x Return
-39x LShiftKey
-12x RShiftKey
-39x Back
-28x Space
-36x LControlKey
+| 63x Left
+| 16x Return
+| 39x LShiftKey
+| 12x RShiftKey
+| 39x Back
+| 28x Space
+| 36x LControlKey
 </code></pre></div></p>
 </details>
 <details class="note"><summary>Note</summary><p>Note that <code class="highlight"><span class="n">InfoLogText</span></code> was set to <code>Keyboard inputs:</code> in the constructor.</p>
 </details>
-<details class="info"><summary>Counter</summary><p>The counters of the logs get reset after every log.</p>
-</details>
-<p>When you want to log a info log instantly set the <code>instant</code> argument as <code class="highlight"><span class="k">true</span></code>.
-<div class="highlight"><pre><span></span><code><span class="n">MyLogger</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&quot;Instant info&quot;</span><span class="p">,</span> <span class="n">LoggerType</span><span class="p">.</span><span class="n">Info</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+<p>When you want to log a info log instantly set the <code>instant</code> argument to <code class="highlight"><span class="k">true</span></code>.
+<div class="highlight"><pre><span></span><code><span class="n">MyLogger</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&quot;Instant info&quot;</span><span class="p">,</span> <span class="n">LogType</span><span class="p">.</span><span class="n">Info</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
 </code></pre></div></p>
 <details class="example"><summary>Output</summary><div class="highlight"><pre><span></span><code>[04-07-2021 | 12:53:34.372] [Info] [MassTest]: Instant info
 </code></pre></div>
 </details>
+<h2 id="outputs">Outputs<a class="headerlink" href="#outputs" title="Permanent link">&para;</a></h2>
+<p>On default <a href="../Reference/Logger/"><code>Logger</code></a> and <a href="../Reference/MassLogger/"><code>MassLogger</code></a> have their <a href="../Reference/Logger/#outputs"><code>Outputs</code></a> list filled with a <a href="../Reference/Output/ConsoleOutput/"><code>ConsoleOutput</code></a>.</p>
+<p>A <a href="../Reference/Output/ConsoleOutput/"><code>ConsoleOutput</code></a> logs to the console window and colors the different log levels.</p>
+<p>You can add one or multiple <a href="../Reference/Output/FileOutput/"><code>FileOutput</code></a> to log to one or multiple files.</p>
+<p>Notice that outputs log every log level on default but you can restrict them to only some log levels with their <a href="../Reference/Output/IOutput/#logflags"><code>LogFlags</code></a> property.</p>
                 
                   
                 

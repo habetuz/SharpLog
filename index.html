@@ -293,6 +293,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#example" class="md-nav__link">
     Example
   </a>
@@ -472,6 +479,14 @@
 <p>A small logger for big projects.</p>
 <p><a href="Getting started/#installation">Installation</a> and <a href="Getting started/#usage">usage</a> under <a href="Getting started/">Getting started</a>.</p>
 <p>Full documentation under <a href="/Reference/Logger/">Reference</a>.</p>
+<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Easy to use</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Asynchronous logging</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> File and console outputs integrated</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Easy to implement custom outputs</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Easy toggling of log levels</li>
+</ul>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
 <p>Example log from <a href="https://github.com/habetuz/GameSense">GameSense</a>.
 <div class="highlight"><pre><span></span><code>[10-07-2021 | 12:19:42.472] [Info] [Main]: Program started. Welcome.
@@ -494,16 +509,16 @@
 [10-07-2021 | 12:19:43.484] [Info] [GameSense/Controller]: UpdateTimer ready.
 [10-07-2021 | 12:19:43.485] [Info] [GameSense/Controller]: Ready!
 [10-07-2021 | 12:24:42.590] [Info] [GameSense/InputManager]: Inputs
-16x Left
-3x Space
-1x Return
+| 16x Left
+|  3x Space
+|  1x Return
 
 [10-07-2021 | 12:24:42.734] [Info] [GameSense/Transmitter]: Transitions
-1x /game_metadata
-1x /bind_game_event
-8x /register_game_event
-4692x /multiple_game_events
-29x /game_heartbeat
+|    1x /game_metadata
+|    1x /bind_game_event
+|    8x /register_game_event
+| 4692x /multiple_game_events
+|   29x /game_heartbeat
 </code></pre></div></p>
                 
                   

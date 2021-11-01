@@ -12,6 +12,7 @@ namespace SharpLog
 {
     using System.Collections.Generic;
     using System.Linq;
+    using System.Timers;
 
     /// <summary>
     /// Extends <see cref="Logger"/> to log a massive amount of info logs. It does that by collecting info logs and logging them together and compressed at specific intervals.
@@ -29,7 +30,7 @@ namespace SharpLog
         /// <param name="logPause">The pause between two info logs in milliseconds.</param>
         public MassLogger(int logPause = 30000) : base()
         {
-            System.Timers.Timer timer = new System.Timers.Timer(logPause);
+            Timer timer = new Timer(logPause);
             timer.Elapsed += this.Log;
             timer.AutoReset = true;
             timer.Enabled = true;
@@ -76,7 +77,7 @@ namespace SharpLog
         /// </summary>
         /// <param name="source">The sender of the <see cref="System.Timers.Timer"/></param> event.
         /// <param name="e">The <see cref="System.Timers.ElapsedEventArgs"/> given by the <see cref="System.Timers.Timer"/></param>
-        private void Log(object source, System.Timers.ElapsedEventArgs e)
+        private void Log(object source, ElapsedEventArgs e)
         {
             int[] values = (new List<int>(this.pairs.Values)).ToArray();
             int maxLength = (values.Max() + string.Empty).Length;

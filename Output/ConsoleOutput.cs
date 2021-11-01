@@ -31,6 +31,7 @@ namespace SharpLog.Output
 
         public LogType LogFlags { get; set; } = LogType.Debug | LogType.Info | LogType.Warning | LogType.Error;
 
+        public bool Instant { get; } = true;
 
         /// <summary>
         /// The write method that writes to the console.

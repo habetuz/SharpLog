@@ -166,11 +166,26 @@ namespace SharpLog
         /// <param name="type">The type of the log</param>
         public void Log(object log, LogType type = LogType.Debug)
         {
-            this.logQueue.Enqueue(new LogContainer()
+            LogContainer container = new LogContainer
             {
-                Text    = log.ToString(),
+                Text = log.ToString(),
                 LogType = type,
+            };
+            string text = this.GenerateText(container);
+
+            this.outputs.ForEach(output =>
+            {
+                if (output.Instant)
+                {
+                    output.Write(text, type);
+                }
+                else
+                {
+                    this.logQueue.Enqueue(container);
+                }
             });
+
+            
         }
 
         private void asyncLog()
@@ -197,6 +212,16 @@ namespace SharpLog
                 Thread.Sleep(500);
                 
             }
+        }
+
+        private string GenerateText(LogContainer log)
+        {
+            return string.Format(
+                "[{0}] [{1}] [{2}]: {3}",
+                DateTime.UtcNow.ToString("dd-MM-yyyy | HH:mm:ss.fff"),
+                log.LogType.ToString(),
+                this.ident,
+                log.Text);
         }
 
         private struct LogContainer

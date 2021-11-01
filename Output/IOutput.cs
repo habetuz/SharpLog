@@ -17,6 +17,8 @@ namespace SharpLog.Output
     {
         LogType LogFlags { get; set; }
 
+        bool Instant { get; }
+
         /// <summary>
         /// Writes the text to the output.
         /// </summary>

@@ -166,6 +166,8 @@ namespace SharpLog
         /// <param name="type">The type of the log</param>
         public void Log(object log, LogType type = LogType.Debug)
         {
+            if ((this.logFlags & type) == 0) return;
+
             LogContainer container = new LogContainer
             {
                 Text = log.ToString(),
@@ -195,19 +197,16 @@ namespace SharpLog
                 LogContainer log;
                 while(this.logQueue.TryDequeue(out log))
                 {
-                    if ((this.logFlags & log.LogType) != 0)
+                    string text = string.Format(
+                        "[{0}] [{1}] [{2}]: {3}",
+                        DateTime.UtcNow.ToString("dd-MM-yyyy | HH:mm:ss.fff"),
+                        log.LogType.ToString(),
+                        this.ident,
+                        log.Text);
+                    this.outputs.ForEach(output =>
                     {
-                        string text = string.Format(
-                            "[{0}] [{1}] [{2}]: {3}",
-                            DateTime.UtcNow.ToString("dd-MM-yyyy | HH:mm:ss.fff"),
-                            log.LogType.ToString(),
-                            this.ident,
-                            log.Text);
-                        this.outputs.ForEach(output =>
-                        {
-                            output.Write(text, log.LogType);
-                        });
-                    }
+                        output.Write(text, log.LogType);
+                    });
                 }
                 Thread.Sleep(500);
                 

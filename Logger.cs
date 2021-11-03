@@ -181,13 +181,10 @@ namespace SharpLog
                 {
                     output.Write(text, type);
                 }
-                else
-                {
-                    this.logQueue.Enqueue(container);
-                }
             });
 
-            
+            this.logQueue.Enqueue(container);
+
         }
 
         private void asyncLog()
@@ -205,7 +202,10 @@ namespace SharpLog
                         log.Text);
                     this.outputs.ForEach(output =>
                     {
-                        output.Write(text, log.LogType);
+                        if (!output.Instant)
+                        {
+                            output.Write(text, log.LogType);
+                        }
                     });
                 }
                 Thread.Sleep(500);

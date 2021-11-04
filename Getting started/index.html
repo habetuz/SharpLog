@@ -570,18 +570,18 @@
 | 36x LControlKey
 </code></pre></div></p>
 </details>
-<details class="note"><summary>Note</summary><p>Note that <code class="highlight"><span class="n">InfoLogText</span></code> was set to <code>Keyboard inputs:</code> in the constructor.</p>
+<details class="note"><summary>Note</summary><p>Note that <code class="highlight"><span class="n">InfoLogText</span></code> was set to <code class="highlight"><span class="s">&quot;Keyboard inputs:&quot;</span></code> in the constructor.</p>
 </details>
-<p>When you want to log a info log instantly set the <code>instant</code> argument to <code class="highlight"><span class="k">true</span></code>.
+<p>When you want to log an info log instantly (just like the normal <a href="../Reference/Logger/"><code>Logger</code></a>) set the <code>instant</code> argument to <code class="highlight"><span class="k">true</span></code>.
 <div class="highlight"><pre><span></span><code><span class="n">MyLogger</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&quot;Instant info&quot;</span><span class="p">,</span> <span class="n">LogType</span><span class="p">.</span><span class="n">Info</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
 </code></pre></div></p>
 <details class="example"><summary>Output</summary><div class="highlight"><pre><span></span><code>[04-07-2021 | 12:53:34.372] [Info] [MassTest]: Instant info
 </code></pre></div>
 </details>
-<h2 id="outputs">Outputs<a class="headerlink" href="#outputs" title="Permanent link">&para;</a></h2>
+<h2 id="outputs"><a href="../Reference/Output/IOutput/">Outputs</a><a class="headerlink" href="#outputs" title="Permanent link">&para;</a></h2>
 <p>On default <a href="../Reference/Logger/"><code>Logger</code></a> and <a href="../Reference/MassLogger/"><code>MassLogger</code></a> have their <a href="../Reference/Logger/#outputs"><code>Outputs</code></a> list filled with a <a href="../Reference/Output/ConsoleOutput/"><code>ConsoleOutput</code></a>.</p>
 <p>A <a href="../Reference/Output/ConsoleOutput/"><code>ConsoleOutput</code></a> logs to the console window and colors the different log levels.</p>
-<p>You can add one or multiple <a href="../Reference/Output/FileOutput/"><code>FileOutput</code></a> to log to one or multiple files.</p>
+<p>You can add one or multiple <a href="../Reference/Output/FileOutput/"><code>FileOutput</code></a> to log to one or multiple files or you can create your own <a href="../Reference/Output/IOutput/"><code>IOutput</code></a> to log to other outputs.</p>
 <p>Notice that outputs log every log level on default but you can restrict them to only some log levels with their <a href="../Reference/Output/IOutput/#logflags"><code>LogFlags</code></a> property.</p>
                 
                   

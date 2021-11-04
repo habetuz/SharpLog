@@ -20,6 +20,7 @@ Interface for outputs used by logger.
 | Type                    | Property                | Get              | Set              |
 | ----------------------- | ----------------------- | ---------------- | ---------------- | 
 | [`LogType`](LogType.md) | [`LogFlags`](#logflags) | :material-check: | :material-check: | 
+| bool                    | [`Instant`](#instant)   | :material-check: |                  | 
 
 ### Methods
 | Type               | Method                                                                 |
@@ -30,17 +31,24 @@ Interface for outputs used by logger.
 ### `LogFlags`
 [:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Output/IOutput.cs#L18)
 
-`#!c# public string FileName {set;}`
+[`LogType`](LogType.md) `#!c# LogFlags { get; set; }`
 
-Sets or gets the [`LogType`](LogType.md)'s the output should log. Should be set to all log types on default.
+Sets or gets the [`LogType`](LogType.md)'s the output should log. Should be set to all log types by default.
+
+### `Instant`
+[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Output/IOutput.cs#L20)
+
+`#!c# bool Instant { get; set; }`
+
+Gets a value indicating wether the output should log instant or non-instant (asynchronous).
 
 ---
 
 ## Methods
 ### `Write`
-[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Output/IOutput.cs#L23)
+[:material-file-code: Source](https://github.com/habetuz/SharpLog/blob/main/Output/IOutput.cs#L27)
 
-`#!c# LogType`  [`LogType`](LogType.md)  `{ get; set; }`
+`#!c# void Write(string text, `[`LogType`](LogType.md)  `logType);`
 
 Writes the text to the output.
 

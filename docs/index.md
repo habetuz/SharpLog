@@ -9,6 +9,9 @@ A small logger for big projects.
 
 Full documentation under [Reference](/Reference/Logger/).
 
+???+ warning "Version"
+    This documentation is up to date with version `2.4.*`
+
 ## Features
 - [x] Easy to use
 - [x] Asynchronous logging

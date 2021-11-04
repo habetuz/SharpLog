@@ -97,9 +97,9 @@ MyLogger.Log(Keyboard.pressedKey(), LogType.Info);
     | 36x LControlKey
     ```
 ??? note
-    Note that `#!c# InfoLogText` was set to `Keyboard inputs:` in the constructor.
+    Note that `#!c# InfoLogText` was set to `#!c# "Keyboard inputs:"` in the constructor.
 
-When you want to log a info log instantly set the `instant` argument to `#!c# true`.
+When you want to log an info log instantly (just like the normal [`Logger`](Logger.md)) set the `instant` argument to `#!c# true`.
 ```c#
 MyLogger.Log("Instant info", LogType.Info, true);
 ```
@@ -108,11 +108,11 @@ MyLogger.Log("Instant info", LogType.Info, true);
     [04-07-2021 | 12:53:34.372] [Info] [MassTest]: Instant info
     ```
 
-## Outputs
+## [Outputs](IOutput.md)
 On default [`Logger`](Logger.md) and [`MassLogger`](MassLogger.md) have their [`Outputs`](Logger.md#outputs) list filled with a [`ConsoleOutput`](ConsoleOutput.md).
 
 A [`ConsoleOutput`](ConsoleOutput.md) logs to the console window and colors the different log levels.
 
-You can add one or multiple [`FileOutput`](FileOutput.md) to log to one or multiple files.
+You can add one or multiple [`FileOutput`](FileOutput.md) to log to one or multiple files or you can create your own [`IOutput`](IOutput.md) to log to other outputs.
 
 Notice that outputs log every log level on default but you can restrict them to only some log levels with their [`LogFlags`](IOutput.md#logflags) property.

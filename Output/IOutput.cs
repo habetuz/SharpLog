@@ -15,8 +15,14 @@ namespace SharpLog.Output
     /// </summary>
     public interface IOutput
     {
+        /// <summary>
+        /// Gets or sets the <see cref="LogType"/>'s the output should log.
+        /// </summary>
         LogType LogFlags { get; set; }
 
+        /// <summary>
+        /// Gets a value indicating whether the output should log instant or non-instant (asynchronous).
+        /// </summary>
         bool Instant { get; }
 
         /// <summary>

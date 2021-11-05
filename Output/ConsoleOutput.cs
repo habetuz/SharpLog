@@ -28,9 +28,15 @@ namespace SharpLog.Output
             { LogType.Warning,  ConsoleColor.Yellow },
             { LogType.Error,    ConsoleColor.Red },
         };
-
+        
+        /// <summary>
+        /// Gets or sets which <see cref="LogType"/>'s should be logged.
+        /// </summary>
         public LogType LogFlags { get; set; } = LogType.Debug | LogType.Info | LogType.Warning | LogType.Error;
 
+        /// <summary>
+        /// Gets a value indicating whether the output should log instant or non-instant (asynchronous).
+        /// </summary>
         public bool Instant { get; } = true;
 
         /// <summary>
@@ -40,7 +46,7 @@ namespace SharpLog.Output
         /// <param name="logType">The log level of the log</param>
         public void Write(string text, LogType logType)
         {
-            if((logType & this.LogFlags) != 0)
+            if ((logType & this.LogFlags) != 0)
             {
                 Console.ForegroundColor = Colors[logType];
                 Console.WriteLine(text);

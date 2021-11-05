@@ -11,8 +11,8 @@
 namespace SharpLog
 {
     using System;
-    using System.Collections.Generic;
     using System.Collections.Concurrent;
+    using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
     using SharpLog.Output;
@@ -32,6 +32,9 @@ namespace SharpLog
         /// </summary>
         private LogType logFlags = LogType.Info | LogType.Warning | LogType.Error;
 
+        /// <summary>
+        /// Queue with all pending logs.
+        /// </summary>
         private ConcurrentQueue<LogContainer> logQueue = new ConcurrentQueue<LogContainer>();
 
         /// <summary>
@@ -39,9 +42,12 @@ namespace SharpLog
         /// </summary>
         private List<IOutput> outputs = new List<IOutput>() { new ConsoleOutput() };
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Logger"/> class.
+        /// </summary>
         public Logger()
         {
-            Task.Factory.StartNew(this.asyncLog, TaskCreationOptions.LongRunning);
+            Task.Factory.StartNew(this.AsyncLog, TaskCreationOptions.LongRunning);
         }
 
         /// <summary>
@@ -72,7 +78,7 @@ namespace SharpLog
         }
 
         /// <summary>
-        /// Sets or gets the <see cref="LogType"/> the logger should log.
+        /// Gets or sets the <see cref="LogType"/>'s the logger should log.
         /// </summary>
         public LogType LogFlags
         {
@@ -166,11 +172,14 @@ namespace SharpLog
         /// <param name="type">The type of the log</param>
         public void Log(object log, LogType type = LogType.Debug)
         {
-            if ((this.logFlags & type) == 0) return;
+            if ((this.logFlags & type) == 0)
+            {
+                return;
+            }
 
             LogContainer container = new LogContainer
             {
-                Text = log.ToString(),
+                Message = log.ToString(),
                 LogType = type,
             };
             string text = this.GenerateText(container);
@@ -184,22 +193,19 @@ namespace SharpLog
             });
 
             this.logQueue.Enqueue(container);
-
         }
 
-        private void asyncLog()
+        /// <summary>
+        /// Asynchronous function that empties the <see cref="logQueue"/> every 500 milliseconds.
+        /// </summary>
+        private void AsyncLog()
         {
-            for(; ; )
+            LogContainer log;
+            for (;;)
             {
-                LogContainer log;
-                while(this.logQueue.TryDequeue(out log))
+                while (this.logQueue.TryDequeue(out log))
                 {
-                    string text = string.Format(
-                        "[{0}] [{1}] [{2}]: {3}",
-                        DateTime.UtcNow.ToString("dd-MM-yyyy | HH:mm:ss.fff"),
-                        log.LogType.ToString(),
-                        this.ident,
-                        log.Text);
+                    string text = this.GenerateText(log);
                     this.outputs.ForEach(output =>
                     {
                         if (!output.Instant)
@@ -208,11 +214,16 @@ namespace SharpLog
                         }
                     });
                 }
+
                 Thread.Sleep(500);
-                
             }
         }
 
+        /// <summary>
+        /// Generates a string representation of a <see cref="LogContainer"/>.
+        /// </summary>
+        /// <param name="log">The <see cref="LogContainer"/> to generate the string from</param>
+        /// <returns>The string representation of the <see cref="LogContainer"/></returns>
         private string GenerateText(LogContainer log)
         {
             return string.Format(
@@ -220,12 +231,22 @@ namespace SharpLog
                 DateTime.UtcNow.ToString("dd-MM-yyyy | HH:mm:ss.fff"),
                 log.LogType.ToString(),
                 this.ident,
-                log.Text);
+                log.Message);
         }
 
+        /// <summary>
+        /// Struct containing all necessary information for a log.
+        /// </summary>
         private struct LogContainer
         {
-            public string Text;
+            /// <summary>
+            /// The message of the log.
+            /// </summary>
+            public string Message;
+
+            /// <summary>
+            /// The <see cref="LogType"/> of the log.
+            /// </summary>
             public LogType LogType;
         }
     }

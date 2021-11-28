@@ -87,7 +87,7 @@ MyLogger.Log(Keyboard.pressedKey(), LogType.Info);
 ??? example "Output"
     Every `30000` milliseconds:
     ```
-    [04-07-2021 | 12:55:34.372] [Info] [MassTest]: Keyboard inputs:
+    [04-07-2021 | 12:55:34.372] [INFO] [MassTest]: Keyboard inputs:
     | 63x Left
     | 16x Return
     | 39x LShiftKey
@@ -105,7 +105,7 @@ MyLogger.Log("Instant info", LogType.Info, true);
 ```
 ??? example "Output"
     ```
-    [04-07-2021 | 12:53:34.372] [Info] [MassTest]: Instant info
+    [04-07-2021 | 12:53:34.372] [INFO] [MassTest]: Instant info
     ```
 
 ## [Outputs](IOutput.md)

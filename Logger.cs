@@ -229,7 +229,7 @@ namespace SharpLog
             return string.Format(
                 "[{0}] [{1}] [{2}]: {3}",
                 DateTime.UtcNow.ToString("dd-MM-yyyy | HH:mm:ss.fff"),
-                log.LogType.ToString(),
+                log.LogType.ToString().ToUpper(),
                 this.ident,
                 log.Message);
         }

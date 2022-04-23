@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace SharpLog.Outputs
 {
-    public abstract class IOutput
+    public abstract class Output : IDisposable
     {
         public string Format { get; set; }
         public LevelContainer Levels { get; set; }
 
-        public IOutput() : this(null, null)
+        public Output() : this(null, null)
         {
         }
 
-        public IOutput(string format, LevelContainer levels)
+        public Output(string format, LevelContainer levels)
         {
             Format = format;
             Levels = levels;
@@ -29,9 +29,9 @@ namespace SharpLog.Outputs
                 log.Format = Format;
             }
 
-            if (Levels != null && Levels.getLevel(log.Level) != null)
+            if (Levels != null && Levels.GetLevel(log.Level) != null)
             {
-                Level levelSettings = Levels.getLevel(log.Level);
+                Level levelSettings = Levels.GetLevel(log.Level);
                 
                 if (!levelSettings.Enabled)  return;
                 
@@ -47,5 +47,7 @@ namespace SharpLog.Outputs
         }
         
         public abstract void Write(string formattedLog, Log log);
+        public abstract void Start();
+        public abstract void Dispose();
     }
 }

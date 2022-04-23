@@ -29,7 +29,7 @@
         public Level Error { get; set; }
         public Level Fatal { get; set; }
         
-        public Level getLevel(LogLevel level)
+        public Level GetLevel(LogLevel level)
         {
             switch (level)
             {

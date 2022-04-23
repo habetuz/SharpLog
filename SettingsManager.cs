@@ -16,13 +16,27 @@ namespace SharpLog
 {
     public static class SettingsManager
     {
+        public static bool IsDisposed { get; private set; }
+
         public static BaseSettings Settings { get; set; }
 
         public static void ReloadSettings(bool fromFile = true)
         {
-            Settings = new BaseSettings();
+            Settings?.Dispose();
 
-            if (!fromFile) return;
+            IsDisposed = false;
+
+            if (!fromFile)
+            {
+                Settings = new BaseSettings();
+                Settings.Outputs.Start();
+                foreach (var tag in Settings.Tags.Values)
+                {
+                    tag.Outputs.Start();
+                }
+                return;
+            }
+            
             // Load Settings from file
             try
             {
@@ -37,6 +51,8 @@ namespace SharpLog
             }
             catch (Exception ex)
             {
+                Settings?.Dispose();
+                Settings = new BaseSettings();
                 if (ex is FileNotFoundException || ex is DirectoryNotFoundException)
                 {
                     Logging.LogWarning("Settings file (sharplog.yml) not found, using default settings.", typeof(SettingsManager), "SHARPLOG-INITIALIZE");
@@ -53,7 +69,6 @@ namespace SharpLog
                 {
                     Logging.LogError("Settings file not readable, using default settings." , typeof(SettingsManager), "SHARPLOG-INITIALIZE", ex);
                 }
-
                 return;
             }
 
@@ -128,7 +143,26 @@ namespace SharpLog
                 return;
             }
 
+            Settings.Outputs.Start();
+            foreach (var tag in Settings.Tags.Values)
+            {
+                tag.Outputs.Start();
+            }
+
             Logging.LogInfo("Settings file loaded successfully!", typeof(SettingsManager), "SHARPLOG-INITIALIZE");
+        }
+
+        public static void Dispose()
+        {
+            if (IsDisposed)
+            {
+                return;
+            }
+
+            Settings?.Dispose();
+            Settings = null;
+
+            IsDisposed = true;
         }
     }
 }

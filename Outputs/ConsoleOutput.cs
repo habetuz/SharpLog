@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SharpLog.Outputs
 {
-    public class ConsoleOutput : IOutput
+    public class ConsoleOutput : Output
     {
         public ConsoleOutput() : this(true, null, null, null)
         {
@@ -36,6 +36,14 @@ namespace SharpLog.Outputs
         public bool ColorEnabled { get; set; }
         
         public Dictionary<LogLevel, Color> Colors { get; set; }
+
+        public override void Dispose()
+        {
+        }
+
+        public override void Start()
+        {
+        }
 
         public override void Write(string formattedLog, Log log)
         {

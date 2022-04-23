@@ -1,5 +1,6 @@
 ﻿using SharpLog.Settings;
 using System;
+using System.Threading;
 
 namespace SharpLog
 {
@@ -14,6 +15,12 @@ namespace SharpLog
 
         public static void Log(LogLevel level, object message, Type @class, string tag = null, Exception exception = null, string stackTrace = null)
         {
+            if (SettingsManager.IsDisposed)
+            {
+                SettingsManager.ReloadSettings();
+                LogWarning("SettingsManager was disposed, reloaded settings.", typeof(Logging), "SHARPLOG-INITIALIZATION");
+            }
+
             // Check if the settings contain the specified tag
             Tag tagContainer = null;
             bool tagAvailable = tag != null && SettingsManager.Settings.Tags.ContainsKey(tag);
@@ -44,14 +51,14 @@ namespace SharpLog
             // 2: General level
             Level levelSettings = null;
             bool levelSettingsFromTag = false;
-            if (tagAvailable && tagContainer.Levels.getLevel(level) != null)
+            if (tagAvailable && tagContainer.Levels.GetLevel(level) != null)
             {
-                levelSettings = tagContainer.Levels.getLevel(level);
+                levelSettings = tagContainer.Levels.GetLevel(level);
                 levelSettingsFromTag = true;
             } 
             else
             {
-                levelSettings = SettingsManager.Settings.Levels.getLevel(level);
+                levelSettings = SettingsManager.Settings.Levels.GetLevel(level);
             }
 
             // Find format
@@ -81,6 +88,8 @@ namespace SharpLog
 
             if (level == LogLevel.Fatal)
             {
+                outputContainer.File?.Dispose();
+                outputContainer.Outputs.ForEach(output => output.Dispose());
                 Environment.Exit(1);
             }
         }
@@ -113,6 +122,11 @@ namespace SharpLog
         public static void LogFatal(object message, Type @class, string tag = null, Exception exception = null, string stackTrace = null)
         {
             Log(LogLevel.Fatal, message, @class, tag, exception, stackTrace);
+        }
+
+        public static void Dispose()
+        {
+            SettingsManager.Dispose();
         }
     }
 }

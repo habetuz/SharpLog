@@ -1,6 +1,8 @@
-﻿namespace SharpLog.Settings
+﻿using System;
+
+namespace SharpLog.Settings
 {
-    public class Tag
+    public class Tag : IDisposable
     {
         public Tag() : this(true, null, null, null)
         {
@@ -23,5 +25,10 @@
         public string Format { get; set; }
         public LevelContainer Levels { get; set; }
         public OutputContainer Outputs { get; set; }
+
+        public void Dispose()
+        {
+            Outputs?.Dispose();
+        }
     }
 }

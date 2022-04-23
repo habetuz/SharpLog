@@ -1,32 +1,53 @@
-﻿using System;
+﻿// <copyright file="Formatter.cs" company="Marvin Fuchs">
+// Copyright (c) Marvin Fuchs. All rights reserved.
+// </copyright>
+// <author>
+// Marvin Fuchs
+// </author>
+// <summary>
+// Visit https://sharplog.marvin-fuchs.de for more information
+// </summary>
 
 namespace SharpLog
 {
+    /// <summary>
+    /// Class for formatting <see cref="Log"/> objects.
+    /// </summary>
     internal class Formatter
     {
+        /// <summary>
+        /// Formats the specified log.
+        /// </summary>
+        /// <param name="log">The log.</param>
+        /// <returns>The formattet log.</returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1005:Single line comments should begin with single space", Justification = "Needed for formatting")]
         internal static string Format(Log log)
         {
             string format = log.Format;
             format = format.Replace("\\n", System.Environment.NewLine);
-            string output = "";
+            string output = string.Empty;
+
             // Iterate through format
-            for(int i = 0; i < format.Length; i++)
+            for (int i = 0; i < format.Length; i++)
             {
                 // Add to output if not a placeholder
                 if (format[i] != '$')
                 {
                     output += format[i];
                 }
+
                 // Format placeholder
                 else
                 {
-                    //     ˅ Get here
-                    // ...$D...
+                    /*     ˅ Get here
+                     * ...$D...
+                     */
                     i++;
                     if (i >= format.Length)
                     {
                         i--;
                     }
+
                     switch (format[i])
                     {
                         //   ...$$...
@@ -34,6 +55,7 @@ namespace SharpLog
                         case '$':
                             output += '$';
                             break;
+
                         // All following cases get format the following:
                         //   ...$Da{...}p{...}s{...}$...
                         // > ...[prefix (p)][value (time, log level, message, etc.)][suffix (s)]...
@@ -41,14 +63,15 @@ namespace SharpLog
                             (string argument, string prefix, string suffix, int index) = GetArguments(format, i);
                             i = index;
                             string date;
-                            if (argument == "")
+                            if (argument == string.Empty)
                             {
                                 date = log.Time.ToString();
-                            } 
+                            }
                             else
                             {
                                 date = log.Time.ToString(argument);
                             }
+
                             output += $"{prefix}{date}{suffix}";
                             break;
                         case 'L':
@@ -65,12 +88,16 @@ namespace SharpLog
                                     logLevel = log.Level.ToString();
                                     break;
                             }
+
                             output += $"{prefix}{logLevel}{suffix}";
                             break;
                         case 'T':
                             (_, prefix, suffix, i) = GetArguments(format, i);
-                            
-                            if (log.Tag == null) break;
+                            if (log.Tag == null)
+                            {
+                                break;
+                            }
+
                             output += $"{prefix}{log.Tag}{suffix}";
                             break;
                         case 'M':
@@ -79,17 +106,29 @@ namespace SharpLog
                             break;
                         case 'C':
                             (_, prefix, suffix, i) = GetArguments(format, i);
-                            if (log.Class == null) break;
+                            if (log.Class == null)
+                            {
+                                break;
+                            }
+
                             output += $"{prefix}{log.Class}{suffix}";
                             break;
                         case 'E':
                             (_, prefix, suffix, i) = GetArguments(format, i);
-                            if (log.Exception == null) break;
+                            if (log.Exception == null)
+                            {
+                                break;
+                            }
+
                             output += $"{prefix}{log.Exception.GetType().Name}: {log.Exception.Message}{suffix}";
                             break;
                         case 'S':
                             (_, prefix, suffix, i) = GetArguments(format, i);
-                            if (log.StackTrace == null) break;
+                            if (log.StackTrace == null)
+                            {
+                                break;
+                            }
+
                             output += $"{prefix}{log.StackTrace}{suffix}";
                             break;
                         default:
@@ -100,21 +139,23 @@ namespace SharpLog
                     }
                 }
             }
-            
+
             return output;
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1005:Single line comments should begin with single space", Justification = "Needed for formatting")]
         private static (string argument, string prefix, string suffix, int index) GetArguments(string format, int index)
         {
-            string argument = "";
-            string prefix = "";
-            string suffix = "";
+            string argument = string.Empty;
+            string prefix = string.Empty;
+            string suffix = string.Empty;
+
             //      ˅ Get here
             // ...$D...
             //   ˅˅˅˅˅˅˅
             for (index++; index < format.Length && format[index] != '$'; index++)
             {
-                switch(format[index])
+                switch (format[index])
                 {
                     case 'a':
                         //                                           ˅ Get here
@@ -145,9 +186,11 @@ namespace SharpLog
             return (argument, prefix, suffix, index);
         }
 
-        private static (string substring, int index)  GetSubstring(string format, int from, char to)
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1005:Single line comments should begin with single space", Justification = "Needed for formatting")]
+        private static (string substring, int index) GetSubstring(string format, int from, char to)
         {
-            string substring = "";
+            string substring = string.Empty;
+
             //       ˅ Get here
             //   ...{...
             //   ˅˅˅˅˅˅

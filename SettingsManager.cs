@@ -1,25 +1,48 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SharpLog.Settings;
-using SharpLog.Outputs;
-using YamlDotNet.Serialization;
-using YamlDotNet.Serialization.NamingConventions;
-using System.IO;
-using System.Security;
-using YamlDotNet.Core;
-using System.Runtime.Serialization;
+﻿// <copyright file="SettingsManager.cs" company="Marvin Fuchs">
+// Copyright (c) Marvin Fuchs. All rights reserved.
+// </copyright>
+// <author>
+// Marvin Fuchs
+// </author>
+// <summary>
+// Visit https://sharplog.marvin-fuchs.de for more information
+// </summary>
 
 namespace SharpLog
 {
+    using System;
+    using System.IO;
+    using System.Security;
+    using SharpLog.Settings;
+    using YamlDotNet.Core;
+    using YamlDotNet.Serialization;
+    using YamlDotNet.Serialization.NamingConventions;
+
+    /// <summary>
+    /// Settings manager for SharpLog.
+    /// </summary>
     public static class SettingsManager
     {
+        /// <summary>
+        /// Gets a value indicating whether this instance is disposed.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is disposed; otherwise, <c>false</c>.
+        /// </value>
         public static bool IsDisposed { get; private set; }
 
+        /// <summary>
+        /// Gets or sets the settings.
+        /// </summary>
+        /// <value>
+        /// The settings.
+        /// </value>
         public static BaseSettings Settings { get; set; }
 
+        /// <summary>
+        /// Reloads the settings.
+        /// </summary>
+        /// <param name="fromFile">if set to <c>true</c> the settings are loaded from the file "sharplog.yml".</param>
         public static void ReloadSettings(bool fromFile = true)
         {
             Settings?.Dispose();
@@ -34,9 +57,10 @@ namespace SharpLog
                 {
                     tag.Outputs.Start();
                 }
+
                 return;
             }
-            
+
             // Load Settings from file
             try
             {
@@ -67,8 +91,9 @@ namespace SharpLog
                 }
                 else
                 {
-                    Logging.LogError("Settings file not readable, using default settings." , typeof(SettingsManager), "SHARPLOG-INITIALIZE", ex);
+                    Logging.LogError("Settings file not readable, using default settings.", typeof(SettingsManager), "SHARPLOG-INITIALIZE", ex);
                 }
+
                 return;
             }
 
@@ -79,11 +104,11 @@ namespace SharpLog
                 Logging.LogWarning("\"tags\" set to \"null\". Remove property or provide valid arguments. Using default settings.", typeof(SettingsManager), "SHARPLOG-INITIALIZE");
                 return;
             }
-            
+
             if (Settings.Outputs == null)
             {
                 ReloadSettings(false);
-                Logging.LogWarning("\"outputs\" set to \"null\". Remove property or provide valid arguments. Using default settings.",typeof(SettingsManager), "SHARPLOG-INITIALIZE");
+                Logging.LogWarning("\"outputs\" set to \"null\". Remove property or provide valid arguments. Using default settings.", typeof(SettingsManager), "SHARPLOG-INITIALIZE");
                 return;
             }
 
@@ -100,7 +125,7 @@ namespace SharpLog
                 Logging.LogWarning("\"format\" set to \"null\". Remove property or provide valid arguments. Using default settings.", typeof(SettingsManager), "SHARPLOG-INITIALIZE");
                 return;
             }
-            
+
             if (Settings.Levels.Debug == null)
             {
                 ReloadSettings(false);
@@ -152,6 +177,9 @@ namespace SharpLog
             Logging.LogInfo("Settings file loaded successfully!", typeof(SettingsManager), "SHARPLOG-INITIALIZE");
         }
 
+        /// <summary>
+        /// Releases unmanaged and - optionally - managed resources.
+        /// </summary>
         public static void Dispose()
         {
             if (IsDisposed)

@@ -1,5 +1,5 @@
-﻿// <copyright file="AssemblyInfo.cs">
-// Copyright (c) 2021. All Rights Reserved
+﻿// <copyright file="AssemblyInfo.cs" company="Marvin Fuchs">
+// Copyright (c) Marvin Fuchs. All rights reserved.
 // </copyright>
 // <author>
 // Marvin Fuchs
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Marvin Fuchs")]
 [assembly: AssemblyProduct("SharpLog")]
-[assembly: AssemblyCopyright("Copyright ©  2021")]
+[assembly: AssemblyCopyright("Copyright ©  Marvin Fuchs")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

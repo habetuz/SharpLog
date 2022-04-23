@@ -1,18 +1,48 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// <copyright file="LogLevel.cs" company="Marvin Fuchs">
+// Copyright (c) Marvin Fuchs. All rights reserved.
+// </copyright>
+// <author>
+// Marvin Fuchs
+// </author>
+// <summary>
+// Visit https://sharplog.marvin-fuchs.de for more information
+// </summary>
 
 namespace SharpLog
 {
+    /// <summary>
+    /// The log level.
+    /// </summary>
     public enum LogLevel
     {
+        /// <summary>
+        /// Level debug
+        /// </summary>
         Debug,
+
+        /// <summary>
+        /// Levl trace
+        /// </summary>
         Trace,
+
+        /// <summary>
+        /// Level information
+        /// </summary>
         Info,
+
+        /// <summary>
+        /// Level warning
+        /// </summary>
         Warn,
+
+        /// <summary>
+        /// Level error
+        /// </summary>
         Error,
-        Fatal
+
+        /// <summary>
+        /// Level fatal
+        /// </summary>
+        Fatal,
     }
 }

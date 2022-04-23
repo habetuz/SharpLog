@@ -17,6 +17,7 @@ theme:
     text: Montserrat
     code: Roboto Mono
 markdown_extensions:
+  - admonition
   - toc:
       permalink: true
   - meta

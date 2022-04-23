@@ -1,54 +1,99 @@
-﻿using SharpLog.Settings;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// <copyright file="ConsoleOutput.cs" company="Marvin Fuchs">
+// Copyright (c) Marvin Fuchs. All rights reserved.
+// </copyright>
+// <author>
+// Marvin Fuchs
+// </author>
+// <summary>
+// Visit https://sharplog.marvin-fuchs.de for more information
+// </summary>
 
 namespace SharpLog.Outputs
 {
+    using System;
+    using System.Collections.Generic;
+    using SharpLog.Settings;
+
+    /// <summary>
+    /// Output using <see cref="Console"/>.
+    /// </summary>
+    /// <seealso cref="SharpLog.Outputs.Output" />
     public class ConsoleOutput : Output
     {
-        public ConsoleOutput() : this(true, null, null, null)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConsoleOutput"/> class.
+        /// </summary>
+        public ConsoleOutput()
+            : this(true, null, null, null)
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConsoleOutput"/> class.
+        /// </summary>
+        /// <param name="colorEnabled">if set to <c>true</c> color is enabled.</param>
+        /// <param name="format">The format.</param>
+        /// <param name="levels">The levels.</param>
+        /// <param name="colors">The colors.</param>
         public ConsoleOutput(
             bool colorEnabled = true,
             string format = null,
             LevelContainer levels = null,
             Dictionary<LogLevel, Color> colors = null)
         {
-            ColorEnabled = colorEnabled;
-            Format = format;
-            Levels = levels;
-            Colors = colors ?? new Dictionary<LogLevel, Color>()
+            this.ColorEnabled = colorEnabled;
+            this.Format = format;
+            this.Levels = levels;
+            this.Colors = colors ?? new Dictionary<LogLevel, Color>()
             {
                 { LogLevel.Debug, new Color(foreground: ConsoleColor.DarkGray) },
                 { LogLevel.Trace, new Color() },
                 { LogLevel.Info, new Color(foreground: ConsoleColor.Green) },
                 { LogLevel.Warn, new Color(foreground: ConsoleColor.Yellow) },
                 { LogLevel.Error, new Color(foreground: ConsoleColor.Red) },
-                { LogLevel.Fatal, new Color(background: ConsoleColor.Red, foreground: ConsoleColor.Black) }
+                { LogLevel.Fatal, new Color(background: ConsoleColor.Red, foreground: ConsoleColor.Black) },
             };
         }
-        
+
+        /// <summary>
+        /// Gets or sets a value indicating whether color is enabled.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if color is enabled; otherwise, <c>false</c>.
+        /// </value>
         public bool ColorEnabled { get; set; }
-        
+
+        /// <summary>
+        /// Gets or sets the colors for each log level.
+        /// </summary>
+        /// <value>
+        /// The colors.
+        /// </value>
         public Dictionary<LogLevel, Color> Colors { get; set; }
 
+        /// <summary>
+        /// Releases unmanaged and - optionally - managed resources.
+        /// </summary>
         public override void Dispose()
         {
         }
 
+        /// <summary>
+        /// Starts this instance.
+        /// </summary>
         public override void Start()
         {
         }
 
+        /// <summary>
+        /// Writes the specified formatted log.
+        /// </summary>
+        /// <param name="formattedLog">The formatted log.</param>
+        /// <param name="log">The log.</param>
         public override void Write(string formattedLog, Log log)
         {
-            Console.BackgroundColor = Colors.ContainsKey(log.Level) ? Colors[log.Level].Background : ConsoleColor.Black;
-            Console.ForegroundColor = Colors.ContainsKey(log.Level) ? Colors[log.Level].Foreground : ConsoleColor.White;
+            Console.BackgroundColor = this.Colors.ContainsKey(log.Level) ? this.Colors[log.Level].Background : ConsoleColor.Black;
+            Console.ForegroundColor = this.Colors.ContainsKey(log.Level) ? this.Colors[log.Level].Foreground : ConsoleColor.White;
             Console.WriteLine(formattedLog);
             Console.ResetColor();
         }

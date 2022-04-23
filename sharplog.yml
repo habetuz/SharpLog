@@ -1,4 +1,4 @@
-﻿format: '$D$: [$L$]$Cp{ [}s{] }$$Tp{ [}s{] }$ $M$$Ep{\n}$$Sp{\nStackTrace:\n}$'
+﻿format: '$D$: [$L$]$Cp{ [}s{] }$$Tp{ [}s{] }$ $M$$Ep{\n}$$Sp{\n}$'
 levels:
   debug:
     short: '?'
@@ -32,7 +32,7 @@ outputs:
     colors:
       debug: 
         background: black
-        foreground: dark_gray
+        foreground: darkGray
       trace:
         background: black
         foreground: white
@@ -52,5 +52,4 @@ outputs:
     levels: null
     format: null
     path: .log
-tags:
-    
+    suspend_time: 500

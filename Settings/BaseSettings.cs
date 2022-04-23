@@ -6,7 +6,7 @@ namespace SharpLog.Settings
     public class BaseSettings : IDisposable
     {
         public BaseSettings() : this(
-            fomat: "$D$: [$L$]$Cp{ [}s{] }$$Tp{ [}s{] }$ $M$$Ep{\n}$$Sp{\nStackTrace:\n}$",
+            fomat: "$D$: [$L$]$Cp{ [}s{] }$$Tp{ [}s{] }$ $M$$Ep{\n}$$Sp{\n}$",
             levels: null,
             outputs: null,
             tags: null)

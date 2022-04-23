@@ -7,6 +7,7 @@ namespace SharpLog
         internal static string Format(Log log)
         {
             string format = log.Format;
+            format = format.Replace("\\n", System.Environment.NewLine);
             string output = "";
             // Iterate through format
             for(int i = 0; i < format.Length; i++)
@@ -84,7 +85,7 @@ namespace SharpLog
                         case 'E':
                             (_, prefix, suffix, i) = GetArguments(format, i);
                             if (log.Exception == null) break;
-                            output += $"{prefix}{log.Exception}{suffix}";
+                            output += $"{prefix}{log.Exception.GetType().Name}: {log.Exception.Message}{suffix}";
                             break;
                         case 'S':
                             (_, prefix, suffix, i) = GetArguments(format, i);

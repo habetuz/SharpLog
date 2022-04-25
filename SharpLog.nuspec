@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>MarvinFuchs.SharpLog</id>
-    <version>2.4.3</version>
+    <version>3.0.0</version>
     <title>$title$</title>
     <authors>Marvin Fuchs</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -11,13 +11,14 @@
     <repository type="git" url="https://github.com/habetuz/SharpLog" branch="master"/>
     <description>A small logger for big projects</description>
     <releaseNotes>
-      Change:
-      - Log levels get printed capitalized
+      Completely rewritten. Read the documentation for more information.
     </releaseNotes>
     <copyright>$copyright$</copyright>
     <tags>Logger</tags>
     <dependencies>
       <dependency id="System.Runtime" version="4.3.1"/>
+      <dependency id="YamlDotNet" version="11.2.1"/>
+      <dependency id="StyleCop.Analyzers" version="1.1.118"/>
     </dependencies>
   </metadata>
 </package>

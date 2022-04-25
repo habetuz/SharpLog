@@ -35,6 +35,7 @@
     <Compile Include="Log.cs" />
     <Compile Include="Logging.cs" />
     <Compile Include="LogLevel.cs" />
+    <Compile Include="Outputs\AsyncOutput.cs" />
     <Compile Include="Outputs\ConsoleOutput.cs" />
     <Compile Include="Outputs\FileOutput.cs" />
     <Compile Include="Outputs\Output.cs" />

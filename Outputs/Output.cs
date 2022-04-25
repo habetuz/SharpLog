@@ -17,22 +17,14 @@ namespace SharpLog.Outputs
     /// Base class for all outputs.
     /// </summary>
     /// <seealso cref="System.IDisposable" />
-    public abstract class Output : IDisposable
+    public abstract class Output
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Output"/> class.
-        /// </summary>
-        public Output()
-            : this(null, null)
-        {
-        }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="Output"/> class.
         /// </summary>
         /// <param name="format">The format.</param>
         /// <param name="levels">The levels.</param>
-        public Output(string format, LevelContainer levels)
+        public Output(string format = null, LevelContainer levels = null)
         {
             this.Format = format;
             this.Levels = levels;
@@ -55,10 +47,17 @@ namespace SharpLog.Outputs
         public LevelContainer Levels { get; set; }
 
         /// <summary>
+        /// Writes the specified formatted log.
+        /// </summary>
+        /// <param name="formattedLog">The formatted log.</param>
+        /// <param name="log">The log.</param>
+        public abstract void Write(string formattedLog, Log log);
+
+        /// <summary>
         /// Writes the specified log.
         /// </summary>
         /// <param name="log">The log.</param>
-        public void Write(Log log)
+        internal void Write(Log log)
         {
             if (this.Format != null)
             {
@@ -84,22 +83,5 @@ namespace SharpLog.Outputs
 
             this.Write(Formatter.Format(log), log);
         }
-
-        /// <summary>
-        /// Writes the specified formatted log.
-        /// </summary>
-        /// <param name="formattedLog">The formatted log.</param>
-        /// <param name="log">The log.</param>
-        public abstract void Write(string formattedLog, Log log);
-
-        /// <summary>
-        /// Starts this instance.
-        /// </summary>
-        public abstract void Start();
-
-        /// <summary>
-        /// Releases unmanaged and - optionally - managed resources.
-        /// </summary>
-        public abstract void Dispose();
     }
 }

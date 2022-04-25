@@ -23,6 +23,11 @@ namespace SharpLog
     /// </summary>
     public static class SettingsManager
     {
+        static SettingsManager()
+        {
+            Logging.Initialize();
+        }
+
         /// <summary>
         /// Gets a value indicating whether this instance is disposed.
         /// </summary>
@@ -171,7 +176,7 @@ namespace SharpLog
             Settings.Outputs.Start();
             foreach (var tag in Settings.Tags.Values)
             {
-                tag.Outputs.Start();
+                tag.Outputs?.Start();
             }
 
             Logging.LogInfo("Settings file loaded successfully!", typeof(SettingsManager), "SHARPLOG-INITIALIZE");

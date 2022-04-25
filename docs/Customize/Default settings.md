@@ -1,4 +1,9 @@
-﻿format: '$D$: [$L$]$Cp{ [}s{] }$$Tp{ [}s{] }$ $M$$Ep{\n}$$Sp{\n}$'
+---
+title: Default settings
+---
+
+``` yaml title="sharplog.yml"
+format: '$D$: [$L$]$Cp{ [}s{] }$$Tp{ [}s{] }$ $M$$Ep{\n}$$Sp{\n}$'
 levels:
   debug:
     short: '?'
@@ -53,3 +58,4 @@ outputs:
     format: null
     path: .log
     suspend_time: 500
+```

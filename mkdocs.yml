@@ -6,13 +6,15 @@ theme:
   features:
       - navigation.tabs
       - navigation.top
-      - toc.integrate
       - navigation.instant
+      - navigation.indexes
+      - navigation.tracking
+      - content.code.annotate
   name: material
   palette:
     scheme: slate
-    primary: black
-    accent: light blue
+    primary: deep purple
+    accent: indigo
   font:
     text: Montserrat
     code: Roboto Mono
@@ -23,12 +25,16 @@ markdown_extensions:
   - meta
   - pymdownx.details
   - attr_list
+  - def_list
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.highlight:
-      linenums: false
+      anchor_linenums: true
   - pymdownx.superfences
+  - pymdownx.snippets
   - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
@@ -37,3 +43,32 @@ plugins:
   - autolinks
 extra_css:
   - stylesheets/extra.css
+extra_javascript:
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - javascripts/tablesort.js
+nav:
+  - index.md
+  - Get started.md
+  - Customize: 
+    - Customize/index.md
+    - Customize/Formatting.md
+    - Customize/Default settings.md
+  - Reference:
+    - Reference/index.md
+    - Reference/Logging.md
+    - Reference/SettingsManager.md
+    - Reference/LogLevel.md
+    - Reference/Log.md
+    - Outputs:
+      - Reference/Outputs/index.md
+      - Reference/Outputs/Output.md
+      - Reference/Outputs/ConsoleOutput.md
+      - Reference/Outputs/FileOutput.md
+    - Settings:
+      - Reference/Settings/index.md
+      - Reference/Settings/BaseSettings.md
+      - Reference/Settings/LevelContainer.md
+      - Reference/Settings/Level.md
+      - Reference/Settings/OutputContainer.md
+      - Reference/Settings/Color.md
+      - Reference/Settings/Tag.md

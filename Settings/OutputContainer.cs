@@ -20,8 +20,8 @@ namespace SharpLog.Settings
     /// <seealso cref="System.IDisposable" />
     public class OutputContainer : IDisposable
     {
+        private readonly List<Output> outputs;
         private FileOutput file;
-        private List<Output> outputs;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputContainer"/> class.
@@ -44,7 +44,7 @@ namespace SharpLog.Settings
         {
             this.Console = console ?? new ConsoleOutput();
             this.File = file ?? new FileOutput();
-            this.Outputs = outputs ?? new List<Output>();
+            this.outputs = outputs ?? new List<Output>();
         }
 
         /// <summary>
@@ -72,28 +72,26 @@ namespace SharpLog.Settings
         }
 
         /// <summary>
-        /// Gets or sets the list with outputs.
+        /// Adds an output and starts it if needed.
         /// </summary>
-        /// <value>
-        /// The outputs.
-        /// </value>
-        public List<Output> Outputs
+        /// <param name="output">The output.</param>
+        public void AddOutput(Output output)
         {
-            get => this.outputs;
-            set
+            this.outputs.Add(output);
+
+            if (output is AsyncOutput asyncOutput)
             {
-                this.outputs?.ForEach(o => o.Dispose());
-                this.outputs = value;
+                asyncOutput.Start();
             }
         }
 
         /// <summary>
-        /// Starts this instance.
+        /// Get the list with outputs.
         /// </summary>
-        public void Start()
+        /// <returns>Array containing the outputs.</returns>
+        public Output[] GetOutputs()
         {
-            this.File?.Start();
-            this.Outputs.ForEach(o => o.Start());
+            return this.outputs.ToArray();
         }
 
         /// <summary>
@@ -102,7 +100,28 @@ namespace SharpLog.Settings
         public void Dispose()
         {
             this.File?.Dispose();
-            this.Outputs?.ForEach(o => o.Dispose());
+            this.outputs.ForEach(o =>
+            {
+                if (o is AsyncOutput asyncOutput)
+                {
+                    asyncOutput.Dispose();
+                }
+            });
+        }
+
+        /// <summary>
+        /// Starts this instance.
+        /// </summary>
+        internal void Start()
+        {
+            this.File?.Start();
+            this.outputs.ForEach(o =>
+            {
+                if (o is AsyncOutput asyncOutput)
+                {
+                    asyncOutput.Start();
+                }
+            });
         }
     }
 }

@@ -17,7 +17,7 @@ namespace SharpLog.Outputs
     /// <summary>
     /// Output using <see cref="Console"/>.
     /// </summary>
-    /// <seealso cref="SharpLog.Outputs.Output" />
+    /// <seealso cref="Output" />
     public class ConsoleOutput : Output
     {
         /// <summary>
@@ -70,20 +70,6 @@ namespace SharpLog.Outputs
         /// The colors.
         /// </value>
         public Dictionary<LogLevel, Color> Colors { get; set; }
-
-        /// <summary>
-        /// Releases unmanaged and - optionally - managed resources.
-        /// </summary>
-        public override void Dispose()
-        {
-        }
-
-        /// <summary>
-        /// Starts this instance.
-        /// </summary>
-        public override void Start()
-        {
-        }
 
         /// <summary>
         /// Writes the specified formatted log.

@@ -3,53 +3,45 @@ title: Home
 ---
 
 # Welcome to SharpLog
+
 A small logger for big projects.
 
-[Installation](Getting started/#installation) and [usage](Getting started/#usage) under [Getting started](Getting started/).
+[Installation](Get started/#installation) and [usage](Get started/#usage) under [Get started](Get started/).
 
 Full documentation under [Reference](/Reference/Logger/).
 
-???+ warning "Version"
-    This documentation is up to date with version `2.4.*`
+!!! warning ""
+    This documentation is up to date with version `3.0.*`
 
 ## Features
-- [x] Easy to use
-- [x] Asynchronous logging
-- [x] File and console outputs integrated
-- [x] Easy to implement custom outputs
-- [x] Easy toggling of log levels
+
+- [x] Fast and easy to use
+- [x] No setup required
+- [x] Easy to customize
+
+## Outputs
+
+[Outputs](Output.md) are used to display, pass or store your log messages. Sharplog can write to one ore multiple outputs.
+
+Some outputs are already provided out-of-the-box:
+
+- [:material-console:](ConsoleOutput.md) Print your logs to the standard console including color coding!
+
+- [:material-file:](FileOutput.md) Store your logs in a log file without blocking the file!
 
 ## Example
-Example log from [GameSense](https://github.com/habetuz/GameSense).
-```
-[10-07-2021 | 12:19:42.472] [INFO] [Main]: Program started. Welcome.
-[10-07-2021 | 12:19:42.489] [INFO] [GameSense/Controller]: Background set.
-[10-07-2021 | 12:19:42.504] [INFO] [GameSense/Controller]: Mouse animation set.
-[10-07-2021 | 12:19:42.584] [INFO] [GameSense/InputManager]: Starting...
-[10-07-2021 | 12:19:42.596] [INFO] [GameSense/InputManager]: Ready!
-[10-07-2021 | 12:19:42.596] [INFO] [GameSense/Controller]: Name set: KALE
-[10-07-2021 | 12:19:42.596] [INFO] [GameSense/Controller]: Display name set: KaLE
-[10-07-2021 | 12:19:42.596] [INFO] [GameSense/Controller]: Developer set: Marvin Fuchs
-[10-07-2021 | 12:19:42.596] [INFO] [GameSense/Controller]: Starting...
-[10-07-2021 | 12:19:42.596] [INFO] [GameSense/Controller]: Registering game...
-[10-07-2021 | 12:19:42.820] [INFO] [GameSense/Transmitter]: Starting...
-[10-07-2021 | 12:19:43.119] [INFO] [GameSense/Transmitter]: GameSense server is running on 127.0.0.1:49748
-[10-07-2021 | 12:19:43.119] [INFO] [GameSense/Transmitter]: Ready!
-[10-07-2021 | 12:19:43.424] [INFO] [GameSense/Controller]: Heartbeat started.
-[10-07-2021 | 12:19:43.424] [INFO] [GameSense/Controller]: Binding events...
-[10-07-2021 | 12:19:43.449] [INFO] [GameSense/Controller]: Keyboard event binned!
-[10-07-2021 | 12:19:43.483] [INFO] [GameSense/Controller]: Mouse events binned!
-[10-07-2021 | 12:19:43.484] [INFO] [GameSense/Controller]: UpdateTimer ready.
-[10-07-2021 | 12:19:43.485] [INFO] [GameSense/Controller]: Ready!
-[10-07-2021 | 12:24:42.590] [INFO] [GameSense/InputManager]: Inputs
-| 16x Left
-|  3x Space
-|  1x Return
 
-[10-07-2021 | 12:24:42.734] [INFO] [GameSense/Transmitter]: Transitions
-|    1x /game_metadata
-|    1x /bind_game_event
-|    8x /register_game_event
-| 4692x /multiple_game_events
-|   29x /game_heartbeat
+``` c#
+SharpLog.Logging.LogDebug("Debug!", typeof(Program));
+SharpLog.Logging.LogTrace("Trace!", typeof(Program));
+SharpLog.Logging.LogInfo("Info!", typeof(Program));
+SharpLog.Logging.LogWarning("Warning!", typeof(Program));
+SharpLog.Logging.LogError("Error!", typeof(Program));
+SharpLog.Logging.LogFatal( //(1)
+    "Fatal!", 
+    typeof(Program), 
+    exception: new Exception("Test"), 
+    stackTrace: new StackTrace(true).ToString());
 ```
+
+1. :material-exit-to-app: Exits program after logging your message.

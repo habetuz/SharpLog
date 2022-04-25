@@ -20,12 +20,8 @@ namespace SharpLog.Outputs
     /// Output writing asynchronously to a file.
     /// </summary>
     /// <seealso cref="SharpLog.Outputs.Output" />
-    public class FileOutput : Output
+    public class FileOutput : AsyncOutput
     {
-        private readonly BlockingCollection<string> queue = new BlockingCollection<string>();
-        private Task task;
-        private CancellationTokenSource cancellationToken;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="FileOutput"/> class.
         /// </summary>
@@ -46,7 +42,7 @@ namespace SharpLog.Outputs
             int suspendTime = 500,
             string format = null,
             LevelContainer levels = null)
-            : base(format, levels)
+            : base(suspendTime, format, levels)
         {
             this.Path = path;
             this.SuspendTime = suspendTime;
@@ -61,73 +57,20 @@ namespace SharpLog.Outputs
         public string Path { get; set; }
 
         /// <summary>
-        /// Gets or sets the time the output waits until it checks for new logs again.
+        /// Writes the logs to the output without blocking the calling thread.
         /// </summary>
-        /// <value>
-        /// The suspend time.
-        /// </value>
-        public int SuspendTime { get; set; }
-
-        /// <summary>
-        /// Releases unmanaged and - optionally - managed resources.
-        /// </summary>
-        public override void Dispose()
+        /// <param name="logs">The logs.</param>
+        public override void WriteNonBlocking((string, Log)[] logs)
         {
-            this.cancellationToken?.Cancel();
-            this.task?.Wait();
-            this.cancellationToken?.Dispose();
-            this.queue.Dispose();
-            this.task?.Dispose();
-        }
-
-        /// <summary>
-        /// Starts this instance.
-        /// </summary>
-        public override void Start()
-        {
-            this.cancellationToken = new CancellationTokenSource();
-            this.task = Task.Run(() =>
+            using (var writer = new StreamWriter(File.Open(this.Path, FileMode.Append, FileAccess.Write)))
             {
-                while (!this.cancellationToken.IsCancellationRequested)
+                foreach (var log in logs)
                 {
-                    if (this.queue.Count > 0)
-                    {
-                        using (var writer = new StreamWriter(File.Open(this.Path, FileMode.Append, FileAccess.Write)))
-                        {
-                            while (this.queue.Count > 0)
-                            {
-                                var line = this.queue.Take();
-                                writer.WriteLine(line);
-                            }
-
-                            writer.Flush();
-                        }
-                    }
-
-                    Task.Delay(this.SuspendTime).Wait();
+                    writer.WriteLine(log.Item1);
                 }
 
-                using (var writer = new StreamWriter(File.Open(this.Path, FileMode.Append, FileAccess.Write)))
-                {
-                    while (this.queue.Count > 0)
-                    {
-                        var line = this.queue.Take();
-                        writer.WriteLine(line);
-                    }
-
-                    writer.Flush();
-                }
-            });
-        }
-
-        /// <summary>
-        /// Writes the specified formatted log.
-        /// </summary>
-        /// <param name="formattedLog">The formatted log.</param>
-        /// <param name="log">The log.</param>
-        public override void Write(string formattedLog, Log log)
-        {
-            this.queue.Add(formattedLog);
+                writer.Flush();
+            }
         }
     }
 }

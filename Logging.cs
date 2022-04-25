@@ -65,11 +65,11 @@ namespace SharpLog
             // 1: Output container of tag
             // 2: General output container
             OutputContainer outputContainer = null;
-            if (tagAvailable)
+            if (tagAvailable && tagContainer.Outputs != null)
             {
                 outputContainer = tagContainer.Outputs;
             }
-            else if (outputContainer == null)
+            else
             {
                 outputContainer = SettingsManager.Settings.Outputs;
             }
@@ -79,7 +79,7 @@ namespace SharpLog
             // 2: General level
             Level levelSettings = null;
             bool levelSettingsFromTag = false;
-            if (tagAvailable && tagContainer.Levels.GetLevel(level) != null)
+            if (tagAvailable && tagContainer.Levels != null && tagContainer.Levels.GetLevel(level) != null)
             {
                 levelSettings = tagContainer.Levels.GetLevel(level);
                 levelSettingsFromTag = true;
@@ -87,6 +87,11 @@ namespace SharpLog
             else
             {
                 levelSettings = SettingsManager.Settings.Levels.GetLevel(level);
+            }
+
+            if (!levelSettings.Enabled)
+            {
+                return;
             }
 
             // Find format
@@ -112,12 +117,14 @@ namespace SharpLog
 
             outputContainer.Console?.Write(log);
             outputContainer.File?.Write(log);
-            outputContainer.Outputs.ForEach(output => output.Write(log));
+            foreach (var output in outputContainer.GetOutputs())
+            {
+                output.Write(log);
+            }
 
             if (level == LogLevel.Fatal)
             {
-                outputContainer.File?.Dispose();
-                outputContainer.Outputs.ForEach(output => output.Dispose());
+                Dispose();
                 Environment.Exit(1);
             }
         }
@@ -128,10 +135,11 @@ namespace SharpLog
         /// <param name="message">The message.</param>
         /// <param name="class">The class.</param>
         /// <param name="tag">The tag.</param>
+        /// <param name="exception">The exception.</param>
         /// <param name="stackTrace">The stack trace.</param>
-        public static void LogDebug(object message, Type @class, string tag = null, string stackTrace = null)
+        public static void LogDebug(object message, Type @class, string tag = null, Exception exception = null, string stackTrace = null)
         {
-            Log(LogLevel.Debug, message, @class, tag, null, stackTrace);
+            Log(LogLevel.Debug, message, @class, tag, exception, stackTrace);
         }
 
         /// <summary>
@@ -140,10 +148,11 @@ namespace SharpLog
         /// <param name="message">The message.</param>
         /// <param name="class">The class.</param>
         /// <param name="tag">The tag.</param>
+        /// <param name="exception">The exception.</param>
         /// <param name="stackTrace">The stack trace.</param>
-        public static void LogTrace(object message, Type @class, string tag = null, string stackTrace = null)
+        public static void LogTrace(object message, Type @class, string tag = null, Exception exception = null, string stackTrace = null)
         {
-            Log(LogLevel.Trace, message, @class, tag, null, stackTrace);
+            Log(LogLevel.Trace, message, @class, tag, exception, stackTrace);
         }
 
         /// <summary>
@@ -152,10 +161,11 @@ namespace SharpLog
         /// <param name="message">The message.</param>
         /// <param name="class">The class.</param>
         /// <param name="tag">The tag.</param>
+        /// <param name="exception">The exception.</param>
         /// <param name="stackTrace">The stack trace.</param>
-        public static void LogInfo(object message, Type @class, string tag = null, string stackTrace = null)
+        public static void LogInfo(object message, Type @class, string tag = null, Exception exception = null, string stackTrace = null)
         {
-            Log(LogLevel.Info, message, @class, tag, null, stackTrace);
+            Log(LogLevel.Info, message, @class, tag, exception, stackTrace);
         }
 
         /// <summary>

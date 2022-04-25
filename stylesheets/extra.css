@@ -7,13 +7,6 @@
     overflow: hidden;
  }
 
- .md-typeset td > code,  .md-typeset article > code, .md-typeset p > code, .md-typeset a > code {
-    font-size: .95em;
-    font-weight: bolder;
-    background: none;
-    padding: 0;
-  }
-
 html {
    scroll-behavior: smooth;
 }

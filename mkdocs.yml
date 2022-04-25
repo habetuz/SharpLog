@@ -13,8 +13,8 @@ theme:
   name: material
   palette:
     scheme: slate
-    primary: deep purple
-    accent: indigo
+    primary: deep orange
+    accent: orange
   font:
     text: Montserrat
     code: Roboto Mono
@@ -43,9 +43,6 @@ plugins:
   - autolinks
 extra_css:
   - stylesheets/extra.css
-extra_javascript:
-  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
-  - javascripts/tablesort.js
 nav:
   - index.md
   - Get started.md

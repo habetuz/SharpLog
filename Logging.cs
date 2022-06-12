@@ -31,15 +31,15 @@ namespace SharpLog
         }
 
         /// <summary>
-        /// Logs a log.
+        /// Logs a log message containing the given information.
         /// </summary>
-        /// <param name="level">The level. If the level is <see cref="LogLevel.Fatal"/> the programm ends with code 0.</param>
+        /// <param name="level">The level. If the level is <see cref="LogLevel.Fatal"/> the program ends with code 0.</param>
         /// <param name="message">The message.</param>
-        /// <param name="class">The class.</param>
+        /// <param name="origin">The origin.</param>
         /// <param name="tag">The tag.</param>
         /// <param name="exception">The exception.</param>
         /// <param name="stackTrace">The stack trace.</param>
-        public static void Log(LogLevel level, object message, Type @class, string tag = null, Exception exception = null, string stackTrace = null)
+        public static void Log(LogLevel level, object message, Type origin, string tag = null, Exception exception = null, string stackTrace = null)
         {
             if (SettingsManager.IsDisposed)
             {
@@ -113,7 +113,7 @@ namespace SharpLog
                 format = SettingsManager.Settings.Format;
             }
 
-            Log log = new Log(level, message, @class, tag, exception, levelSettings, format, DateTime.Now, stackTrace);
+            Log log = new Log(level, message, origin, tag, exception, levelSettings, format, DateTime.Now, stackTrace);
 
             outputContainer.Console?.Write(log);
             outputContainer.File?.Write(log);
@@ -130,81 +130,81 @@ namespace SharpLog
         }
 
         /// <summary>
-        /// Logs a debug log.
+        /// Logs a debug log message.
         /// </summary>
         /// <param name="message">The message.</param>
-        /// <param name="class">The class.</param>
+        /// <param name="origin">The origin.</param>
         /// <param name="tag">The tag.</param>
         /// <param name="exception">The exception.</param>
         /// <param name="stackTrace">The stack trace.</param>
-        public static void LogDebug(object message, Type @class, string tag = null, Exception exception = null, string stackTrace = null)
+        public static void LogDebug(object message, Type origin, string tag = null, Exception exception = null, string stackTrace = null)
         {
-            Log(LogLevel.Debug, message, @class, tag, exception, stackTrace);
+            Log(LogLevel.Debug, message, origin, tag, exception, stackTrace);
         }
 
         /// <summary>
-        /// Logs a trace log.
+        /// Logs a trace log message.
         /// </summary>
         /// <param name="message">The message.</param>
-        /// <param name="class">The class.</param>
+        /// <param name="origin">The origin.</param>
         /// <param name="tag">The tag.</param>
         /// <param name="exception">The exception.</param>
         /// <param name="stackTrace">The stack trace.</param>
-        public static void LogTrace(object message, Type @class, string tag = null, Exception exception = null, string stackTrace = null)
+        public static void LogTrace(object message, Type origin, string tag = null, Exception exception = null, string stackTrace = null)
         {
-            Log(LogLevel.Trace, message, @class, tag, exception, stackTrace);
+            Log(LogLevel.Trace, message, origin, tag, exception, stackTrace);
         }
 
         /// <summary>
-        /// Logs an information log.
+        /// Logs an information log message.
         /// </summary>
         /// <param name="message">The message.</param>
-        /// <param name="class">The class.</param>
+        /// <param name="origin">The origin.</param>
         /// <param name="tag">The tag.</param>
         /// <param name="exception">The exception.</param>
         /// <param name="stackTrace">The stack trace.</param>
-        public static void LogInfo(object message, Type @class, string tag = null, Exception exception = null, string stackTrace = null)
+        public static void LogInfo(object message, Type origin, string tag = null, Exception exception = null, string stackTrace = null)
         {
-            Log(LogLevel.Info, message, @class, tag, exception, stackTrace);
+            Log(LogLevel.Info, message, origin, tag, exception, stackTrace);
         }
 
         /// <summary>
-        /// Logs a warning log.
+        /// Logs a warning log message.
         /// </summary>
         /// <param name="message">The message.</param>
-        /// <param name="class">The class.</param>
+        /// <param name="origin">The origin.</param>
         /// <param name="tag">The tag.</param>
         /// <param name="exception">The exception.</param>
         /// <param name="stackTrace">The stack trace.</param>
-        public static void LogWarning(object message, Type @class, string tag = null, Exception exception = null, string stackTrace = null)
+        public static void LogWarning(object message, Type origin, string tag = null, Exception exception = null, string stackTrace = null)
         {
-            Log(LogLevel.Warn, message, @class, tag, exception, stackTrace);
+            Log(LogLevel.Warn, message, origin, tag, exception, stackTrace);
         }
 
         /// <summary>
-        /// Logs an error log.
+        /// Logs an error log message.
         /// </summary>
         /// <param name="message">The message.</param>
-        /// <param name="class">The class.</param>
+        /// <param name="origin">The origin.</param>
         /// <param name="tag">The tag.</param>
         /// <param name="exception">The exception.</param>
         /// <param name="stackTrace">The stack trace.</param>
-        public static void LogError(object message, Type @class, string tag = null, Exception exception = null, string stackTrace = null)
+        public static void LogError(object message, Type origin, string tag = null, Exception exception = null, string stackTrace = null)
         {
-            Log(LogLevel.Error, message, @class, tag, exception, stackTrace);
+            Log(LogLevel.Error, message, origin, tag, exception, stackTrace);
         }
 
         /// <summary>
-        /// Logs a fatal log and exits the programm (with code 1).
+        /// Logs a fatal log message and exits the programm (with code 1).
         /// </summary>
         /// <param name="message">The message.</param>
-        /// <param name="class">The class.</param>
+        /// <param name="origin">The origin.</param>
         /// <param name="tag">The tag.</param>
         /// <param name="exception">The exception.</param>
         /// <param name="stackTrace">The stack trace.</param>
-        public static void LogFatal(object message, Type @class, string tag = null, Exception exception = null, string stackTrace = null)
+        public static void LogFatal(object message, Type origin, string tag = null, Exception exception = null, string stackTrace = null)
         {
-            Log(LogLevel.Fatal, message, @class, tag, exception, stackTrace);
+            Log(LogLevel.Fatal, message, origin, tag, exception, stackTrace);
         }
 
         /// <summary>

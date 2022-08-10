@@ -499,7 +499,7 @@
   
     <li class="md-nav__item">
       <a href="../Reference/Logging/" class="md-nav__link">
-        Logging
+        Logging Class
       </a>
     </li>
   
@@ -513,7 +513,7 @@
   
     <li class="md-nav__item">
       <a href="../Reference/SettingsManager/" class="md-nav__link">
-        SettingsManager
+        SettingsManager Class
       </a>
     </li>
   
@@ -527,7 +527,7 @@
   
     <li class="md-nav__item">
       <a href="../Reference/LogLevel/" class="md-nav__link">
-        LogLevel
+        LogLevel Enum
       </a>
     </li>
   
@@ -541,7 +541,7 @@
   
     <li class="md-nav__item">
       <a href="../Reference/Log/" class="md-nav__link">
-        Log
+        Log Struct
       </a>
     </li>
   
@@ -869,28 +869,28 @@
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <p>Sharplog automatically tries to load the settings from <code>sharplog.yml</code>. A Yaml file containing all changes to the default settings you want to make.</p>
 <p>Read <a href="/Setup/">here</a> how you can customize your logger!</p>
-<p>To log a message just use <code class="highlight"><span class="n">Logging</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">LogLevel</span><span class="p">.</span><span class="n">Debug</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Your Message&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">typeof</span><span class="p">(</span><span class="n">YourClass</span><span class="p">))</span><span class="w"></span></code> or a log level specific logging method:</p>
-<div class="highlight"><span class="filename">Log level specific logging methods</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Logging</span><span class="p">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s">&quot;Debug!&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">typeof</span><span class="p">(</span><span class="n">Program</span><span class="p">));</span><span class="w"></span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">Logging</span><span class="p">.</span><span class="n">LogTrace</span><span class="p">(</span><span class="s">&quot;Trace!&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">typeof</span><span class="p">(</span><span class="n">Program</span><span class="p">));</span><span class="w"></span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">Logging</span><span class="p">.</span><span class="n">LogInfo</span><span class="p">(</span><span class="s">&quot;Info!&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">typeof</span><span class="p">(</span><span class="n">Program</span><span class="p">));</span><span class="w"></span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">Logging</span><span class="p">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="s">&quot;Warning!&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">typeof</span><span class="p">(</span><span class="n">Program</span><span class="p">));</span><span class="w"></span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">Logging</span><span class="p">.</span><span class="n">LogError</span><span class="p">(</span><span class="s">&quot;Error!&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">typeof</span><span class="p">(</span><span class="n">Program</span><span class="p">));</span><span class="w"></span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">Logging</span><span class="p">.</span><span class="n">LogFatal</span><span class="p">(</span><span class="s">&quot;Fatal!&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">typeof</span><span class="p">(</span><span class="n">Program</span><span class="p">));</span><span class="w"></span>
+<p>To log a message just use <code class="highlight"><span class="n">Logging</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">LogLevel</span><span class="p">.</span><span class="n">Debug</span><span class="p">,</span> <span class="s">&quot;Your Message&quot;</span><span class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="n">YourClass</span><span class="p">))</span></code> or a log level specific logging method:</p>
+<div class="highlight"><span class="filename">Log level specific logging methods</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">Logging</span><span class="p">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s">&quot;Debug!&quot;</span><span class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="n">Program</span><span class="p">));</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">Logging</span><span class="p">.</span><span class="n">LogTrace</span><span class="p">(</span><span class="s">&quot;Trace!&quot;</span><span class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="n">Program</span><span class="p">));</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">Logging</span><span class="p">.</span><span class="n">LogInfo</span><span class="p">(</span><span class="s">&quot;Info!&quot;</span><span class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="n">Program</span><span class="p">));</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">Logging</span><span class="p">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="s">&quot;Warning!&quot;</span><span class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="n">Program</span><span class="p">));</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="n">Logging</span><span class="p">.</span><span class="n">LogError</span><span class="p">(</span><span class="s">&quot;Error!&quot;</span><span class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="n">Program</span><span class="p">));</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">Logging</span><span class="p">.</span><span class="n">LogFatal</span><span class="p">(</span><span class="s">&quot;Fatal!&quot;</span><span class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="n">Program</span><span class="p">));</span>
 </code></pre></div>
 <div class="result" markdown>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>24.04.2022 14:04:47: [Debug] [YourNamespace.Program]  Debug!
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>24.04.2022 14:04:47: [Trace] [YourNamespace.Program]  Trace!
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>24.04.2022 14:04:47: [Info] [YourNamespace.Program]  Info!
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>24.04.2022 14:04:47: [Warn] [YourNamespace.Program]  Warning!
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>24.04.2022 14:04:47: [Error] [YourNamespace.Program]  Error!
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>24.04.2022 14:04:47: [Fatal] [YourNamespace.Program]  Fatal!
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>24.04.2022 14:04:47: [Debug] [YourNamespace.Program]  Debug!
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>24.04.2022 14:04:47: [Trace] [YourNamespace.Program]  Trace!
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>24.04.2022 14:04:47: [Info] [YourNamespace.Program]  Info!
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>24.04.2022 14:04:47: [Warn] [YourNamespace.Program]  Warning!
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>24.04.2022 14:04:47: [Error] [YourNamespace.Program]  Error!
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>24.04.2022 14:04:47: [Fatal] [YourNamespace.Program]  Fatal!
 </code></pre></div>
 </div>
 
 <p>Note that you can pass additional information for your log message:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">string</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tag</span><span class="w"> </span><span class="c1">#(1)</span><span class="w"></span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">Exception</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exception</span><span class="w"> </span><span class="c1">#(2)</span><span class="w"></span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">string</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stacktrace</span><span class="w"> </span><span class="c1">#(3)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nt">string</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tag</span> <span class="c1">#(1)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="nt">Exception</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">exception</span> <span class="c1">#(2)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="nt">string</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">stacktrace</span> <span class="c1">#(3)</span>
 </code></pre></div>
 <ol>
 <li>The tag of the message to better organize your logs.</li>
@@ -904,13 +904,13 @@
 </div>
 <p>Some outputs (like the file output) write your logs asynchronously and therefore could need some time until they pick up your message to log it.</p>
 <p>Disposing the logger ensures that you wait until all messages are logged before your program exits.</p>
-<div class="highlight"><span class="filename">Possible ways of disposing the logger</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">Logging</span><span class="p">.</span><span class="n">Dispose</span><span class="p">();</span><span class="w"> </span><span class="c1">//(1)</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">Logging</span><span class="p">.</span><span class="n">LogFatal</span><span class="p">(</span><span class="s">&quot;Something went terribly wrong! We cannot continue the program.&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">typeof</span><span class="p">(</span><span class="n">Program</span><span class="p">));</span><span class="w"> </span><span class="c1">//(2)</span>
+<div class="highlight"><span class="filename">Possible ways of disposing the logger</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">Logging</span><span class="p">.</span><span class="n">Dispose</span><span class="p">();</span> <span class="c1">//(1)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">Logging</span><span class="p">.</span><span class="n">LogFatal</span><span class="p">(</span><span class="s">&quot;Something went terribly wrong! We cannot continue the program.&quot;</span><span class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="n">Program</span><span class="p">));</span> <span class="c1">//(2)</span>
 </code></pre></div>
 <ol>
 <li>Halts the program until all log messages are written.</li>
-<li>Writes all log messages and then exits the program using <a href="https://docs.microsoft.com/en-us/dotnet/api/system.environment.exit?view=net-6.0"><code class="highlight"><span class="n">Environment</span><span class="p">.</span><span class="n">Exit</span><span class="p">(</span><span class="m">1</span><span class="p">)</span><span class="w"></span></code></a></li>
+<li>Writes all log messages and then exits the program using <a href="https://docs.microsoft.com/en-us/dotnet/api/system.environment.exit?view=net-6.0"><code class="highlight"><span class="n">Environment</span><span class="p">.</span><span class="n">Exit</span><span class="p">(</span><span class="m">1</span><span class="p">)</span></code></a></li>
 </ol>
 
               

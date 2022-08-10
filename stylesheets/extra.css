@@ -6,15 +6,19 @@
  .md-typeset table:not([class]) {
     display: table;
     overflow: hidden;
-    box-shadow: 0 .2rem .5rem rgba(0,0,0,.05),0 0 .05rem rgba(0,0,0,.1);
+    margin-top: .4rem;
+    box-shadow: 0 .1rem .5rem .3rem rgba(0,0,0,.05),0 0 .05rem rgba(0,0,0,.1);
     border: none;
     border-radius: .15rem;
+    
  }
 
+/*
 thead {
-   background-color: #9397b1;
-   color: var(--md-default-bg-color)
+    background-color: #9397b1;
+    color: var(--md-default-bg-color)
 }
+*/
 
 html {
    scroll-behavior: smooth;

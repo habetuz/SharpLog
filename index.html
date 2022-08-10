@@ -497,7 +497,7 @@
   
     <li class="md-nav__item">
       <a href="Reference/Logging/" class="md-nav__link">
-        Logging
+        Logging Class
       </a>
     </li>
   
@@ -511,7 +511,7 @@
   
     <li class="md-nav__item">
       <a href="Reference/SettingsManager/" class="md-nav__link">
-        SettingsManager
+        SettingsManager Class
       </a>
     </li>
   
@@ -525,7 +525,7 @@
   
     <li class="md-nav__item">
       <a href="Reference/LogLevel/" class="md-nav__link">
-        LogLevel
+        LogLevel Enum
       </a>
     </li>
   
@@ -539,7 +539,7 @@
   
     <li class="md-nav__item">
       <a href="Reference/Log/" class="md-nav__link">
-        Log
+        Log Struct
       </a>
     </li>
   
@@ -880,16 +880,16 @@
 </li>
 </ul>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">SharpLog</span><span class="p">.</span><span class="n">Logging</span><span class="p">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s">&quot;Debug!&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">typeof</span><span class="p">(</span><span class="n">Program</span><span class="p">));</span><span class="w"></span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">SharpLog</span><span class="p">.</span><span class="n">Logging</span><span class="p">.</span><span class="n">LogTrace</span><span class="p">(</span><span class="s">&quot;Trace!&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">typeof</span><span class="p">(</span><span class="n">Program</span><span class="p">));</span><span class="w"></span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">SharpLog</span><span class="p">.</span><span class="n">Logging</span><span class="p">.</span><span class="n">LogInfo</span><span class="p">(</span><span class="s">&quot;Info!&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">typeof</span><span class="p">(</span><span class="n">Program</span><span class="p">));</span><span class="w"></span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">SharpLog</span><span class="p">.</span><span class="n">Logging</span><span class="p">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="s">&quot;Warning!&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">typeof</span><span class="p">(</span><span class="n">Program</span><span class="p">));</span><span class="w"></span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">SharpLog</span><span class="p">.</span><span class="n">Logging</span><span class="p">.</span><span class="n">LogError</span><span class="p">(</span><span class="s">&quot;Error!&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">typeof</span><span class="p">(</span><span class="n">Program</span><span class="p">));</span><span class="w"></span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">SharpLog</span><span class="p">.</span><span class="n">Logging</span><span class="p">.</span><span class="n">LogFatal</span><span class="p">(</span><span class="w"> </span><span class="c1">//(1)</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="s">&quot;Fatal!&quot;</span><span class="p">,</span><span class="w"> </span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="k">typeof</span><span class="p">(</span><span class="n">Program</span><span class="p">),</span><span class="w"> </span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="n">exception</span><span class="p">:</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Exception</span><span class="p">(</span><span class="s">&quot;Test&quot;</span><span class="p">),</span><span class="w"> </span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="n">stackTrace</span><span class="p">:</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StackTrace</span><span class="p">(</span><span class="k">true</span><span class="p">).</span><span class="n">ToString</span><span class="p">());</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">SharpLog</span><span class="p">.</span><span class="n">Logging</span><span class="p">.</span><span class="n">LogDebug</span><span class="p">(</span><span class="s">&quot;Debug!&quot;</span><span class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="n">Program</span><span class="p">));</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">SharpLog</span><span class="p">.</span><span class="n">Logging</span><span class="p">.</span><span class="n">LogTrace</span><span class="p">(</span><span class="s">&quot;Trace!&quot;</span><span class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="n">Program</span><span class="p">));</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">SharpLog</span><span class="p">.</span><span class="n">Logging</span><span class="p">.</span><span class="n">LogInfo</span><span class="p">(</span><span class="s">&quot;Info!&quot;</span><span class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="n">Program</span><span class="p">));</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">SharpLog</span><span class="p">.</span><span class="n">Logging</span><span class="p">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="s">&quot;Warning!&quot;</span><span class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="n">Program</span><span class="p">));</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="n">SharpLog</span><span class="p">.</span><span class="n">Logging</span><span class="p">.</span><span class="n">LogError</span><span class="p">(</span><span class="s">&quot;Error!&quot;</span><span class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="n">Program</span><span class="p">));</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">SharpLog</span><span class="p">.</span><span class="n">Logging</span><span class="p">.</span><span class="n">LogFatal</span><span class="p">(</span> <span class="c1">//(1)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>    <span class="s">&quot;Fatal!&quot;</span><span class="p">,</span> 
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>    <span class="k">typeof</span><span class="p">(</span><span class="n">Program</span><span class="p">),</span> 
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>    <span class="n">exception</span><span class="p">:</span> <span class="k">new</span> <span class="n">Exception</span><span class="p">(</span><span class="s">&quot;Test&quot;</span><span class="p">),</span> 
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>    <span class="n">stackTrace</span><span class="p">:</span> <span class="k">new</span> <span class="n">StackTrace</span><span class="p">(</span><span class="k">true</span><span class="p">).</span><span class="n">ToString</span><span class="p">());</span>
 </code></pre></div>
 <ol>
 <li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .89-2 2v4h2V5h14v14H5v-4H3v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-8.92 12.58L11.5 17l5-5-5-5-1.42 1.41L12.67 11H3v2h9.67l-2.59 2.58Z"/></svg></span> Exits program after logging your message.</li>

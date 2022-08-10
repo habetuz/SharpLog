@@ -11,7 +11,7 @@
 namespace SharpLog
 {
     /// <summary>
-    /// The log level.
+    /// Specifies the log level.
     /// </summary>
     public enum LogLevel
     {

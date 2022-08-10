@@ -159,7 +159,7 @@ On default only a console output is set, but you can also add a file output.
 
 ### Set a custom output
 
-Create a class that extends the [`Outputs.Output](Output.md) class.
+Create a class that extends the [`Outputs.Output`](Output.md) class.
 
 === "Synchronous"
     ```c#

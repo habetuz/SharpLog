@@ -10,7 +10,6 @@ theme:
       - navigation.indexes
       - navigation.tracking
       - content.code.annotate
-      - toc.integrate
   name: material
   palette:
     scheme: slate
@@ -23,6 +22,7 @@ markdown_extensions:
   - admonition
   - toc:
       permalink: true
+      toc_depth: 3
   - meta
   - pymdownx.details
   - attr_list

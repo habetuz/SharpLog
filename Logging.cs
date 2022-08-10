@@ -195,7 +195,7 @@ namespace SharpLog
         }
 
         /// <summary>
-        /// Logs a fatal log message and exits the programm (with code 1).
+        /// Logs a fatal log message and exits the program with code 1.
         /// </summary>
         /// <param name="message">The message.</param>
         /// <param name="origin">The origin.</param>
@@ -208,7 +208,7 @@ namespace SharpLog
         }
 
         /// <summary>
-        /// Releases resources.
+        /// Releases resources and logs all remaining logs. Should be called before exiting the program.
         /// </summary>
         public static void Dispose()
         {

@@ -19,7 +19,7 @@ namespace SharpLog
     using YamlDotNet.Serialization.NamingConventions;
 
     /// <summary>
-    /// Settings manager for SharpLog.
+    /// Class responsible for managing the settings.
     /// </summary>
     public static class SettingsManager
     {
@@ -34,7 +34,7 @@ namespace SharpLog
         /// <value>
         ///   <c>true</c> if this instance is disposed; otherwise, <c>false</c>.
         /// </value>
-        public static bool IsDisposed { get; private set; }
+        internal static bool IsDisposed { get; private set; }
 
         /// <summary>
         /// Gets or sets the settings.
@@ -47,7 +47,7 @@ namespace SharpLog
         /// <summary>
         /// Reloads the settings.
         /// </summary>
-        /// <param name="fromFile">if set to <c>true</c> the settings are loaded from the file "sharplog.yml".</param>
+        /// <param name="fromFile">if set to <c>true</c> the settings are loaded from the file "sharplog.yml" if possible.</param>
         public static void ReloadSettings(bool fromFile = true)
         {
             Settings?.Dispose();
@@ -185,7 +185,7 @@ namespace SharpLog
         /// <summary>
         /// Releases unmanaged and - optionally - managed resources.
         /// </summary>
-        public static void Dispose()
+        internal static void Dispose()
         {
             if (IsDisposed)
             {

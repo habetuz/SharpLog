@@ -15,8 +15,8 @@ public static class Logging
 
 ### Methods
 
-| Name                                                                                                       | Modifiers            | Returns              |
-| ---------------------------------------------------------------------------------------------------------- | -------------------- | -------------------- |
+| Name                                                                                                       | Modifiers            | Returns         |
+| ---------------------------------------------------------------------------------------------------------- | -------------------- | --------------- |
 | [Initialize()](#initialize)                                                                                | `#!c# public static` | :octicons-x-16: |
 | [Dispose()](#dispose)                                                                                      | `#!c# public static` | :octicons-x-16: |
 | [Log(LogLevel, object, Type, string, Exception, string)](#logloglevel-object-type-string-exception-string) | `#!c# public static` | :octicons-x-16: |

@@ -5,7 +5,7 @@
 // Marvin Fuchs
 // </author>
 // <summary>
-// Visit https://sharplog.marvin-fuchs.de for more information
+// Visit https://sharplog.marvin-fuchs.de for more information.
 // </summary>
 
 namespace SharpLog.Settings
@@ -30,7 +30,9 @@ namespace SharpLog.Settings
         /// </summary>
         /// <param name="foreground">The foreground color.</param>
         /// <param name="background">The background color.</param>
-        public Color(ConsoleColor foreground = ConsoleColor.White, ConsoleColor background = ConsoleColor.Black)
+        public Color(
+            ConsoleColor foreground = ConsoleColor.White, 
+            ConsoleColor background = ConsoleColor.Black)
         {
             this.Foreground = foreground;
             this.Background = background;

@@ -15,9 +15,9 @@ public static class SettingsManager
 
 ### Properties
 
-| Name                        | Type                                                                                         | GET                 | SET                 |
-| --------------------------- | -------------------------------------------------------------------------------------------- | ------------------- | ------------------- |
-| [`Settings`](#settings)     | [`BaseSettings`](BaseSettings.md)                                                            | :octicons-check-16: | :octicons-check-16: |
+| Name                    | Type                              | GET                 | SET                 |
+| ----------------------- | --------------------------------- | ------------------- | ------------------- |
+| [Settings](#settings) | [BaseSettings](BaseSettings.md) | :octicons-check-16: | :octicons-check-16: |
 
 ### Methods
 
@@ -49,5 +49,5 @@ public static void ReloadSettings(bool fromFile = true)
 
 #### Parameter
 
-`fromFile` [bool](https://docs.microsoft.com/de-de/dotnet/csharp/language-reference/builtin-types/bool)  · :octicons-milestone-16: `#!c# true`
+`fromFile` [bool](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool)  · :octicons-milestone-16: `#!c# true`
 :   The message of the log. Gets converted to a string using `.toString()`.

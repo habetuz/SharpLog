@@ -9,8 +9,8 @@ public enum LogLevel
 ```
 
 [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object)<br>
-:material-subdirectory-arrow-right: [ValueType](https://docs.microsoft.com/de-de/dotnet/api/system.valuetype)<br>
-&emsp;&ensp;:material-subdirectory-arrow-right: [Enum](https://docs.microsoft.com/de-de/dotnet/api/system.enum)<br>
+:material-subdirectory-arrow-right: [ValueType](https://docs.microsoft.com/en-us/dotnet/api/system.valuetype)<br>
+&emsp;&ensp;:material-subdirectory-arrow-right: [Enum](https://docs.microsoft.com/en-us/dotnet/api/system.enum)<br>
 &emsp;&ensp;&emsp;&ensp;:material-subdirectory-arrow-right: [**LogLevel**](./)
 
 :   Specifies the log level.

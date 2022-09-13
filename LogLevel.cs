@@ -5,7 +5,7 @@
 // Marvin Fuchs
 // </author>
 // <summary>
-// Visit https://sharplog.marvin-fuchs.de for more information
+// Visit https://sharplog.marvin-fuchs.de for more information.
 // </summary>
 
 namespace SharpLog

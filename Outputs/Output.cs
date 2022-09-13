@@ -5,7 +5,7 @@
 // Marvin Fuchs
 // </author>
 // <summary>
-// Visit https://sharplog.marvin-fuchs.de for more information
+// Visit https://sharplog.marvin-fuchs.de for more information.
 // </summary>
 
 namespace SharpLog.Outputs
@@ -23,7 +23,7 @@ namespace SharpLog.Outputs
         /// Initializes a new instance of the <see cref="Output"/> class.
         /// </summary>
         /// <param name="format">The format.</param>
-        /// <param name="levels">The levels.</param>
+        /// <param name="levels">The level settings.</param>
         public Output(string format = null, LevelContainer levels = null)
         {
             this.Format = format;
@@ -50,7 +50,7 @@ namespace SharpLog.Outputs
         /// Writes the specified formatted log.
         /// </summary>
         /// <param name="formattedLog">The formatted log.</param>
-        /// <param name="log">The log.</param>
+        /// <param name="log">The log information.</param>
         public abstract void Write(string formattedLog, Log log);
 
         /// <summary>

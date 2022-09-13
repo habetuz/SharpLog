@@ -5,21 +5,18 @@
 // Marvin Fuchs
 // </author>
 // <summary>
-// Visit https://sharplog.marvin-fuchs.de for more information
+// Visit https://sharplog.marvin-fuchs.de for more information.
 // </summary>
 
 namespace SharpLog.Outputs
 {
-    using System.Collections.Concurrent;
     using System.IO;
-    using System.Threading;
-    using System.Threading.Tasks;
     using SharpLog.Settings;
 
     /// <summary>
     /// Output writing asynchronously to a file.
     /// </summary>
-    /// <seealso cref="SharpLog.Outputs.Output" />
+    /// <seealso cref="SharpLog.Outputs.AsyncOutput" />
     public class FileOutput : AsyncOutput
     {
         /// <summary>

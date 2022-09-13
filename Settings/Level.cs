@@ -5,18 +5,18 @@
 // Marvin Fuchs
 // </author>
 // <summary>
-// Visit https://sharplog.marvin-fuchs.de for more information
+// Visit https://sharplog.marvin-fuchs.de for more information.
 // </summary>
 
 namespace SharpLog.Settings
 {
     /// <summary>
-    /// Class containing the settings for the <see cref="Level"/>.
+    /// Class containing the settings for a log level.
     /// </summary>
     public class Level
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Level"/> class.
+        /// Initializes a new instance of the <see cref="Level"/> class using default values.
         /// </summary>
         public Level()
             : this('-', true, null)
@@ -27,7 +27,7 @@ namespace SharpLog.Settings
         /// Initializes a new instance of the <see cref="Level"/> class.
         /// </summary>
         /// <param name="short">The short for the log level.</param>
-        /// <param name="enabled">if set to <c>true</c> the level is enabled.</param>
+        /// <param name="enabled">Wether the level is enabled.</param>
         /// <param name="format">The format.</param>
         public Level(
             char @short = '-',
@@ -48,7 +48,7 @@ namespace SharpLog.Settings
         public bool Enabled { get; set; }
 
         /// <summary>
-        /// Gets or sets the format.
+        /// Gets or sets the optional format.
         /// </summary>
         /// <value>
         /// The format.

@@ -5,7 +5,7 @@
 // Marvin Fuchs
 // </author>
 // <summary>
-// Visit https://sharplog.marvin-fuchs.de for more information
+// Visit https://sharplog.marvin-fuchs.de for more information.
 // </summary>
 
 namespace SharpLog.Settings
@@ -29,7 +29,7 @@ namespace SharpLog.Settings
         /// <summary>
         /// Initializes a new instance of the <see cref="Tag"/> class.
         /// </summary>
-        /// <param name="enabled">if set to <c>true</c> the tag is enabled.</param>
+        /// <param name="enabled">Wether the tag is enabled.</param>
         /// <param name="format">The format.</param>
         /// <param name="levels">The levels.</param>
         /// <param name="outputs">The outputs.</param>

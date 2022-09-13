@@ -5,13 +5,13 @@
 // Marvin Fuchs
 // </author>
 // <summary>
-// Visit https://sharplog.marvin-fuchs.de for more information
+// Visit https://sharplog.marvin-fuchs.de for more information.
 // </summary>
 
 namespace SharpLog.Settings
 {
     /// <summary>
-    /// Container for all log level settings.
+    /// Container for all log level specific settings.
     /// </summary>
     public class LevelContainer
     {
@@ -26,12 +26,12 @@ namespace SharpLog.Settings
         /// <summary>
         /// Initializes a new instance of the <see cref="LevelContainer"/> class.
         /// </summary>
-        /// <param name="debug">The debug.</param>
-        /// <param name="trace">The trace.</param>
-        /// <param name="info">The information.</param>
-        /// <param name="warn">The warn.</param>
-        /// <param name="error">The error.</param>
-        /// <param name="fatal">The fatal.</param>
+        /// <param name="debug">The debug settings.</param>
+        /// <param name="trace">The trace settings.</param>
+        /// <param name="info">The information settings.</param>
+        /// <param name="warn">The warn settings.</param>
+        /// <param name="error">The error settings.</param>
+        /// <param name="fatal">The fatal settings.</param>
         public LevelContainer(
             Level debug = null,
             Level trace = null,
@@ -99,8 +99,8 @@ namespace SharpLog.Settings
         /// <summary>
         /// Gets the settings for a level.
         /// </summary>
-        /// <param name="level">The level.</param>
-        /// <returns>The settings.</returns>
+        /// <param name="level">The level the settings should be returned from.</param>
+        /// <returns>The requested settings.</returns>
         public Level GetLevel(LogLevel level)
         {
             switch (level)

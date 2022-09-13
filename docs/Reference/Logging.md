@@ -64,19 +64,19 @@ public static void Log(
 `level` [LogLevel](LogLevel.md)  · :octicons-milestone-16: :octicons-x-16:
 :   The log level. If the level is [`LogLevel.Fatal`](LogLevel.md#fatal) the program ends with code 0 after logging all remaining logs.
 
-`message` [object](https://docs.microsoft.com/de-de/dotnet/api/system.object)  · :octicons-milestone-16: :octicons-x-16:
+`message` [object](https://docs.microsoft.com/en-us/dotnet/api/system.object)  · :octicons-milestone-16: :octicons-x-16:
 :   The message of the log. Gets converted to a string using `.toString()`.
 
-`origin` [Type](https://docs.microsoft.com/de-de/dotnet/api/system.type)  · :octicons-milestone-16: :octicons-x-16:
+`origin` [Type](https://docs.microsoft.com/en-us/dotnet/api/system.type)  · :octicons-milestone-16: :octicons-x-16:
 :   The origin log.
 
-`tag` [string](https://docs.microsoft.com/de-de/dotnet/api/system.string)  · :octicons-milestone-16: `null`
+`tag` [string](https://docs.microsoft.com/en-us/dotnet/api/system.string)  · :octicons-milestone-16: `null`
 :   The tag of the log.
 
-`exception` [Exception](https://docs.microsoft.com/de-de/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
+`exception` [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
 :   The exception of the log.
 
-`stackTrace` [string](https://docs.microsoft.com/de-de/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
+`stackTrace` [string](https://docs.microsoft.com/en-us/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
 :   The current stack trace. Retrieve it using `Environment.StackTrace`.
 
 ### LogDebug(object, Type, string, Exception, string)
@@ -94,19 +94,19 @@ public static void LogDebug(
 
 #### Parameter
 
-`message` [object](https://docs.microsoft.com/de-de/dotnet/api/system.object)  · :octicons-milestone-16: :octicons-x-16:
+`message` [object](https://docs.microsoft.com/en-us/dotnet/api/system.object)  · :octicons-milestone-16: :octicons-x-16:
 :   The message of the log. Gets converted to a string using `.toString()`.
 
-`origin` [Type](https://docs.microsoft.com/de-de/dotnet/api/system.type)  · :octicons-milestone-16: :octicons-x-16:
+`origin` [Type](https://docs.microsoft.com/en-us/dotnet/api/system.type)  · :octicons-milestone-16: :octicons-x-16:
 :   The origin log.
 
-`tag` [string](https://docs.microsoft.com/de-de/dotnet/api/system.string)  · :octicons-milestone-16: `null`
+`tag` [string](https://docs.microsoft.com/en-us/dotnet/api/system.string)  · :octicons-milestone-16: `null`
 :   The tag of the log.
 
-`exception` [Exception](https://docs.microsoft.com/de-de/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
+`exception` [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
 :   The exception of the log.
 
-`stackTrace` [string](https://docs.microsoft.com/de-de/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
+`stackTrace` [string](https://docs.microsoft.com/en-us/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
 :   The current stack trace. Retrieve it using `Environment.StackTrace`.
 
 ### LogTrace(object, Type, string, Exception, string)
@@ -124,19 +124,19 @@ public static void LogTrace(
 
 #### Parameter
 
-`message` [object](https://docs.microsoft.com/de-de/dotnet/api/system.object)  · :octicons-milestone-16: :octicons-x-16:
+`message` [object](https://docs.microsoft.com/en-us/dotnet/api/system.object)  · :octicons-milestone-16: :octicons-x-16:
 :   The message of the log. Gets converted to a string using `.toString()`.
 
-`origin` [Type](https://docs.microsoft.com/de-de/dotnet/api/system.type)  · :octicons-milestone-16: :octicons-x-16:
+`origin` [Type](https://docs.microsoft.com/en-us/dotnet/api/system.type)  · :octicons-milestone-16: :octicons-x-16:
 :   The origin log.
 
-`tag` [string](https://docs.microsoft.com/de-de/dotnet/api/system.string)  · :octicons-milestone-16: `null`
+`tag` [string](https://docs.microsoft.com/en-us/dotnet/api/system.string)  · :octicons-milestone-16: `null`
 :   The tag of the log.
 
-`exception` [Exception](https://docs.microsoft.com/de-de/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
+`exception` [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
 :   The exception of the log.
 
-`stackTrace` [string](https://docs.microsoft.com/de-de/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
+`stackTrace` [string](https://docs.microsoft.com/en-us/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
 :   The current stack trace. Retrieve it using `Environment.StackTrace`.
 
 ### LogInfo(object, Type, string, Exception, string)
@@ -154,19 +154,19 @@ public static void LogInfo(
 
 #### Parameter
 
-`message` [object](https://docs.microsoft.com/de-de/dotnet/api/system.object)  · :octicons-milestone-16: :octicons-x-16:
+`message` [object](https://docs.microsoft.com/en-us/dotnet/api/system.object)  · :octicons-milestone-16: :octicons-x-16:
 :   The message of the log. Gets converted to a string using `.toString()`.
 
-`origin` [Type](https://docs.microsoft.com/de-de/dotnet/api/system.type)  · :octicons-milestone-16: :octicons-x-16:
+`origin` [Type](https://docs.microsoft.com/en-us/dotnet/api/system.type)  · :octicons-milestone-16: :octicons-x-16:
 :   The origin log.
 
-`tag` [string](https://docs.microsoft.com/de-de/dotnet/api/system.string)  · :octicons-milestone-16: `null`
+`tag` [string](https://docs.microsoft.com/en-us/dotnet/api/system.string)  · :octicons-milestone-16: `null`
 :   The tag of the log.
 
-`exception` [Exception](https://docs.microsoft.com/de-de/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
+`exception` [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
 :   The exception of the log.
 
-`stackTrace` [string](https://docs.microsoft.com/de-de/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
+`stackTrace` [string](https://docs.microsoft.com/en-us/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
 :   The current stack trace. Retrieve it using `Environment.StackTrace`.
 
 ### LogWarning(object, Type, string, Exception, string)
@@ -184,19 +184,19 @@ public static void LogWarning(
 
 #### Parameter
 
-`message` [object](https://docs.microsoft.com/de-de/dotnet/api/system.object)  · :octicons-milestone-16: :octicons-x-16:
+`message` [object](https://docs.microsoft.com/en-us/dotnet/api/system.object)  · :octicons-milestone-16: :octicons-x-16:
 :   The message of the log. Gets converted to a string using `.toString()`.
 
-`origin` [Type](https://docs.microsoft.com/de-de/dotnet/api/system.type)  · :octicons-milestone-16: :octicons-x-16:
+`origin` [Type](https://docs.microsoft.com/en-us/dotnet/api/system.type)  · :octicons-milestone-16: :octicons-x-16:
 :   The origin log.
 
-`tag` [string](https://docs.microsoft.com/de-de/dotnet/api/system.string)  · :octicons-milestone-16: `null`
+`tag` [string](https://docs.microsoft.com/en-us/dotnet/api/system.string)  · :octicons-milestone-16: `null`
 :   The tag of the log.
 
-`exception` [Exception](https://docs.microsoft.com/de-de/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
+`exception` [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
 :   The exception of the log.
 
-`stackTrace` [string](https://docs.microsoft.com/de-de/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
+`stackTrace` [string](https://docs.microsoft.com/en-us/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
 :   The current stack trace. Retrieve it using `Environment.StackTrace`.
 
 ### LogError(object, Type, string, Exception, string)
@@ -214,19 +214,19 @@ public static void LogError(
 
 #### Parameter
 
-`message` [object](https://docs.microsoft.com/de-de/dotnet/api/system.object)  · :octicons-milestone-16: :octicons-x-16:
+`message` [object](https://docs.microsoft.com/en-us/dotnet/api/system.object)  · :octicons-milestone-16: :octicons-x-16:
 :   The message of the log. Gets converted to a string using `.toString()`.
 
-`origin` [Type](https://docs.microsoft.com/de-de/dotnet/api/system.type)  · :octicons-milestone-16: :octicons-x-16:
+`origin` [Type](https://docs.microsoft.com/en-us/dotnet/api/system.type)  · :octicons-milestone-16: :octicons-x-16:
 :   The origin log.
 
-`tag` [string](https://docs.microsoft.com/de-de/dotnet/api/system.string)  · :octicons-milestone-16: `null`
+`tag` [string](https://docs.microsoft.com/en-us/dotnet/api/system.string)  · :octicons-milestone-16: `null`
 :   The tag of the log.
 
-`exception` [Exception](https://docs.microsoft.com/de-de/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
+`exception` [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
 :   The exception of the log.
 
-`stackTrace` [string](https://docs.microsoft.com/de-de/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
+`stackTrace` [string](https://docs.microsoft.com/en-us/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
 :   The current stack trace. Retrieve it using `Environment.StackTrace`.
 
 ### LogFatal(object, Type, string, Exception, string)
@@ -244,17 +244,17 @@ public static void LogFatal(
 
 #### Parameter
 
-`message` [object](https://docs.microsoft.com/de-de/dotnet/api/system.object)  · :octicons-milestone-16: :octicons-x-16:
+`message` [object](https://docs.microsoft.com/en-us/dotnet/api/system.object)  · :octicons-milestone-16: :octicons-x-16:
 :   The message of the log. Gets converted to a string using `.toString()`.
 
-`origin` [Type](https://docs.microsoft.com/de-de/dotnet/api/system.type)  · :octicons-milestone-16: :octicons-x-16:
+`origin` [Type](https://docs.microsoft.com/en-us/dotnet/api/system.type)  · :octicons-milestone-16: :octicons-x-16:
 :   The origin log.
 
-`tag` [string](https://docs.microsoft.com/de-de/dotnet/api/system.string)  · :octicons-milestone-16: `null`
+`tag` [string](https://docs.microsoft.com/en-us/dotnet/api/system.string)  · :octicons-milestone-16: `null`
 :   The tag of the log.
 
-`exception` [Exception](https://docs.microsoft.com/de-de/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
+`exception` [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
 :   The exception of the log.
 
-`stackTrace` [string](https://docs.microsoft.com/de-de/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
+`stackTrace` [string](https://docs.microsoft.com/en-us/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
 :   The current stack trace. Retrieve it using `Environment.StackTrace`.

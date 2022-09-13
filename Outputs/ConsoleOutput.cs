@@ -5,7 +5,7 @@
 // Marvin Fuchs
 // </author>
 // <summary>
-// Visit https://sharplog.marvin-fuchs.de for more information
+// Visit https://sharplog.marvin-fuchs.de for more information.
 // </summary>
 
 namespace SharpLog.Outputs
@@ -31,7 +31,7 @@ namespace SharpLog.Outputs
         /// <summary>
         /// Initializes a new instance of the <see cref="ConsoleOutput"/> class.
         /// </summary>
-        /// <param name="colorEnabled">if set to <c>true</c> color is enabled.</param>
+        /// <param name="colorEnabled">If set to <c>true</c> color output is enabled.</param>
         /// <param name="format">The format.</param>
         /// <param name="levels">The levels.</param>
         /// <param name="colors">The colors.</param>

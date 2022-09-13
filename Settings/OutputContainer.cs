@@ -5,7 +5,7 @@
 // Marvin Fuchs
 // </author>
 // <summary>
-// Visit https://sharplog.marvin-fuchs.de for more information
+// Visit https://sharplog.marvin-fuchs.de for more information.
 // </summary>
 
 namespace SharpLog.Settings
@@ -36,7 +36,7 @@ namespace SharpLog.Settings
         /// </summary>
         /// <param name="console">The console output.</param>
         /// <param name="file">The file output.</param>
-        /// <param name="outputs">The outputs list.</param>
+        /// <param name="outputs">The output list.</param>
         public OutputContainer(
             ConsoleOutput console = null,
             FileOutput file = null,
@@ -82,6 +82,20 @@ namespace SharpLog.Settings
             if (output is AsyncOutput asyncOutput)
             {
                 asyncOutput.Start();
+            }
+        }
+
+        /// <summary>
+        /// Removes and disposes an output.
+        /// </summary>
+        /// <param name="output">The output.</param>
+        public void RemoveOutput(Output output)
+        {
+            this.outputs.Remove(output);
+
+            if (output is AsyncOutput asyncOutput)
+            {
+                asyncOutput.Dispose();
             }
         }
 

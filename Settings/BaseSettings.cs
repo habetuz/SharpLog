@@ -5,7 +5,7 @@
 // Marvin Fuchs
 // </author>
 // <summary>
-// Visit https://sharplog.marvin-fuchs.de for more information
+// Visit https://sharplog.marvin-fuchs.de for more information.
 // </summary>
 
 namespace SharpLog.Settings
@@ -32,7 +32,7 @@ namespace SharpLog.Settings
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BaseSettings"/> class.
+        /// Initializes a new instance of the <see cref="BaseSettings"/> class using default settings if not provided.
         /// </summary>
         /// <param name="fomat">The fomat.</param>
         /// <param name="levels">The levels.</param>
@@ -57,7 +57,7 @@ namespace SharpLog.Settings
         }
 
         /// <summary>
-        /// Gets or sets the generall format.
+        /// Gets or sets the general format.
         /// </summary>
         /// <value>
         /// The format.
@@ -65,7 +65,7 @@ namespace SharpLog.Settings
         public string Format { get; set; }
 
         /// <summary>
-        /// Gets or sets the generall levels.
+        /// Gets or sets the general levels.
         /// </summary>
         /// <value>
         /// The levels.
@@ -73,7 +73,7 @@ namespace SharpLog.Settings
         public LevelContainer Levels { get; set; }
 
         /// <summary>
-        /// Gets or sets the generall outputs.
+        /// Gets or sets the general outputs.
         /// </summary>
         /// <value>
         /// The outputs.

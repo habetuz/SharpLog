@@ -1,7 +1,7 @@
 site_name: SharpLog
 site_url: https://sharplog.marvin-fuchs.de/
 repo_url: https://github.com/habetuz/SharpLog/
-edit_uri: edit/main/docs/
+edit_uri: ""
 theme:
   features:
       - navigation.tabs
@@ -62,6 +62,7 @@ nav:
       - Reference/Outputs/Output.md
       - Reference/Outputs/ConsoleOutput.md
       - Reference/Outputs/FileOutput.md
+      - Reference/Outputs/AsyncOutput.md
     - Settings:
       - Reference/Settings/index.md
       - Reference/Settings/BaseSettings.md

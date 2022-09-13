@@ -5,7 +5,7 @@
 // Marvin Fuchs
 // </author>
 // <summary>
-// Visit https://sharplog.marvin-fuchs.de for more information
+// Visit https://sharplog.marvin-fuchs.de for more information.
 // </summary>
 
 namespace SharpLog.Outputs
@@ -17,7 +17,7 @@ namespace SharpLog.Outputs
     using SharpLog.Settings;
 
     /// <summary>
-    /// Class for async output.
+    /// Base class for async outputs.
     /// </summary>
     public abstract class AsyncOutput : Output, IDisposable
     {
@@ -28,7 +28,7 @@ namespace SharpLog.Outputs
         /// <summary>
         /// Initializes a new instance of the <see cref="AsyncOutput"/> class.
         /// </summary>
-        /// <param name="suspendTime">The time the output waits until it checks for new logs again.</param>
+        /// <param name="suspendTime">The time the output waits until it checks for new logs in ms.</param>
         /// <param name="format">The format of the output.</param>
         /// <param name="levels">The level settings of the output.</param>
         public AsyncOutput(
@@ -41,7 +41,7 @@ namespace SharpLog.Outputs
         }
 
         /// <summary>
-        /// Gets or sets the time the output waits until it checks for new logs again.
+        /// Gets or sets the time the output waits until it checks for new logs in ms.
         /// </summary>
         /// <value>
         /// The suspend time.

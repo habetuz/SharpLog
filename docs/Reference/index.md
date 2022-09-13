@@ -2,7 +2,7 @@
 
 Reference for every public function, property and field of `SharpLog`!
 
-!!! error "Missing documentation"
-    The reference is not complete right now!
+!!! success "Reference up to date!"
+    The reference is complete right now with version `3.0.0`!
 
-    Missing reference for namespaces `sharpLog.outputs` and `sharplog.settings`.
+    No missing references.

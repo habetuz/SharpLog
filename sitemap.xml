@@ -2,107 +2,112 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://sharplog.marvin-fuchs.de/</loc>
-         <lastmod>2022-08-29</lastmod>
+         <lastmod>2022-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sharplog.marvin-fuchs.de/Get%20started/</loc>
-         <lastmod>2022-08-29</lastmod>
+         <lastmod>2022-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sharplog.marvin-fuchs.de/Customize/</loc>
-         <lastmod>2022-08-29</lastmod>
+         <lastmod>2022-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sharplog.marvin-fuchs.de/Customize/Default%20settings/</loc>
-         <lastmod>2022-08-29</lastmod>
+         <lastmod>2022-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sharplog.marvin-fuchs.de/Customize/Formatting/</loc>
-         <lastmod>2022-08-29</lastmod>
+         <lastmod>2022-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sharplog.marvin-fuchs.de/Reference/</loc>
-         <lastmod>2022-08-29</lastmod>
+         <lastmod>2022-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sharplog.marvin-fuchs.de/Reference/Log/</loc>
-         <lastmod>2022-08-29</lastmod>
+         <lastmod>2022-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sharplog.marvin-fuchs.de/Reference/LogLevel/</loc>
-         <lastmod>2022-08-29</lastmod>
+         <lastmod>2022-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sharplog.marvin-fuchs.de/Reference/Logging/</loc>
-         <lastmod>2022-08-29</lastmod>
+         <lastmod>2022-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sharplog.marvin-fuchs.de/Reference/SettingsManager/</loc>
-         <lastmod>2022-08-29</lastmod>
+         <lastmod>2022-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sharplog.marvin-fuchs.de/Reference/Outputs/</loc>
-         <lastmod>2022-08-29</lastmod>
+         <lastmod>2022-09-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://sharplog.marvin-fuchs.de/Reference/Outputs/AsyncOutput/</loc>
+         <lastmod>2022-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sharplog.marvin-fuchs.de/Reference/Outputs/ConsoleOutput/</loc>
-         <lastmod>2022-08-29</lastmod>
+         <lastmod>2022-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sharplog.marvin-fuchs.de/Reference/Outputs/FileOutput/</loc>
-         <lastmod>2022-08-29</lastmod>
+         <lastmod>2022-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sharplog.marvin-fuchs.de/Reference/Outputs/Output/</loc>
-         <lastmod>2022-08-29</lastmod>
+         <lastmod>2022-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sharplog.marvin-fuchs.de/Reference/Settings/</loc>
-         <lastmod>2022-08-29</lastmod>
+         <lastmod>2022-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sharplog.marvin-fuchs.de/Reference/Settings/BaseSettings/</loc>
-         <lastmod>2022-08-29</lastmod>
+         <lastmod>2022-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sharplog.marvin-fuchs.de/Reference/Settings/Color/</loc>
-         <lastmod>2022-08-29</lastmod>
+         <lastmod>2022-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sharplog.marvin-fuchs.de/Reference/Settings/Level/</loc>
-         <lastmod>2022-08-29</lastmod>
+         <lastmod>2022-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sharplog.marvin-fuchs.de/Reference/Settings/LevelContainer/</loc>
-         <lastmod>2022-08-29</lastmod>
+         <lastmod>2022-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sharplog.marvin-fuchs.de/Reference/Settings/OutputContainer/</loc>
-         <lastmod>2022-08-29</lastmod>
+         <lastmod>2022-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sharplog.marvin-fuchs.de/Reference/Settings/Tag/</loc>
-         <lastmod>2022-08-29</lastmod>
+         <lastmod>2022-09-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

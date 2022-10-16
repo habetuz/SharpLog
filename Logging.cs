@@ -117,6 +117,7 @@ namespace SharpLog
 
             outputContainer.Console?.Write(log);
             outputContainer.File?.Write(log);
+            outputContainer.Email?.Write(log);
             foreach (var output in outputContainer.GetOutputs())
             {
                 output.Write(log);

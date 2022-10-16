@@ -21,9 +21,11 @@ namespace SharpLog.Outputs
     /// </summary>
     public abstract class AsyncOutput : Output, IDisposable
     {
-        private readonly BlockingCollection<(string, Log)> queue = new BlockingCollection<(string, Log)>();
+        private BlockingCollection<(string, Log)> queue = new BlockingCollection<(string, Log)>();
         private Task task;
         private CancellationTokenSource cancellationToken;
+        protected event EventHandler OnStart;
+        protected event EventHandler OnDispose;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AsyncOutput"/> class.
@@ -58,6 +60,8 @@ namespace SharpLog.Outputs
             this.cancellationToken?.Dispose();
             this.queue.Dispose();
             this.task?.Dispose();
+
+            this.OnDispose?.Invoke(this, null);
         }
 
         /// <summary>
@@ -65,6 +69,8 @@ namespace SharpLog.Outputs
         /// </summary>
         public void Start()
         {
+            this.OnStart?.Invoke(this, null);
+
             this.cancellationToken = new CancellationTokenSource();
             this.task = Task.Run(() =>
             {
@@ -72,7 +78,13 @@ namespace SharpLog.Outputs
                 {
                     if (this.queue.Count > 0)
                     {
-                        this.WriteNonBlocking(this.queue.ToArray());
+                        var logs = this.queue.ToArray();
+                        this.queue.Dispose();
+                        this.queue = new BlockingCollection<(string, Log)>();
+                        while (this.WriteNonBlocking(logs) && !this.cancellationToken.IsCancellationRequested)
+                        {
+                            Task.Delay(this.SuspendTime).Wait();
+                        }
                     }
 
                     Task.Delay(this.SuspendTime).Wait();
@@ -99,6 +111,7 @@ namespace SharpLog.Outputs
         /// Writes the logs to the output without blocking the calling thread.
         /// </summary>
         /// <param name="logs">The logs.</param>
-        public abstract void WriteNonBlocking((string, Log)[] logs);
+        /// <returns><c>true</c> if the write was not successful but should be tried again.</returns>
+        public abstract bool WriteNonBlocking((string, Log)[] logs);
     }
 }

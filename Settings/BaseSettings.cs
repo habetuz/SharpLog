@@ -54,6 +54,14 @@ namespace SharpLog.Settings
                 fatal: new Level('X'));
             this.Outputs = outputs ?? new OutputContainer();
             this.Tags = tags ?? new Dictionary<string, Tag>();
+
+            this.Tags["SHARPLOG_INTERNAL"] = new Tag()
+            {
+                Outputs = new OutputContainer()
+                {
+                    Console = new Outputs.ConsoleOutput(),
+                },
+            };
         }
 
         /// <summary>

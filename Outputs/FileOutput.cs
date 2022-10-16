@@ -10,6 +10,7 @@
 
 namespace SharpLog.Outputs
 {
+    using System;
     using System.IO;
     using SharpLog.Settings;
 
@@ -31,9 +32,9 @@ namespace SharpLog.Outputs
         /// Initializes a new instance of the <see cref="FileOutput"/> class.
         /// </summary>
         /// <param name="path">The path.</param>
-        /// <param name="suspendTime">The suspend time.</param>
+        /// <param name="suspendTime">The suspend time between logs in ms.</param>
         /// <param name="format">The format.</param>
-        /// <param name="levels">The levels.</param>
+        /// <param name="levels">The level settings.</param>
         public FileOutput(
             string path = ".log",
             int suspendTime = 500,
@@ -53,21 +54,31 @@ namespace SharpLog.Outputs
         /// </value>
         public string Path { get; set; }
 
-        /// <summary>
-        /// Writes the logs to the output without blocking the calling thread.
-        /// </summary>
-        /// <param name="logs">The logs.</param>
-        public override void WriteNonBlocking((string, Log)[] logs)
+        /// <inheritdoc/>
+        public override bool WriteNonBlocking((string, Log)[] logs)
         {
-            using (var writer = new StreamWriter(File.Open(this.Path, FileMode.Append, FileAccess.Write)))
+            try
             {
-                foreach (var log in logs)
+                using (var writer = new StreamWriter(File.Open(this.Path, FileMode.Append, FileAccess.Write)))
                 {
-                    writer.WriteLine(log.Item1);
-                }
+                    foreach (var log in logs)
+                    {
+                        writer.WriteLine(log.Item1);
+                    }
 
-                writer.Flush();
+                    writer.Flush();
+                }
             }
+            catch (IOException)
+            {
+                return true;
+            }
+            catch (Exception e)
+            {
+                Logging.LogError("An error occurred while logging to a file.", typeof(FileOutput), "SHARPLOG_INTERNAL", e);
+            }
+
+            return false;
         }
     }
 }

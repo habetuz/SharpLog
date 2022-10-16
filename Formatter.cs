@@ -16,6 +16,30 @@ namespace SharpLog
     internal class Formatter
     {
         /// <summary>
+        /// Formats the specified log with an alternative format.
+        /// </summary>
+        /// <param name="format">The alternative format.</param>
+        /// <param name="log">The log.</param>
+        /// <returns>The formattet log.</returns>
+        internal static string Format(string format, Log log)
+        {
+            log = new Log()
+            {
+                Class = log.Class,
+                Exception = log.Exception,
+                Format = format,
+                Level = log.Level,
+                LevelSettings = log.LevelSettings,
+                Message = log.Message,
+                StackTrace = log.StackTrace,
+                Tag = log.Tag,
+                Time = log.Time,
+            };
+
+            return Format(log);
+        }
+
+        /// <summary>
         /// Formats the specified log.
         /// </summary>
         /// <param name="log">The log.</param>

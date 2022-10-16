@@ -37,6 +37,7 @@
     <Compile Include="LogLevel.cs" />
     <Compile Include="Outputs\AsyncOutput.cs" />
     <Compile Include="Outputs\ConsoleOutput.cs" />
+    <Compile Include="Outputs\EmailOutput.cs" />
     <Compile Include="Outputs\FileOutput.cs" />
     <Compile Include="Outputs\Output.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -47,6 +48,7 @@
     <Compile Include="Settings\OutputContainer.cs" />
     <Compile Include="Settings\BaseSettings.cs" />
     <Compile Include="Settings\Tag.cs" />
+    <Compile Include="Outputs\MailAddress.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="StyleCop.Analyzers">

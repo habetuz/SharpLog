@@ -22,6 +22,7 @@ namespace SharpLog.Settings
     {
         private readonly List<Output> outputs;
         private FileOutput file;
+        private EmailOutput email;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputContainer"/> class.
@@ -43,7 +44,7 @@ namespace SharpLog.Settings
             List<Output> outputs = null)
         {
             this.Console = console ?? new ConsoleOutput();
-            this.File = file ?? new FileOutput();
+            this.File = file;
             this.outputs = outputs ?? new List<Output>();
         }
 
@@ -68,6 +69,18 @@ namespace SharpLog.Settings
             {
                 this.file?.Dispose();
                 this.file = value;
+                value?.Start();
+            }
+        }
+
+        public EmailOutput Email
+        {
+            get => this.email;
+            set
+            {
+                this.email?.Dispose();
+                this.email = value;
+                value?.Start();
             }
         }
 
@@ -114,26 +127,12 @@ namespace SharpLog.Settings
         public void Dispose()
         {
             this.File?.Dispose();
+            this.Email?.Dispose();
             this.outputs.ForEach(o =>
             {
                 if (o is AsyncOutput asyncOutput)
                 {
                     asyncOutput.Dispose();
-                }
-            });
-        }
-
-        /// <summary>
-        /// Starts this instance.
-        /// </summary>
-        internal void Start()
-        {
-            this.File?.Start();
-            this.outputs.ForEach(o =>
-            {
-                if (o is AsyncOutput asyncOutput)
-                {
-                    asyncOutput.Start();
                 }
             });
         }

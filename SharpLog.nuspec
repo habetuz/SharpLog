@@ -11,7 +11,12 @@
     <repository type="git" url="https://github.com/habetuz/SharpLog" branch="master"/>
     <description>A small logger for big projects</description>
     <releaseNotes>
-      Completely rewritten. Read the documentation for more information.
+      - Add a new Output: Email output.
+      - Make formatter public.
+      - SharpLog logs get called with "SHARPLOG_INTERNAL" tag that cannot be overwritten.
+      - Add retry option for async loggers.
+      - Fixed async logging not clearing the log queue.
+      - Disable file logger on default.
     </releaseNotes>
     <copyright>$copyright$</copyright>
     <tags>Logger</tags>

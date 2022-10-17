@@ -29,14 +29,13 @@ Some outputs are already provided out-of-the-box:
 ## Example
 
 ``` c#
-SharpLog.Logging.LogDebug("Debug!", typeof(Program));
-SharpLog.Logging.LogTrace("Trace!", typeof(Program));
-SharpLog.Logging.LogInfo("Info!", typeof(Program));
-SharpLog.Logging.LogWarning("Warning!", typeof(Program));
-SharpLog.Logging.LogError("Error!", typeof(Program));
+SharpLog.Logging.LogDebug("Debug!");
+SharpLog.Logging.LogTrace("Trace!");
+SharpLog.Logging.LogInfo("Info!");
+SharpLog.Logging.LogWarning("Warning!");
+SharpLog.Logging.LogError("Error!");
 SharpLog.Logging.LogFatal( //🚪Exits program after logging your message.
-    "Fatal!", 
-    typeof(Program), 
+    "Fatal!",
     exception: new Exception("Test"), 
-    stackTrace: new StackTrace(true).ToString());
+    stackTrace: true);
 ```

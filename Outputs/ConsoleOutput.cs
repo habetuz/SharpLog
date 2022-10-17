@@ -78,8 +78,16 @@ namespace SharpLog.Outputs
         /// <param name="log">The log.</param>
         public override void Write(string formattedLog, Log log)
         {
-            Console.BackgroundColor = this.Colors.ContainsKey(log.Level) ? this.Colors[log.Level].Background : ConsoleColor.Black;
-            Console.ForegroundColor = this.Colors.ContainsKey(log.Level) ? this.Colors[log.Level].Foreground : ConsoleColor.White;
+            if (this.ColorEnabled)
+            {
+                Console.BackgroundColor = this.Colors.ContainsKey(log.Level) ? this.Colors[log.Level].Background : ConsoleColor.Black;
+                Console.ForegroundColor = this.Colors.ContainsKey(log.Level) ? this.Colors[log.Level].Foreground : ConsoleColor.White;
+            }
+            else
+            {
+                Console.ResetColor();
+            }
+
             Console.WriteLine(formattedLog);
             Console.ResetColor();
         }

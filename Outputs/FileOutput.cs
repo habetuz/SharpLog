@@ -75,7 +75,7 @@ namespace SharpLog.Outputs
             }
             catch (Exception e)
             {
-                Logging.LogError("An error occurred while logging to a file.", typeof(FileOutput), "SHARPLOG_INTERNAL", e);
+                Logging.LogError("An error occurred while logging to a file.", "SHARPLOG_INTERNAL", e);
             }
 
             return false;

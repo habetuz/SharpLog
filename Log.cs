@@ -11,6 +11,7 @@
 namespace SharpLog
 {
     using System;
+    using System.Reflection;
     using SharpLog.Settings;
 
     /// <summary>
@@ -24,17 +25,19 @@ namespace SharpLog
         /// <param name="level">The level.</param>
         /// <param name="message">The message.</param>
         /// <param name="class">The class.</param>
+        /// <param name="method">The method.</param>
         /// <param name="tag">The tag.</param>
         /// <param name="exception">The exception.</param>
         /// <param name="levelSettings">The level settings.</param>
         /// <param name="format">The format.</param>
         /// <param name="time">The time.</param>
         /// <param name="stackTrace">The stack trace.</param>
-        public Log(LogLevel level, object message, Type @class, string tag, Exception exception, Level levelSettings, string format, DateTime time, string stackTrace)
+        public Log(LogLevel level, object message, Type @class, MethodBase method, string tag, Exception exception, Level levelSettings, string format, DateTime time, string stackTrace)
         {
             this.Level = level;
             this.Message = message;
             this.Class = @class;
+            this.Function = method;
             this.Tag = tag;
             this.Exception = exception;
             this.LevelSettings = levelSettings;
@@ -58,6 +61,8 @@ namespace SharpLog
         /// The class.
         /// </value>
         public Type Class { get; set; }
+
+        public MethodBase Function { get; set; }
 
         /// <summary>
         /// Gets or sets the message.

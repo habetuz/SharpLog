@@ -13,7 +13,7 @@ namespace SharpLog
     using System;
     using System.Collections.Generic;
     using System.IO;
-using System.Net;
+    using System.Net;
     using System.Security;
     using SharpLog.Settings;
     using YamlDotNet.Core;
@@ -32,20 +32,20 @@ using System.Net;
         }
 
         /// <summary>
-        /// Gets a value indicating whether this instance is disposed.
-        /// </summary>
-        /// <value>
-        ///   <c>true</c> if this instance is disposed; otherwise, <c>false</c>.
-        /// </value>
-        internal static bool IsDisposed { get; private set; }
-
-        /// <summary>
         /// Gets or sets the settings.
         /// </summary>
         /// <value>
         /// The settings.
         /// </value>
         public static BaseSettings Settings { get; set; }
+
+        /// <summary>
+        /// Gets a value indicating whether this instance is disposed.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is disposed; otherwise, <c>false</c>.
+        /// </value>
+        internal static bool IsDisposed { get; private set; }
 
         /// <summary>
         /// Reloads the settings.
@@ -85,19 +85,19 @@ using System.Net;
                 Settings = new BaseSettings();
                 if (ex is FileNotFoundException || ex is DirectoryNotFoundException)
                 {
-                    Logging.LogWarning("Settings file (sharplog.yml) not found, using default settings.", typeof(SettingsManager), "SHARPLOG_INTERNAL");
+                    Logging.LogWarning("Settings file (sharplog.yml) not found, using default settings.", "SHARPLOG_INTERNAL", ex);
                 }
                 else if (ex is UnauthorizedAccessException || ex is SecurityException)
                 {
-                    Logging.LogWarning("Settings file (sharplog.yml) not accessible, using default settings.", typeof(SettingsManager), "SHARPLOG_INTERNAL");
+                    Logging.LogWarning("Settings file (sharplog.yml) not accessible, using default settings.", "SHARPLOG_INTERNAL", ex);
                 }
                 else if (ex is YamlException)
                 {
-                    Logging.LogWarning("Settings file is invalid, using default settings.", typeof(SettingsManager), "SHARPLOG_INTERNAL", ex.GetBaseException());
+                    Logging.LogWarning("Settings file is invalid, using default settings.", "SHARPLOG_INTERNAL", ex);
                 }
                 else
                 {
-                    Logging.LogError("Settings file not readable, using default settings.", typeof(SettingsManager), "SHARPLOG_INTERNAL", ex);
+                    Logging.LogError("Settings file not readable, using default settings.", "SHARPLOG_INTERNAL", ex);
                 }
 
                 return;
@@ -107,74 +107,74 @@ using System.Net;
             if (Settings.Tags == null)
             {
                 ReloadSettings(false);
-                Logging.LogWarning("\"tags\" set to \"null\". Remove property or provide valid arguments. Using default settings.", typeof(SettingsManager), "SHARPLOG_INTERNAL");
+                Logging.LogWarning("\"tags\" set to \"null\". Remove property or provide valid arguments. Using default settings.", "SHARPLOG_INTERNAL");
                 return;
             }
 
             if (Settings.Outputs == null)
             {
                 ReloadSettings(false);
-                Logging.LogWarning("\"outputs\" set to \"null\". Remove property or provide valid arguments. Using default settings.", typeof(SettingsManager), "SHARPLOG_INTERNAL");
+                Logging.LogWarning("\"outputs\" set to \"null\". Remove property or provide valid arguments. Using default settings.", "SHARPLOG_INTERNAL");
                 return;
             }
 
             if (Settings.Levels == null)
             {
                 ReloadSettings(false);
-                Logging.LogWarning("\"levels\" set to \"null\". Remove property or provide valid arguments. Using default settings.", typeof(SettingsManager), "SHARPLOG_INTERNAL");
+                Logging.LogWarning("\"levels\" set to \"null\". Remove property or provide valid arguments. Using default settings.", "SHARPLOG_INTERNAL");
                 return;
             }
 
             if (Settings.Format == null)
             {
                 ReloadSettings(false);
-                Logging.LogWarning("\"format\" set to \"null\". Remove property or provide valid arguments. Using default settings.", typeof(SettingsManager), "SHARPLOG_INTERNAL");
+                Logging.LogWarning("\"format\" set to \"null\". Remove property or provide valid arguments. Using default settings.", "SHARPLOG_INTERNAL");
                 return;
             }
 
             if (Settings.Levels.Debug == null)
             {
                 ReloadSettings(false);
-                Logging.LogWarning("\"levels.debug\" set to \"null\". Remove property or provide valid arguments. Using default settings.", typeof(SettingsManager), "SHARPLOG_INTERNAL");
+                Logging.LogWarning("\"levels.debug\" set to \"null\". Remove property or provide valid arguments. Using default settings.", "SHARPLOG_INTERNAL");
                 return;
             }
 
             if (Settings.Levels.Trace == null)
             {
                 ReloadSettings(false);
-                Logging.LogWarning("\"levels.trace\" set to \"null\". Remove property or provide valid arguments. Using default settings.", typeof(SettingsManager), "SHARPLOG_INTERNAL");
+                Logging.LogWarning("\"levels.trace\" set to \"null\". Remove property or provide valid arguments. Using default settings.", "SHARPLOG_INTERNAL");
                 return;
             }
 
             if (Settings.Levels.Info == null)
             {
                 ReloadSettings(false);
-                Logging.LogWarning("\"levels.info\" set to \"null\". Remove property or provide valid arguments. Using default settings.", typeof(SettingsManager), "SHARPLOG_INTERNAL");
+                Logging.LogWarning("\"levels.info\" set to \"null\". Remove property or provide valid arguments. Using default settings.", "SHARPLOG_INTERNAL");
                 return;
             }
 
             if (Settings.Levels.Warn == null)
             {
                 ReloadSettings(false);
-                Logging.LogWarning("\"levels.warn\" set to \"null\". Remove property or provide valid arguments. Using default settings.", typeof(SettingsManager), "SHARPLOG_INTERNAL");
+                Logging.LogWarning("\"levels.warn\" set to \"null\". Remove property or provide valid arguments. Using default settings.", "SHARPLOG_INTERNAL");
                 return;
             }
 
             if (Settings.Levels.Error == null)
             {
                 ReloadSettings(false);
-                Logging.LogWarning("\"levels.error\" set to \"null\". Remove property or provide valid arguments. Using default settings.", typeof(SettingsManager), "SHARPLOG_INTERNAL");
+                Logging.LogWarning("\"levels.error\" set to \"null\". Remove property or provide valid arguments. Using default settings.", "SHARPLOG_INTERNAL");
                 return;
             }
 
             if (Settings.Levels.Fatal == null)
             {
                 ReloadSettings(false);
-                Logging.LogWarning("\"levels.fatal\" set to \"null\". Remove property or provide valid arguments. Using default settings.", typeof(SettingsManager), "SHARPLOG_INTERNAL");
+                Logging.LogWarning("\"levels.fatal\" set to \"null\". Remove property or provide valid arguments. Using default settings.", "SHARPLOG_INTERNAL");
                 return;
             }
 
-            Logging.LogInfo("Settings file loaded successfully!", typeof(SettingsManager), "SHARPLOG_INTERNAL");
+            Logging.LogInfo("Settings file loaded successfully!", "SHARPLOG_INTERNAL");
         }
 
         /// <summary>

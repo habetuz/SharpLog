@@ -24,7 +24,7 @@ namespace SharpLog.Settings
         /// </summary>
         public BaseSettings()
             : this(
-            fomat: "$D$: [$L$]$Cp{ [}s{] }$$Tp{ [}s{] }$ $M$$Ep{\n}$$Sp{\n}$",
+            fomat: "$D$: [$L$][$C$->$F$] $M$$Ep{\n}$$Sp{\n}$",
             levels: null,
             outputs: null,
             tags: null)

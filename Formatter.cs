@@ -8,6 +8,8 @@
 // Visit https://sharplog.marvin-fuchs.de for more information.
 // </summary>
 
+using System.Reflection;
+
 namespace SharpLog
 {
     /// <summary>
@@ -137,6 +139,31 @@ namespace SharpLog
 
                             output += $"{prefix}{log.Class}{suffix}";
                             break;
+
+                        case 'F':
+                            (argument, prefix, suffix, i) = GetArguments(format, i);
+                            if (log.Function == null)
+                            {
+                                break;
+                            }
+
+                            switch (argument)
+                            {
+                                case "l":
+                                    output += $"{prefix}{log.Function}{suffix}";
+                                    break;
+                                case "s":
+                                    goto default;
+                                default:
+                                    output +=
+                                        $"{prefix}" +
+                                        $"{log.Function.Name}{suffix}" +
+                                        $"{(log.Function.IsGenericMethod ? "[...]" : string.Empty)}" +
+                                        $"{(log.Function.GetParameters().Length > 0 ? "(...)" : "()")}";
+                                    break;
+                            }
+
+                            break;
                         case 'E':
                             (_, prefix, suffix, i) = GetArguments(format, i);
                             if (log.Exception == null)
@@ -144,7 +171,26 @@ namespace SharpLog
                                 break;
                             }
 
-                            output += $"{prefix}{log.Exception.GetType().Name}: {log.Exception.Message}{suffix}";
+                            output += prefix;
+
+                            var exception = log.Exception;
+                            int depth = 0;
+                            do
+                            {
+                                if (depth > 0)
+                                {
+                                    output += "\n";
+                                }
+
+                                output += new string(' ', depth * 2);
+
+                                output += $"{exception.GetType().Name}: {exception.Message}";
+                                exception = exception.InnerException;
+                                depth++;
+                            }
+                            while (exception != null);
+
+                            output += suffix;
                             break;
                         case 'S':
                             (_, prefix, suffix, i) = GetArguments(format, i);

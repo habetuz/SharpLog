@@ -24,8 +24,6 @@ namespace SharpLog.Outputs
         private BlockingCollection<(string, Log)> queue = new BlockingCollection<(string, Log)>();
         private Task task;
         private CancellationTokenSource cancellationToken;
-        protected event EventHandler OnStart;
-        protected event EventHandler OnDispose;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AsyncOutput"/> class.
@@ -41,6 +39,10 @@ namespace SharpLog.Outputs
         {
             this.SuspendTime = suspendTime;
         }
+
+        protected event EventHandler OnStart;
+
+        protected event EventHandler OnDispose;
 
         /// <summary>
         /// Gets or sets the time the output waits until it checks for new logs in ms.

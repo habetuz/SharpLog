@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>MarvinFuchs.SharpLog</id>
-    <version>3.0.0</version>
+    <version>3.1.0</version>
     <title>$title$</title>
     <authors>Marvin Fuchs</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -11,12 +11,7 @@
     <repository type="git" url="https://github.com/habetuz/SharpLog" branch="master"/>
     <description>A small logger for big projects</description>
     <releaseNotes>
-      - Add a new Output: Email output.
-      - Make formatter public.
-      - SharpLog logs get called with "SHARPLOG_INTERNAL" tag that cannot be overwritten.
-      - Add retry option for async loggers.
-      - Fixed async logging not clearing the log queue.
-      - Disable file logger on default.
+      https://github.com/habetuz/SharpLog/releases/tag/v3.2.0
     </releaseNotes>
     <copyright>$copyright$</copyright>
     <tags>Logger</tags>

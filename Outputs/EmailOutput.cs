@@ -101,7 +101,7 @@ namespace SharpLog.Outputs
                 }
                 catch (Exception e)
                 {
-                    Logging.LogError("An exception occurred while sending a mail!", typeof(EmailOutput), "SHARPLOG_INTERNAL", e.InnerException);
+                    Logging.LogError("An exception occurred while sending a mail!", "SHARPLOG_INTERNAL", e.InnerException);
                 }
             }
 

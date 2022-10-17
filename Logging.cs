@@ -11,6 +11,7 @@
 namespace SharpLog
 {
     using System;
+    using System.Diagnostics;
     using SharpLog.Settings;
 
     /// <summary>
@@ -35,16 +36,15 @@ namespace SharpLog
         /// </summary>
         /// <param name="level">The level. If the level is <see cref="LogLevel.Fatal"/> the program ends with code 0.</param>
         /// <param name="message">The message.</param>
-        /// <param name="origin">The origin.</param>
         /// <param name="tag">The tag.</param>
         /// <param name="exception">The exception.</param>
-        /// <param name="stackTrace">The stack trace.</param>
-        public static void Log(LogLevel level, object message, Type origin, string tag = null, Exception exception = null, string stackTrace = null)
+        /// <param name="stackTrace">Wether the stack trace should be logged.</param>
+        internal static void Log(LogLevel level, object message, string tag = null, Exception exception = null, bool stackTrace = false)
         {
             if (SettingsManager.IsDisposed)
             {
                 SettingsManager.ReloadSettings();
-                LogWarning("SettingsManager was disposed, reloaded settings.", typeof(Logging), "SHARPLOG-INITIALIZATION");
+                LogWarning("SettingsManager was disposed, reloaded settings.", "SHARPLOG-INITIALIZATION");
             }
 
             // Check if the settings contain the specified tag
@@ -108,12 +108,19 @@ namespace SharpLog
             {
                 format = tagContainer.Format;
             }
+            else if (levelSettings.Format != null)
+            {
+                format = levelSettings.Format;
+            }
             else
             {
                 format = SettingsManager.Settings.Format;
             }
 
-            Log log = new Log(level, message, origin, tag, exception, levelSettings, format, DateTime.Now, stackTrace);
+            // Generate stack trace
+            var stack = stackTrace ? new StackTrace(2, true) : new StackTrace(2, false);
+
+            Log log = new Log(level, message, stack.GetFrame(0).GetMethod().DeclaringType, stack.GetFrame(0).GetMethod(), tag, exception, levelSettings, format, DateTime.Now, stackTrace ? stack.ToString() : null);
 
             outputContainer.Console?.Write(log);
             outputContainer.File?.Write(log);
@@ -134,13 +141,12 @@ namespace SharpLog
         /// Logs a debug log message.
         /// </summary>
         /// <param name="message">The message.</param>
-        /// <param name="origin">The origin.</param>
         /// <param name="tag">The tag.</param>
         /// <param name="exception">The exception.</param>
-        /// <param name="stackTrace">The stack trace.</param>
-        public static void LogDebug(object message, Type origin, string tag = null, Exception exception = null, string stackTrace = null)
+        /// <param name="stackTrace">Wether the stack trace should be logged.</param>
+        public static void LogDebug(object message, string tag = null, Exception exception = null, bool stackTrace = false)
         {
-            Log(LogLevel.Debug, message, origin, tag, exception, stackTrace);
+            Log(LogLevel.Debug, message, tag, exception, stackTrace);
         }
 
         /// <summary>
@@ -150,23 +156,22 @@ namespace SharpLog
         /// <param name="origin">The origin.</param>
         /// <param name="tag">The tag.</param>
         /// <param name="exception">The exception.</param>
-        /// <param name="stackTrace">The stack trace.</param>
-        public static void LogTrace(object message, Type origin, string tag = null, Exception exception = null, string stackTrace = null)
+        /// <param name="stackTrace">Wether the stack trace should be logged.</param>
+        public static void LogTrace(object message, string tag = null, Exception exception = null, bool stackTrace = false)
         {
-            Log(LogLevel.Trace, message, origin, tag, exception, stackTrace);
+            Log(LogLevel.Trace, message, tag, exception, stackTrace);
         }
 
         /// <summary>
         /// Logs an information log message.
         /// </summary>
         /// <param name="message">The message.</param>
-        /// <param name="origin">The origin.</param>
         /// <param name="tag">The tag.</param>
         /// <param name="exception">The exception.</param>
-        /// <param name="stackTrace">The stack trace.</param>
-        public static void LogInfo(object message, Type origin, string tag = null, Exception exception = null, string stackTrace = null)
+        /// <param name="stackTrace">Wether the stack trace should be logged.</param>
+        public static void LogInfo(object message, string tag = null, Exception exception = null, bool stackTrace = false)
         {
-            Log(LogLevel.Info, message, origin, tag, exception, stackTrace);
+            Log(LogLevel.Info, message, tag, exception, stackTrace);
         }
 
         /// <summary>
@@ -176,36 +181,34 @@ namespace SharpLog
         /// <param name="origin">The origin.</param>
         /// <param name="tag">The tag.</param>
         /// <param name="exception">The exception.</param>
-        /// <param name="stackTrace">The stack trace.</param>
-        public static void LogWarning(object message, Type origin, string tag = null, Exception exception = null, string stackTrace = null)
+        /// <param name="stackTrace">Wether the stack trace should be logged.</param>
+        public static void LogWarning(object message, string tag = null, Exception exception = null, bool stackTrace = false)
         {
-            Log(LogLevel.Warn, message, origin, tag, exception, stackTrace);
+            Log(LogLevel.Warn, message, tag, exception, stackTrace);
         }
 
         /// <summary>
         /// Logs an error log message.
         /// </summary>
         /// <param name="message">The message.</param>
-        /// <param name="origin">The origin.</param>
         /// <param name="tag">The tag.</param>
         /// <param name="exception">The exception.</param>
-        /// <param name="stackTrace">The stack trace.</param>
-        public static void LogError(object message, Type origin, string tag = null, Exception exception = null, string stackTrace = null)
+        /// <param name="stackTrace">Wether the stack trace should be logged.</param>
+        public static void LogError(object message, string tag = null, Exception exception = null, bool stackTrace = false)
         {
-            Log(LogLevel.Error, message, origin, tag, exception, stackTrace);
+            Log(LogLevel.Error, message, tag, exception, stackTrace);
         }
 
         /// <summary>
         /// Logs a fatal log message and exits the program with code 1.
         /// </summary>
         /// <param name="message">The message.</param>
-        /// <param name="origin">The origin.</param>
         /// <param name="tag">The tag.</param>
         /// <param name="exception">The exception.</param>
-        /// <param name="stackTrace">The stack trace.</param>
-        public static void LogFatal(object message, Type origin, string tag = null, Exception exception = null, string stackTrace = null)
+        /// <param name="stackTrace">Wether the stack trace should be logged.</param>
+        public static void LogFatal(object message, string tag = null, Exception exception = null, bool stackTrace = false)
         {
-            Log(LogLevel.Fatal, message, origin, tag, exception, stackTrace);
+            Log(LogLevel.Fatal, message, tag, exception, stackTrace);
         }
 
         /// <summary>

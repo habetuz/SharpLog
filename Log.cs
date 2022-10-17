@@ -55,13 +55,16 @@ namespace SharpLog
         public LogLevel Level { get; set; }
 
         /// <summary>
-        /// Gets or sets the class from wich the log comes from.
+        /// Gets or sets the sender type.
         /// </summary>
         /// <value>
         /// The class.
         /// </value>
         public Type Class { get; set; }
 
+        /// <summary>
+        /// Gets or sets the sender function.
+        /// </summary>
         public MethodBase Function { get; set; }
 
         /// <summary>

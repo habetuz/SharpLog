@@ -16,33 +16,35 @@ public struct Log
 
 ### Constructors
 
-| Name                                                                                                                                                        |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`Log(LogLevel, object, Type, string, Exception, Level, string, DateTime, string)`](#logloglevel-object-type-string-exception-level-string-datetime-string) |
+| Name                                                                                                                                                                               |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`Log(LogLevel, object, Type, MethodBase, string, Exception, Level, string, DateTime, string)`](#logloglevel-object-type-methodbase-string-exception-level-string-datetime-string) |
 
 ### Properties
 
-| Name                             | Type                                                                      | GET                 | SET                 |
-| -------------------------------- | ------------------------------------------------------------------------- | ------------------- | ------------------- |
-| [`Level`](#level)                | [LogLevel](LogLevel.md)                                                   | :octicons-check-16: | :octicons-check-16: |
-| [`Class`](#class)                | [Type](https://docs.microsoft.com/en-us/dotnet/api/system.type)           | :octicons-check-16: | :octicons-check-16: |
-| [`Message`](#message)            | [object](https://docs.microsoft.com/en-us/dotnet/api/system.object)       | :octicons-check-16: | :octicons-check-16: |
-| [`Tag`](#tag)                    | [string](https://docs.microsoft.com/en-us/dotnet/api/system.string)       | :octicons-check-16: | :octicons-check-16: |
-| [`Exception`](#exception)        | [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception) | :octicons-check-16: | :octicons-check-16: |
-| [`LevelSettings`](levelsettings) | [Level](Level.md)                                                         | :octicons-check-16: | :octicons-check-16: |
-| [`Format`](#format)              | [string](https://docs.microsoft.com/en-us/dotnet/api/system.string)       | :octicons-check-16: | :octicons-check-16: |
-| [`Time`](#time)                  | [DateTime](https://docs.microsoft.com/en-us/dotnet/api/system.datetime)   | :octicons-check-16: | :octicons-check-16: |
-| [`StackTrace`](#stacktrace)      | [string](https://docs.microsoft.com/en-us/dotnet/api/system.string)       | :octicons-check-16: | :octicons-check-16: |
+| Name                             | Type                                                                                    | GET                 | SET                 |
+| -------------------------------- | --------------------------------------------------------------------------------------- | ------------------- | ------------------- |
+| [`Level`](#level)                | [LogLevel](LogLevel.md)                                                                 | :octicons-check-16: | :octicons-check-16: |
+| [`Class`](#class)                | [Type](https://docs.microsoft.com/en-us/dotnet/api/system.type)                         | :octicons-check-16: | :octicons-check-16: |
+| [`Function`](#function)          | [MethodBase](https://learn.microsoft.com/en-us/dotnet/api/system.reflection.methodbase) | :octicons-check-16: | :octicons-check-16: |
+| [`Message`](#message)            | [object](https://docs.microsoft.com/en-us/dotnet/api/system.object)                     | :octicons-check-16: | :octicons-check-16: |
+| [`Tag`](#tag)                    | [string](https://docs.microsoft.com/en-us/dotnet/api/system.string)                     | :octicons-check-16: | :octicons-check-16: |
+| [`Exception`](#exception)        | [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception)               | :octicons-check-16: | :octicons-check-16: |
+| [`LevelSettings`](levelsettings) | [Level](Level.md)                                                                       | :octicons-check-16: | :octicons-check-16: |
+| [`Format`](#format)              | [string](https://docs.microsoft.com/en-us/dotnet/api/system.string)                     | :octicons-check-16: | :octicons-check-16: |
+| [`Time`](#time)                  | [DateTime](https://docs.microsoft.com/en-us/dotnet/api/system.datetime)                 | :octicons-check-16: | :octicons-check-16: |
+| [`StackTrace`](#stacktrace)      | [string](https://docs.microsoft.com/en-us/dotnet/api/system.string)                     | :octicons-check-16: | :octicons-check-16: |
 
 ## Constructors
 
-### Log(LogLevel, object, Type, string, Exception, Level, string, DateTime, string)
+### Log(LogLevel, object, Type, MethodBase, string, Exception, Level, string, DateTime, string)
 
 ```c#
 public Log(
     LogLevel level, 
     object message, 
     Type @class, 
+    MethodBase function,
     string tag, 
     Exception exception, 
     Level levelSettings, 
@@ -63,6 +65,9 @@ public Log(
 
 `@class` [Type](https://docs.microsoft.com/en-us/dotnet/api/system.type)  · :octicons-milestone-16: :octicons-x-16:
 :   The class.
+
+`function` [MethodBase](https://learn.microsoft.com/en-us/dotnet/api/system.reflection.methodbase)  · :octicons-milestone-16: :octicons-x-16:
+    The function.
 
 `tag` [string](https://docs.microsoft.com/en-us/dotnet/api/system.string)  · :octicons-milestone-16: :octicons-x-16:
 :   The tag.
@@ -102,7 +107,17 @@ public Type Class { get; set; }
 
 Type: [Type](https://docs.microsoft.com/en-us/dotnet/api/system.type)
 
-:   Gets or sets the class from wich the log comes from.
+:   Gets or sets the sender type.
+
+### Function
+
+```c#
+public MethodBase Function { get; set; }
+```
+
+Type: [MethodBase](https://learn.microsoft.com/en-us/dotnet/api/system.reflection.methodbase)
+
+:   Gets or sets the sender function.
 
 ### Message
 

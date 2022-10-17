@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>MarvinFuchs.SharpLog</id>
-    <version>3.2.0</version>
+    <version>3.3.1</version>
     <title>$title$</title>
     <authors>Marvin Fuchs</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -11,7 +11,7 @@
     <repository type="git" url="https://github.com/habetuz/SharpLog" branch="master"/>
     <description>A small logger for big projects</description>
     <releaseNotes>
-      https://github.com/habetuz/SharpLog/releases/tag/v3.2.0
+      https://github.com/habetuz/SharpLog/releases/tag/v3.3.1
     </releaseNotes>
     <copyright>$copyright$</copyright>
     <tags>Logger</tags>

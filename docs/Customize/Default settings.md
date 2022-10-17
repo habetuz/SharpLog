@@ -3,7 +3,7 @@ title: Default settings
 ---
 
 ``` yaml title="sharplog.yml"
-format: '$D$: [$L$]$Cp{ [}s{] }$$Tp{ [}s{] }$ $M$$Ep{\n}$$Sp{\n}$'
+format: '$D$: [$L$][$C$->$F$] $M$$Ep{\n}i{   }$$Sp{\n}$'
 levels:
   debug:
     short: '?'

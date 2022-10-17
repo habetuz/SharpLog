@@ -40,8 +40,14 @@ namespace SharpLog.Outputs
             this.SuspendTime = suspendTime;
         }
 
+        /// <summary>
+        /// Event called when the output gets started.
+        /// </summary>
         protected event EventHandler OnStart;
 
+        /// <summary>
+        /// Event called when the output gets disposed.
+        /// </summary>
         protected event EventHandler OnDispose;
 
         /// <summary>

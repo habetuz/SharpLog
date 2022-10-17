@@ -1,4 +1,4 @@
-﻿format: '$D$: [$L$][$C$->$F$] $M$$Ep{\n}$$Sp{\n}$'
+﻿format: '$D$: [$L$][$C$->$F$] $M$$Ep{\n}i{   }$$Sp{\n}$'
 levels:
   debug:
     short: '?'

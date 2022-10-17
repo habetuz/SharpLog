@@ -29,6 +29,8 @@ Some outputs are already provided out-of-the-box:
 
 - [:material-file:](FileOutput.md) Store your logs in a log file without blocking the file!
 
+- [:material-email:](EmailOutput.md) Send your logs via email!
+
 ## Example
 
 ``` c#

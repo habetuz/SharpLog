@@ -11,11 +11,13 @@
 namespace SharpLog.Outputs
 {
     using System;
-    using System.Net;
     using System.Net.Mail;
     using SharpLog.Settings;
     using MailAddress = SharpLog.Settings.Wrapper.MailAddress;
 
+    /// <summary>
+    /// Output sending mails.
+    /// </summary>
     public class EmailOutput : AsyncOutput, IDisposable
     {
         /// <summary>
@@ -26,6 +28,16 @@ namespace SharpLog.Outputs
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EmailOutput"/> class.
+        /// </summary>
+        /// <param name="client">The smpt client.</param>
+        /// <param name="from">The email from field.</param>
+        /// <param name="to">The email to field.</param>
+        /// <param name="formatSubject">The format of the subject field.</param>
+        /// <param name="suspendTime">The time the output waits until it checks for new logs in ms.</param>
+        /// <param name="format">The format of the output.</param>
+        /// <param name="levels">The level settings of the output.</param>
         public EmailOutput(
             SmtpClient client,
             MailAddress from,
@@ -46,16 +58,34 @@ namespace SharpLog.Outputs
             base.OnDispose += this.OnDispose;
         }
 
+        /// <summary>
+        /// Gets or sets the smpt client.
+        /// </summary>
         public SmtpClient Client { get; set; }
 
+        /// <summary>
+        /// Gets or sets the email from field.
+        /// </summary>
         public MailAddress From { get; set; }
 
+        /// <summary>
+        /// Gets or sets the email to field.
+        /// </summary>
         public MailAddress[] To { get; set; }
 
+        /// <summary>
+        /// Gets or sets the email bcc field.
+        /// </summary>
         public MailAddress[] Bcc { get; set; }
 
+        /// <summary>
+        /// Gets or sets the email cc field.
+        /// </summary>
         public MailAddress[] CC { get; set; }
 
+        /// <summary>
+        /// Gets or sets the format of the subject field.
+        /// </summary>
         public string FormatSubject { get; set; }
 
         /// <inheritdoc/>

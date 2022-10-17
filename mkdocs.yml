@@ -63,6 +63,8 @@ nav:
       - Reference/Outputs/ConsoleOutput.md
       - Reference/Outputs/FileOutput.md
       - Reference/Outputs/AsyncOutput.md
+      - Reference/Outputs/EmailOutput.md
+      - Reference/Outputs/MailAddress.md
     - Settings:
       - Reference/Settings/index.md
       - Reference/Settings/BaseSettings.md

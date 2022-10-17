@@ -86,7 +86,7 @@ namespace SharpLog
                         //   ...$Da{...}p{...}s{...}$...
                         // > ...[prefix (p)][value (time, log level, message, etc.)][suffix (s)]...
                         case 'D':
-                            (string argument, string prefix, string suffix, int index) = GetArguments(format, i);
+                            (string argument, string prefix, string suffix, string indentation, int index) = GetArguments(format, i);
                             i = index;
                             string date;
                             if (argument == string.Empty)
@@ -98,10 +98,10 @@ namespace SharpLog
                                 date = log.Time.ToString(argument);
                             }
 
-                            output += $"{prefix}{date}{suffix}";
+                            output += $"{prefix}{indentation}{date}{suffix}";
                             break;
                         case 'L':
-                            (argument, prefix, suffix, i) = GetArguments(format, i);
+                            (argument, prefix, suffix, indentation, i) = GetArguments(format, i);
                             string logLevel;
                             switch (argument)
                             {
@@ -115,23 +115,26 @@ namespace SharpLog
                                     break;
                             }
 
-                            output += $"{prefix}{logLevel}{suffix}";
+                            output += $"{prefix}{indentation}{logLevel}{suffix}";
                             break;
                         case 'T':
-                            (_, prefix, suffix, i) = GetArguments(format, i);
+                            (_, prefix, suffix, indentation, i) = GetArguments(format, i);
                             if (log.Tag == null)
                             {
                                 break;
                             }
 
-                            output += $"{prefix}{log.Tag}{suffix}";
+                            output += $"{prefix}{indentation}{log.Tag}{suffix}";
                             break;
                         case 'M':
-                            (_, prefix, suffix, i) = GetArguments(format, i);
-                            output += $"{prefix}{log.Message}{suffix}";
+                            (_, prefix, suffix, indentation, i) = GetArguments(format, i);
+
+                            var m = log.Message.ToString().Replace("\n", $"\n{indentation}");
+
+                            output += $"{prefix}{indentation}{m}{suffix}";
                             break;
                         case 'C':
-                            (_, prefix, suffix, i) = GetArguments(format, i);
+                            (_, prefix, suffix, indentation, i) = GetArguments(format, i);
                             if (log.Class == null)
                             {
                                 break;
@@ -141,7 +144,7 @@ namespace SharpLog
                             break;
 
                         case 'F':
-                            (argument, prefix, suffix, i) = GetArguments(format, i);
+                            (argument, prefix, suffix, indentation, i) = GetArguments(format, i);
                             if (log.Function == null)
                             {
                                 break;
@@ -157,6 +160,7 @@ namespace SharpLog
                                 default:
                                     output +=
                                         $"{prefix}" +
+                                        $"{indentation}" +
                                         $"{log.Function.Name}{suffix}" +
                                         $"{(log.Function.IsGenericMethod ? "[...]" : string.Empty)}" +
                                         $"{(log.Function.GetParameters().Length > 0 ? "(...)" : "()")}";
@@ -165,7 +169,7 @@ namespace SharpLog
 
                             break;
                         case 'E':
-                            (_, prefix, suffix, i) = GetArguments(format, i);
+                            (_, prefix, suffix, indentation, i) = GetArguments(format, i);
                             if (log.Exception == null)
                             {
                                 break;
@@ -182,9 +186,9 @@ namespace SharpLog
                                     output += "\n";
                                 }
 
-                                output += new string(' ', depth * 2);
+                                output += new string(' ', depth * 3);
 
-                                output += $"{exception.GetType().Name}: {exception.Message}";
+                                output += $"{indentation}{exception.GetType().Name}: {exception.Message}";
                                 exception = exception.InnerException;
                                 depth++;
                             }
@@ -193,18 +197,21 @@ namespace SharpLog
                             output += suffix;
                             break;
                         case 'S':
-                            (_, prefix, suffix, i) = GetArguments(format, i);
+                            (_, prefix, suffix, indentation, i) = GetArguments(format, i);
                             if (log.StackTrace == null)
                             {
                                 break;
                             }
 
-                            output += $"{prefix}{log.StackTrace}{suffix}";
+                            var s = log.StackTrace.Replace("\n", $"\n{indentation}");
+                            s = s.Remove(s.Length - 2);
+
+                            output += $"{prefix}{indentation}{s}{suffix}";
                             break;
                         default:
                             char placeholder = format[i];
-                            (_, prefix, suffix, i) = GetArguments(format, i);
-                            output += $"${placeholder}:{prefix}!UNKNOWN PLACEHOLDER!{suffix}$";
+                            (_, prefix, suffix, indentation, i) = GetArguments(format, i);
+                            output += $"${placeholder}:{prefix}{indentation}!UNKNOWN PLACEHOLDER!{suffix}$";
                             break;
                     }
                 }
@@ -214,11 +221,12 @@ namespace SharpLog
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1005:Single line comments should begin with single space", Justification = "Needed for formatting")]
-        private static (string argument, string prefix, string suffix, int index) GetArguments(string format, int index)
+        private static (string argument, string prefix, string suffix, string indentation, int index) GetArguments(string format, int index)
         {
             string argument = string.Empty;
             string prefix = string.Empty;
             string suffix = string.Empty;
+            string indentation = string.Empty;
 
             //      ˅ Get here
             // ...$D...
@@ -245,6 +253,12 @@ namespace SharpLog
                         //                                     ˅˅˅˅˅˅˅˅˅
                         (suffix, index) = GetSubstring(format, index + 1, '}');
                         break;
+                    case 'i':
+                        //                                         ˅ Get here
+                        //                                     ...i{...
+                        //                                     ˅˅˅˅˅˅˅˅˅
+                        (indentation, index) = GetSubstring(format, index + 1, '}');
+                        break;
                     default:
                         string prePrefix = format[index] + "{";
                         (prefix, index) = GetSubstring(format, index + 1, '}');
@@ -253,7 +267,7 @@ namespace SharpLog
                 }
             }
 
-            return (argument, prefix, suffix, index);
+            return (argument, prefix, suffix, indentation, index);
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1005:Single line comments should begin with single space", Justification = "Needed for formatting")]

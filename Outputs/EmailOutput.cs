@@ -24,16 +24,18 @@ namespace SharpLog.Outputs
         /// Initializes a new instance of the <see cref="EmailOutput"/> class.
         /// </summary>
         public EmailOutput()
-            : this(null, null, null)
+            : this(null, null)
         {
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="EmailOutput"/> class.
         /// </summary>
-        /// <param name="client">The smpt client.</param>
+        /// <param name="client">The smtp client.</param>
         /// <param name="from">The email from field.</param>
         /// <param name="to">The email to field.</param>
+        /// <param name="bcc">The email bcc field.</param>
+        /// <param name="cc">The email cc field.</param>
         /// <param name="formatSubject">The format of the subject field.</param>
         /// <param name="suspendTime">The time the output waits until it checks for new logs in ms.</param>
         /// <param name="format">The format of the output.</param>
@@ -41,7 +43,9 @@ namespace SharpLog.Outputs
         public EmailOutput(
             SmtpClient client,
             MailAddress from,
-            MailAddress[] to,
+            MailAddress[] to = null,
+            MailAddress[] bcc = null,
+            MailAddress[] cc = null,
             string formatSubject = "[$La{l}$] $C$",
             int suspendTime = 5000,
             string format = null,
@@ -51,6 +55,8 @@ namespace SharpLog.Outputs
             this.Client = client;
             this.From = from;
             this.To = to;
+            this.Bcc = bcc;
+            this.Cc = cc;
             this.FormatSubject = formatSubject;
             this.Format = format;
 
@@ -59,7 +65,7 @@ namespace SharpLog.Outputs
         }
 
         /// <summary>
-        /// Gets or sets the smpt client.
+        /// Gets or sets the smtp client.
         /// </summary>
         public SmtpClient Client { get; set; }
 
@@ -81,7 +87,7 @@ namespace SharpLog.Outputs
         /// <summary>
         /// Gets or sets the email cc field.
         /// </summary>
-        public MailAddress[] CC { get; set; }
+        public MailAddress[] Cc { get; set; }
 
         /// <summary>
         /// Gets or sets the format of the subject field.
@@ -119,9 +125,9 @@ namespace SharpLog.Outputs
                         }
                     }
 
-                    if (this.CC != null)
+                    if (this.Cc != null)
                     {
-                        foreach (var cc in this.CC)
+                        foreach (var cc in this.Cc)
                         {
                             message.CC.Add(new System.Net.Mail.MailAddress(cc.Address, cc.DisplayName));
                         }
@@ -148,7 +154,7 @@ namespace SharpLog.Outputs
             {
                 throw new ArgumentNullException("FromAdress", "Property cannot be null!");
             }
-            else if (this.To == null && this.Bcc == null && this.CC == null)
+            else if (this.To == null && this.Bcc == null && this.Cc == null)
             {
                 throw new ArgumentNullException("To, Bcc, CC", "One receiver must be set!");
             }

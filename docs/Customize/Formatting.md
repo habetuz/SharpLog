@@ -31,16 +31,18 @@ Add up to three properties to each placeholder for more customization:
 | `p{...}` | Prefix that will be displayed before of the information.           |
 | `s{...}` | Suffix that will be displayed after the information.               |
 | `a{...}` | Arguments that some placeholders need to specify their formatting. |
+| `i{...}` | Indentation that will be displayed before every line.              |
+
 
 ## List of placeholders
 
 | Placeholder | Description                                   | Arguments                                                                                                                                                                      |
 | :---------: | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 |     `C`     | The namespace and class of the source.        | :material-minus-box:                                                                                                                                                           |
+|     `F`     | The source function.                          | `l` for the whole function definition.<br>`s` or empty for a short version.                                                                                                    |
 |     `D`     | The timestamp.                                | [Date and time format string](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings) or empty for standard format of your culture. |
 |     `E`     | The exception of the log source if available. | :material-minus-box:                                                                                                                                                           |
 |     `L`     | The log level.                                | `l` or empty for a written log level.<br>`s` for the short form specified in the [level settings](./index.md#set-tag-specific-settings).                                       |
 |     `M`     | The message.                                  | :material-minus-box:                                                                                                                                                           |
 |     `S`     | The stack trace if available.                 | :material-minus-box:                                                                                                                                                           |
 |     `T`     | The tag if available.                         | :material-minus-box:                                                                                                                                                           |
-

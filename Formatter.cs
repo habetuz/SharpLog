@@ -8,10 +8,10 @@
 // Visit https://sharplog.marvin-fuchs.de for more information.
 // </summary>
 
-using System.Reflection;
-
 namespace SharpLog
 {
+    using System.Reflection;
+
     /// <summary>
     /// Class for formatting <see cref="Log"/> objects.
     /// </summary>
@@ -140,7 +140,7 @@ namespace SharpLog
                                 break;
                             }
 
-                            output += $"{prefix}{log.Class}{suffix}";
+                            output += $"{prefix}{indentation}{log.Class}{suffix}";
                             break;
 
                         case 'F':

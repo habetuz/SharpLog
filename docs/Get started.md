@@ -16,22 +16,22 @@ Read [here](/Setup/) how you can customize your logger!
 To log a message just use `#!c# Logging.log(LogLevel.Debug, "Your Message", typeof(YourClass))` or a log level specific logging method:
 
 ``` c# title="Log level specific logging methods"
-Logging.LogDebug("Debug!", typeof(Program));
-Logging.LogTrace("Trace!", typeof(Program));
-Logging.LogInfo("Info!", typeof(Program));
-Logging.LogWarning("Warning!", typeof(Program));
-Logging.LogError("Error!", typeof(Program));
-Logging.LogFatal("Fatal!", typeof(Program));
+Logging.LogDebug("Debug!");
+Logging.LogTrace("Trace!");
+Logging.LogInfo("Info!");
+Logging.LogWarning("Warning!");
+Logging.LogError("Error!");
+Logging.LogFatal("Fatal!");
 ```
 
 <div class="result" markdown>
 ```
-24.04.2022 14:04:47: [Debug] [YourNamespace.Program]  Debug!
-24.04.2022 14:04:47: [Trace] [YourNamespace.Program]  Trace!
-24.04.2022 14:04:47: [Info] [YourNamespace.Program]  Info!
-24.04.2022 14:04:47: [Warn] [YourNamespace.Program]  Warning!
-24.04.2022 14:04:47: [Error] [YourNamespace.Program]  Error!
-24.04.2022 14:04:47: [Fatal] [YourNamespace.Program]  Fatal!
+18.10.2022 20:31:12: [Debug][SharpLogAndGameSenseTest.Program->Main(...)] Debug!
+18.10.2022 20:31:12: [Trace][SharpLogAndGameSenseTest.Program->Main(...)] Trace!
+18.10.2022 20:31:12: [Info][SharpLogAndGameSenseTest.Program->Main(...)] Info!
+18.10.2022 20:31:12: [Warn][SharpLogAndGameSenseTest.Program->Main(...)] Warning!
+18.10.2022 20:31:12: [Error][SharpLogAndGameSenseTest.Program->Main(...)] Error!
+18.10.2022 20:31:12: [Fatal][SharpLogAndGameSenseTest.Program->Main(...)] Fatal!
 ```
 </div>
 
@@ -40,27 +40,27 @@ Note that you can pass additional information for your log message:
 ``` yaml
 string: tag #(1)
 Exception: exception #(2)
-string: stacktrace #(3)
+bool: stacktrace #(3)
 ```
 
 1. The tag of the message to better organize your logs.
 2. An exception you want to log.
-3. The current stacktrace for better a better understanding what happened with your program.
+3. Wether you want to log the stack trace for better a better understanding what happened with your program.
 
 ### Exit your program correctly
 
 !!! Warning
-    If you do not exit your program correctly some of your logs may not be written to their desired outputs!
+    If you do not exit your program correctly async outputs may not be finished writing or sending your logs!
 
 Some outputs (like the file output) write your logs asynchronously and therefore could need some time until they pick up your message to log it.
 
-Disposing the logger ensures that you wait until all messages are logged before your program exits.
+Dispose the logger to ensure that you wait until all messages are logged before your program exits.
 
 ``` c# title="Possible ways of disposing the logger"
 Logging.Dispose(); //(1)
 
-Logging.LogFatal("Something went terribly wrong! We cannot continue the program.", typeof(Program)); //(2)
+Logging.LogFatal("Something went terribly wrong! We cannot continue the program."); //(2)
 ```
 
 1. Halts the program until all log messages are written.
-2. Writes all log messages and then exits the program using [`#!c# Environment.Exit(1)`](https://docs.microsoft.com/en-us/dotnet/api/system.environment.exit?view=net-6.0)
+2. Writes all log messages and then exits the program using [`#!c# Environment.Exit(1)`](https://docs.microsoft.com/en-us/dotnet/api/system.environment.exit)

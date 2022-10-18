@@ -12,12 +12,12 @@ The global format gets used when there is no other format is provided.
 
 === "sharplog.yml"
     ```yaml
-    format: '$D$: [$L$]$Cp{ [}s{] }$$Tp{ [}s{] }$ $M$$Ep{\n}$$Sp{\n}$'
+    format: '$D$: [$L$]$Tp{[}s{]}$[$C$->$F$] $M$$Ep{\n}i{   }$$Sp{\n}$$'
     ```
 
 === "C#"
     ```c#
-    SettingsManager.Settings.Format = "$D$: [$L$]$Cp{ [}s{] }$$Tp{ [}s{] }$ $M$$Ep{\n}$$Sp{\n}$"
+    SettingsManager.Settings.Format = "$D$: [$L$]$Tp{[}s{]}$[$C$->$F$] $M$$Ep{\n}i{   }$$Sp{\n}$"
     ```
 
 ## Set the global level settings
@@ -155,6 +155,82 @@ On default only a console output is set, but you can also add a file output.
 === "C#"
     ```c#
     new FileOutput()
+    ```
+
+### Set a email output
+
+=== "sharplog.yml"
+    ```yaml
+    email:
+      levels: null
+      format: null
+      format_subject: '[$La{l}$] $C$'
+      client:
+        host: smtp.yourdomain.com
+        port: 587
+        enable_ssl: true
+        credentials:
+          user_name: yourusername
+          password: yourpassword
+      from:
+        display_name: SharpLog
+        address: sharplog@yourdomain.com
+      to:
+        - display_name: Your Receiver
+          address: mail@your-receiver.com
+      bcc:
+        - display_name: Your Receiver
+          address: mail@your-receiver.com
+      cc:
+        - display_name: Your Receiver
+          address: mail@your-receiver.com
+    ```
+
+=== "C#"
+    ```c#
+    new EmailOutput()
+    {
+        Client = new SmtpClient()
+        {
+            Port = 587,
+            Host = "smtp.yourdomain.com",
+            EnableSsl = true,
+            Credentials = new NetworkCredential()
+            {
+                Password = "yourusername",
+                UserName = "yourpassword",
+            },
+        },
+        From = new MailAddress()
+        {
+            Address = "sharplog@yourdomain.com",
+            DisplayName = "SharpLog",
+        },
+        To = new MailAddress[]
+        {
+            new MailAddress()
+            {
+                Address = "mail@your-receiver.com",
+                DisplayName = "Your Receiver",
+            },
+        },
+        Bcc = new MailAddress[]
+        {
+            new MailAddress()
+            {
+                Address = "mail@your-receiver.com",
+                DisplayName = "Your Receiver",
+            },
+        },
+        Cc = new MailAddress[]
+        {
+            new MailAddress()
+            {
+                Address = "mail@your-receiver.com",
+                DisplayName = "Your Receiver",
+            },
+        },
+    };
     ```
 
 ### Set a custom output

@@ -19,12 +19,12 @@ public static class Logging
 | ------------------------------------------------------------------------------------------ | -------------------- | --------------- |
 | [Initialize()](#initialize)                                                                | `#!c# public static` | :octicons-x-16: |
 | [Dispose()](#dispose)                                                                      | `#!c# public static` | :octicons-x-16: |
-| [LogDebug(object, string, Exception, string)](#logdebugobject-string-exception-string)     | `#!c# public static` | :octicons-x-16: |
-| [LogTrace(object, string, Exception, string)](#logtraceobject-string-exception-string)     | `#!c# public static` | :octicons-x-16: |
-| [LogInfo(object, string, Exception, string)](#loginfoobject-string-exception-string)       | `#!c# public static` | :octicons-x-16: |
-| [LogWarning(object, string, Exception, string)](#logwarningobject-string-exception-string) | `#!c# public static` | :octicons-x-16: |
-| [LogError(object, string, Exception, string)](#logerrorobject-string-exception-string)     | `#!c# public static` | :octicons-x-16: |
-| [LogFatal(object, string, Exception, string)](#logfatalobject-string-exception-string)     | `#!c# public static` | :octicons-x-16: |
+| [LogDebug(object, string, Exception, bool)](#logdebugobject-string-exception-bool)     | `#!c# public static` | :octicons-x-16: |
+| [LogTrace(object, string, Exception, bool)](#logtraceobject-string-exception-bool)     | `#!c# public static` | :octicons-x-16: |
+| [LogInfo(object, string, Exception, bool)](#loginfoobject-string-exception-bool)       | `#!c# public static` | :octicons-x-16: |
+| [LogWarning(object, string, Exception, bool)](#logwarningobject-string-exception-bool) | `#!c# public static` | :octicons-x-16: |
+| [LogError(object, string, Exception, bool)](#logerrorobject-string-exception-bool)     | `#!c# public static` | :octicons-x-16: |
+| [LogFatal(object, string, Exception, bool)](#logfatalobject-string-exception-bool)     | `#!c# public static` | :octicons-x-16: |
 
 ## Methods
 
@@ -44,14 +44,14 @@ public static void Dispose()
 
 :   Releases resources and logs all remaining logs. Should be called before exiting the program.
 
-### LogDebug(object, string, Exception, string)
+### LogDebug(object, string, Exception, bool)
 
 ```c#
 public static void LogDebug(
     object message,
     string tag = null, 
     Exception exception = null, 
-    string stackTrace = null)
+    bool stackTrace = false)
 ```
 
 :   Logs a debug log message.
@@ -68,17 +68,17 @@ public static void LogDebug(
 `exception` [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
 :   The exception of the log.
 
-`stackTrace` [string](https://docs.microsoft.com/en-us/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
-:   The current stack trace. Retrieve it using `Environment.StackTrace`.
+`stackTrace` [bool](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool)  · :octicons-milestone-16: `false`
+:   Wether the log should include the stack trace.
 
-### LogTrace(object, string, Exception, string)
+### LogTrace(object, string, Exception, bool)
 
 ```c#
 public static void LogTrace(
     object message,
     string tag = null, 
     Exception exception = null, 
-    string stackTrace = null)
+    bool stackTrace = false)
 ```
 
 :   Logs a trace log message.
@@ -94,17 +94,17 @@ public static void LogTrace(
 `exception` [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
 :   The exception of the log.
 
-`stackTrace` [string](https://docs.microsoft.com/en-us/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
-:   The current stack trace. Retrieve it using `Environment.StackTrace`.
+`stackTrace` [bool](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool)  · :octicons-milestone-16: `false`
+:   Wether the log should include the stack trace.
 
-### LogInfo(object, string, Exception, string)
+### LogInfo(object, string, Exception, bool)
 
 ```c#
 public static void LogInfo(
     object message,
     string tag = null, 
     Exception exception = null, 
-    string stackTrace = null)
+    bool stackTrace = false)
 ```
 
 :   Logs an information log message.
@@ -120,17 +120,17 @@ public static void LogInfo(
 `exception` [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
 :   The exception of the log.
 
-`stackTrace` [string](https://docs.microsoft.com/en-us/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
-:   The current stack trace. Retrieve it using `Environment.StackTrace`.
+`stackTrace` [bool](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool)  · :octicons-milestone-16: `false`
+:   Wether the log should include the stack trace.
 
-### LogWarning(object, string, Exception, string)
+### LogWarning(object, string, Exception, bool)
 
 ```c#
 public static void LogWarning(
     object message,
     string tag = null, 
     Exception exception = null, 
-    string stackTrace = null)
+    bool stackTrace = false)
 ```
 
 :   Logs a warning log message.
@@ -146,17 +146,17 @@ public static void LogWarning(
 `exception` [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
 :   The exception of the log.
 
-`stackTrace` [string](https://docs.microsoft.com/en-us/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
-:   The current stack trace. Retrieve it using `Environment.StackTrace`.
+`stackTrace` [bool](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool)  · :octicons-milestone-16: `false`
+:   Wether the log should include the stack trace.
 
-### LogError(object, string, Exception, string)
+### LogError(object, string, Exception, bool)
 
 ```c#
 public static void LogError(
     object message,
     string tag = null, 
     Exception exception = null, 
-    string stackTrace = null)
+    bool stackTrace = false)
 ```
 
 :   Logs an error log message.
@@ -172,17 +172,17 @@ public static void LogError(
 `exception` [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
 :   The exception of the log.
 
-`stackTrace` [string](https://docs.microsoft.com/en-us/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
-:   The current stack trace. Retrieve it using `Environment.StackTrace`.
+`stackTrace` [bool](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool)  · :octicons-milestone-16: `false`
+:   Wether the log should include the stack trace.
 
-### LogFatal(object, string, Exception, string)
+### LogFatal(object, string, Exception, bool)
 
 ```c#
 public static void LogFatal(
     object message,
     string tag = null, 
     Exception exception = null, 
-    string stackTrace = null)
+    bool stackTrace = false)
 ```
 
 :   Logs a fatal log message and exits the program with code 1.
@@ -198,5 +198,5 @@ public static void LogFatal(
 `exception` [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
 :   The exception of the log.
 
-`stackTrace` [string](https://docs.microsoft.com/en-us/dotnet/api/system.exception)  · :octicons-milestone-16: `null`
-:   The current stack trace. Retrieve it using `Environment.StackTrace`.
+`stackTrace` [bool](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool)  · :octicons-milestone-16: `false`
+:   Wether the log should include the stack trace.

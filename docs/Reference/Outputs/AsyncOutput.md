@@ -12,6 +12,8 @@ public abstract class AsyncOutput
 :material-subdirectory-arrow-right: [Output](Output.md)<br>
 &emsp;&ensp;:material-subdirectory-arrow-right: [**AsyncOutput**](./)
 
+*Implements*: [System.IDisposable](https://docs.microsoft.com/en-us/dotnet/api/system.idisposable)
+
 :   Base class for async outputs.
 
 ### Constructors
@@ -27,6 +29,13 @@ public abstract class AsyncOutput
 | [SuspendTime](#suspendtime) | [int](https://docs.microsoft.com/en-us/dotnet/api/system.int32)     | :octicons-check-16: | :octicons-check-16: |
 | [Format](Output.md#format)  | [string](https://docs.microsoft.com/en-us/dotnet/api/system.string) | :octicons-check-16: | :octicons-check-16: |
 | [Levels](Output.md#levels)  | [LevelContainer](LevelContainer.md)                                 | :octicons-check-16: | :octicons-check-16: |
+
+### Events
+
+| Name                    | Delegate                                                                         | Modifiers        |
+| ----------------------- | -------------------------------------------------------------------------------- | ---------------- |
+| [OnStart](#onstart)     | [EventHandler](https://learn.microsoft.com/en-us/dotnet/api/system.eventhandler) | `#!c# protected` |
+| [OnDispose](#ondispose) | [EventHandler](https://learn.microsoft.com/en-us/dotnet/api/system.eventhandler) | `#!c# protected` |
 
 ### Methods
 
@@ -78,6 +87,28 @@ public int SuspendTime { get; set; }
 Type: [int](https://docs.microsoft.com/en-us/dotnet/api/system.int32)
 
 :   Gets or sets the time the output waits until it checks for new logs in ms.
+
+## Events
+
+### OnStart
+
+```c#
+protected event EventHandler OnStart;
+```
+
+Delegate: [EventHandler](https://learn.microsoft.com/en-us/dotnet/api/system.eventhandler)
+
+:   Event called when the output gets started.
+
+### OnDispose
+
+```c#
+protected event EventHandler OnDispose;
+```
+
+Delegate: [EventHandler](https://learn.microsoft.com/en-us/dotnet/api/system.eventhandler)
+
+:   Event called when the output gets disposed.
 
 ## Methods
 

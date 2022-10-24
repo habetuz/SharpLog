@@ -31,7 +31,7 @@ namespace SharpLog.Settings
         /// <param name="foreground">The foreground color.</param>
         /// <param name="background">The background color.</param>
         public Color(
-            ConsoleColor foreground = ConsoleColor.White, 
+            ConsoleColor foreground = ConsoleColor.White,
             ConsoleColor background = ConsoleColor.Black)
         {
             this.Foreground = foreground;

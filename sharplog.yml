@@ -1,4 +1,4 @@
-﻿format: '$D$: [$L$]$Tp{[}s{]}$[$C$->$F$] $M$$Ep{\n}i{   }$$Sp{\n}$'
+﻿format: '$D$: $Lp{[}s{]}r{7, }$$Tp{[}s{]}$[$C$->$F$] $M$$Ep{\n}i{   }$$Sp{\n}$'
 levels:
   debug:
     short: '?'

@@ -3,7 +3,7 @@ title: Default settings
 ---
 
 ``` yaml title="sharplog.yml"
-format: '$D$: [$L$][$C$->$F$] $M$$Ep{\n}i{   }$$Sp{\n}$'
+format: '[$D$] - $La{u}r{7, }$$Tp{ - }r{10, }$ - $Cs{ -}r{30,-}$> $Fr{20, }$ - $M$$Ep{\n}i{   }$$Sp{\n}$'
 levels:
   debug:
     short: '?'
@@ -17,7 +17,7 @@ levels:
     short: '+'
     enabled: true
     format: null
-  warn:
+  warning:
     short: '!'
     enabled: true
     format: null
@@ -44,7 +44,7 @@ outputs:
       info:
         background: black
         foreground: green
-      warn:
+      warning:
         background: black
         foreground: yellow
       error:

@@ -49,7 +49,7 @@ namespace SharpLog.Outputs
                 { LogLevel.Debug, new Color(foreground: ConsoleColor.DarkGray) },
                 { LogLevel.Trace, new Color() },
                 { LogLevel.Info, new Color(foreground: ConsoleColor.Green) },
-                { LogLevel.Warn, new Color(foreground: ConsoleColor.Yellow) },
+                { LogLevel.Warning, new Color(foreground: ConsoleColor.Yellow) },
                 { LogLevel.Error, new Color(foreground: ConsoleColor.Red) },
                 { LogLevel.Fatal, new Color(background: ConsoleColor.Red, foreground: ConsoleColor.Black) },
             };

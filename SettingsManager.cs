@@ -153,7 +153,7 @@ namespace SharpLog
                 return;
             }
 
-            if (Settings.Levels.Warn == null)
+            if (Settings.Levels.Warning == null)
             {
                 ReloadSettings(false);
                 Logging.LogWarning("\"levels.warn\" set to \"null\". Remove property or provide valid arguments. Using default settings.", "SHARPLOG_INTERNAL");

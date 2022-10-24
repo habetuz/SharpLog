@@ -27,7 +27,7 @@ public class LevelContainer
 | [Debug](#debug) | [Level](Level.md) | :octicons-check-16: | :octicons-check-16: |
 | [Trace](#trace) | [Level](Level.md) | :octicons-check-16: | :octicons-check-16: |
 | [Info](#info)   | [Level](Level.md) | :octicons-check-16: | :octicons-check-16: |
-| [Warn](#warn)   | [Level](Level.md) | :octicons-check-16: | :octicons-check-16: |
+| [Warning](#warning)   | [Level](Level.md) | :octicons-check-16: | :octicons-check-16: |
 | [Error](#error) | [Level](Level.md) | :octicons-check-16: | :octicons-check-16: |
 | [Fatal](#fatal) | [Level](Level.md) | :octicons-check-16: | :octicons-check-16: |
 
@@ -55,7 +55,7 @@ public LevelContainer(
     Level debug = null,
     Level trace = null,
     Level info = null,
-    Level warn = null,
+    Level warning = null,
     Level error = null,
     Level fatal = null)
 ```
@@ -73,7 +73,7 @@ public LevelContainer(
 `info` [Level](Level.md) · :octicons-milestone-16: `null`
 :   The info settings.
 
-`warn` [Level](Level.md) · :octicons-milestone-16: `null`
+`warning` [Level](Level.md) · :octicons-milestone-16: `null`
 :   The warning settings.
 
 `error` [Level](Level.md) · :octicons-milestone-16: `null`
@@ -114,15 +114,15 @@ Type: [Level](Level.md)
 
 :   Gets or sets the settings for the log level `info`.
 
-### Warn
+### Warning
 
 ```c#
-public Level Warn { get; set; }
+public Level Warning { get; set; }
 ```
 
 Type: [Level](Level.md)
 
-:   Gets or sets the settings for the log level `warn`.
+:   Gets or sets the settings for the log level `warning`.
 
 ### Error
 

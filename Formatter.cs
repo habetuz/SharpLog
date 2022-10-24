@@ -86,7 +86,7 @@ namespace SharpLog
                         //   ...$Da{...}p{...}s{...}$...
                         // > ...[prefix (p)][value (time, log level, message, etc.)][suffix (s)]...
                         case 'D':
-                            (string argument, string prefix, string suffix, string indentation, (int, char) padLeft, (int, char) padRight, int index) = GetArguments(format, i);
+                            (string argument, string prefix, string suffix, string indentation, (int, char) padLeft, (int, char) padRight, int index) = GetProperties(format, i);
                             i = index;
                             string date;
                             if (argument == string.Empty)
@@ -101,7 +101,7 @@ namespace SharpLog
                             output += $"{prefix}{indentation}{date}{suffix}".PadLeft(padLeft.Item1, padLeft.Item2).PadRight(padRight.Item1, padRight.Item2);
                             break;
                         case 'L':
-                            (argument, prefix, suffix, indentation, padLeft, padRight, index) = GetArguments(format, i);
+                            (argument, prefix, suffix, indentation, padLeft, padRight, index) = GetProperties(format, i);
                             i = index;
                             string logLevel;
                             switch (argument)
@@ -111,6 +111,9 @@ namespace SharpLog
                                 case "s":
                                     logLevel = log.LevelSettings.Short.ToString();
                                     break;
+                                case "u":
+                                    logLevel = log.Level.ToString().ToUpper();
+                                    break;
                                 default:
                                     logLevel = log.Level.ToString();
                                     break;
@@ -119,7 +122,7 @@ namespace SharpLog
                             output += $"{prefix}{indentation}{logLevel}{suffix}".PadLeft(padLeft.Item1, padLeft.Item2).PadRight(padRight.Item1, padRight.Item2);
                             break;
                         case 'T':
-                            (_, prefix, suffix, indentation, padLeft, padRight, index) = GetArguments(format, i);
+                            (_, prefix, suffix, indentation, padLeft, padRight, index) = GetProperties(format, i);
                             i = index;
                             if (log.Tag == null)
                             {
@@ -129,7 +132,7 @@ namespace SharpLog
                             output += $"{prefix}{indentation}{log.Tag}{suffix}".PadLeft(padLeft.Item1, padLeft.Item2).PadRight(padRight.Item1, padRight.Item2);
                             break;
                         case 'M':
-                            (_, prefix, suffix, indentation, padLeft, padRight, index) = GetArguments(format, i);
+                            (_, prefix, suffix, indentation, padLeft, padRight, index) = GetProperties(format, i);
                             i = index;
 
                             var m = log.Message.ToString().Replace("\n", $"\n{indentation}");
@@ -137,7 +140,7 @@ namespace SharpLog
                             output += $"{prefix}{indentation}{m}{suffix}".PadLeft(padLeft.Item1, padLeft.Item2).PadRight(padRight.Item1, padRight.Item2);
                             break;
                         case 'C':
-                            (_, prefix, suffix, indentation, padLeft, padRight, index) = GetArguments(format, i);
+                            (_, prefix, suffix, indentation, padLeft, padRight, index) = GetProperties(format, i);
                             i = index;
                             if (log.Class == null)
                             {
@@ -148,7 +151,7 @@ namespace SharpLog
                             break;
 
                         case 'F':
-                            (argument, prefix, suffix, indentation, padLeft, padRight, index) = GetArguments(format, i);
+                            (argument, prefix, suffix, indentation, padLeft, padRight, index) = GetProperties(format, i);
                             i = index;
                             if (log.Function == null)
                             {
@@ -163,18 +166,20 @@ namespace SharpLog
                                 case "s":
                                     goto default;
                                 default:
-                                    output +=
+                                    output += (
                                         $"{prefix}" +
                                         $"{indentation}" +
                                         $"{log.Function.Name}{suffix}" +
                                         $"{(log.Function.IsGenericMethod ? "[...]" : string.Empty)}" +
-                                        $"{(log.Function.GetParameters().Length > 0 ? "(...)" : "()")}";
+                                        $"{(log.Function.GetParameters().Length > 0 ? "(...)" : "()")}")
+                                        .PadLeft(padLeft.Item1, padLeft.Item2)
+                                        .PadRight(padRight.Item1, padRight.Item2);
                                     break;
                             }
 
                             break;
                         case 'E':
-                            (_, prefix, suffix, indentation, padLeft, padRight, index) = GetArguments(format, i);
+                            (_, prefix, suffix, indentation, padLeft, padRight, index) = GetProperties(format, i);
                             i = index;
                             if (log.Exception == null)
                             {
@@ -203,7 +208,7 @@ namespace SharpLog
                             output += suffix;
                             break;
                         case 'S':
-                            (_, prefix, suffix, indentation, padLeft, padRight, index) = GetArguments(format, i);
+                            (_, prefix, suffix, indentation, padLeft, padRight, index) = GetProperties(format, i);
                             i = index;
                             if (log.StackTrace == null)
                             {
@@ -217,7 +222,7 @@ namespace SharpLog
                             break;
                         default:
                             char placeholder = format[i];
-                            (_, prefix, suffix, indentation, padLeft, padRight, index) = GetArguments(format, i);
+                            (_, prefix, suffix, indentation, padLeft, padRight, index) = GetProperties(format, i);
                             i = index;
                             output += $"${placeholder}:{prefix}{indentation}!UNKNOWN PLACEHOLDER!{suffix}$".PadLeft(padLeft.Item1, padLeft.Item2).PadRight(padRight.Item1, padRight.Item2);
                             break;
@@ -229,7 +234,7 @@ namespace SharpLog
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1005:Single line comments should begin with single space", Justification = "Needed for formatting")]
-        private static (string argument, string prefix, string suffix, string indentation, (int, char) padLeft, (int, char) padRight, int index) GetArguments(string format, int index)
+        private static (string argument, string prefix, string suffix, string indentation, (int, char) padLeft, (int, char) padRight, int index) GetProperties(string format, int index)
         {
             string argument = string.Empty;
             string prefix = string.Empty;

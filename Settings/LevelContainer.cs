@@ -29,21 +29,21 @@ namespace SharpLog.Settings
         /// <param name="debug">The debug settings.</param>
         /// <param name="trace">The trace settings.</param>
         /// <param name="info">The information settings.</param>
-        /// <param name="warn">The warn settings.</param>
+        /// <param name="warning">The warning settings.</param>
         /// <param name="error">The error settings.</param>
         /// <param name="fatal">The fatal settings.</param>
         public LevelContainer(
             Level debug = null,
             Level trace = null,
             Level info = null,
-            Level warn = null,
+            Level warning = null,
             Level error = null,
             Level fatal = null)
         {
             this.Debug = debug;
             this.Trace = trace;
             this.Info = info;
-            this.Warn = warn;
+            this.Warning = warning;
             this.Error = error;
             this.Fatal = fatal;
         }
@@ -76,9 +76,9 @@ namespace SharpLog.Settings
         /// Gets or sets the settings for the log level "info".
         /// </summary>
         /// <value>
-        /// The warn.
+        /// The warning.
         /// </value>
-        public Level Warn { get; set; }
+        public Level Warning { get; set; }
 
         /// <summary>
         /// Gets or sets the settings for the log level "error".
@@ -111,8 +111,8 @@ namespace SharpLog.Settings
                     return this.Trace;
                 case LogLevel.Info:
                     return this.Info;
-                case LogLevel.Warn:
-                    return this.Warn;
+                case LogLevel.Warning:
+                    return this.Warning;
                 case LogLevel.Error:
                     return this.Error;
                 case LogLevel.Fatal:

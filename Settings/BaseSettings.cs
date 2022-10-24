@@ -24,7 +24,7 @@ namespace SharpLog.Settings
         /// </summary>
         public BaseSettings()
             : this(
-            fomat: "$D$: $Lp{[}s{]}r{7, }$$Tp{[}s{]}$[$C$->$F$] $M$$Ep{\n}i{   }$$Sp{\n}$",
+            fomat: "[$D$] - $La{u}r{7, }$$Tp{ - }r{10, }$ - $Cs{ -}r{30,-}$> $Fr{20, }$ - $M$$Ep{\n}i{   }$$Sp{\n}$",
             levels: null,
             outputs: null,
             tags: null)
@@ -49,7 +49,7 @@ namespace SharpLog.Settings
                 debug: new Level('?'),
                 trace: new Level('&'),
                 info: new Level('+'),
-                warn: new Level('!'),
+                warning: new Level('!'),
                 error: new Level('x'),
                 fatal: new Level('X'));
             this.Outputs = outputs ?? new OutputContainer();

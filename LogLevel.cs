@@ -33,7 +33,7 @@ namespace SharpLog
         /// <summary>
         /// Level warning
         /// </summary>
-        Warn,
+        Warning,
 
         /// <summary>
         /// Level error

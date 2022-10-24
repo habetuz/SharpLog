@@ -76,7 +76,7 @@ namespace SharpLog
         /// <param name="stackTrace">Wether the stack trace should be logged.</param>
         public static void LogWarning(object message, string tag = null, Exception exception = null, bool stackTrace = false)
         {
-            Log(LogLevel.Warn, message, tag, exception, stackTrace);
+            Log(LogLevel.Warning, message, tag, exception, stackTrace);
         }
 
         /// <summary>

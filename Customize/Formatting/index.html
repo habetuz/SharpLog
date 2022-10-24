@@ -886,7 +886,7 @@
 <p class="admonition-title">Tip</p>
 <p>To write <code>$</code> to your log write <code>$$</code> in your format string.</p>
 </div>
-<p>Add up to three properties to each placeholder for more customization:</p>
+<p>The following properties are currently available.</p>
 <div class="admonition note inline end">
 <p class="admonition-title">Note</p>
 <p>Prefix and suffix properties cannot contain nested placeholders.</p>
@@ -915,8 +915,18 @@
 <td align="center"><code>i{...}</code></td>
 <td>Indentation that will be displayed before every line.</td>
 </tr>
+<tr>
+<td align="center"><code>l{num,char}</code></td>
+<td>Padding left that will be displayed before the prefix</td>
+</tr>
+<tr>
+<td align="center"><code>r{num,char}</code></td>
+<td>Padding right that will be displayed after the suffix</td>
+</tr>
 </tbody>
 </table>
+<p>The order of suffix, paddings, prefix etc. is the following: indentation</p>
+<p><code>[pad left][prefix][indentation (each line)][content of placeholder][suffix][pad right]</code></p>
 <h2 id="list-of-placeholders">List of placeholders<a class="headerlink" href="#list-of-placeholders" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -950,7 +960,7 @@
 <tr>
 <td align="center"><code>L</code></td>
 <td>The log level.</td>
-<td><code>l</code> or empty for a written log level.<br><code>s</code> for the short form specified in the <a href="../#set-tag-specific-settings">level settings</a>.</td>
+<td><code>l</code> or empty for a written log level.<br><code>u</code> for a written log level in uppercase.<br><code>s</code> for the short form specified in the <a href="../#set-tag-specific-settings">level settings</a>.</td>
 </tr>
 <tr>
 <td align="center"><code>M</code></td>

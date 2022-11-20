@@ -34,16 +34,15 @@ Some outputs are already provided out-of-the-box:
 ## Example
 
 ``` c#
-SharpLog.Logging.LogDebug("Debug!", typeof(Program));
-SharpLog.Logging.LogTrace("Trace!", typeof(Program));
-SharpLog.Logging.LogInfo("Info!", typeof(Program));
-SharpLog.Logging.LogWarning("Warning!", typeof(Program));
-SharpLog.Logging.LogError("Error!", typeof(Program));
+SharpLog.Logging.LogDebug("Debug!");
+SharpLog.Logging.LogTrace("Trace!");
+SharpLog.Logging.LogInfo("Info!");
+SharpLog.Logging.LogWarning("Warning!");
+SharpLog.Logging.LogError("Error!");
 SharpLog.Logging.LogFatal( //(1)
     "Fatal!", 
-    typeof(Program), 
     exception: new Exception("Test"), 
-    stackTrace: new StackTrace(true).ToString());
+    stackTrace: true;
 ```
 
 1. :material-exit-to-app: Exits program after logging your message.

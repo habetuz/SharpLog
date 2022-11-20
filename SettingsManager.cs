@@ -174,7 +174,7 @@ namespace SharpLog
                 return;
             }
 
-            Logging.LogInfo("Settings file loaded successfully!", "SHARPLOG_INTERNAL");
+            // Logging.LogInfo("Settings file loaded successfully!", "SHARPLOG_INTERNAL");
         }
 
         /// <summary>

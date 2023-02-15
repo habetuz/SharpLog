@@ -15,7 +15,7 @@ namespace SharpLog
     /// <summary>
     /// Class for formatting <see cref="Log"/> objects.
     /// </summary>
-    internal class Formatter
+    internal static class Formatter
     {
         /// <summary>
         /// Formats the specified log with an alternative format.
@@ -45,7 +45,7 @@ namespace SharpLog
         /// Formats the specified log.
         /// </summary>
         /// <param name="log">The log.</param>
-        /// <returns>The formattet log.</returns>
+        /// <returns>The formatted log.</returns>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1005:Single line comments should begin with single space", Justification = "Needed for formatting")]
         internal static string Format(Log log)
         {

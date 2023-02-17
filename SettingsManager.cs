@@ -8,19 +8,16 @@
 // Visit https://sharplog.marvin-fuchs.de for more information.
 // </summary>
 
+using System.Net;
+using System.Security;
+using SharpLog.Settings;
+using YamlDotNet.Core;
+using YamlDotNet.Serialization;
+using YamlDotNet.Serialization.NamingConventions;
+using YamlDotNet.Serialization.ObjectFactories;
+
 namespace SharpLog
 {
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Net;
-    using System.Security;
-    using SharpLog.Settings;
-    using YamlDotNet.Core;
-    using YamlDotNet.Serialization;
-    using YamlDotNet.Serialization.NamingConventions;
-    using YamlDotNet.Serialization.ObjectFactories;
-
     /// <summary>
     /// Class responsible for managing the settings.
     /// </summary>
@@ -37,7 +34,7 @@ namespace SharpLog
         /// <value>
         /// The settings.
         /// </value>
-        public static BaseSettings Settings { get; set; }
+        public static BaseSettings? Settings { get; set; }
 
         /// <summary>
         /// Gets a value indicating whether this instance is disposed.
@@ -73,11 +70,7 @@ namespace SharpLog
                     .Build();
 
                 string file = System.IO.Path.Combine(Environment.CurrentDirectory, "sharplog.yml");
-                Settings = deserializer.Deserialize<BaseSettings>(File.ReadAllText(file));
-                if (Settings == null)
-                {
-                    Settings = new BaseSettings();
-                }
+                Settings = deserializer.Deserialize<BaseSettings>(File.ReadAllText(file)) ?? new BaseSettings();
             }
             catch (Exception ex)
             {
@@ -107,72 +100,94 @@ namespace SharpLog
             if (Settings.Tags == null)
             {
                 ReloadSettings(false);
-                Logging.LogWarning("\"tags\" set to \"null\". Remove property or provide valid arguments. Using default settings.", "SHARPLOG_INTERNAL");
+                Logging.LogWarning(
+                    "\"tags\" set to \"null\". Remove property or provide valid arguments. Using default settings.",
+                    "SHARPLOG_INTERNAL");
                 return;
             }
 
             if (Settings.Outputs == null)
             {
                 ReloadSettings(false);
-                Logging.LogWarning("\"outputs\" set to \"null\". Remove property or provide valid arguments. Using default settings.", "SHARPLOG_INTERNAL");
+                Logging.LogWarning(
+                    "\"outputs\" set to \"null\". Remove property or provide valid arguments. Using default settings.",
+                    "SHARPLOG_INTERNAL");
                 return;
             }
 
             if (Settings.Levels == null)
             {
                 ReloadSettings(false);
-                Logging.LogWarning("\"levels\" set to \"null\". Remove property or provide valid arguments. Using default settings.", "SHARPLOG_INTERNAL");
+                Logging.LogWarning(
+                    "\"levels\" set to \"null\". Remove property or provide valid arguments. Using default settings.",
+                    "SHARPLOG_INTERNAL");
                 return;
             }
 
             if (Settings.Format == null)
             {
                 ReloadSettings(false);
-                Logging.LogWarning("\"format\" set to \"null\". Remove property or provide valid arguments. Using default settings.", "SHARPLOG_INTERNAL");
+                Logging.LogWarning(
+                    "\"format\" set to \"null\". Remove property or provide valid arguments. Using default settings.",
+                    "SHARPLOG_INTERNAL");
                 return;
             }
 
             if (Settings.Levels.Debug == null)
             {
                 ReloadSettings(false);
-                Logging.LogWarning("\"levels.debug\" set to \"null\". Remove property or provide valid arguments. Using default settings.", "SHARPLOG_INTERNAL");
+                Logging.LogWarning(
+                    "\"levels.debug\" set to \"null\". Remove property or provide valid arguments. Using default settings.",
+                    "SHARPLOG_INTERNAL");
                 return;
             }
 
             if (Settings.Levels.Trace == null)
             {
                 ReloadSettings(false);
-                Logging.LogWarning("\"levels.trace\" set to \"null\". Remove property or provide valid arguments. Using default settings.", "SHARPLOG_INTERNAL");
+                Logging.LogWarning(
+                    "\"levels.trace\" set to \"null\". Remove property or provide valid arguments. Using default settings.",
+                    "SHARPLOG_INTERNAL");
                 return;
             }
 
             if (Settings.Levels.Info == null)
             {
                 ReloadSettings(false);
-                Logging.LogWarning("\"levels.info\" set to \"null\". Remove property or provide valid arguments. Using default settings.", "SHARPLOG_INTERNAL");
+                Logging.LogWarning(
+                    "\"levels.info\" set to \"null\". Remove property or provide valid arguments. Using default settings.",
+                    "SHARPLOG_INTERNAL");
                 return;
             }
 
             if (Settings.Levels.Warning == null)
             {
                 ReloadSettings(false);
-                Logging.LogWarning("\"levels.warn\" set to \"null\". Remove property or provide valid arguments. Using default settings.", "SHARPLOG_INTERNAL");
+                Logging.LogWarning(
+                    "\"levels.warn\" set to \"null\". Remove property or provide valid arguments. Using default settings.",
+                    "SHARPLOG_INTERNAL");
                 return;
             }
 
             if (Settings.Levels.Error == null)
             {
                 ReloadSettings(false);
-                Logging.LogWarning("\"levels.error\" set to \"null\". Remove property or provide valid arguments. Using default settings.", "SHARPLOG_INTERNAL");
+                Logging.LogWarning(
+                    "\"levels.error\" set to \"null\". Remove property or provide valid arguments. Using default settings.",
+                    "SHARPLOG_INTERNAL");
                 return;
             }
 
-            if (Settings.Levels.Fatal == null)
+            if (Settings.Levels.Fatal != null)
             {
-                ReloadSettings(false);
-                Logging.LogWarning("\"levels.fatal\" set to \"null\". Remove property or provide valid arguments. Using default settings.", "SHARPLOG_INTERNAL");
                 return;
             }
+
+            ReloadSettings(false);
+            Logging.LogWarning(
+                "\"levels.fatal\" set to \"null\". Remove property or provide valid arguments. Using default settings.",
+                "SHARPLOG_INTERNAL");
+            return;
 
             // Logging.LogInfo("Settings file loaded successfully!", "SHARPLOG_INTERNAL");
         }

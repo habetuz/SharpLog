@@ -8,12 +8,11 @@
 // Visit https://sharplog.marvin-fuchs.de for more information.
 // </summary>
 
+using System.Reflection;
+using SharpLog.Settings;
+
 namespace SharpLog
 {
-    using System;
-    using System.Reflection;
-    using SharpLog.Settings;
-
     /// <summary>
     /// Log structure containing all information about the log.
     /// </summary>
@@ -32,7 +31,17 @@ namespace SharpLog
         /// <param name="format">The format.</param>
         /// <param name="time">The time.</param>
         /// <param name="stackTrace">The stack trace.</param>
-        public Log(LogLevel level, object message, Type @class, MethodBase method, string tag, Exception exception, Level levelSettings, string format, DateTime time, string stackTrace)
+        public Log(
+            in LogLevel level,
+            in object message,
+            in Type @class,
+            in MethodBase method,
+            in string tag,
+            in Exception exception,
+            in Level levelSettings,
+            in string format,
+            in DateTime time,
+            in string stackTrace)
         {
             this.Level = level;
             this.Message = message;

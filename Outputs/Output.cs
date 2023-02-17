@@ -8,11 +8,10 @@
 // Visit https://sharplog.marvin-fuchs.de for more information.
 // </summary>
 
+using SharpLog.Settings;
+
 namespace SharpLog.Outputs
 {
-    using System;
-    using SharpLog.Settings;
-
     /// <summary>
     /// Base class for all outputs.
     /// </summary>
@@ -24,7 +23,7 @@ namespace SharpLog.Outputs
         /// </summary>
         /// <param name="format">The format.</param>
         /// <param name="levels">The level settings.</param>
-        public Output(string format = null, LevelContainer levels = null)
+        protected Output(string? format = null, LevelContainer? levels = null)
         {
             this.Format = format;
             this.Levels = levels;
@@ -36,7 +35,7 @@ namespace SharpLog.Outputs
         /// <value>
         /// The format.
         /// </value>
-        public string Format { get; set; }
+        public string? Format { get; set; }
 
         /// <summary>
         /// Gets or sets the level settings for the output.
@@ -44,7 +43,7 @@ namespace SharpLog.Outputs
         /// <value>
         /// The levels.
         /// </value>
-        public LevelContainer Levels { get; set; }
+        public LevelContainer? Levels { get; set; }
 
         /// <summary>
         /// Writes the specified formatted log.
@@ -64,9 +63,9 @@ namespace SharpLog.Outputs
                 log.Format = this.Format;
             }
 
-            if (this.Levels != null && this.Levels.GetLevel(log.Level) != null)
+            if (this.Levels?.GetLevel(log.Level) != null)
             {
-                Level levelSettings = this.Levels.GetLevel(log.Level);
+                Level levelSettings = this.Levels.GetLevel(log.Level)!;
 
                 if (!levelSettings.Enabled)
                 {

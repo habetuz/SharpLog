@@ -8,10 +8,10 @@
 // Visit https://sharplog.marvin-fuchs.de for more information.
 // </summary>
 
+using System;
+
 namespace SharpLog.Settings
 {
-    using System;
-
     /// <summary>
     /// Class containing colors for the <see cref="SharpLog.Outputs.ConsoleOutput"/>.
     /// </summary>

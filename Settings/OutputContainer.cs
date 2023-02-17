@@ -8,21 +8,21 @@
 // Visit https://sharplog.marvin-fuchs.de for more information.
 // </summary>
 
+using System;
+using System.Collections.Generic;
+using SharpLog.Outputs;
+
 namespace SharpLog.Settings
 {
-    using System;
-    using System.Collections.Generic;
-    using SharpLog.Outputs;
-
     /// <summary>
     /// Container for the output settings.
     /// </summary>
     /// <seealso cref="System.IDisposable" />
     public class OutputContainer : IDisposable
     {
-        private readonly List<Output> outputs;
-        private FileOutput file;
-        private EmailOutput email;
+        private readonly List<Output>? outputs;
+        private FileOutput? file;
+        private EmailOutput? email;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputContainer"/> class.
@@ -39,9 +39,9 @@ namespace SharpLog.Settings
         /// <param name="file">The file output.</param>
         /// <param name="outputs">The output list.</param>
         public OutputContainer(
-            ConsoleOutput console = null,
-            FileOutput file = null,
-            List<Output> outputs = null)
+            ConsoleOutput? console = null,
+            FileOutput? file = null,
+            List<Output>? outputs = null)
         {
             this.Console = console ?? new ConsoleOutput();
             this.File = file;
@@ -54,7 +54,7 @@ namespace SharpLog.Settings
         /// <value>
         /// The console output.
         /// </value>
-        public ConsoleOutput Console { get; set; }
+        public ConsoleOutput? Console { get; set; }
 
         /// <summary>
         /// Gets or sets the file output.
@@ -62,24 +62,26 @@ namespace SharpLog.Settings
         /// <value>
         /// The file output.
         /// </value>
-        public FileOutput File
+        public FileOutput? File
         {
             get => this.file;
+
             set
             {
                 this.file?.Dispose();
-                this.file = value;
+                this.file = value!;
                 value?.Start();
             }
         }
 
-        public EmailOutput Email
+        public EmailOutput? Email
         {
             get => this.email;
+
             set
             {
                 this.email?.Dispose();
-                this.email = value;
+                this.email = value!;
                 value?.Start();
             }
         }
@@ -90,12 +92,14 @@ namespace SharpLog.Settings
         /// <param name="output">The output.</param>
         public void AddOutput(Output output)
         {
-            this.outputs.Add(output);
+            this.outputs!.Add(output);
 
-            if (output is AsyncOutput asyncOutput)
+            if (output is not AsyncOutput asyncOutput)
             {
-                asyncOutput.Start();
+                return;
             }
+
+            asyncOutput.Start();
         }
 
         /// <summary>
@@ -104,12 +108,14 @@ namespace SharpLog.Settings
         /// <param name="output">The output.</param>
         public void RemoveOutput(Output output)
         {
-            this.outputs.Remove(output);
+            this.outputs!.Remove(output);
 
-            if (output is AsyncOutput asyncOutput)
+            if (output is not AsyncOutput asyncOutput)
             {
-                asyncOutput.Dispose();
+                return;
             }
+
+            asyncOutput.Dispose();
         }
 
         /// <summary>
@@ -118,7 +124,7 @@ namespace SharpLog.Settings
         /// <returns>Array containing the outputs.</returns>
         public Output[] GetOutputs()
         {
-            return this.outputs.ToArray();
+            return this.outputs!.ToArray();
         }
 
         /// <summary>
@@ -126,15 +132,19 @@ namespace SharpLog.Settings
         /// </summary>
         public void Dispose()
         {
+            GC.SuppressFinalize(this);
             this.File?.Dispose();
             this.Email?.Dispose();
-            this.outputs.ForEach(o =>
+            this.outputs!.ForEach(o =>
             {
-                if (o is AsyncOutput asyncOutput)
+                if (o is not AsyncOutput asyncOutput)
                 {
-                    asyncOutput.Dispose();
+                    return;
                 }
-            });
+
+                asyncOutput.Dispose();
+            }
+);
         }
     }
 }

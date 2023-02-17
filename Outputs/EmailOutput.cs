@@ -8,13 +8,12 @@
 // Visit https://sharplog.marvin-fuchs.de for more information.
 // </summary>
 
+using System;
+using System.Net.Mail;
+using SharpLog.Settings;
+
 namespace SharpLog.Outputs
 {
-    using System;
-    using System.Net.Mail;
-    using SharpLog.Settings;
-    using MailAddress = SharpLog.Settings.Wrapper.MailAddress;
-
     /// <summary>
     /// Output sending mails.
     /// </summary>
@@ -41,15 +40,15 @@ namespace SharpLog.Outputs
         /// <param name="format">The format of the output.</param>
         /// <param name="levels">The level settings of the output.</param>
         public EmailOutput(
-            SmtpClient client,
-            MailAddress from,
-            MailAddress[] to = null,
-            MailAddress[] bcc = null,
-            MailAddress[] cc = null,
+            SmtpClient? client,
+            Settings.Wrapper.MailAddress? from,
+            Settings.Wrapper.MailAddress[]? to = null,
+            Settings.Wrapper.MailAddress[]? bcc = null,
+            Settings.Wrapper.MailAddress[]? cc = null,
             string formatSubject = "[$La{l}$] $C$",
             int suspendTime = 5000,
-            string format = null,
-            LevelContainer levels = null)
+            string? format = null,
+            LevelContainer? levels = null)
             : base(suspendTime, format, levels)
         {
             this.Client = client;
@@ -60,34 +59,34 @@ namespace SharpLog.Outputs
             this.FormatSubject = formatSubject;
             this.Format = format;
 
-            base.OnStart += this.OnStart;
-            base.OnDispose += this.OnDispose;
+            base.OnStart += this.OnStart!;
+            base.OnDispose += this.OnDispose!;
         }
 
         /// <summary>
         /// Gets or sets the smtp client.
         /// </summary>
-        public SmtpClient Client { get; set; }
+        public SmtpClient? Client { get; set; }
 
         /// <summary>
         /// Gets or sets the email from field.
         /// </summary>
-        public MailAddress From { get; set; }
+        public Settings.Wrapper.MailAddress? From { get; set; }
 
         /// <summary>
         /// Gets or sets the email to field.
         /// </summary>
-        public MailAddress[] To { get; set; }
+        public Settings.Wrapper.MailAddress[]? To { get; set; }
 
         /// <summary>
         /// Gets or sets the email bcc field.
         /// </summary>
-        public MailAddress[] Bcc { get; set; }
+        public Settings.Wrapper.MailAddress[]? Bcc { get; set; }
 
         /// <summary>
         /// Gets or sets the email cc field.
         /// </summary>
-        public MailAddress[] Cc { get; set; }
+        public Settings.Wrapper.MailAddress[]? Cc { get; set; }
 
         /// <summary>
         /// Gets or sets the format of the subject field.
@@ -103,7 +102,7 @@ namespace SharpLog.Outputs
                 {
                     var message = new MailMessage()
                     {
-                        From = new System.Net.Mail.MailAddress(this.From.Address, this.From.DisplayName),
+                        From = new System.Net.Mail.MailAddress(this.From!.Address!, this.From.DisplayName),
                         Subject = SharpLog.Formatter.Format(this.FormatSubject, log.Item2),
                         IsBodyHtml = true,
                         Body = log.Item1,
@@ -113,7 +112,7 @@ namespace SharpLog.Outputs
                     {
                         foreach (var to in this.To)
                         {
-                            message.To.Add(new System.Net.Mail.MailAddress(to.Address, to.DisplayName));
+                            message.To.Add(new System.Net.Mail.MailAddress(to.Address!, to.DisplayName));
                         }
                     }
 
@@ -121,7 +120,7 @@ namespace SharpLog.Outputs
                     {
                         foreach (var bcc in this.Bcc)
                         {
-                            message.Bcc.Add(new System.Net.Mail.MailAddress(bcc.Address, bcc.DisplayName));
+                            message.Bcc.Add(new System.Net.Mail.MailAddress(bcc.Address!, bcc.DisplayName));
                         }
                     }
 
@@ -129,11 +128,11 @@ namespace SharpLog.Outputs
                     {
                         foreach (var cc in this.Cc)
                         {
-                            message.CC.Add(new System.Net.Mail.MailAddress(cc.Address, cc.DisplayName));
+                            message.CC.Add(new System.Net.Mail.MailAddress(cc.Address!, cc.DisplayName));
                         }
                     }
 
-                    this.Client.Send(message);
+                    this.Client!.Send(message);
                 }
                 catch (Exception e)
                 {
@@ -144,7 +143,7 @@ namespace SharpLog.Outputs
             return false;
         }
 
-        private new void OnStart(object sender, EventArgs args)
+        new private void OnStart(object sender, EventArgs args)
         {
             if (this.Client == null)
             {
@@ -152,7 +151,7 @@ namespace SharpLog.Outputs
             }
             else if (this.From == null)
             {
-                throw new ArgumentNullException("FromAdress", "Property cannot be null!");
+                throw new ArgumentNullException("From", "Property cannot be null!");
             }
             else if (this.To == null && this.Bcc == null && this.Cc == null)
             {
@@ -160,9 +159,9 @@ namespace SharpLog.Outputs
             }
         }
 
-        private new void OnDispose(object sender, EventArgs args)
+        new private void OnDispose(object sender, EventArgs args)
         {
-            this.Client.Dispose();
+            this.Client!.Dispose();
         }
     }
 }

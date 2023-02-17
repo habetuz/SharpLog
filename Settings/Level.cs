@@ -32,7 +32,7 @@ namespace SharpLog.Settings
         public Level(
             char @short = '-',
             bool enabled = true,
-            string format = null)
+            string? format = null)
         {
             this.Short = @short;
             this.Enabled = enabled;
@@ -53,7 +53,7 @@ namespace SharpLog.Settings
         /// <value>
         /// The format.
         /// </value>
-        public string Format { get; set; }
+        public string? Format { get; set; }
 
         /// <summary>
         /// Gets or sets a char representing the log level.

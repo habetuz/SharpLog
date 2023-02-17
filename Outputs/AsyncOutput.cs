@@ -8,22 +8,22 @@
 // Visit https://sharplog.marvin-fuchs.de for more information.
 // </summary>
 
+using System;
+using System.Collections.Concurrent;
+using System.Threading;
+using System.Threading.Tasks;
+using SharpLog.Settings;
+
 namespace SharpLog.Outputs
 {
-    using System;
-    using System.Collections.Concurrent;
-    using System.Threading;
-    using System.Threading.Tasks;
-    using SharpLog.Settings;
-
     /// <summary>
     /// Base class for async outputs.
     /// </summary>
     public abstract class AsyncOutput : Output, IDisposable
     {
-        private BlockingCollection<(string, Log)> queue = new BlockingCollection<(string, Log)>();
-        private Task task;
-        private CancellationTokenSource cancellationToken;
+        private BlockingCollection<(string, Log)> queue = new();
+        private Task? task;
+        private CancellationTokenSource? cancellationToken;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AsyncOutput"/> class.
@@ -31,10 +31,10 @@ namespace SharpLog.Outputs
         /// <param name="suspendTime">The time the output waits until it checks for new logs in ms.</param>
         /// <param name="format">The format of the output.</param>
         /// <param name="levels">The level settings of the output.</param>
-        public AsyncOutput(
+        protected AsyncOutput(
             int suspendTime = 500,
-            string format = null,
-            LevelContainer levels = null)
+            string? format = null,
+            LevelContainer? levels = null)
             : base(format, levels)
         {
             this.SuspendTime = suspendTime;
@@ -43,12 +43,12 @@ namespace SharpLog.Outputs
         /// <summary>
         /// Event called when the output gets started.
         /// </summary>
-        protected event EventHandler OnStart;
+        protected event EventHandler? OnStart;
 
         /// <summary>
         /// Event called when the output gets disposed.
         /// </summary>
-        protected event EventHandler OnDispose;
+        protected event EventHandler? OnDispose;
 
         /// <summary>
         /// Gets or sets the time the output waits until it checks for new logs in ms.
@@ -63,13 +63,14 @@ namespace SharpLog.Outputs
         /// </summary>
         public void Dispose()
         {
+            GC.SuppressFinalize(this);
             this.cancellationToken?.Cancel();
             this.task?.Wait();
             this.cancellationToken?.Dispose();
             this.queue.Dispose();
             this.task?.Dispose();
 
-            this.OnDispose?.Invoke(this, null);
+            this.OnDispose?.Invoke(this, null!);
         }
 
         /// <summary>
@@ -77,7 +78,7 @@ namespace SharpLog.Outputs
         /// </summary>
         public void Start()
         {
-            this.OnStart?.Invoke(this, null);
+            this.OnStart?.Invoke(this, null!);
 
             this.cancellationToken = new CancellationTokenSource();
             this.task = Task.Run(() =>
@@ -98,10 +99,12 @@ namespace SharpLog.Outputs
                     Task.Delay(this.SuspendTime).Wait();
                 }
 
-                if (this.queue.Count > 0)
+                if (this.queue.Count == 0)
                 {
-                    this.WriteNonBlocking(this.queue.ToArray());
+                    return;
                 }
+
+                this.WriteNonBlocking(this.queue.ToArray());
             });
         }
 

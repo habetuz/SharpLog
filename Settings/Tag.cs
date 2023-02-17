@@ -8,10 +8,10 @@
 // Visit https://sharplog.marvin-fuchs.de for more information.
 // </summary>
 
+using System;
+
 namespace SharpLog.Settings
 {
-    using System;
-
     /// <summary>
     /// Class containing settings of a tag.
     /// </summary>
@@ -35,9 +35,9 @@ namespace SharpLog.Settings
         /// <param name="outputs">The outputs.</param>
         public Tag(
             bool enabled = true,
-            string format = null,
-            LevelContainer levels = null,
-            OutputContainer outputs = null)
+            string? format = null,
+            LevelContainer? levels = null,
+            OutputContainer? outputs = null)
         {
             this.Enabled = enabled;
             this.Format = format;
@@ -59,7 +59,7 @@ namespace SharpLog.Settings
         /// <value>
         /// The format.
         /// </value>
-        public string Format { get; set; }
+        public string? Format { get; set; }
 
         /// <summary>
         /// Gets or sets the level settings.
@@ -67,7 +67,7 @@ namespace SharpLog.Settings
         /// <value>
         /// The levels.
         /// </value>
-        public LevelContainer Levels { get; set; }
+        public LevelContainer? Levels { get; set; }
 
         /// <summary>
         /// Gets or sets the outputs.
@@ -75,13 +75,14 @@ namespace SharpLog.Settings
         /// <value>
         /// The outputs.
         /// </value>
-        public OutputContainer Outputs { get; set; }
+        public OutputContainer? Outputs { get; set; }
 
         /// <summary>
         /// Releases unmanaged and - optionally - managed resources.
         /// </summary>
         public void Dispose()
         {
+            GC.SuppressFinalize(this);
             this.Outputs?.Dispose();
         }
     }

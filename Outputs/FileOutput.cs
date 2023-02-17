@@ -8,12 +8,12 @@
 // Visit https://sharplog.marvin-fuchs.de for more information.
 // </summary>
 
+using System;
+using System.IO;
+using SharpLog.Settings;
+
 namespace SharpLog.Outputs
 {
-    using System;
-    using System.IO;
-    using SharpLog.Settings;
-
     /// <summary>
     /// Output writing asynchronously to a file.
     /// </summary>
@@ -38,8 +38,8 @@ namespace SharpLog.Outputs
         public FileOutput(
             string path = ".log",
             int suspendTime = 500,
-            string format = null,
-            LevelContainer levels = null)
+            string? format = null,
+            LevelContainer? levels = null)
             : base(suspendTime, format, levels)
         {
             this.Path = path;
@@ -59,15 +59,13 @@ namespace SharpLog.Outputs
         {
             try
             {
-                using (var writer = new StreamWriter(File.Open(this.Path, FileMode.Append, FileAccess.Write)))
+                using var writer = new StreamWriter(File.Open(this.Path, FileMode.Append, FileAccess.Write));
+                foreach (var log in logs)
                 {
-                    foreach (var log in logs)
-                    {
-                        writer.WriteLine(log.Item1);
-                    }
-
-                    writer.Flush();
+                    writer.WriteLine(log.Item1);
                 }
+
+                writer.Flush();
             }
             catch (IOException)
             {

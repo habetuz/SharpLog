@@ -8,12 +8,12 @@
 // Visit https://sharplog.marvin-fuchs.de for more information.
 // </summary>
 
+using System;
+using System.Diagnostics;
+using SharpLog.Settings;
+
 namespace SharpLog
 {
-    using System;
-    using System.Diagnostics;
-    using SharpLog.Settings;
-
     /// <summary>
     /// Class responsible for logging.
     /// </summary>
@@ -38,7 +38,7 @@ namespace SharpLog
         /// <param name="tag">The tag.</param>
         /// <param name="exception">The exception.</param>
         /// <param name="stackTrace">Wether the stack trace should be logged.</param>
-        public static void LogDebug(object message, string tag = null, Exception exception = null, bool stackTrace = false)
+        public static void LogDebug(object message, string? tag = null, Exception? exception = null, bool stackTrace = false)
         {
             Log(LogLevel.Debug, message, tag, exception, stackTrace);
         }
@@ -50,7 +50,7 @@ namespace SharpLog
         /// <param name="tag">The tag.</param>
         /// <param name="exception">The exception.</param>
         /// <param name="stackTrace">Wether the stack trace should be logged.</param>
-        public static void LogTrace(object message, string tag = null, Exception exception = null, bool stackTrace = false)
+        public static void LogTrace(object message, string? tag = null, Exception? exception = null, bool stackTrace = false)
         {
             Log(LogLevel.Trace, message, tag, exception, stackTrace);
         }
@@ -62,7 +62,7 @@ namespace SharpLog
         /// <param name="tag">The tag.</param>
         /// <param name="exception">The exception.</param>
         /// <param name="stackTrace">Wether the stack trace should be logged.</param>
-        public static void LogInfo(object message, string tag = null, Exception exception = null, bool stackTrace = false)
+        public static void LogInfo(object message, string? tag = null, Exception? exception = null, bool stackTrace = false)
         {
             Log(LogLevel.Info, message, tag, exception, stackTrace);
         }
@@ -74,7 +74,7 @@ namespace SharpLog
         /// <param name="tag">The tag.</param>
         /// <param name="exception">The exception.</param>
         /// <param name="stackTrace">Wether the stack trace should be logged.</param>
-        public static void LogWarning(object message, string tag = null, Exception exception = null, bool stackTrace = false)
+        public static void LogWarning(object message, string? tag = null, Exception? exception = null, bool stackTrace = false)
         {
             Log(LogLevel.Warning, message, tag, exception, stackTrace);
         }
@@ -86,7 +86,7 @@ namespace SharpLog
         /// <param name="tag">The tag.</param>
         /// <param name="exception">The exception.</param>
         /// <param name="stackTrace">Wether the stack trace should be logged.</param>
-        public static void LogError(object message, string tag = null, Exception exception = null, bool stackTrace = false)
+        public static void LogError(object message, string? tag = null, Exception? exception = null, bool stackTrace = false)
         {
             Log(LogLevel.Error, message, tag, exception, stackTrace);
         }
@@ -98,7 +98,7 @@ namespace SharpLog
         /// <param name="tag">The tag.</param>
         /// <param name="exception">The exception.</param>
         /// <param name="stackTrace">Wether the stack trace should be logged.</param>
-        public static void LogFatal(object message, string tag = null, Exception exception = null, bool stackTrace = false)
+        public static void LogFatal(object message, string? tag = null, Exception? exception = null, bool stackTrace = false)
         {
             Log(LogLevel.Fatal, message, tag, exception, stackTrace);
         }
@@ -119,7 +119,7 @@ namespace SharpLog
         /// <param name="tag">The tag.</param>
         /// <param name="exception">The exception.</param>
         /// <param name="stackTrace">Wether the stack trace should be logged.</param>
-        internal static void Log(LogLevel level, object message, string tag = null, Exception exception = null, bool stackTrace = false)
+        internal static void Log(LogLevel level, object message, string? tag = null, Exception? exception = null, bool stackTrace = false)
         {
             if (SettingsManager.IsDisposed)
             {
@@ -128,15 +128,15 @@ namespace SharpLog
             }
 
             // Check if the settings contain the specified tag
-            Tag tagContainer = null;
-            bool tagAvailable = tag != null && SettingsManager.Settings.Tags.ContainsKey(tag);
+            Tag? tagContainer = null;
+            bool tagAvailable = tag != null && SettingsManager.Settings!.Tags.ContainsKey(tag);
             if (tagAvailable)
             {
-                tagContainer = SettingsManager.Settings.Tags[tag];
+                tagContainer = SettingsManager.Settings!.Tags[tag!];
             }
 
             // Check if tag is enabled
-            if (tagAvailable && !tagContainer.Enabled)
+            if (tagAvailable && !tagContainer!.Enabled)
             {
                 return;
             }
@@ -145,13 +145,13 @@ namespace SharpLog
             // 1: Output container of tag
             // 2: General output container
             OutputContainer outputContainer;
-            if (tagAvailable && tagContainer.Outputs != null)
+            if (tagAvailable && tagContainer!.Outputs != null)
             {
                 outputContainer = tagContainer.Outputs;
             }
             else
             {
-                outputContainer = SettingsManager.Settings.Outputs;
+                outputContainer = SettingsManager.Settings!.Outputs;
             }
 
             // Find level
@@ -159,14 +159,14 @@ namespace SharpLog
             // 2: General level
             Level levelSettings;
             bool levelSettingsFromTag = false;
-            if (tagAvailable && tagContainer.Levels != null && tagContainer.Levels.GetLevel(level) != null)
+            if (tagAvailable && tagContainer!.Levels != null && tagContainer.Levels.GetLevel(level) != null)
             {
-                levelSettings = tagContainer.Levels.GetLevel(level);
+                levelSettings = tagContainer.Levels.GetLevel(level)!;
                 levelSettingsFromTag = true;
             }
             else
             {
-                levelSettings = SettingsManager.Settings.Levels.GetLevel(level);
+                levelSettings = SettingsManager.Settings!.Levels.GetLevel(level)!;
             }
 
             if (!levelSettings.Enabled)
@@ -184,7 +184,7 @@ namespace SharpLog
             {
                 format = levelSettings.Format;
             }
-            else if (tagAvailable && tagContainer.Format != null)
+            else if (tagAvailable && tagContainer!.Format != null)
             {
                 format = tagContainer.Format;
             }
@@ -194,13 +194,23 @@ namespace SharpLog
             }
             else
             {
-                format = SettingsManager.Settings.Format;
+                format = SettingsManager.Settings!.Format;
             }
 
             // Generate stack trace
             var stack = stackTrace ? new StackTrace(2, true) : new StackTrace(2, false);
 
-            Log log = new Log(level, message, stack.GetFrame(0).GetMethod().DeclaringType, stack.GetFrame(0).GetMethod(), tag, exception, levelSettings, format, DateTime.Now, stackTrace ? stack.ToString() : null);
+            Log log = new(
+                level,
+                message,
+                stack!.GetFrame(0)!.GetMethod()!.DeclaringType!,
+                stack!.GetFrame(0)!.GetMethod()!,
+                tag!,
+                exception!,
+                levelSettings,
+                format,
+                DateTime.Now,
+                stackTrace ? stack.ToString() : null!);
 
             outputContainer.Console?.Write(log);
             outputContainer.File?.Write(log);
@@ -210,11 +220,13 @@ namespace SharpLog
                 output.Write(log);
             }
 
-            if (level == LogLevel.Fatal)
+            if (level != LogLevel.Fatal)
             {
-                Dispose();
-                Environment.Exit(1);
+                return;
             }
+
+            Dispose();
+            Environment.Exit(1);
         }
     }
 }

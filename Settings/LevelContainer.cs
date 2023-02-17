@@ -33,12 +33,12 @@ namespace SharpLog.Settings
         /// <param name="error">The error settings.</param>
         /// <param name="fatal">The fatal settings.</param>
         public LevelContainer(
-            Level debug = null,
-            Level trace = null,
-            Level info = null,
-            Level warning = null,
-            Level error = null,
-            Level fatal = null)
+            Level? debug = null,
+            Level? trace = null,
+            Level? info = null,
+            Level? warning = null,
+            Level? error = null,
+            Level? fatal = null)
         {
             this.Debug = debug;
             this.Trace = trace;
@@ -54,7 +54,7 @@ namespace SharpLog.Settings
         /// <value>
         /// The debug.
         /// </value>
-        public Level Debug { get; set; }
+        public Level? Debug { get; set; }
 
         /// <summary>
         /// Gets or sets the settings for the log level "trace".
@@ -62,15 +62,15 @@ namespace SharpLog.Settings
         /// <value>
         /// The trace.
         /// </value>
-        public Level Trace { get; set; }
+        public Level? Trace { get; set; }
 
         /// <summary>
-        /// Gets or sets thej settings for the log level "info".
+        /// Gets or sets the settings for the log level "info".
         /// </summary>
         /// <value>
         /// The information.
         /// </value>
-        public Level Info { get; set; }
+        public Level? Info { get; set; }
 
         /// <summary>
         /// Gets or sets the settings for the log level "info".
@@ -78,7 +78,7 @@ namespace SharpLog.Settings
         /// <value>
         /// The warning.
         /// </value>
-        public Level Warning { get; set; }
+        public Level? Warning { get; set; }
 
         /// <summary>
         /// Gets or sets the settings for the log level "error".
@@ -86,7 +86,7 @@ namespace SharpLog.Settings
         /// <value>
         /// The error.
         /// </value>
-        public Level Error { get; set; }
+        public Level? Error { get; set; }
 
         /// <summary>
         /// Gets or sets the settings for the log level "fatal".
@@ -94,32 +94,25 @@ namespace SharpLog.Settings
         /// <value>
         /// The fatal.
         /// </value>
-        public Level Fatal { get; set; }
+        public Level? Fatal { get; set; }
 
         /// <summary>
         /// Gets the settings for a level.
         /// </summary>
         /// <param name="level">The level the settings should be returned from.</param>
         /// <returns>The requested settings.</returns>
-        public Level GetLevel(LogLevel level)
+        public Level? GetLevel(LogLevel level)
         {
-            switch (level)
+            return level switch
             {
-                case LogLevel.Debug:
-                    return this.Debug;
-                case LogLevel.Trace:
-                    return this.Trace;
-                case LogLevel.Info:
-                    return this.Info;
-                case LogLevel.Warning:
-                    return this.Warning;
-                case LogLevel.Error:
-                    return this.Error;
-                case LogLevel.Fatal:
-                    return this.Fatal;
-                default:
-                    return null;
-            }
+                LogLevel.Debug => this.Debug,
+                LogLevel.Trace => this.Trace,
+                LogLevel.Info => this.Info,
+                LogLevel.Warning => this.Warning,
+                LogLevel.Error => this.Error,
+                LogLevel.Fatal => this.Fatal,
+                _ => null,
+            };
         }
     }
 }

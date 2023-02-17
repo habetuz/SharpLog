@@ -8,11 +8,11 @@
 // Visit https://sharplog.marvin-fuchs.de for more information.
 // </summary>
 
+using System;
+using System.Collections.Generic;
+
 namespace SharpLog.Settings
 {
-    using System;
-    using System.Collections.Generic;
-
     /// <summary>
     /// Base class containing all settings.
     /// </summary>
@@ -24,34 +24,35 @@ namespace SharpLog.Settings
         /// </summary>
         public BaseSettings()
             : this(
-            fomat: "[$D$] - $La{u}r{7, }$$Tp{ - }r{10, }$ - $Cs{ -}r{30,-}$> $Fr{20, }$ - $M$$Ep{\n}i{   }$$Sp{\n}$",
-            levels: null,
-            outputs: null,
-            tags: null)
+                format: "[$D$] - $La{u}r{7, }$$Tp{ - }r{10, }$ - $Cs{ -}r{30,-}$> $Fr{20, }$ - $M$$Ep{\n}i{   }$$Sp{\n}$",
+                levels: null,
+                outputs: null,
+                tags: null)
         {
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseSettings"/> class using default settings if not provided.
         /// </summary>
-        /// <param name="fomat">The fomat.</param>
+        /// <param name="format">The format.</param>
         /// <param name="levels">The levels.</param>
         /// <param name="outputs">The outputs.</param>
         /// <param name="tags">The tags.</param>
         public BaseSettings(
-            string fomat = "$D$: [$L$]$Cp{ [}s{] }$$Tp{ [}s{] }$ $M$$Ep{\nException: }$$Sp{\nStackTrace: }$",
-            LevelContainer levels = null,
-            OutputContainer outputs = null,
-            Dictionary<string, Tag> tags = null)
+            string format = "$D$: [$L$]$Cp{ [}s{] }$$Tp{ [}s{] }$ $M$$Ep{\nException: }$$Sp{\nStackTrace: }$",
+            LevelContainer? levels = null,
+            OutputContainer? outputs = null,
+            Dictionary<string, Tag>? tags = null)
         {
-            this.Format = fomat;
-            this.Levels = levels ?? new LevelContainer(
-                debug: new Level('?'),
-                trace: new Level('&'),
-                info: new Level('+'),
-                warning: new Level('!'),
-                error: new Level('x'),
-                fatal: new Level('X'));
+            this.Format = format;
+            this.Levels = levels
+                ?? new LevelContainer(
+                    debug: new Level('?'),
+                    trace: new Level('&'),
+                    info: new Level('+'),
+                    warning: new Level('!'),
+                    error: new Level('x'),
+                    fatal: new Level('X'));
             this.Outputs = outputs ?? new OutputContainer();
             this.Tags = tags ?? new Dictionary<string, Tag>();
 
@@ -101,13 +102,16 @@ namespace SharpLog.Settings
         /// </summary>
         public void Dispose()
         {
+            GC.SuppressFinalize(this);
             this.Outputs?.Dispose();
-            if (this.Tags != null)
+            if (this.Tags == null)
             {
-                foreach (var tag in this.Tags.Values)
-                {
-                    tag.Dispose();
-                }
+                return;
+            }
+
+            foreach (var tag in this.Tags.Values)
+            {
+                tag.Dispose();
             }
         }
     }

@@ -28,7 +28,7 @@ namespace SharpLog.Settings.Wrapper
         /// </summary>
         /// <param name="address">The mail address.</param>
         /// <param name="displayName">The display name.</param>
-        public MailAddress(string address, string displayName = null)
+        public MailAddress(string? address, string? displayName = null)
         {
             this.Address = address;
             this.DisplayName = displayName;
@@ -37,11 +37,11 @@ namespace SharpLog.Settings.Wrapper
         /// <summary>
         /// Gets or sets the mail address.
         /// </summary>
-        public string Address { get; set; }
+        public string? Address { get; set; }
 
         /// <summary>
         /// Gets or sets the display name.
         /// </summary>
-        public string DisplayName { get; set; }
+        public string? DisplayName { get; set; }
     }
 }

@@ -8,12 +8,12 @@
 // Visit https://sharplog.marvin-fuchs.de for more information.
 // </summary>
 
+using System;
+using System.Collections.Generic;
+using SharpLog.Settings;
+
 namespace SharpLog.Outputs
 {
-    using System;
-    using System.Collections.Generic;
-    using SharpLog.Settings;
-
     /// <summary>
     /// Output using <see cref="Console"/>.
     /// </summary>
@@ -37,22 +37,23 @@ namespace SharpLog.Outputs
         /// <param name="colors">The colors.</param>
         public ConsoleOutput(
             bool colorEnabled = true,
-            string format = null,
-            LevelContainer levels = null,
-            Dictionary<LogLevel, Color> colors = null)
+            string? format = null,
+            LevelContainer? levels = null,
+            Dictionary<LogLevel, Color>? colors = null)
         {
             this.ColorEnabled = colorEnabled;
             this.Format = format;
             this.Levels = levels;
-            this.Colors = colors ?? new Dictionary<LogLevel, Color>()
-            {
-                { LogLevel.Debug, new Color(foreground: ConsoleColor.DarkGray) },
-                { LogLevel.Trace, new Color() },
-                { LogLevel.Info, new Color(foreground: ConsoleColor.Green) },
-                { LogLevel.Warning, new Color(foreground: ConsoleColor.Yellow) },
-                { LogLevel.Error, new Color(foreground: ConsoleColor.Red) },
-                { LogLevel.Fatal, new Color(background: ConsoleColor.Red, foreground: ConsoleColor.Black) },
-            };
+            this.Colors = colors
+                ?? new Dictionary<LogLevel, Color>()
+                    {
+                        { LogLevel.Debug, new Color(foreground: ConsoleColor.DarkGray) },
+                        { LogLevel.Trace, new Color() },
+                        { LogLevel.Info, new Color(foreground: ConsoleColor.Green) },
+                        { LogLevel.Warning, new Color(foreground: ConsoleColor.Yellow) },
+                        { LogLevel.Error, new Color(foreground: ConsoleColor.Red) },
+                        { LogLevel.Fatal, new Color(foreground: ConsoleColor.Black, background: ConsoleColor.Red) },
+                    };
         }
 
         /// <summary>
@@ -80,8 +81,8 @@ namespace SharpLog.Outputs
         {
             if (this.ColorEnabled)
             {
-                Console.BackgroundColor = this.Colors.ContainsKey(log.Level) ? this.Colors[log.Level].Background : ConsoleColor.Black;
-                Console.ForegroundColor = this.Colors.ContainsKey(log.Level) ? this.Colors[log.Level].Foreground : ConsoleColor.White;
+                Console.BackgroundColor = Colors.TryGetValue(log.Level, out Color? value) ? value.Background : ConsoleColor.Black;
+                Console.ForegroundColor = Colors.TryGetValue(log.Level, out value) ? value.Foreground : ConsoleColor.White;
             }
             else
             {

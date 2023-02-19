@@ -40,7 +40,7 @@ namespace SharpLog
         /// <param name="stackTrace">Wether the stack trace should be logged.</param>
         public static void LogDebug(object message, string? tag = null, Exception? exception = null, bool stackTrace = false)
         {
-            Log(LogLevel.Debug, message, tag, exception, stackTrace);
+            LogInternal(LogLevel.Debug, message, tag, exception, stackTrace);
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace SharpLog
         /// <param name="stackTrace">Wether the stack trace should be logged.</param>
         public static void LogTrace(object message, string? tag = null, Exception? exception = null, bool stackTrace = false)
         {
-            Log(LogLevel.Trace, message, tag, exception, stackTrace);
+            LogInternal(LogLevel.Trace, message, tag, exception, stackTrace);
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace SharpLog
         /// <param name="stackTrace">Wether the stack trace should be logged.</param>
         public static void LogInfo(object message, string? tag = null, Exception? exception = null, bool stackTrace = false)
         {
-            Log(LogLevel.Info, message, tag, exception, stackTrace);
+            LogInternal(LogLevel.Info, message, tag, exception, stackTrace);
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace SharpLog
         /// <param name="stackTrace">Wether the stack trace should be logged.</param>
         public static void LogWarning(object message, string? tag = null, Exception? exception = null, bool stackTrace = false)
         {
-            Log(LogLevel.Warning, message, tag, exception, stackTrace);
+            LogInternal(LogLevel.Warning, message, tag, exception, stackTrace);
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace SharpLog
         /// <param name="stackTrace">Wether the stack trace should be logged.</param>
         public static void LogError(object message, string? tag = null, Exception? exception = null, bool stackTrace = false)
         {
-            Log(LogLevel.Error, message, tag, exception, stackTrace);
+            LogInternal(LogLevel.Error, message, tag, exception, stackTrace);
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace SharpLog
         /// <param name="stackTrace">Wether the stack trace should be logged.</param>
         public static void LogFatal(object message, string? tag = null, Exception? exception = null, bool stackTrace = false)
         {
-            Log(LogLevel.Fatal, message, tag, exception, stackTrace);
+            LogInternal(LogLevel.Fatal, message, tag, exception, stackTrace);
         }
 
         /// <summary>
@@ -119,7 +119,28 @@ namespace SharpLog
         /// <param name="tag">The tag.</param>
         /// <param name="exception">The exception.</param>
         /// <param name="stackTrace">Wether the stack trace should be logged.</param>
-        internal static void Log(LogLevel level, object message, string? tag = null, Exception? exception = null, bool stackTrace = false)
+        public static void Log(
+            LogLevel level,
+            object message,
+            string? tag = null,
+            Exception? exception = null,
+            bool stackTrace = false)
+        {
+            LogInternal(
+                level,
+                message,
+                tag,
+                exception,
+                stackTrace
+            );
+        }
+
+        private static void LogInternal(
+            LogLevel level,
+            object message,
+            string? tag = null,
+            Exception? exception = null,
+            bool stackTrace = false)
         {
             if (SettingsManager.IsDisposed)
             {
@@ -212,10 +233,7 @@ namespace SharpLog
                 DateTime.Now,
                 stackTrace ? stack.ToString() : null!);
 
-            outputContainer.Console?.Write(log);
-            outputContainer.File?.Write(log);
-            outputContainer.Email?.Write(log);
-            foreach (var output in outputContainer.GetOutputs())
+            foreach (var output in outputContainer)
             {
                 output.Write(log);
             }

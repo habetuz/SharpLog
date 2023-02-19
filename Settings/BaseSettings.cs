@@ -60,7 +60,7 @@ namespace SharpLog.Settings
             {
                 Outputs = new OutputContainer()
                 {
-                    Console = new Outputs.ConsoleOutput(),
+                    new Outputs.ConsoleOutput(),
                 },
             };
         }

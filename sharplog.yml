@@ -1,31 +1,31 @@
 ﻿format: '$D$: $Lp{[}s{]}r{7, }$$Tp{[}s{]}$[$C$->$F$] $M$$Ep{\n}i{   }$$Sp{\n}$'
 levels:
   debug:
-    short: '?'
+    short: "?"
     enabled: true
     format: null
   trace:
-    short: '&'
+    short: "&"
     enabled: true
     format: null
   info:
-    short: '+'
+    short: "+"
     enabled: true
     format: null
   warn:
-    short: '!'
+    short: "!"
     enabled: true
     format: null
   error:
-    short: 'x'
+    short: "x"
     enabled: true
     format: null
   fatal:
-    short: 'X'
+    short: "X"
     enabled: true
     format: null
 outputs:
-  console:
+  - type: SharpLog.Outputs.ConsoleOutput
     levels: null
     format: null
     color_enabled: true
@@ -48,7 +48,7 @@ outputs:
       fatal:
         background: red
         foreground: black
-  file:
+  - type: SharpLog.Outputs.FileOutput
     levels: null
     format: null
     path: .log

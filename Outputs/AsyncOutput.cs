@@ -24,6 +24,7 @@ namespace SharpLog.Outputs
         private BlockingCollection<(string, Log)> queue = new();
         private Task? task;
         private CancellationTokenSource? cancellationToken;
+        private bool started;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AsyncOutput"/> class.
@@ -78,6 +79,13 @@ namespace SharpLog.Outputs
         /// </summary>
         public void Start()
         {
+            if (this.started)
+            {
+                return;
+            }
+
+            this.started = true;
+
             this.OnStart?.Invoke(this, null!);
 
             this.cancellationToken = new CancellationTokenSource();

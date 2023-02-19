@@ -2,8 +2,8 @@
 <package>
   <metadata>
     <id>MarvinFuchs.SharpLog</id>
-    <version>3.4.1</version>
-    <title>$title$</title>
+    <version>3.5.0</version>
+    <title>SharpLog</title>
     <authors>Marvin Fuchs</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
@@ -11,14 +11,13 @@
     <repository type="git" url="https://github.com/habetuz/SharpLog" branch="master"/>
     <description>A small logger for big projects.</description>
     <releaseNotes>
-      https://github.com/habetuz/SharpLog/releases/tag/v3.4.1
+      https://github.com/habetuz/SharpLog/releases/tag/v3.5.0
     </releaseNotes>
-    <copyright>$copyright$</copyright>
-    <tags>Logger</tags>
+    <copyright>Copyright (c) Marvin Fuchs. All rights reserved.</copyright>
+    <tags>Logger,Logging</tags>
     <dependencies>
-      <dependency id="System.Runtime" version="4.3.1"/>
       <dependency id="YamlDotNet" version="11.2.1"/>
-      <dependency id="StyleCop.Analyzers" version="1.1.118"/>
+      <dependency id="spectre.Console" version="0.46.0"/>
     </dependencies>
   </metadata>
 </package>

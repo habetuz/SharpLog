@@ -67,10 +67,11 @@ namespace SharpLog
                 IDeserializer deserializer = new DeserializerBuilder()
                     .WithNamingConvention(UnderscoredNamingConvention.Instance)
                     .WithTypeMapping<ICredentialsByHost, NetworkCredential>()
+                    .WithTypeMapping<Outputs.Output, Outputs.GenericOutput>()
                     .Build();
 
                 string file = System.IO.Path.Combine(Environment.CurrentDirectory, "sharplog.yml");
-                Settings = deserializer.Deserialize<BaseSettings>(File.ReadAllText(file)) ?? new BaseSettings();
+                Settings = deserializer.Deserialize<BaseSettings>(File.ReadAllText(file));
             }
             catch (Exception ex)
             {

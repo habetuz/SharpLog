@@ -22,14 +22,17 @@ namespace SharpLog.Settings
     /// <summary>
     /// Container for the output settings.
     /// </summary>
-    /// <seealso cref="System.IDisposable" />
     public class OutputContainer : IDisposable, IList<Output>
     {
         private readonly List<Output> outputs = new();
 
+        /// <inheritdoc />
         public int Count => this.outputs.Count;
+
+        /// <inheritdoc />
         public bool IsReadOnly => false;
 
+        /// <inheritdoc />
         public Output this[int index]
         {
             get => this.outputs[index];
@@ -104,9 +107,7 @@ namespace SharpLog.Settings
             }
         }
 
-        /// <summary>
-        /// Releases unmanaged and - optionally - managed resources.
-        /// </summary>
+        /// <inheritdoc />
         public void Dispose()
         {
             GC.SuppressFinalize(this);
@@ -121,11 +122,13 @@ namespace SharpLog.Settings
             });
         }
 
+        /// <inheritdoc />
         public int IndexOf(Output output)
         {
             return outputs.IndexOf(output);
         }
 
+        /// <inheritdoc />
         public void Insert(int index, Output output)
         {
             if (output is GenericOutput genericOutput)
@@ -141,6 +144,7 @@ namespace SharpLog.Settings
             this.outputs.Insert(index, output);
         }
 
+        /// <inheritdoc />
         public void RemoveAt(int index)
         {
             if (this[index] is AsyncOutput asyncOutput)
@@ -151,6 +155,7 @@ namespace SharpLog.Settings
             this.outputs.RemoveAt(index);
         }
 
+        /// <inheritdoc />
         public void Add(Output output)
         {
             if (output is GenericOutput genericOutput)
@@ -168,22 +173,26 @@ namespace SharpLog.Settings
             asyncOutput.Start();
         }
 
+        /// <inheritdoc />
         public void Clear()
         {
             this.Dispose();
             this.outputs.Clear();
         }
 
+        /// <inheritdoc />
         public bool Contains(Output output)
         {
             return this.outputs.Contains(output);
         }
 
+        /// <inheritdoc />
         public void CopyTo(Output[] array, int arrayIndex)
         {
             this.outputs.CopyTo(array, arrayIndex);
         }
 
+        /// <inheritdoc />
         public bool Remove(Output output)
         {
             var success = this.outputs.Remove(output);
@@ -197,11 +206,13 @@ namespace SharpLog.Settings
             return success;
         }
 
+        /// <inheritdoc />
         public IEnumerator<Output> GetEnumerator()
         {
             return this.outputs.GetEnumerator();
         }
 
+        /// <inheritdoc />
         IEnumerator IEnumerable.GetEnumerator()
         {
             return this.outputs.GetEnumerator();

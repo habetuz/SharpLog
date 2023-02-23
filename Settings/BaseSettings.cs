@@ -10,6 +10,7 @@
 
 using System;
 using System.Collections.Generic;
+using SharpLog.Outputs;
 
 namespace SharpLog.Settings
 {
@@ -53,14 +54,44 @@ namespace SharpLog.Settings
                     warning: new Level('!'),
                     error: new Level('x'),
                     fatal: new Level('X'));
-            this.Outputs = outputs ?? new OutputContainer();
+            this.Outputs = outputs
+                ?? new OutputContainer()
+                    {
+                        new Outputs.ConsoleOutput(),
+                        new Outputs.FileOutput(),
+                    };
             this.Tags = tags ?? new Dictionary<string, Tag>();
 
             this.Tags["SHARPLOG_INTERNAL"] = new Tag()
             {
-                Outputs = new OutputContainer()
+                Levels = new LevelContainer
                 {
-                    new Outputs.ConsoleOutput(),
+                    Debug = new Level
+                    {
+                        Enabled = false,
+                    },
+                    Trace = new Level
+                    {
+                        Enabled = false,
+                    },
+                    Info = new Level
+                    {
+                        Enabled = false,
+                    },
+                },
+                Outputs = new OutputContainer
+                {
+                    new AnsiConsoleOutput
+                    {
+                        AnsiErrorPrint = true,
+                        Levels = new LevelContainer(
+                            debug: new Level('?', format: "[bold gray]$La{s}p{[[}s{]]}$[/] - $M$$Sp{\nStackTrace: }$"),
+                            trace: new Level('&', format: "[bold white]$La{s}p{[[}s{]]}$[/] - $M$$Sp{\nStackTrace: }$"),
+                            info: new Level('+', format: "[bold green]$La{s}p{[[}s{]]}$[/] - $M$$Sp{\nStackTrace: }$"),
+                            warning: new Level('!', format: "[bold yellow]$La{s}p{[[}s{]]}$[/] - $M$$Sp{\nStackTrace: }$"),
+                            error: new Level('x', format: "[bold red]$La{s}p{[[}s{]]}$[/] - $M$$Sp{\nStackTrace: }$"),
+                            fatal: new Level('X', format: "[bold white on red]$La{s}p{[[}s{]]}$[/] - $M$$Sp{\nStackTrace: }$"))
+                    },
                 },
             };
         }
@@ -71,7 +102,7 @@ namespace SharpLog.Settings
         /// <value>
         /// The format.
         /// </value>
-        public string Format { get; set; }
+        public string? Format { get; set; }
 
         /// <summary>
         /// Gets or sets the general levels.
@@ -79,7 +110,7 @@ namespace SharpLog.Settings
         /// <value>
         /// The levels.
         /// </value>
-        public LevelContainer Levels { get; set; }
+        public LevelContainer? Levels { get; set; }
 
         /// <summary>
         /// Gets or sets the general outputs.
@@ -87,7 +118,7 @@ namespace SharpLog.Settings
         /// <value>
         /// The outputs.
         /// </value>
-        public OutputContainer Outputs { get; set; }
+        public OutputContainer? Outputs { get; set; }
 
         /// <summary>
         /// Gets or sets the tags.
@@ -95,7 +126,7 @@ namespace SharpLog.Settings
         /// <value>
         /// The tags.
         /// </value>
-        public Dictionary<string, Tag> Tags { get; set; }
+        public Dictionary<string, Tag>? Tags { get; set; }
 
         /// <summary>
         /// Releases unmanaged and - optionally - managed resources.
@@ -103,6 +134,9 @@ namespace SharpLog.Settings
         public void Dispose()
         {
             GC.SuppressFinalize(this);
+
+            Logging.LogInfo("Disposing SharpLog!", "SHARPLOG_INTERNAL");
+
             this.Outputs?.Dispose();
             if (this.Tags == null)
             {

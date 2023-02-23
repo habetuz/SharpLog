@@ -23,7 +23,7 @@ namespace SharpLog.Outputs
         /// Initializes a new instance of the <see cref="AnsiConsoleOutput"/> class.
         /// </summary>
         public AnsiConsoleOutput()
-            : this(null, null)
+            : this(false, null, null)
         {
         }
 
@@ -33,12 +33,20 @@ namespace SharpLog.Outputs
         /// <param name="format">The format.</param>
         /// <param name="levels">The levels.</param>
         public AnsiConsoleOutput(
+            bool ansiErrorPrint = false,
             string? format = null,
             LevelContainer? levels = null)
         {
+            this.AnsiErrorPrint = ansiErrorPrint;
             this.Format = format;
             this.Levels = levels;
         }
+
+        /// <summary>
+        /// Gets or sets a value indicating wether the build in error logging capability of <see cref="Spectre.Console.AnsiConsole"/> should be used.
+        /// Do not specify an error format if you set this parameter to true, else the error will be logged twice.
+        /// </summary>
+        public bool AnsiErrorPrint { get; set; }
 
         /// <summary>
         /// Writes the specified formatted log.
@@ -47,7 +55,21 @@ namespace SharpLog.Outputs
         /// <param name="log">The log.</param>
         public override void Write(string formattedLog, Log log)
         {
-            AnsiConsole.MarkupLine(formattedLog);
+            try
+            {
+                AnsiConsole.MarkupLine(formattedLog);
+
+                if (this.AnsiErrorPrint && log.Exception is not null)
+                {
+                    AnsiConsole.WriteException(log.Exception, ExceptionFormats.ShortenEverything);
+                }
+            }
+            catch (InvalidOperationException e)
+            {
+                AnsiConsole.MarkupLine("[yellow]The following message contains invalid markup:[/]");
+                AnsiConsole.WriteLine(formattedLog);
+                AnsiConsole.WriteException(e, ExceptionFormats.ShortenEverything);
+            }
         }
     }
 }

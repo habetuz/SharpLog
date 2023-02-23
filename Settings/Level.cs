@@ -19,7 +19,7 @@ namespace SharpLog.Settings
         /// Initializes a new instance of the <see cref="Level"/> class using default values.
         /// </summary>
         public Level()
-            : this('-', true, null)
+            : this('\0', true, null)
         {
         }
 
@@ -30,7 +30,7 @@ namespace SharpLog.Settings
         /// <param name="enabled">Wether the level is enabled.</param>
         /// <param name="format">The format.</param>
         public Level(
-            char @short = '-',
+            char @short = '\0',
             bool enabled = true,
             string? format = null)
         {

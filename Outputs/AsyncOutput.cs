@@ -59,9 +59,7 @@ namespace SharpLog.Outputs
         /// </value>
         public int SuspendTime { get; set; }
 
-        /// <summary>
-        /// Releases unmanaged and - optionally - managed resources.
-        /// </summary>
+        /// <inheritdoc />
         public void Dispose()
         {
             GC.SuppressFinalize(this);

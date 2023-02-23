@@ -148,16 +148,26 @@ namespace SharpLog
                 LogWarning("SettingsManager was disposed, reloaded settings.", "SHARPLOG-INITIALIZATION");
             }
 
+            if (SettingsManager.Settings is null)
+            {
+                throw new NullReferenceException("SettingsManager.Settings should not be null here. This is a bug!");
+            }
+
+            string? format = SettingsManager.Settings.Format;
+
             // Check if the settings contain the specified tag
             Tag? tagContainer = null;
-            bool tagAvailable = tag != null && SettingsManager.Settings!.Tags.ContainsKey(tag);
-            if (tagAvailable)
+            if (tag is not null && SettingsManager.Settings.Tags is not null)
             {
-                tagContainer = SettingsManager.Settings!.Tags[tag!];
+                SettingsManager.Settings.Tags.TryGetValue(tag, out tagContainer);
+                if (tagContainer?.Format is not null)
+                {
+                    format = tagContainer.Format;
+                }
             }
 
             // Check if tag is enabled
-            if (tagAvailable && !tagContainer!.Enabled)
+            if (tagContainer?.Enabled == false)
             {
                 return;
             }
@@ -166,28 +176,57 @@ namespace SharpLog
             // 1: Output container of tag
             // 2: General output container
             OutputContainer outputContainer;
-            if (tagAvailable && tagContainer!.Outputs != null)
+            if (tagContainer?.Outputs is not null)
             {
                 outputContainer = tagContainer.Outputs;
             }
             else
             {
-                outputContainer = SettingsManager.Settings!.Outputs;
+                if (SettingsManager.Settings.Outputs is null)
+                {
+                    tag ??= "<null>";
+                    LogTrace($"A log with the tag [yellow]{tag}[/] could not be logged because no tag or general output was specified.", "SHARPLOG_INTERNAL");
+                    return;
+                }
+
+                outputContainer = SettingsManager.Settings.Outputs;
             }
 
-            // Find level
+            // Find level settings
             // 1: Tag level
             // 2: General level
-            Level levelSettings;
-            bool levelSettingsFromTag = false;
-            if (tagAvailable && tagContainer!.Levels != null && tagContainer.Levels.GetLevel(level) != null)
+            Level levelSettings = new();
+            if (SettingsManager.Settings.Levels is not null)
             {
-                levelSettings = tagContainer.Levels.GetLevel(level)!;
-                levelSettingsFromTag = true;
+                var generalLevelSettings = SettingsManager.Settings.Levels.GetLevel(level);
+                if (generalLevelSettings is not null)
+                {
+                    levelSettings.Enabled = generalLevelSettings.Enabled;
+                    levelSettings.Short = generalLevelSettings.Short;
+                    if (generalLevelSettings.Format is not null && tagContainer?.Format is not null)
+                    {
+                        format = generalLevelSettings.Format;
+                    }
+                }
             }
-            else
+
+            if (!levelSettings.Enabled)
             {
-                levelSettings = SettingsManager.Settings!.Levels.GetLevel(level)!;
+                return;
+            }
+
+            if (tagContainer?.Levels != null)
+            {
+                var tagLevelSettings = tagContainer.Levels.GetLevel(level);
+                if (tagLevelSettings is not null)
+                {
+                    levelSettings.Enabled = tagLevelSettings.Enabled;
+                    levelSettings.Short = tagLevelSettings.Short == '\0' ? levelSettings.Short : tagLevelSettings.Short;
+                    if (tagLevelSettings.Format is not null)
+                    {
+                        format = tagLevelSettings.Format;
+                    }
+                }
             }
 
             if (!levelSettings.Enabled)
@@ -200,22 +239,9 @@ namespace SharpLog
             // 2: Format of tag
             // 3: Format of general level
             // 4: General format
-            string format;
-            if (levelSettingsFromTag && levelSettings.Format != null)
+            if (format is null)
             {
-                format = levelSettings.Format;
-            }
-            else if (tagAvailable && tagContainer!.Format != null)
-            {
-                format = tagContainer.Format;
-            }
-            else if (levelSettings.Format != null)
-            {
-                format = levelSettings.Format;
-            }
-            else
-            {
-                format = SettingsManager.Settings!.Format;
+                throw new NullReferenceException("No format was found! Check your settings.yml or your code if you set formats to <null>.");
             }
 
             // Generate stack trace
@@ -228,7 +254,7 @@ namespace SharpLog
                 stack!.GetFrame(0)!.GetMethod()!,
                 tag!,
                 exception!,
-                levelSettings,
+                levelSettings.Short,
                 format,
                 DateTime.Now,
                 stackTrace ? stack.ToString() : null!);

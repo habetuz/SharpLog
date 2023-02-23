@@ -27,7 +27,7 @@ namespace SharpLog
         /// <param name="method">The method.</param>
         /// <param name="tag">The tag.</param>
         /// <param name="exception">The exception.</param>
-        /// <param name="levelSettings">The level settings.</param>
+        /// <param name="short">The short form of the log level.</param>
         /// <param name="format">The format.</param>
         /// <param name="time">The time.</param>
         /// <param name="stackTrace">The stack trace.</param>
@@ -38,7 +38,7 @@ namespace SharpLog
             in MethodBase method,
             in string tag,
             in Exception exception,
-            in Level levelSettings,
+            in char @short,
             in string format,
             in DateTime time,
             in string stackTrace)
@@ -49,7 +49,7 @@ namespace SharpLog
             this.Function = method;
             this.Tag = tag;
             this.Exception = exception;
-            this.LevelSettings = levelSettings;
+            this.Short = @short;
             this.Format = format;
             this.Time = time;
             this.StackTrace = stackTrace;
@@ -109,12 +109,12 @@ namespace SharpLog
         public string Format { get; set; }
 
         /// <summary>
-        /// Gets or sets the level settings.
+        /// Gets or sets the short form of the log level.
         /// </summary>
         /// <value>
-        /// The level settings.
+        /// The short form of the log level.
         /// </value>
-        public Level LevelSettings { get; set; }
+        public char Short { get; set; }
 
         /// <summary>
         /// Gets or sets the time the log was logged.

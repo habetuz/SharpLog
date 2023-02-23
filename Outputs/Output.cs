@@ -58,26 +58,25 @@ namespace SharpLog.Outputs
         /// <param name="log">The log.</param>
         internal void Write(Log log)
         {
-            if (this.Format != null)
+            var levelSettings = this.Levels?.GetLevel(log.Level);
+            if (levelSettings?.Enabled == false)
+            {
+                return;
+            }
+
+            if (levelSettings?.Short is not null or '\0')
+            {
+                log.Short = levelSettings.Short;
+            }
+
+            if (this.Format is not null)
             {
                 log.Format = this.Format;
             }
 
-            if (this.Levels?.GetLevel(log.Level) != null)
+            if (levelSettings?.Format is not null)
             {
-                Level levelSettings = this.Levels.GetLevel(log.Level)!;
-
-                if (!levelSettings.Enabled)
-                {
-                    return;
-                }
-
-                log.LevelSettings = levelSettings;
-
-                if (levelSettings.Format != null)
-                {
-                    log.Format = levelSettings.Format;
-                }
+                log.Format = levelSettings.Format;
             }
 
             this.Write(Formatter.Format(log), log);

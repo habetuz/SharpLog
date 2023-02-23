@@ -32,7 +32,7 @@ namespace SharpLog
                 Exception = log.Exception,
                 Format = format,
                 Level = log.Level,
-                LevelSettings = log.LevelSettings,
+                Short = log.Short,
                 Message = log.Message,
                 StackTrace = log.StackTrace,
                 Tag = log.Tag,
@@ -117,7 +117,7 @@ namespace SharpLog
 
                                     case "s":
                                         {
-                                            logLevel = log.LevelSettings.Short.ToString();
+                                            logLevel = log.Short.ToString();
                                             break;
                                         }
 

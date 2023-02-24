@@ -8,20 +8,20 @@
       
       
       
-        <link rel="canonical" href="https://sharplog.marvin-fuchs.de/Reference/Outputs/ConsoleOutput/">
+        <link rel="canonical" href="https://sharplog.marvin-fuchs.de/Reference/Outputs/AnsiConsoleOutput/">
       
       
-        <link rel="prev" href="../AnsiConsoleOutput/">
+        <link rel="prev" href="../AsyncOutput/">
       
       
-        <link rel="next" href="../EmailOutput/">
+        <link rel="next" href="../ConsoleOutput/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.14">
     
     
       
-        <title>ConsoleOutput Class - SharpLog</title>
+        <title>AnsiConsoleOutput Class - SharpLog</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#consoleoutput-class" class="md-skip">
+        <a href="#ansiconsoleoutput-class" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ConsoleOutput Class
+              AnsiConsoleOutput Class
             
           </span>
         </div>
@@ -588,20 +588,6 @@
               
   
   
-  
-    <li class="md-nav__item">
-      <a href="../AnsiConsoleOutput/" class="md-nav__link">
-        AnsiConsoleOutput Class
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
     
   
   
@@ -614,12 +600,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          ConsoleOutput Class
+          AnsiConsoleOutput Class
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        ConsoleOutput Class
+        AnsiConsoleOutput Class
       </a>
       
         
@@ -680,15 +666,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#consoleoutput" class="md-nav__link">
-    ConsoleOutput()
+  <a href="#ansiconsoleoutput" class="md-nav__link">
+    AnsiConsoleOutput()
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#consoleoutputbool-string-levelcontainer-dictionary-loglevel-color" class="md-nav__link">
-    ConsoleOutput(bool, string, LevelContainer, Dictionary&lt; LogLevel, Color &gt;)
+  <a href="#ansiconsoleoutputbool-string-levelcontainer" class="md-nav__link">
+    AnsiConsoleOutput(bool, string?, LevelContainer?)
   </a>
   
 </li>
@@ -707,15 +693,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#colorenabled" class="md-nav__link">
-    ColorEnabled
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#colors" class="md-nav__link">
-    Colors
+  <a href="#ansierrorprint" class="md-nav__link">
+    AnsiErrorPrint
   </a>
   
 </li>
@@ -729,6 +708,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ConsoleOutput/" class="md-nav__link">
+        ConsoleOutput Class
+      </a>
     </li>
   
 
@@ -1002,15 +995,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#consoleoutput" class="md-nav__link">
-    ConsoleOutput()
+  <a href="#ansiconsoleoutput" class="md-nav__link">
+    AnsiConsoleOutput()
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#consoleoutputbool-string-levelcontainer-dictionary-loglevel-color" class="md-nav__link">
-    ConsoleOutput(bool, string, LevelContainer, Dictionary&lt; LogLevel, Color &gt;)
+  <a href="#ansiconsoleoutputbool-string-levelcontainer" class="md-nav__link">
+    AnsiConsoleOutput(bool, string?, LevelContainer?)
   </a>
   
 </li>
@@ -1029,15 +1022,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#colorenabled" class="md-nav__link">
-    ColorEnabled
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#colors" class="md-nav__link">
-    Colors
+  <a href="#ansierrorprint" class="md-nav__link">
+    AnsiErrorPrint
   </a>
   
 </li>
@@ -1062,17 +1048,17 @@
                   
 
 
-<h1 id="consoleoutput-class">ConsoleOutput Class<a class="headerlink" href="#consoleoutput-class" title="Permanent link">&para;</a></h1>
+<h1 id="ansiconsoleoutput-class">AnsiConsoleOutput Class<a class="headerlink" href="#ansiconsoleoutput-class" title="Permanent link">&para;</a></h1>
 <h2 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h2>
 <p><code class="highlight"><span class="k">namespace</span><span class="w"> </span><span class="nn">Sharplog.Outputs</span></code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ConsoleOutput</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Output</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">AnsiConsoleOutput</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Output</span>
 </code></pre></div>
 <dl>
 <dt><a href="https://docs.microsoft.com/en-us/dotnet/api/system.object">Object</a><br></dt>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 15-6 6-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"/></svg></span> <a href="../Output/">Output</a></dt>
-<dt>&emsp;&ensp;<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 15-6 6-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"/></svg></span> <a href="./"><strong>ConsoleOutput</strong></a></dt>
+<dt>&emsp;&ensp;<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 15-6 6-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"/></svg></span> <a href="./"><strong>AnsiConsoleOutput</strong></a></dt>
 <dd>
-<p>Output using the default console output.</p>
+<p>Output using <a href="https://spectreconsole.net/">Spectre.Console.AnsiConsole</a>.</p>
 </dd>
 </dl>
 <h3 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h3>
@@ -1084,10 +1070,10 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="#consoleoutput">ConsoleOutput()</a></td>
+<td><a href="#ansiconsoleoutput">AnsiConsoleOutput()</a></td>
 </tr>
 <tr>
-<td><a href="#consoleoutputbool-string-levelcontainer-dictionary-loglevel-color">ConsoleOutput(bool, string, LevelContainer, Dictionary&lt; LogLevel, Color &gt;)</a></td>
+<td><a href="#ansiconsoleoutputbool-string-levelcontainer">AnsiConsoleOutput(bool, string?, LevelContainer?)</a></td>
 </tr>
 </tbody>
 </table>
@@ -1115,14 +1101,8 @@
 <td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg></span></td>
 </tr>
 <tr>
-<td><a href="#colorenabled">ColorEnabled</a></td>
+<td><a href="#ansierrorprint">AnsiErrorPrint</a></td>
 <td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a></td>
-<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg></span></td>
-<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg></span></td>
-</tr>
-<tr>
-<td><a href="#colors">Colors</a></td>
-<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2">Dictionary&lt; LogLevel, Color &gt;</a></td>
 <td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg></span></td>
 <td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg></span></td>
 </tr>
@@ -1146,55 +1126,44 @@
 </tbody>
 </table>
 <h2 id="constructors_1">Constructors<a class="headerlink" href="#constructors_1" title="Permanent link">&para;</a></h2>
-<h3 id="consoleoutput">ConsoleOutput()<a class="headerlink" href="#consoleoutput" title="Permanent link">&para;</a></h3>
+<h3 id="ansiconsoleoutput">AnsiConsoleOutput()<a class="headerlink" href="#ansiconsoleoutput" title="Permanent link">&para;</a></h3>
 <dl>
-<dt><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">public</span><span class="w"> </span><span class="nf">ConsoleOutput</span><span class="p">()</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="p">:</span><span class="w"> </span><span class="k">this</span><span class="p">(</span><span class="k">true</span><span class="p">,</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<dt><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">public</span><span class="w"> </span><span class="nf">AnsiConsoleOutput</span><span class="p">()</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="p">:</span><span class="w"> </span><span class="k">this</span><span class="p">(</span><span class="k">false</span><span class="p">,</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
 </code></pre></div></dt>
 <dd>
-<p>Initializes a new instance of the <a href="./">ConsoleOutput</a> class.</p>
+<p>Initializes a new instance of the <a href="./">AnsiConsoleOutput</a> class.</p>
 </dd>
 </dl>
-<h3 id="consoleoutputbool-string-levelcontainer-dictionary-loglevel-color">ConsoleOutput(bool, string, LevelContainer, Dictionary&lt; LogLevel, Color &gt;)<a class="headerlink" href="#consoleoutputbool-string-levelcontainer-dictionary-loglevel-color" title="Permanent link">&para;</a></h3>
+<h3 id="ansiconsoleoutputbool-string-levelcontainer">AnsiConsoleOutput(bool, string?, LevelContainer?)<a class="headerlink" href="#ansiconsoleoutputbool-string-levelcontainer" title="Permanent link">&para;</a></h3>
 <dl>
-<dt><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">public</span><span class="w"> </span><span class="nf">ConsoleOutput</span><span class="p">(</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">colorEnabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">,</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">,</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="n">LevelContainer</span><span class="w"> </span><span class="n">levels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">,</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">LogLevel</span><span class="p">,</span><span class="w"> </span><span class="n">Color</span><span class="o">&gt;</span><span class="w"> </span><span class="n">colors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<dt><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">public</span><span class="w"> </span><span class="nf">AnsiConsoleOutput</span><span class="p">(</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">ansiErrorPrint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="kt">string?</span><span class="w"> </span><span class="n">format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">,</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="n">LevelContainer</span><span class="o">?</span><span class="w"> </span><span class="n">levels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
 </code></pre></div></dt>
 <dd>
-<p>Initializes a new instance of the <a href="./">ConsoleOutput</a> class.</p>
+<p>Initializes a new instance of the <a href="./">AnsiConsoleOutput</a> class.</p>
 </dd>
 </dl>
 <h4 id="parameter">Parameter<a class="headerlink" href="#parameter" title="Permanent link">&para;</a></h4>
 <dl>
-<dt><code>colorEnabled</code> <a href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> · <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M7.75 0a.75.75 0 0 1 .75.75V3h3.634c.414 0 .814.147 1.13.414l2.07 1.75a1.75 1.75 0 0 1 0 2.672l-2.07 1.75a1.75 1.75 0 0 1-1.13.414H8.5v5.25a.75.75 0 0 1-1.5 0V10H2.75A1.75 1.75 0 0 1 1 8.25v-3.5C1 3.784 1.784 3 2.75 3H7V.75A.75.75 0 0 1 7.75 0Zm4.384 8.5a.25.25 0 0 0 .161-.06l2.07-1.75a.248.248 0 0 0 0-.38l-2.07-1.75a.25.25 0 0 0-.161-.06H2.75a.25.25 0 0 0-.25.25v3.5c0 .138.112.25.25.25h9.384Z"/></svg></span> <code>true</code></dt>
-<dd>If set to <code>true</code> color output is enabled.</dd>
+<dt><code>ansiErrorPrint</code> <a href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a> · <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M7.75 0a.75.75 0 0 1 .75.75V3h3.634c.414 0 .814.147 1.13.414l2.07 1.75a1.75 1.75 0 0 1 0 2.672l-2.07 1.75a1.75 1.75 0 0 1-1.13.414H8.5v5.25a.75.75 0 0 1-1.5 0V10H2.75A1.75 1.75 0 0 1 1 8.25v-3.5C1 3.784 1.784 3 2.75 3H7V.75A.75.75 0 0 1 7.75 0Zm4.384 8.5a.25.25 0 0 0 .161-.06l2.07-1.75a.248.248 0 0 0 0-.38l-2.07-1.75a.25.25 0 0 0-.161-.06H2.75a.25.25 0 0 0-.25.25v3.5c0 .138.112.25.25.25h9.384Z"/></svg></span> <code>false</code></dt>
+<dd>If set to true the build in error logging capability of <a href="https://spectreconsole.net/exceptions">Spectre.Console.AnsiConsole</a> get used.</dd>
 <dt><code>format</code> <a href="https://docs.microsoft.com/en-us/dotnet/api/system.string">string</a> · <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M7.75 0a.75.75 0 0 1 .75.75V3h3.634c.414 0 .814.147 1.13.414l2.07 1.75a1.75 1.75 0 0 1 0 2.672l-2.07 1.75a1.75 1.75 0 0 1-1.13.414H8.5v5.25a.75.75 0 0 1-1.5 0V10H2.75A1.75 1.75 0 0 1 1 8.25v-3.5C1 3.784 1.784 3 2.75 3H7V.75A.75.75 0 0 1 7.75 0Zm4.384 8.5a.25.25 0 0 0 .161-.06l2.07-1.75a.248.248 0 0 0 0-.38l-2.07-1.75a.25.25 0 0 0-.161-.06H2.75a.25.25 0 0 0-.25.25v3.5c0 .138.112.25.25.25h9.384Z"/></svg></span> <code>null</code></dt>
 <dd>The format.</dd>
 <dt><code>levels</code> <a href="..%5CSettings%5CLevelContainer.md">LevelContainer</a> · <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M7.75 0a.75.75 0 0 1 .75.75V3h3.634c.414 0 .814.147 1.13.414l2.07 1.75a1.75 1.75 0 0 1 0 2.672l-2.07 1.75a1.75 1.75 0 0 1-1.13.414H8.5v5.25a.75.75 0 0 1-1.5 0V10H2.75A1.75 1.75 0 0 1 1 8.25v-3.5C1 3.784 1.784 3 2.75 3H7V.75A.75.75 0 0 1 7.75 0Zm4.384 8.5a.25.25 0 0 0 .161-.06l2.07-1.75a.248.248 0 0 0 0-.38l-2.07-1.75a.25.25 0 0 0-.161-.06H2.75a.25.25 0 0 0-.25.25v3.5c0 .138.112.25.25.25h9.384Z"/></svg></span> <code>null</code></dt>
 <dd>The level settings.</dd>
-<dt><code>colors</code> <a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2">Dictionary&lt; LogLevel, Color &gt;</a></dt>
-<dd>The colors.</dd>
 </dl>
 <h2 id="properties_1">Properties<a class="headerlink" href="#properties_1" title="Permanent link">&para;</a></h2>
-<h3 id="colorenabled">ColorEnabled<a class="headerlink" href="#colorenabled" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">public</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">ColorEnabled</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<h3 id="ansierrorprint">AnsiErrorPrint<a class="headerlink" href="#ansierrorprint" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">public</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">AnsiErrorPrint</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <dl>
 <dt>Type: <a href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">bool</a></dt>
 <dd>
-<p>Gets or sets a value indicating whether color is enabled.</p>
-</dd>
-</dl>
-<h3 id="colors">Colors<a class="headerlink" href="#colors" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">public</span><span class="w"> </span><span class="n">LevelContainer</span><span class="w"> </span><span class="n">Levels</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-</code></pre></div>
-<dl>
-<dt>Type: <a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2">Dictionary&lt; LogLevel, Color &gt;</a></dt>
-<dd>
-<p>Gets or sets the colors for each log level.</p>
+<p>Gets or sets a value indicating wether the build in error logging capability of <a href="https://spectreconsole.net/exceptions">Spectre.Console.AnsiConsole</a> should be used.
+Do not specify an error format if you set this parameter to <code>true</code>, else the error will be logged twice.</p>
 </dd>
 </dl>
 

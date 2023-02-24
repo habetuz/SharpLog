@@ -10,8 +10,14 @@
       
         <link rel="canonical" href="https://sharplog.marvin-fuchs.de/Customize/">
       
+      
+        <link rel="prev" href="../Get%20started/">
+      
+      
+        <link rel="next" href="Formatting/">
+      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.14">
     
     
       
@@ -19,16 +25,13 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.120efc48.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.113286f1.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#ff6e42">
-        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
       
+      
+
     
     
     
@@ -43,10 +46,11 @@
     
       <link rel="stylesheet" href="../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -123,7 +127,7 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -135,7 +139,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -147,7 +151,7 @@
         <a href="https://github.com/habetuz/SharpLog/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -166,7 +170,7 @@
           
             
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
@@ -261,7 +265,7 @@
       <a href="https://github.com/habetuz/SharpLog/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -314,8 +318,9 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
       
       
         
@@ -340,7 +345,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Customize" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Customize
@@ -394,8 +399,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
       
       
         
@@ -428,7 +434,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Reference" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Reference
@@ -445,20 +451,6 @@
     <li class="md-nav__item">
       <a href="../Reference/Logging/" class="md-nav__link">
         Logging Class
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Reference/SettingsManager/" class="md-nav__link">
-        SettingsManager Class
       </a>
     </li>
   
@@ -498,17 +490,34 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../Reference/SettingsManager/" class="md-nav__link">
+        SettingsManager Class
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
       
       
         
           
             
+          
+        
           
         
           
@@ -536,7 +545,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Outputs" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4_6">
           <span class="md-nav__icon md-icon"></span>
           Outputs
@@ -565,34 +574,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Reference/Outputs/ConsoleOutput/" class="md-nav__link">
-        ConsoleOutput Class
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Reference/Outputs/FileOutput/" class="md-nav__link">
-        FileOutput Class
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Reference/Outputs/AsyncOutput/" class="md-nav__link">
         AsyncOutput Class
       </a>
@@ -607,8 +588,50 @@
   
   
     <li class="md-nav__item">
+      <a href="../Reference/Outputs/AnsiConsoleOutput/" class="md-nav__link">
+        AnsiConsoleOutput Class
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Reference/Outputs/ConsoleOutput/" class="md-nav__link">
+        ConsoleOutput Class
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Reference/Outputs/EmailOutput/" class="md-nav__link">
         EmailOutput Class
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Reference/Outputs/FileOutput/" class="md-nav__link">
+        FileOutput Class
       </a>
     </li>
   
@@ -645,8 +668,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7" type="checkbox" id="__nav_4_7" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
       
       
         
@@ -679,7 +703,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="Settings" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4_7">
           <span class="md-nav__icon md-icon"></span>
           Settings
@@ -696,6 +720,20 @@
     <li class="md-nav__item">
       <a href="../Reference/Settings/BaseSettings/" class="md-nav__link">
         BaseSettings Class
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Reference/Settings/Color/" class="md-nav__link">
+        Color Class
       </a>
     </li>
   
@@ -738,20 +776,6 @@
     <li class="md-nav__item">
       <a href="../Reference/Settings/OutputContainer/" class="md-nav__link">
         OutputContainer Class
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Reference/Settings/Color/" class="md-nav__link">
-        Color Class
       </a>
     </li>
   
@@ -879,10 +903,11 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
 
   <h1>Customize</h1>
@@ -894,11 +919,11 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">sharplog.yml</label><label for="__tabbed_1_2">C#</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">format</span><span class="p">:</span> <span class="s">&#39;$D$:</span><span class="nv"> </span><span class="s">[$L$]$Tp{[}s{]}$[$C$-&gt;$F$]</span><span class="nv"> </span><span class="s">$M$$Ep{\n}i{</span><span class="nv">   </span><span class="s">}$$Sp{\n}$$&#39;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;$D$:</span><span class="nv"> </span><span class="s">[$L$]$Tp{[}s{]}$[$C$-&gt;$F$]</span><span class="nv"> </span><span class="s">$M$$Ep{\n}i{</span><span class="nv">   </span><span class="s">}$$Sp{\n}$$&#39;</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">SettingsManager</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">Format</span> <span class="p">=</span> <span class="s">&quot;$D$: [$L$]$Tp{[}s{]}$[$C$-&gt;$F$] $M$$Ep{\n}i{   }$$Sp{\n}$&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">SettingsManager</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">Format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;$D$: [$L$]$Tp{[}s{]}$[$C$-&gt;$F$] $M$$Ep{\n}i{   }$$Sp{\n}$&quot;</span>
 </code></pre></div>
 </div>
 </div>
@@ -912,31 +937,31 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">sharplog.yml</label><label for="__tabbed_2_2">C#</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nt">levels</span><span class="p">:</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>  <span class="nt">debug</span><span class="p">:</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>    <span class="nt">short</span><span class="p">:</span> <span class="s">&#39;?&#39;</span> <span class="c1">#(1)</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a>    <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a>    <span class="nt">format</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">null</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a>  <span class="nt">trace</span><span class="p">:</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a>    <span class="nt">short</span><span class="p">:</span> <span class="s">&#39;&amp;&#39;</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a>    <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span> <span class="c1">#(2)</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a>    <span class="nt">format</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">null</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a>  <span class="nt">info</span><span class="p">:</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a>    <span class="nt">short</span><span class="p">:</span> <span class="s">&#39;+&#39;</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12"></a>    <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13"></a>    <span class="nt">format</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">null</span> <span class="c1">#(3)</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14"></a>  <span class="nt">warn</span><span class="p">:</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15"></a>    <span class="nt">short</span><span class="p">:</span> <span class="s">&#39;!&#39;</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16"></a>    <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17"></a>    <span class="nt">format</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">null</span>
-<a id="__codelineno-2-18" name="__codelineno-2-18"></a>  <span class="nt">error</span><span class="p">:</span>
-<a id="__codelineno-2-19" name="__codelineno-2-19"></a>    <span class="nt">short</span><span class="p">:</span> <span class="s">&#39;x&#39;</span>
-<a id="__codelineno-2-20" name="__codelineno-2-20"></a>    <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-<a id="__codelineno-2-21" name="__codelineno-2-21"></a>    <span class="nt">format</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">null</span>
-<a id="__codelineno-2-22" name="__codelineno-2-22"></a>  <span class="nt">fatal</span><span class="p">:</span>
-<a id="__codelineno-2-23" name="__codelineno-2-23"></a>    <span class="nt">short</span><span class="p">:</span> <span class="s">&#39;X&#39;</span>
-<a id="__codelineno-2-24" name="__codelineno-2-24"></a>    <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-<a id="__codelineno-2-25" name="__codelineno-2-25"></a>    <span class="nt">format</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">null</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">levels</span><span class="p">:</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">debug</span><span class="p">:</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">short</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;?&#39;</span><span class="w"> </span><span class="c1">#(1)</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="nt">trace</span><span class="p">:</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nt">short</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&amp;&#39;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1">#(2)</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="nt">info</span><span class="p">:</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="nt">short</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;+&#39;</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1">#(3)</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">  </span><span class="nt">warn</span><span class="p">:</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="nt">short</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;!&#39;</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">  </span><span class="nt">error</span><span class="p">:</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span><span class="nt">short</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;x&#39;</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">    </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">  </span><span class="nt">fatal</span><span class="p">:</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">    </span><span class="nt">short</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;X&#39;</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">    </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
 </code></pre></div>
 <ol>
 <li>The short value is the <code class="highlight"><span class="kt">char</span></code> representation of the level.</li>
@@ -945,13 +970,13 @@
 </ol>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">SettingsManager</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">Levels</span> <span class="p">=</span> <span class="k">new</span> <span class="n">LevelContainer</span><span class="p">(</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a>    <span class="n">debug</span><span class="p">:</span> <span class="k">new</span> <span class="n">Level</span><span class="p">(</span><span class="sc">&#39;?&#39;</span><span class="p">),</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a>    <span class="n">trace</span><span class="p">:</span> <span class="k">new</span> <span class="n">Level</span><span class="p">(</span><span class="sc">&#39;&amp;&#39;</span><span class="p">),</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a>    <span class="n">info</span><span class="p">:</span> <span class="k">new</span> <span class="n">Level</span><span class="p">(</span><span class="sc">&#39;+&#39;</span><span class="p">),</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a>    <span class="n">warn</span><span class="p">:</span> <span class="k">new</span> <span class="n">Level</span><span class="p">(</span><span class="sc">&#39;!&#39;</span><span class="p">),</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a>    <span class="n">error</span><span class="p">:</span> <span class="k">new</span> <span class="n">Level</span><span class="p">(</span><span class="sc">&#39;x&#39;</span><span class="p">),</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a>    <span class="n">fatal</span><span class="p">:</span> <span class="k">new</span> <span class="n">Level</span><span class="p">(</span><span class="sc">&#39;X&#39;</span><span class="p">));</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">SettingsManager</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">Levels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LevelContainer</span><span class="p">(</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="n">debug</span><span class="p">:</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Level</span><span class="p">(</span><span class="sc">&#39;?&#39;</span><span class="p">),</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="n">trace</span><span class="p">:</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Level</span><span class="p">(</span><span class="sc">&#39;&amp;&#39;</span><span class="p">),</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="n">info</span><span class="p">:</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Level</span><span class="p">(</span><span class="sc">&#39;+&#39;</span><span class="p">),</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="n">warn</span><span class="p">:</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Level</span><span class="p">(</span><span class="sc">&#39;!&#39;</span><span class="p">),</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="n">error</span><span class="p">:</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Level</span><span class="p">(</span><span class="sc">&#39;x&#39;</span><span class="p">),</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="n">fatal</span><span class="p">:</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Level</span><span class="p">(</span><span class="sc">&#39;X&#39;</span><span class="p">));</span>
 </code></pre></div>
 </div>
 </div>
@@ -963,15 +988,15 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">sharplog.yml</label><label for="__tabbed_3_2">C#</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nt">outputs</span><span class="p">:</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>  <span class="nt">console</span><span class="p">:</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a>    <span class="l l-Scalar l-Scalar-Plain">...</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a>  <span class="nt">file</span><span class="p">:</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a>    <span class="l l-Scalar l-Scalar-Plain">...</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">outputs</span><span class="p">:</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">console</span><span class="p">:</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">file</span><span class="p">:</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">...</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="n">SettingsManager</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">Outputs</span> <span class="p">=</span> <span class="k">new</span> <span class="n">OutputContainer</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">SettingsManager</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">Outputs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">OutputContainer</span><span class="p">()</span>
 </code></pre></div>
 </div>
 </div>
@@ -984,29 +1009,29 @@
 <p class="admonition-title">Colors</p>
 <p><code>black</code> <code>blue</code> <code>cyan</code> <code>darkBlue</code> <code>darkCyan</code> <code>darkGray</code> <code>darkGreen</code> <code>darkMagenta</code> <code>darkRed</code> <code>darkYellow</code> <code>gray</code> <code>green</code> <code>magenta</code> <code>red</code> <code>white</code> <code>yellow</code></p>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="nt">console</span><span class="p">:</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a>  <span class="nt">levels</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">null</span> <span class="c1">#(1)</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a>  <span class="nt">format</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">null</span> <span class="c1">#(2)</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a>  <span class="nt">color_enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span> <span class="c1">#(3)</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5"></a>  <span class="nt">colors</span><span class="p">:</span> <span class="c1">#(4)</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6"></a>    <span class="nt">debug</span><span class="p">:</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7"></a>      <span class="nt">background</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">black</span> <span class="c1">#(5)</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8"></a>      <span class="nt">foreground</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">darkGray</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9"></a>    <span class="nt">trace</span><span class="p">:</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10"></a>      <span class="nt">background</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">black</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11"></a>      <span class="nt">foreground</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">white</span> <span class="c1">#(6)</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12"></a>    <span class="nt">info</span><span class="p">:</span>
-<a id="__codelineno-6-13" name="__codelineno-6-13"></a>      <span class="nt">background</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">black</span>
-<a id="__codelineno-6-14" name="__codelineno-6-14"></a>      <span class="nt">foreground</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">green</span>
-<a id="__codelineno-6-15" name="__codelineno-6-15"></a>    <span class="nt">warn</span><span class="p">:</span>
-<a id="__codelineno-6-16" name="__codelineno-6-16"></a>      <span class="nt">background</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">black</span>
-<a id="__codelineno-6-17" name="__codelineno-6-17"></a>      <span class="nt">foreground</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yellow</span>
-<a id="__codelineno-6-18" name="__codelineno-6-18"></a>    <span class="nt">error</span><span class="p">:</span>
-<a id="__codelineno-6-19" name="__codelineno-6-19"></a>      <span class="nt">background</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">black</span>
-<a id="__codelineno-6-20" name="__codelineno-6-20"></a>      <span class="nt">foreground</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">red</span>
-<a id="__codelineno-6-21" name="__codelineno-6-21"></a>    <span class="nt">fatal</span><span class="p">:</span>
-<a id="__codelineno-6-22" name="__codelineno-6-22"></a>      <span class="nt">background</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">red</span>
-<a id="__codelineno-6-23" name="__codelineno-6-23"></a>      <span class="nt">foreground</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">black</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">console</span><span class="p">:</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">levels</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1">#(1)</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1">#(2)</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">color_enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1">#(3)</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="nt">colors</span><span class="p">:</span><span class="w"> </span><span class="c1">#(4)</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="nt">debug</span><span class="p">:</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">      </span><span class="nt">background</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span><span class="w"> </span><span class="c1">#(5)</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">      </span><span class="nt">foreground</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">darkGray</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="nt">trace</span><span class="p">:</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">      </span><span class="nt">background</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">      </span><span class="nt">foreground</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">white</span><span class="w"> </span><span class="c1">#(6)</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">    </span><span class="nt">info</span><span class="p">:</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">      </span><span class="nt">background</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">      </span><span class="nt">foreground</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">green</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">    </span><span class="nt">warn</span><span class="p">:</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">      </span><span class="nt">background</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">      </span><span class="nt">foreground</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yellow</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">    </span><span class="nt">error</span><span class="p">:</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">      </span><span class="nt">background</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="w">      </span><span class="nt">foreground</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">red</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="w">    </span><span class="nt">fatal</span><span class="p">:</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="w">      </span><span class="nt">background</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">red</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="w">      </span><span class="nt">foreground</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
 </code></pre></div>
 <ol>
 <li>Level settings for the output. Read <a href="#set-the-global-level-settings">here</a> for more information about level settings but <strong>note that levels that are left blank will fallback to the global level settings instead of receiving a default value.</strong></li>
@@ -1018,7 +1043,7 @@
 </ol>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">new</span> <span class="nf">ConsoleOutput</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">new</span><span class="w"> </span><span class="nf">ConsoleOutput</span><span class="p">()</span>
 </code></pre></div>
 </div>
 </div>
@@ -1027,11 +1052,11 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">sharplog.yml</label><label for="__tabbed_5_2">C#</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="nt">file</span><span class="p">:</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2"></a>  <span class="nt">levels</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">null</span> <span class="c1">#(1)</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3"></a>  <span class="nt">format</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">null</span> <span class="c1">#(2)</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4"></a>  <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.log</span> <span class="c1">#(3)</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5"></a>  <span class="nt">suspend_time</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">500</span> <span class="c1">#(4)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">file</span><span class="p">:</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">levels</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1">#(1)</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1">#(2)</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.log</span><span class="w"> </span><span class="c1">#(3)</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">  </span><span class="nt">suspend_time</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">500</span><span class="w"> </span><span class="c1">#(4)</span>
 </code></pre></div>
 <ol>
 <li>Level settings for the output. Read <a href="#set-the-global-level-settings">here</a> for more information about level settings but <strong>note that levels that are left blank will fallback to the global level settings instead of receiving a default value.</strong></li>
@@ -1041,7 +1066,7 @@
 </ol>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="k">new</span> <span class="nf">FileOutput</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">new</span><span class="w"> </span><span class="nf">FileOutput</span><span class="p">()</span>
 </code></pre></div>
 </div>
 </div>
@@ -1050,104 +1075,104 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">sharplog.yml</label><label for="__tabbed_6_2">C#</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="nt">email</span><span class="p">:</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2"></a>  <span class="nt">levels</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">null</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3"></a>  <span class="nt">format</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">null</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4"></a>  <span class="nt">format_subject</span><span class="p">:</span> <span class="s">&#39;[$La{l}$]</span><span class="nv"> </span><span class="s">$C$&#39;</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5"></a>  <span class="nt">client</span><span class="p">:</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6"></a>    <span class="nt">host</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">smtp.yourdomain.com</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7"></a>    <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">587</span>
-<a id="__codelineno-10-8" name="__codelineno-10-8"></a>    <span class="nt">enable_ssl</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-<a id="__codelineno-10-9" name="__codelineno-10-9"></a>    <span class="nt">credentials</span><span class="p">:</span>
-<a id="__codelineno-10-10" name="__codelineno-10-10"></a>      <span class="nt">user_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yourusername</span>
-<a id="__codelineno-10-11" name="__codelineno-10-11"></a>      <span class="nt">password</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yourpassword</span>
-<a id="__codelineno-10-12" name="__codelineno-10-12"></a>  <span class="nt">from</span><span class="p">:</span>
-<a id="__codelineno-10-13" name="__codelineno-10-13"></a>    <span class="nt">display_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">SharpLog</span>
-<a id="__codelineno-10-14" name="__codelineno-10-14"></a>    <span class="nt">address</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sharplog@yourdomain.com</span>
-<a id="__codelineno-10-15" name="__codelineno-10-15"></a>  <span class="nt">to</span><span class="p">:</span>
-<a id="__codelineno-10-16" name="__codelineno-10-16"></a>    <span class="p p-Indicator">-</span> <span class="nt">display_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Your Receiver</span>
-<a id="__codelineno-10-17" name="__codelineno-10-17"></a>      <span class="nt">address</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mail@your-receiver.com</span>
-<a id="__codelineno-10-18" name="__codelineno-10-18"></a>  <span class="nt">bcc</span><span class="p">:</span>
-<a id="__codelineno-10-19" name="__codelineno-10-19"></a>    <span class="p p-Indicator">-</span> <span class="nt">display_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Your Receiver</span>
-<a id="__codelineno-10-20" name="__codelineno-10-20"></a>      <span class="nt">address</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mail@your-receiver.com</span>
-<a id="__codelineno-10-21" name="__codelineno-10-21"></a>  <span class="nt">cc</span><span class="p">:</span>
-<a id="__codelineno-10-22" name="__codelineno-10-22"></a>    <span class="p p-Indicator">-</span> <span class="nt">display_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Your Receiver</span>
-<a id="__codelineno-10-23" name="__codelineno-10-23"></a>      <span class="nt">address</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mail@your-receiver.com</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">email</span><span class="p">:</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">levels</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="nt">format_subject</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;[$La{l}$]</span><span class="nv"> </span><span class="s">$C$&#39;</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">  </span><span class="nt">client</span><span class="p">:</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">smtp.yourdomain.com</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">587</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">    </span><span class="nt">enable_ssl</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">    </span><span class="nt">credentials</span><span class="p">:</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">      </span><span class="nt">user_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yourusername</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">      </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yourpassword</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">  </span><span class="nt">from</span><span class="p">:</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">    </span><span class="nt">display_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SharpLog</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">    </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sharplog@yourdomain.com</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">  </span><span class="nt">to</span><span class="p">:</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">display_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Your Receiver</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">      </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mail@your-receiver.com</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="w">  </span><span class="nt">bcc</span><span class="p">:</span>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">display_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Your Receiver</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="w">      </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mail@your-receiver.com</span>
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="w">  </span><span class="nt">cc</span><span class="p">:</span>
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">display_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Your Receiver</span>
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="w">      </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mail@your-receiver.com</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="k">new</span> <span class="nf">EmailOutput</span><span class="p">()</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="p">{</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3"></a>    <span class="n">Client</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SmtpClient</span><span class="p">()</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4"></a>    <span class="p">{</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5"></a>        <span class="n">Port</span> <span class="p">=</span> <span class="m">587</span><span class="p">,</span>
-<a id="__codelineno-11-6" name="__codelineno-11-6"></a>        <span class="n">Host</span> <span class="p">=</span> <span class="s">&quot;smtp.yourdomain.com&quot;</span><span class="p">,</span>
-<a id="__codelineno-11-7" name="__codelineno-11-7"></a>        <span class="n">EnableSsl</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
-<a id="__codelineno-11-8" name="__codelineno-11-8"></a>        <span class="n">Credentials</span> <span class="p">=</span> <span class="k">new</span> <span class="n">NetworkCredential</span><span class="p">()</span>
-<a id="__codelineno-11-9" name="__codelineno-11-9"></a>        <span class="p">{</span>
-<a id="__codelineno-11-10" name="__codelineno-11-10"></a>            <span class="n">Password</span> <span class="p">=</span> <span class="s">&quot;yourusername&quot;</span><span class="p">,</span>
-<a id="__codelineno-11-11" name="__codelineno-11-11"></a>            <span class="n">UserName</span> <span class="p">=</span> <span class="s">&quot;yourpassword&quot;</span><span class="p">,</span>
-<a id="__codelineno-11-12" name="__codelineno-11-12"></a>        <span class="p">},</span>
-<a id="__codelineno-11-13" name="__codelineno-11-13"></a>    <span class="p">},</span>
-<a id="__codelineno-11-14" name="__codelineno-11-14"></a>    <span class="n">From</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MailAddress</span><span class="p">()</span>
-<a id="__codelineno-11-15" name="__codelineno-11-15"></a>    <span class="p">{</span>
-<a id="__codelineno-11-16" name="__codelineno-11-16"></a>        <span class="n">Address</span> <span class="p">=</span> <span class="s">&quot;sharplog@yourdomain.com&quot;</span><span class="p">,</span>
-<a id="__codelineno-11-17" name="__codelineno-11-17"></a>        <span class="n">DisplayName</span> <span class="p">=</span> <span class="s">&quot;SharpLog&quot;</span><span class="p">,</span>
-<a id="__codelineno-11-18" name="__codelineno-11-18"></a>    <span class="p">},</span>
-<a id="__codelineno-11-19" name="__codelineno-11-19"></a>    <span class="n">To</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MailAddress</span><span class="p">[]</span>
-<a id="__codelineno-11-20" name="__codelineno-11-20"></a>    <span class="p">{</span>
-<a id="__codelineno-11-21" name="__codelineno-11-21"></a>        <span class="k">new</span> <span class="nf">MailAddress</span><span class="p">()</span>
-<a id="__codelineno-11-22" name="__codelineno-11-22"></a>        <span class="p">{</span>
-<a id="__codelineno-11-23" name="__codelineno-11-23"></a>            <span class="n">Address</span> <span class="p">=</span> <span class="s">&quot;mail@your-receiver.com&quot;</span><span class="p">,</span>
-<a id="__codelineno-11-24" name="__codelineno-11-24"></a>            <span class="n">DisplayName</span> <span class="p">=</span> <span class="s">&quot;Your Receiver&quot;</span><span class="p">,</span>
-<a id="__codelineno-11-25" name="__codelineno-11-25"></a>        <span class="p">},</span>
-<a id="__codelineno-11-26" name="__codelineno-11-26"></a>    <span class="p">},</span>
-<a id="__codelineno-11-27" name="__codelineno-11-27"></a>    <span class="n">Bcc</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MailAddress</span><span class="p">[]</span>
-<a id="__codelineno-11-28" name="__codelineno-11-28"></a>    <span class="p">{</span>
-<a id="__codelineno-11-29" name="__codelineno-11-29"></a>        <span class="k">new</span> <span class="nf">MailAddress</span><span class="p">()</span>
-<a id="__codelineno-11-30" name="__codelineno-11-30"></a>        <span class="p">{</span>
-<a id="__codelineno-11-31" name="__codelineno-11-31"></a>            <span class="n">Address</span> <span class="p">=</span> <span class="s">&quot;mail@your-receiver.com&quot;</span><span class="p">,</span>
-<a id="__codelineno-11-32" name="__codelineno-11-32"></a>            <span class="n">DisplayName</span> <span class="p">=</span> <span class="s">&quot;Your Receiver&quot;</span><span class="p">,</span>
-<a id="__codelineno-11-33" name="__codelineno-11-33"></a>        <span class="p">},</span>
-<a id="__codelineno-11-34" name="__codelineno-11-34"></a>    <span class="p">},</span>
-<a id="__codelineno-11-35" name="__codelineno-11-35"></a>    <span class="n">Cc</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MailAddress</span><span class="p">[]</span>
-<a id="__codelineno-11-36" name="__codelineno-11-36"></a>    <span class="p">{</span>
-<a id="__codelineno-11-37" name="__codelineno-11-37"></a>        <span class="k">new</span> <span class="nf">MailAddress</span><span class="p">()</span>
-<a id="__codelineno-11-38" name="__codelineno-11-38"></a>        <span class="p">{</span>
-<a id="__codelineno-11-39" name="__codelineno-11-39"></a>            <span class="n">Address</span> <span class="p">=</span> <span class="s">&quot;mail@your-receiver.com&quot;</span><span class="p">,</span>
-<a id="__codelineno-11-40" name="__codelineno-11-40"></a>            <span class="n">DisplayName</span> <span class="p">=</span> <span class="s">&quot;Your Receiver&quot;</span><span class="p">,</span>
-<a id="__codelineno-11-41" name="__codelineno-11-41"></a>        <span class="p">},</span>
-<a id="__codelineno-11-42" name="__codelineno-11-42"></a>    <span class="p">},</span>
-<a id="__codelineno-11-43" name="__codelineno-11-43"></a><span class="p">};</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">new</span><span class="w"> </span><span class="nf">EmailOutput</span><span class="p">()</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="p">{</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="n">Client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SmtpClient</span><span class="p">()</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">        </span><span class="n">Port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">587</span><span class="p">,</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">        </span><span class="n">Host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;smtp.yourdomain.com&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">        </span><span class="n">EnableSsl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">,</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">        </span><span class="n">Credentials</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">NetworkCredential</span><span class="p">()</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">            </span><span class="n">Password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;yourusername&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">            </span><span class="n">UserName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;yourpassword&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">        </span><span class="p">},</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">    </span><span class="n">From</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MailAddress</span><span class="p">()</span>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="w">        </span><span class="n">Address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;sharplog@yourdomain.com&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="w">        </span><span class="n">DisplayName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SharpLog&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="w">    </span><span class="n">To</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MailAddress</span><span class="p">[]</span>
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a><span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="nf">MailAddress</span><span class="p">()</span>
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a><span class="w">            </span><span class="n">Address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mail@your-receiver.com&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a><span class="w">            </span><span class="n">DisplayName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Your Receiver&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a><span class="w">        </span><span class="p">},</span>
+<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a><span class="w">    </span><span class="n">Bcc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MailAddress</span><span class="p">[]</span>
+<a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a><span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="nf">MailAddress</span><span class="p">()</span>
+<a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a><span class="w">            </span><span class="n">Address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mail@your-receiver.com&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a><span class="w">            </span><span class="n">DisplayName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Your Receiver&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-33" name="__codelineno-11-33" href="#__codelineno-11-33"></a><span class="w">        </span><span class="p">},</span>
+<a id="__codelineno-11-34" name="__codelineno-11-34" href="#__codelineno-11-34"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-11-35" name="__codelineno-11-35" href="#__codelineno-11-35"></a><span class="w">    </span><span class="n">Cc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MailAddress</span><span class="p">[]</span>
+<a id="__codelineno-11-36" name="__codelineno-11-36" href="#__codelineno-11-36"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-11-37" name="__codelineno-11-37" href="#__codelineno-11-37"></a><span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="nf">MailAddress</span><span class="p">()</span>
+<a id="__codelineno-11-38" name="__codelineno-11-38" href="#__codelineno-11-38"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-11-39" name="__codelineno-11-39" href="#__codelineno-11-39"></a><span class="w">            </span><span class="n">Address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mail@your-receiver.com&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-40" name="__codelineno-11-40" href="#__codelineno-11-40"></a><span class="w">            </span><span class="n">DisplayName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Your Receiver&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-41" name="__codelineno-11-41" href="#__codelineno-11-41"></a><span class="w">        </span><span class="p">},</span>
+<a id="__codelineno-11-42" name="__codelineno-11-42" href="#__codelineno-11-42"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-11-43" name="__codelineno-11-43" href="#__codelineno-11-43"></a><span class="p">};</span>
 </code></pre></div>
 </div>
 </div>
 </div>
 <h3 id="set-a-custom-output">Set a custom output<a class="headerlink" href="#set-a-custom-output" title="Permanent link">&para;</a></h3>
-<p>Create a class that extends the <a href="../Reference/Outputs/Output/"><code>Outputs.Output</code></a> class.</p>
+<p>Create a class that extends the <a href="..%5CReference%5COutputs%5COutput.md"><code>Outputs.Output</code></a> class.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Synchronous</label><label for="__tabbed_7_2">Asynchronous</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="k">class</span> <span class="nc">CustomOutput</span> <span class="p">:</span> <span class="n">SharpLog</span><span class="p">.</span><span class="n">Outputs</span><span class="p">.</span><span class="n">Output</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="p">{</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3"></a>    <span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Write</span><span class="p">(</span><span class="kt">string</span> <span class="n">formattedLog</span><span class="p">,</span> <span class="n">Log</span> <span class="n">log</span><span class="p">)</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4"></a>    <span class="p">{</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5"></a>        <span class="c1">//(1)</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6"></a>    <span class="p">}</span>
-<a id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">CustomOutput</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">SharpLog</span><span class="p">.</span><span class="n">Outputs</span><span class="p">.</span><span class="n">Output</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="p">{</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Write</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">formattedLog</span><span class="p">,</span><span class="w"> </span><span class="n">Log</span><span class="w"> </span><span class="n">log</span><span class="p">)</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">        </span><span class="c1">//(1)</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="p">}</span>
 </code></pre></div>
 <ol>
 <li>Write the formatted log to your output. The log object contains all the information about the log.</li>
 </ol>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="k">class</span> <span class="nc">CustomOutput</span> <span class="p">:</span> <span class="n">SharpLog</span><span class="p">.</span><span class="n">Outputs</span><span class="p">.</span><span class="n">AsyncOutput</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="p">{</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3"></a>    <span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">WriteNonBlocking</span><span class="p">((</span><span class="kt">string</span><span class="p">,</span> <span class="n">Log</span><span class="p">)[]</span> <span class="n">logs</span><span class="p">)</span>
-<a id="__codelineno-13-4" name="__codelineno-13-4"></a>    <span class="p">{</span>
-<a id="__codelineno-13-5" name="__codelineno-13-5"></a>        <span class="c1">//(1)</span>
-<a id="__codelineno-13-6" name="__codelineno-13-6"></a>    <span class="p">}</span>
-<a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">CustomOutput</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">SharpLog</span><span class="p">.</span><span class="n">Outputs</span><span class="p">.</span><span class="n">AsyncOutput</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="p">{</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">WriteNonBlocking</span><span class="p">((</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="n">Log</span><span class="p">)[]</span><span class="w"> </span><span class="n">logs</span><span class="p">)</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">        </span><span class="c1">//(1)</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="p">}</span>
 </code></pre></div>
 <ol>
 <li>Write the formatted logs to your output. This method gets called asynchronously.</li>
@@ -1155,15 +1180,15 @@
 </div>
 </div>
 </div>
-<p>Now you have to add the output to an <a href="../Reference/Settings/OutputContainer/"><code>OutputContainer</code></a>.</p>
+<p>Now you have to add the output to an <a href="..%5CReference%5CSettings%5COutputContainer.md"><code>OutputContainer</code></a>.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">General output</label><label for="__tabbed_8_2">Tag output</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="n">SettingsManager</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">Outputs</span><span class="p">.</span><span class="n">AddOutput</span><span class="p">(</span><span class="k">new</span> <span class="n">CustomOutput</span><span class="p">())</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">SettingsManager</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">Outputs</span><span class="p">.</span><span class="n">AddOutput</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CustomOutput</span><span class="p">())</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="n">SettingsManager</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">Tags</span><span class="p">[</span><span class="s">&quot;YOUR_TAG&quot;</span><span class="p">].</span><span class="n">Outputs</span><span class="p">.</span><span class="n">AddOutput</span><span class="p">(</span><span class="k">new</span> <span class="n">CustomOutput</span><span class="p">())</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">SettingsManager</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">Tags</span><span class="p">[</span><span class="s">&quot;YOUR_TAG&quot;</span><span class="p">].</span><span class="n">Outputs</span><span class="p">.</span><span class="n">AddOutput</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CustomOutput</span><span class="p">())</span>
 </code></pre></div>
 </div>
 </div>
@@ -1174,17 +1199,17 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">sharplog.yml</label><label for="__tabbed_9_2">C#</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="nt">tags</span><span class="p">:</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2"></a>  <span class="nt">YOUR_TAG</span><span class="p">:</span>
-<a id="__codelineno-16-3" name="__codelineno-16-3"></a>    <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span> <span class="c1">#(1)</span>
-<a id="__codelineno-16-4" name="__codelineno-16-4"></a>    <span class="nt">format</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">null</span>
-<a id="__codelineno-16-5" name="__codelineno-16-5"></a>    <span class="nt">levels</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">null</span> <span class="c1">#(2)</span>
-<a id="__codelineno-16-6" name="__codelineno-16-6"></a>    <span class="nt">outputs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">null</span>
-<a id="__codelineno-16-7" name="__codelineno-16-7"></a>  <span class="nt">anotherTag</span><span class="p">:</span> <span class="c1">#(3)</span>
-<a id="__codelineno-16-8" name="__codelineno-16-8"></a>    <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-<a id="__codelineno-16-9" name="__codelineno-16-9"></a>    <span class="nt">format</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">null</span> <span class="c1">#(4)</span>
-<a id="__codelineno-16-10" name="__codelineno-16-10"></a>    <span class="nt">levels</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">null</span>
-<a id="__codelineno-16-11" name="__codelineno-16-11"></a>    <span class="nt">outputs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">null</span> <span class="c1">#(5)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nt">tags</span><span class="p">:</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="nt">YOUR_TAG</span><span class="p">:</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1">#(1)</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="nt">levels</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1">#(2)</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">    </span><span class="nt">outputs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">  </span><span class="nt">anotherTag</span><span class="p">:</span><span class="w"> </span><span class="c1">#(3)</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">    </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1">#(4)</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">    </span><span class="nt">levels</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">    </span><span class="nt">outputs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1">#(5)</span>
 </code></pre></div>
 <ol>
 <li><code class="highlight"><span class="k">true</span></code> if the tag is enabled, else <code class="highlight"><span class="k">false</span></code></li>
@@ -1195,19 +1220,25 @@
 </ol>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="n">SettingsManager</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">Tags</span><span class="p">[</span><span class="s">&quot;YOUR_TAG&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Tag</span><span class="p">();</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="n">SettingsManager</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">Tags</span><span class="p">[</span><span class="s">&quot;anotherTag&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Tag</span><span class="p">();</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">SettingsManager</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">Tags</span><span class="p">[</span><span class="s">&quot;YOUR_TAG&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Tag</span><span class="p">();</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="n">SettingsManager</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">Tags</span><span class="p">[</span><span class="s">&quot;anotherTag&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Tag</span><span class="p">();</span>
 </code></pre></div>
 </div>
 </div>
 </div>
 
-              
-            </article>
-          </div>
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             Back to top
           </a>
@@ -1215,41 +1246,6 @@
       </main>
       
         <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../Get%20started/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Get started" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Get started
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="Formatting/" class="md-footer__link md-footer__link--next" aria-label="Next: Formatting" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Formatting
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1271,10 +1267,11 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "navigation.instant", "navigation.indexes", "navigation.tracking", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "navigation.instant", "navigation.indexes", "navigation.tracking", "content.code.annotate"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      <script src="../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
     
   </body>

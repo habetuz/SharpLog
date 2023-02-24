@@ -1,17 +1,23 @@
+/*
 .md-typeset__table {
-    min-width: 100%;
- }
- 
- 
- .md-typeset table:not([class]) {
-    display: table;
-    overflow: hidden;
-    margin-top: .4rem;
-    box-shadow: 0 .1rem .5rem .3rem rgba(0,0,0,.05),0 0 .05rem rgba(0,0,0,.1);
-    border: none;
-    border-radius: .15rem;
-    
- }
+   min-width: 100%;
+}
+
+
+.md-typeset table:not([class]) {
+   display: table;
+   overflow: hidden;
+   margin-top: .4rem;
+   box-shadow: 0 .1rem .5rem .3rem rgba(0, 0, 0, .05), 0 0 .05rem rgba(0, 0, 0, .1);
+   border: none;
+   border-radius: .15rem;
+
+}
+*/
+
+.ansiConsoleIcon {
+   color: #2bc7b5;
+}
 
 /*
 thead {

@@ -30,6 +30,7 @@ namespace SharpLog.Outputs
         /// <summary>
         /// Initializes a new instance of the <see cref="AnsiConsoleOutput"/> class.
         /// </summary>
+        /// <param name="ansiErrorPrint">Gets or sets a value indicating wether the build in error logging capability of <see cref="Spectre.Console.AnsiConsole"/> should be used.</param>
         /// <param name="format">The format.</param>
         /// <param name="levels">The levels.</param>
         public AnsiConsoleOutput(

@@ -3,59 +3,108 @@ title: Default settings
 ---
 
 ``` yaml title="sharplog.yml"
-format: '[$D$] - $La{u}r{7, }$$Tp{ - }r{10, }$ - $Cs{ -}r{30,-}$> $Fr{20, }$ - $M$$Ep{\n}i{   }$$Sp{\n}$'
+format: "$D$: [$L$]$Cp{ [}s{] }$$Tp{ [}s{] }$ $M$$Ep{\nException: }$$Sp{\nStackTrace: }$"
 levels:
   debug:
-    short: '?'
     enabled: true
-    format: null
+    format:
+    short: "?"
   trace:
-    short: '&'
     enabled: true
-    format: null
+    format:
+    short: "&"
   info:
-    short: '+'
     enabled: true
-    format: null
+    format:
+    short: +
   warning:
-    short: '!'
     enabled: true
-    format: null
+    format:
+    short: "!"
   error:
-    short: 'x'
     enabled: true
-    format: null
+    format:
+    short: x
   fatal:
-    short: 'X'
     enabled: true
-    format: null
+    format:
+    short: X
 outputs:
-  console:
-    levels: null
-    format: null
+  - type: ConsoleOutput
     color_enabled: true
     colors:
-      debug:
-        background: black
-        foreground: darkGray
-      trace:
-        background: black
-        foreground: white
-      info:
-        background: black
-        foreground: green
-      warning:
-        background: black
-        foreground: yellow
-      error:
-        background: black
-        foreground: red
-      fatal:
-        background: red
-        foreground: black
-  file:
-    levels: null
-    format: null
+      Debug:
+        background: Black
+        foreground: DarkGray
+      Trace:
+        background: Black
+        foreground: White
+      Info:
+        background: Black
+        foreground: Green
+      Warning:
+        background: Black
+        foreground: Yellow
+      Error:
+        background: Black
+        foreground: Red
+      Fatal:
+        background: Red
+        foreground: Black
+    format:
+    levels:
+  - type: FileOutput
     path: .log
     suspend_time: 500
+    format:
+    levels:
+tags:
+  SHARPLOG_INTERNAL:
+    enabled: true
+    format:
+    levels:
+      debug:
+        enabled: true
+        format:
+        short: "\0"
+      trace:
+        enabled: true
+        format:
+        short: "\0"
+      info:
+        enabled: true
+        format:
+        short: "\0"
+      warning:
+      error:
+      fatal:
+    outputs:
+      - ansi_error_print: true
+        format:
+        levels:
+          debug:
+            enabled: true
+            format: "[bold gray]$La{u}r{11, }p{[[}s{]]}$ - [/]$M$$Sp{\nStackTrace: }$"
+            short: "\0"
+          trace:
+            enabled: true
+            format: "[bold white]$La{u}r{11, }p{[[}s{]]}$ - [/]$M$$Sp{\nStackTrace: }$"
+            short: "\0"
+          info:
+            enabled: true
+            format: "[bold green]$La{u}r{11, }p{[[}s{]]}$ - [/]$M$$Sp{\nStackTrace: }$"
+            short: "\0"
+          warning:
+            enabled: true
+            format: "[bold yellow]$La{u}r{11, }p{[[}s{]]}$ - [/]$M$$Sp{\nStackTrace: }$"
+            short: "\0"
+          error:
+            enabled: true
+            format: "[bold red]$La{u}r{11, }p{[[}s{]]}$ - [/]$M$$Sp{\nStackTrace: }$"
+            short: "\0"
+          fatal:
+            enabled: true
+            format: "[bold white on red]$La{u}r{11, }p{[[}s{]]}$ - [/]$M$$Sp{\nStackTrace: }$"
+            short: "\0"
+
 ```

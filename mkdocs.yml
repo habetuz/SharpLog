@@ -4,12 +4,12 @@ repo_url: https://github.com/habetuz/SharpLog/
 edit_uri: ""
 theme:
   features:
-      - navigation.tabs
-      - navigation.top
-      - navigation.instant
-      - navigation.indexes
-      - navigation.tracking
-      - content.code.annotate
+    - navigation.tabs
+    - navigation.top
+    - navigation.instant
+    - navigation.indexes
+    - navigation.tracking
+    - content.code.annotate
   name: material
   palette:
     scheme: slate
@@ -47,29 +47,30 @@ extra_css:
 nav:
   - index.md
   - Get started.md
-  - Customize: 
-    - Customize/index.md
-    - Customize/Formatting.md
-    - Customize/Default settings.md
+  - Customize:
+      - Customize/index.md
+      - Customize/Formatting.md
+      - Customize/Default settings.md
   - Reference:
-    - Reference/index.md
-    - Reference/Logging.md
-    - Reference/SettingsManager.md
-    - Reference/LogLevel.md
-    - Reference/Log.md
-    - Outputs:
-      - Reference/Outputs/index.md
-      - Reference/Outputs/Output.md
-      - Reference/Outputs/ConsoleOutput.md
-      - Reference/Outputs/FileOutput.md
-      - Reference/Outputs/AsyncOutput.md
-      - Reference/Outputs/EmailOutput.md
-      - Reference/Outputs/MailAddress.md
-    - Settings:
-      - Reference/Settings/index.md
-      - Reference/Settings/BaseSettings.md
-      - Reference/Settings/LevelContainer.md
-      - Reference/Settings/Level.md
-      - Reference/Settings/OutputContainer.md
-      - Reference/Settings/Color.md
-      - Reference/Settings/Tag.md
+      - Reference/index.md
+      - Reference/Logging.md
+      - Reference/LogLevel.md
+      - Reference/Log.md
+      - Reference/SettingsManager.md
+      - Outputs:
+          - Reference/Outputs/index.md
+          - Reference/Outputs/Output.md
+          - Reference/Outputs/AsyncOutput.md
+          - Reference/Outputs/AnsiConsoleOutput.md
+          - Reference/Outputs/ConsoleOutput.md
+          - Reference/Outputs/EmailOutput.md
+          - Reference/Outputs/FileOutput.md
+          - Reference/Outputs/MailAddress.md
+      - Settings:
+          - Reference/Settings/index.md
+          - Reference/Settings/BaseSettings.md
+          - Reference/Settings/Color.md
+          - Reference/Settings/LevelContainer.md
+          - Reference/Settings/Level.md
+          - Reference/Settings/OutputContainer.md
+          - Reference/Settings/Tag.md

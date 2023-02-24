@@ -5,7 +5,7 @@
 `#!c# namespace Sharplog.Outputs`
 
 ``` c#
-public abstract class ConsoleOutput : Output
+public class ConsoleOutput : Output
 ```
 
 [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object)<br>
@@ -81,7 +81,7 @@ public ConsoleOutput(
 public bool ColorEnabled { get; set; }
 ```
 
-Type: [string](https://docs.microsoft.com/en-us/dotnet/api/system.boolean)
+Type: [bool](https://docs.microsoft.com/en-us/dotnet/api/system.boolean)
 
 :   Gets or sets a value indicating whether color is enabled.
 

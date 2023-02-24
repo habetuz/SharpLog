@@ -5,7 +5,7 @@
 `#!c# namespace Sharplog.Outputs`
 
 ``` c#
- public class EmailOutput : AsyncOutput
+public class EmailOutput : AsyncOutput
 ```
 
 [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object)<br>

@@ -26,6 +26,7 @@ Full documentation under [Reference](/Reference/Logger/).
 Some outputs are already provided out-of-the-box:
 
 - [:material-console:](ConsoleOutput.md) Print your logs to the standard console including color coding!
+- [:material-console:{.ansiConsoleIcon}](AnsiConsoleOutput.md) Print your logs to [Spectre.Console.AnsiConsole](https://spectreconsole.net/)!
 
 - [:material-file:](FileOutput.md) Store your logs in a log file without blocking the file!
 

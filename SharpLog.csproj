@@ -4,6 +4,19 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PackageId>MarvinFuchs.SharpLog</PackageId>
+    <Version>3.5.0</Version>
+    <Title>SharpLog</Title>
+    <Authors>Marvin Fuchs</Authors>
+    <PackageProjectUrl>https://sharplog.marvin-fuchs.de</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/habetuz/SharpLog</RepositoryUrl>
+    <Description>A small logger for big projects.</Description>
+    <PackageReleaseNotes>
+      https://github.com/habetuz/SharpLog/releases/tag/v3.5.0
+    </PackageReleaseNotes>
+    <Copyright>Copyright (c) Marvin Fuchs. All rights reserved.</Copyright>
+    <PackageTags>Logger;Logging</PackageTags>
+    <PackRelease>true</PackRelease>
   </PropertyGroup>
 
   <ItemGroup>

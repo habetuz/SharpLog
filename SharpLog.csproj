@@ -17,6 +17,7 @@
     <Copyright>Copyright (c) Marvin Fuchs. All rights reserved.</Copyright>
     <PackageTags>Logger;Logging</PackageTags>
     <PackRelease>true</PackRelease>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>

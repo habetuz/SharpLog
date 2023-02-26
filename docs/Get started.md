@@ -13,7 +13,7 @@ Sharplog automatically tries to load the settings from `sharplog.yml`. A Yaml fi
 
 Read [here](/Setup/) how you can customize your logger!
 
-To log a message just use `#!c# Logging.log(LogLevel.Debug, "Your Message", typeof(YourClass))` or a log level specific logging method:
+To log a message just use `#!c# Logging.log(LogLevel.Debug, "Your Message")` or a log level specific logging method:
 
 ``` c# title="Log level specific logging methods"
 Logging.LogDebug("Debug!");

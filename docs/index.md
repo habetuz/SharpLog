@@ -11,7 +11,7 @@ A small logger for big projects.
 Full documentation under [Reference](/Reference/Logger/).
 
 !!! warning ""
-    This documentation is up to date with version `3.4.*`
+    This documentation is up to date with version `3.6.*`
 
 ## Features
 

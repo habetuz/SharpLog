@@ -19,10 +19,10 @@ public class EmailOutput : AsyncOutput
 
 ### Constructors
 
-| Name                                                                                                                                                                                                                |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [EmailOutput()](#emailoutput)                                                                                                                                                                                       |
-| [EmailOutput(SmtpClient, MailAddress, MailAddress[], MailAddress[], MailAddress[], int, string, LevelContainer)](#emailoutputsmtpclient-mailaddress-mailaddress-mailaddress-mailaddress-int-string-levelconatainer) |
+| Name                                                                                                                                                                                                               |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [EmailOutput()](#emailoutput)                                                                                                                                                                                      |
+| [EmailOutput(SmtpClient, MailAddress, MailAddress[], MailAddress[], MailAddress[], int, string, LevelContainer)](#emailoutputsmtpclient-mailaddress-mailaddress-mailaddress-mailaddress-int-string-levelcontainer) |
 
 ### Properties
 
@@ -96,7 +96,7 @@ public EmailOutput(
 `formatSubject` [string](https://docs.microsoft.com/en-us/dotnet/api/system.string) · :octicons-milestone-16: `"[$La{l}$] $C$"`
 :   The format of the subject field.
 
-`suspendTime` [int](https://docs.microsoft.com/en-us/dotnet/api/system.int32) · :octicons-milestone-16: `500`
+`suspendTime` [int](https://docs.microsoft.com/en-us/dotnet/api/system.int32) · :octicons-milestone-16: `5000`
 :   The suspend time between logs in ms.
 
 `format` [string](https://docs.microsoft.com/en-us/dotnet/api/system.string) · :octicons-milestone-16: `null`

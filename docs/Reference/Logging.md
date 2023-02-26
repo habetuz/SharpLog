@@ -15,17 +15,17 @@ public static class Logging
 
 ### Methods
 
-| Name                                                                                       | Modifiers            | Returns         |
-| ------------------------------------------------------------------------------------------ | -------------------- | --------------- |
-| [Initialize()](#initialize)                                                                | `#!c# public static` | :octicons-x-16: |
-| [Dispose()](#dispose)                                                                      | `#!c# public static` | :octicons-x-16: |
-| [Log(LogLevel, object, string, Exception, bool)](logloglevel-object-string-exception-bool) | `#!c# public static` | :octicons-x-16: |
-| [LogDebug(object, string, Exception, bool)](#logdebugobject-string-exception-bool)         | `#!c# public static` | :octicons-x-16: |
-| [LogTrace(object, string, Exception, bool)](#logtraceobject-string-exception-bool)         | `#!c# public static` | :octicons-x-16: |
-| [LogInfo(object, string, Exception, bool)](#loginfoobject-string-exception-bool)           | `#!c# public static` | :octicons-x-16: |
-| [LogWarning(object, string, Exception, bool)](#logwarningobject-string-exception-bool)     | `#!c# public static` | :octicons-x-16: |
-| [LogError(object, string, Exception, bool)](#logerrorobject-string-exception-bool)         | `#!c# public static` | :octicons-x-16: |
-| [LogFatal(object, string, Exception, bool)](#logfatalobject-string-exception-bool)         | `#!c# public static` | :octicons-x-16: |
+| Name                                                                                        | Modifiers            | Returns         |
+| ------------------------------------------------------------------------------------------- | -------------------- | --------------- |
+| [Initialize()](#initialize)                                                                 | `#!c# public static` | :octicons-x-16: |
+| [Dispose()](#dispose)                                                                       | `#!c# public static` | :octicons-x-16: |
+| [Log(LogLevel, object, string, Exception, bool)](#logloglevel-object-string-exception-bool) | `#!c# public static` | :octicons-x-16: |
+| [LogDebug(object, string, Exception, bool)](#logdebugobject-string-exception-bool)          | `#!c# public static` | :octicons-x-16: |
+| [LogTrace(object, string, Exception, bool)](#logtraceobject-string-exception-bool)          | `#!c# public static` | :octicons-x-16: |
+| [LogInfo(object, string, Exception, bool)](#loginfoobject-string-exception-bool)            | `#!c# public static` | :octicons-x-16: |
+| [LogWarning(object, string, Exception, bool)](#logwarningobject-string-exception-bool)      | `#!c# public static` | :octicons-x-16: |
+| [LogError(object, string, Exception, bool)](#logerrorobject-string-exception-bool)          | `#!c# public static` | :octicons-x-16: |
+| [LogFatal(object, string, Exception, bool)](#logfatalobject-string-exception-bool)          | `#!c# public static` | :octicons-x-16: |
 
 ## Methods
 

@@ -30,7 +30,7 @@ namespace SharpLog.Outputs
         /// <summary>
         /// Initializes a new instance of the <see cref="AnsiConsoleOutput"/> class.
         /// </summary>
-        /// <param name="ansiErrorPrint">Gets or sets a value indicating wether the build in error logging capability of <see cref="Spectre.Console.AnsiConsole"/> should be used.</param>
+        /// <param name="ansiErrorPrint"><c>true</c> if the build in error logging capability of <see cref="Spectre.Console.AnsiConsole"/> should be used.</param>
         /// <param name="format">The format.</param>
         /// <param name="levels">The levels.</param>
         public AnsiConsoleOutput(
@@ -45,7 +45,7 @@ namespace SharpLog.Outputs
 
         /// <summary>
         /// Gets or sets a value indicating wether the build in error logging capability of <see cref="Spectre.Console.AnsiConsole"/> should be used.
-        /// Do not specify an error format if you set this parameter to true, else the error will be logged twice.
+        /// Do not specify an exception placeholder if you set this parameter to true, else the error will be logged twice.
         /// </summary>
         public bool AnsiErrorPrint { get; set; }
 

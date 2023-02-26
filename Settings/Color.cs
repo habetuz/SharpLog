@@ -10,7 +10,7 @@
 
 using System;
 
-namespace SharpLog.Settings
+namespace SharpLog.Settings.Wrapper
 {
     /// <summary>
     /// Class containing colors for the <see cref="SharpLog.Outputs.ConsoleOutput"/>.

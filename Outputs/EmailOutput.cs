@@ -17,7 +17,7 @@ namespace SharpLog.Outputs
     /// <summary>
     /// Output sending mails.
     /// </summary>
-    public class EmailOutput : AsyncOutput, IDisposable
+    public class EmailOutput : AsyncOutput
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="EmailOutput"/> class.
@@ -59,8 +59,8 @@ namespace SharpLog.Outputs
             this.FormatSubject = formatSubject;
             this.Format = format;
 
-            base.OnStart += this.OnStart!;
-            base.OnDispose += this.OnDispose!;
+            base.OnStart += this.OnStart;
+            base.OnDispose += this.OnDispose;
         }
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace SharpLog.Outputs
             return false;
         }
 
-        new private void OnStart(object sender, EventArgs args)
+        new private void OnStart(object? sender, EventArgs? args)
         {
             if (this.Client == null)
             {
@@ -159,7 +159,7 @@ namespace SharpLog.Outputs
             }
         }
 
-        new private void OnDispose(object sender, EventArgs args)
+        new private void OnDispose(object? sender, EventArgs? args)
         {
             this.Client!.Dispose();
         }

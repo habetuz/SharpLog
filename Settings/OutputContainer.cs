@@ -8,19 +8,13 @@
 // Visit https://sharplog.marvin-fuchs.de for more information.
 // </summary>
 
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Net;
-using System.Reflection;
 using SharpLog.Outputs;
-using YamlDotNet.Serialization;
-using YamlDotNet.Serialization.NamingConventions;
 
 namespace SharpLog.Settings
 {
     /// <summary>
-    /// Container for the output settings.
+    /// Container for output settings.
     /// </summary>
     public class OutputContainer : IDisposable, IList<Output>
     {
@@ -45,7 +39,7 @@ namespace SharpLog.Settings
                 }
                 else if (value is GenericOutput genericOutput)
                 {
-                    value = GenerateOutput(genericOutput);
+                    value = genericOutput.ConstructOutput();
                 }
 
                 this.outputs[index] = value;
@@ -56,54 +50,6 @@ namespace SharpLog.Settings
                 }
 
                 newAsyncOutput.Start();
-            }
-        }
-
-        private static Output GenerateOutput(GenericOutput genericOutput)
-        {
-            if (genericOutput.Type is null)
-            {
-                throw new NullReferenceException("GenericOutput.Type: The type parameter cannot be null!");
-            }
-
-            try
-            {
-                var type = Type.GetType("SharpLog.Outputs." + genericOutput.Type);
-                if (type is null)
-                {
-                    throw new NullReferenceException("GenericOutput.Type");
-                }
-
-                var objGraph = new Dictionary<string, object>(genericOutput.ToArray());
-
-                var serializer = new SerializerBuilder()
-                    .WithNamingConvention(UnderscoredNamingConvention.Instance)
-                    .Build();
-                var yaml = serializer.Serialize(objGraph);
-
-                var deserializer = new DeserializerBuilder()
-                    .WithNamingConvention(UnderscoredNamingConvention.Instance)
-                    .WithTypeMapping<ICredentialsByHost, NetworkCredential>()
-                    .WithTypeMapping<Output, GenericOutput>()
-                    .Build();
-
-                var output = deserializer.Deserialize(yaml, type);
-                if (output is null)
-                {
-                    throw new NullReferenceException("The yaml deserializer returned null where it should not have done it.");
-                }
-
-                return (Output)output;
-            }
-            catch (Exception e) when (
-                e is ArgumentException or
-                    TypeLoadException or
-                    FileLoadException or
-                    BadImageFormatException or
-                    NullReferenceException
-            )
-            {
-                throw new ArgumentException($"Output {genericOutput.Type} could not be found or read!");
             }
         }
 
@@ -133,7 +79,7 @@ namespace SharpLog.Settings
         {
             if (output is GenericOutput genericOutput)
             {
-                output = GenerateOutput(genericOutput);
+                output = genericOutput.ConstructOutput();
             }
 
             if (output is AsyncOutput asyncOutput)
@@ -160,7 +106,7 @@ namespace SharpLog.Settings
         {
             if (output is GenericOutput genericOutput)
             {
-                output = GenerateOutput(genericOutput);
+                output = genericOutput.ConstructOutput();
             }
 
             this.outputs.Add(output);

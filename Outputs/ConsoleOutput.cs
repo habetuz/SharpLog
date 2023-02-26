@@ -8,9 +8,8 @@
 // Visit https://sharplog.marvin-fuchs.de for more information.
 // </summary>
 
-using System;
-using System.Collections.Generic;
 using SharpLog.Settings;
+using SharpLog.Settings.Wrapper;
 
 namespace SharpLog.Outputs
 {

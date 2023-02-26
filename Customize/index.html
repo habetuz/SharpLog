@@ -14,7 +14,7 @@
         <link rel="prev" href="../Get%20started/">
       
       
-        <link rel="next" href="Formatting/">
+        <link rel="next" href="Default%20settings/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.14">
@@ -360,8 +360,8 @@
   
   
     <li class="md-nav__item">
-      <a href="Formatting/" class="md-nav__link">
-        Formatting
+      <a href="Default%20settings/" class="md-nav__link">
+        Default settings
       </a>
     </li>
   
@@ -374,8 +374,8 @@
   
   
     <li class="md-nav__item">
-      <a href="Default%20settings/" class="md-nav__link">
-        Default settings
+      <a href="Formatting/" class="md-nav__link">
+        Formatting
       </a>
     </li>
   
@@ -449,8 +449,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../Reference/Logging/" class="md-nav__link">
-        Logging Class
+      <a href="../Reference/Log/" class="md-nav__link">
+        Log Struct
       </a>
     </li>
   
@@ -477,8 +477,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../Reference/Log/" class="md-nav__link">
-        Log Struct
+      <a href="../Reference/Logging/" class="md-nav__link">
+        Logging Class
       </a>
     </li>
   
@@ -560,8 +560,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../Reference/Outputs/Output/" class="md-nav__link">
-        Output Class
+      <a href="../Reference/Outputs/AnsiConsoleOutput/" class="md-nav__link">
+        AnsiConsoleOutput Class
       </a>
     </li>
   
@@ -576,20 +576,6 @@
     <li class="md-nav__item">
       <a href="../Reference/Outputs/AsyncOutput/" class="md-nav__link">
         AsyncOutput Class
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Reference/Outputs/AnsiConsoleOutput/" class="md-nav__link">
-        AnsiConsoleOutput Class
       </a>
     </li>
   
@@ -644,8 +630,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../Reference/Outputs/MailAddress/" class="md-nav__link">
-        MailAddress Class
+      <a href="../Reference/Outputs/GenericOutput/" class="md-nav__link">
+        GenericOutput Class
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Reference/Outputs/Output/" class="md-nav__link">
+        Output Class
       </a>
     </li>
   
@@ -732,8 +732,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../Reference/Settings/Color/" class="md-nav__link">
-        Color Class
+      <a href="../Reference/Settings/Level/" class="md-nav__link">
+        Level Class
       </a>
     </li>
   
@@ -748,20 +748,6 @@
     <li class="md-nav__item">
       <a href="../Reference/Settings/LevelContainer/" class="md-nav__link">
         LevelContainer Class
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Reference/Settings/Level/" class="md-nav__link">
-        Level Class
       </a>
     </li>
   
@@ -791,6 +777,74 @@
       <a href="../Reference/Settings/Tag/" class="md-nav__link">
         Tag Class
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7_7" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_7_7" id="__nav_4_7_7_label" tabindex="0">
+          Wrapper
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_7_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_7_7">
+          <span class="md-nav__icon md-icon"></span>
+          Wrapper
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Reference/Settings/Wrapper/Color/" class="md-nav__link">
+        Color Class
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Reference/Settings/Wrapper/MailAddress/" class="md-nav__link">
+        MailAddress Class
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -870,8 +924,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#set-a-email-output" class="md-nav__link">
-    Set a email output
+  <a href="#set-an-email-output" class="md-nav__link">
+    Set an email output
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-using-spectreconsole" class="md-nav__link">
+    Log using Spectre.Console
   </a>
   
 </li>
@@ -932,7 +993,7 @@
 <p>The global level settings that get used when no other level setting is provided.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>If you only want to change one or multiple level settings you only need to provide this level setting. The others still remain their default value.</p>
+<p>Instead of providing all logging levels you can only specify the logging levels you want to change.</p>
 </div>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">sharplog.yml</label><label for="__tabbed_2_2">C#</label></div>
 <div class="tabbed-content">
@@ -984,14 +1045,13 @@
 <h2 id="set-global-outputs">Set global outputs<a class="headerlink" href="#set-global-outputs" title="Permanent link">&para;</a></h2>
 <p>The global outputs get used if there is no <a href="#set-tag-specific-settings">tag that specifies outputs</a>.</p>
 <p>Settings specified for an output have the highest priority and overwrite every other defined setting.</p>
-<p>On default only a console output is set, but you can also add a file output.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">sharplog.yml</label><label for="__tabbed_3_2">C#</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">outputs</span><span class="p">:</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">console</span><span class="p">:</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConsoleOutput</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">...</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">file</span><span class="p">:</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FileOutput</span>
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">...</span>
 </code></pre></div>
 </div>
@@ -1009,7 +1069,7 @@
 <p class="admonition-title">Colors</p>
 <p><code>black</code> <code>blue</code> <code>cyan</code> <code>darkBlue</code> <code>darkCyan</code> <code>darkGray</code> <code>darkGreen</code> <code>darkMagenta</code> <code>darkRed</code> <code>darkYellow</code> <code>gray</code> <code>green</code> <code>magenta</code> <code>red</code> <code>white</code> <code>yellow</code></p>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">console</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConsoleOutput</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">levels</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1">#(1)</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1">#(2)</span>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">color_enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1">#(3)</span>
@@ -1052,7 +1112,7 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">sharplog.yml</label><label for="__tabbed_5_2">C#</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">file</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FileOutput</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">levels</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1">#(1)</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1">#(2)</span>
 <a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.log</span><span class="w"> </span><span class="c1">#(3)</span>
@@ -1071,11 +1131,11 @@
 </div>
 </div>
 </div>
-<h3 id="set-a-email-output">Set a email output<a class="headerlink" href="#set-a-email-output" title="Permanent link">&para;</a></h3>
+<h3 id="set-an-email-output">Set an email output<a class="headerlink" href="#set-an-email-output" title="Permanent link">&para;</a></h3>
 <div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">sharplog.yml</label><label for="__tabbed_6_2">C#</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">email</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EmailOutput</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">levels</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
 <a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="nt">format_subject</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;[$La{l}$]</span><span class="nv"> </span><span class="s">$C$&#39;</span>
@@ -1148,47 +1208,82 @@
 </div>
 </div>
 </div>
-<h3 id="set-a-custom-output">Set a custom output<a class="headerlink" href="#set-a-custom-output" title="Permanent link">&para;</a></h3>
-<p>Create a class that extends the <a href="..%5CReference%5COutputs%5COutput.md"><code>Outputs.Output</code></a> class.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Synchronous</label><label for="__tabbed_7_2">Asynchronous</label></div>
+<h3 id="log-using-spectreconsole">Log using Spectre.Console<a class="headerlink" href="#log-using-spectreconsole" title="Permanent link">&para;</a></h3>
+<p>You might want to use <a href="../Reference/Outputs/AnsiConsoleOutput/">AnsiConsoleOutput</a> for a more customizable console output.</p>
+<p>This output uses <code>AnsiConsole.MarkupLine(log)</code> from <a href="https://spectreconsole.net">Spectre.Console</a> to log to the console. Read more about Spectre.Console markup <a href="https://spectreconsole.net/markup">here</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Make sure your log messages or formats do not contain unwanted <code>[...]</code> because they will be interpreted as markdown! You can escape brackets by doubling them (<code>[...]</code> -&gt; <code>[[...]]</code>) or by calling <code>Markup.Escape(yourLogMessage)</code>.</p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">sharplog.yml</label><label for="__tabbed_7_2">C#</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">CustomOutput</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">SharpLog</span><span class="p">.</span><span class="n">Outputs</span><span class="p">.</span><span class="n">Output</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="p">{</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Write</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">formattedLog</span><span class="p">,</span><span class="w"> </span><span class="n">Log</span><span class="w"> </span><span class="n">log</span><span class="p">)</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">        </span><span class="c1">//(1)</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AnsiConsoleOutput</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="nt">levels</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1">#(1)</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1">#(2)</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">  </span><span class="nt">ansi_error_print</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1">#(3)</span>
+</code></pre></div>
+<ol>
+<li>Level settings for the output. Read <a href="#set-the-global-level-settings">here</a> for more information about level settings but <strong>note that levels that are left blank will fallback to the global level settings instead of receiving a default value.</strong></li>
+<li>A format for the output.</li>
+<li><code>true</code> if the <a href="https://spectreconsole.net/exceptions">build in error logging capability</a> of Spectre.Console should be used. Do not <a href="Formatting/#list-of-placeholders">specify an exception placeholder</a> if you set this parameter to <code>true</code>, else the error will be logged twice.</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">new</span><span class="w"> </span><span class="nf">FileOutput</span><span class="p">()</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="set-a-custom-output">Set a custom output<a class="headerlink" href="#set-a-custom-output" title="Permanent link">&para;</a></h3>
+<p>Create a class that extends the <a href="../Reference/Outputs/Output/"><code>Output</code></a> or <a href="../Reference/Outputs/AsyncOutput/"><code>AsyncOutput</code></a> class.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Synchronous</label><label for="__tabbed_8_2">Asynchronous</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">CustomOutput</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">SharpLog</span><span class="p">.</span><span class="n">Outputs</span><span class="p">.</span><span class="n">Output</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="p">{</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Write</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">formattedLog</span><span class="p">,</span><span class="w"> </span><span class="n">Log</span><span class="w"> </span><span class="n">log</span><span class="p">)</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">        </span><span class="c1">//(1)</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="p">}</span>
 </code></pre></div>
 <ol>
 <li>Write the formatted log to your output. The log object contains all the information about the log.</li>
 </ol>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">CustomOutput</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">SharpLog</span><span class="p">.</span><span class="n">Outputs</span><span class="p">.</span><span class="n">AsyncOutput</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="p">{</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">WriteNonBlocking</span><span class="p">((</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="n">Log</span><span class="p">)[]</span><span class="w"> </span><span class="n">logs</span><span class="p">)</span>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">        </span><span class="c1">//(1)</span>
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">CustomOutput</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">SharpLog</span><span class="p">.</span><span class="n">Outputs</span><span class="p">.</span><span class="n">AsyncOutput</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="p">{</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">CustomOutput</span><span class="p">()</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">        </span><span class="k">base</span><span class="p">.</span><span class="n">OnStart</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="n">_</span><span class="p">,</span><span class="w"> </span><span class="n">_</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{};</span><span class="w"> </span><span class="c1">//(2)</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">        </span><span class="k">base</span><span class="p">.</span><span class="n">OnDispose</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="n">_</span><span class="p">,</span><span class="w"> </span><span class="n">_</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{};</span><span class="w"> </span><span class="c1">//(3)</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">WriteNonBlocking</span><span class="p">((</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="n">Log</span><span class="p">)[]</span><span class="w"> </span><span class="n">logs</span><span class="p">)</span>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">        </span><span class="c1">//(1)</span>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="p">}</span>
 </code></pre></div>
 <ol>
 <li>Write the formatted logs to your output. This method gets called asynchronously.</li>
+<li>Attach to <a href="../Reference/Outputs/AsyncOutput/#onstart"><code>OnStart</code></a> for your setup code.</li>
+<li>Attach to <a href="../Reference/Outputs/AsyncOutput/#ondispose"><code>OnDispose</code></a> for your dispose code. Waiting for your output to finish writing is handled automatically.</li>
 </ol>
 </div>
 </div>
 </div>
-<p>Now you have to add the output to an <a href="..%5CReference%5CSettings%5COutputContainer.md"><code>OutputContainer</code></a>.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">General output</label><label for="__tabbed_8_2">Tag output</label></div>
+<p>Now you have to add the output to an <a href="../Reference/Settings/OutputContainer/"><code>OutputContainer</code></a>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">General output</label><label for="__tabbed_9_2">Tag output</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">SettingsManager</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">Outputs</span><span class="p">.</span><span class="n">AddOutput</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CustomOutput</span><span class="p">())</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">SettingsManager</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">Outputs</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CustomOutput</span><span class="p">())</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">SettingsManager</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">Tags</span><span class="p">[</span><span class="s">&quot;YOUR_TAG&quot;</span><span class="p">].</span><span class="n">Outputs</span><span class="p">.</span><span class="n">AddOutput</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CustomOutput</span><span class="p">())</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">SettingsManager</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">Tags</span><span class="p">[</span><span class="s">&quot;YOUR_TAG&quot;</span><span class="p">].</span><span class="n">Outputs</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CustomOutput</span><span class="p">())</span>
 </code></pre></div>
 </div>
 </div>
@@ -1196,20 +1291,20 @@
 <h2 id="set-tag-specific-settings">Set tag specific settings<a class="headerlink" href="#set-tag-specific-settings" title="Permanent link">&para;</a></h2>
 <p>The tag specific settings get used when a matching tag is provided with the log message.</p>
 <p>These settings overwrite global format, level and output settings.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">sharplog.yml</label><label for="__tabbed_9_2">C#</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">sharplog.yml</label><label for="__tabbed_10_2">C#</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nt">tags</span><span class="p">:</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="nt">YOUR_TAG</span><span class="p">:</span>
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1">#(1)</span>
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
-<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="nt">levels</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1">#(2)</span>
-<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">    </span><span class="nt">outputs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
-<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">  </span><span class="nt">anotherTag</span><span class="p">:</span><span class="w"> </span><span class="c1">#(3)</span>
-<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">    </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1">#(4)</span>
-<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">    </span><span class="nt">levels</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
-<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">    </span><span class="nt">outputs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1">#(5)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nt">tags</span><span class="p">:</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">  </span><span class="nt">YOUR_TAG</span><span class="p">:</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1">#(1)</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span><span class="nt">levels</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1">#(2)</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">    </span><span class="nt">outputs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">  </span><span class="nt">anotherTag</span><span class="p">:</span><span class="w"> </span><span class="c1">#(3)</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">    </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1">#(4)</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">    </span><span class="nt">levels</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">    </span><span class="nt">outputs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1">#(5)</span>
 </code></pre></div>
 <ol>
 <li><code class="highlight"><span class="k">true</span></code> if the tag is enabled, else <code class="highlight"><span class="k">false</span></code></li>
@@ -1220,8 +1315,8 @@
 </ol>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">SettingsManager</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">Tags</span><span class="p">[</span><span class="s">&quot;YOUR_TAG&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Tag</span><span class="p">();</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="n">SettingsManager</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">Tags</span><span class="p">[</span><span class="s">&quot;anotherTag&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Tag</span><span class="p">();</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">SettingsManager</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">Tags</span><span class="p">[</span><span class="s">&quot;YOUR_TAG&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Tag</span><span class="p">();</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="n">SettingsManager</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">Tags</span><span class="p">[</span><span class="s">&quot;anotherTag&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Tag</span><span class="p">();</span>
 </code></pre></div>
 </div>
 </div>

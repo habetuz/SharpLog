@@ -9,7 +9,7 @@ public class AnsiConsoleOutput : Output
 ```
 
 [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object)<br>
-:material-subdirectory-arrow-right: [Output](Output.md)
+:material-subdirectory-arrow-right: [Output](Output.md)<br>
 &emsp;&ensp;:material-subdirectory-arrow-right: [**AnsiConsoleOutput**](./)
 
 :   Output using [Spectre.Console.AnsiConsole](https://spectreconsole.net/).
@@ -26,7 +26,7 @@ public class AnsiConsoleOutput : Output
 | Name                              | Type                                                                | GET                 | SET                 |
 | --------------------------------- | ------------------------------------------------------------------- | ------------------- | ------------------- |
 | [Format](Output.md#format)        | [string](https://docs.microsoft.com/en-us/dotnet/api/system.string) | :octicons-check-16: | :octicons-check-16: |
-| [Levels](Output.md#levels)        | [LevelContainer](LevelContainer.md)                                 | :octicons-check-16: | :octicons-check-16: |
+| [Levels](Output.md#levels)        | [LevelContainer](../Settings/LevelContainer.md)                     | :octicons-check-16: | :octicons-check-16: |
 | [AnsiErrorPrint](#ansierrorprint) | [bool](https://docs.microsoft.com/en-us/dotnet/api/system.boolean)  | :octicons-check-16: | :octicons-check-16: |
 
 ### Inherited Methods
@@ -65,7 +65,7 @@ public AnsiConsoleOutput(
 `format` [string](https://docs.microsoft.com/en-us/dotnet/api/system.string) · :octicons-milestone-16: `null`
 :   The format.
 
-`levels` [LevelContainer](LevelContainer.md) · :octicons-milestone-16: `null`
+`levels` [LevelContainer](../Settings/LevelContainer.md) · :octicons-milestone-16: `null`
 :   The level settings.
 
 ## Properties

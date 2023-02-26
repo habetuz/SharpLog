@@ -11,7 +11,7 @@ public class Color
 [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object)<br>
 :material-subdirectory-arrow-right: [**Color**](./)
 
-:   Class containing colors for the [ConsoleOutput](ConsoleOutput.md).
+:   Class containing colors for the [ConsoleOutput](../../Outputs/ConsoleOutput.md).
 
 ### Constructors
 

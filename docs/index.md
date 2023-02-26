@@ -21,16 +21,16 @@ Full documentation under [Reference](/Reference/Logger/).
 
 ## Outputs
 
-[Outputs](Output.md) are used to display, pass or store your log messages. Sharplog can write to one ore multiple outputs.
+[Outputs](Reference/Outputs/Output.md) are used to display, pass or store your log messages. Sharplog can write to one ore multiple outputs.
 
 Some outputs are already provided out-of-the-box:
 
-- [:material-console:](ConsoleOutput.md) Print your logs to the standard console including color coding!
-- [:material-console:{.ansiConsoleIcon}](AnsiConsoleOutput.md) Print your logs to [Spectre.Console.AnsiConsole](https://spectreconsole.net/)!
+- [:material-console:](Reference/Outputs/ConsoleOutput.md) Print your logs to the standard console including color coding!
+- [:material-console:{.ansiConsoleIcon}](Reference/Outputs/AnsiConsoleOutput.md) Print your logs to [Spectre.Console.AnsiConsole](https://spectreconsole.net/)!
 
-- [:material-file:](FileOutput.md) Store your logs in a log file without blocking the file!
+- [:material-file:](Reference/Outputs/FileOutput.md) Store your logs in a log file without blocking the file!
 
-- [:material-email:](EmailOutput.md) Send your logs via email!
+- [:material-email:](Reference/Outputs/EmailOutput.md) Send your logs via email!
 
 ## Example
 

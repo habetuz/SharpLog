@@ -2,7 +2,7 @@
 
 ## Definition
 
-`#!c# namespace Sharplog.Outputs`
+`#!c# namespace Sharplog.Settings.Wrapper`
 
 ``` c#
 public abstract class MailAddress

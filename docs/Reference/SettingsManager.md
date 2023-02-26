@@ -15,9 +15,9 @@ public static class SettingsManager
 
 ### Properties
 
-| Name                    | Type                              | GET                 | SET                 |
-| ----------------------- | --------------------------------- | ------------------- | ------------------- |
-| [Settings](#settings) | [BaseSettings](BaseSettings.md) | :octicons-check-16: | :octicons-check-16: |
+| Name                  | Type                                      | GET                 | SET                 |
+| --------------------- | ----------------------------------------- | ------------------- | ------------------- |
+| [Settings](#settings) | [BaseSettings](/Settings/BaseSettings.md) | :octicons-check-16: | :octicons-check-16: |
 
 ### Methods
 
@@ -33,7 +33,7 @@ public static class SettingsManager
 public static BaseSettings Settings { get; set; }
 ```
 
-Type: [BaseSettings](BaseSettings.md)
+Type: [BaseSettings](/Settings/BaseSettings.md)
 
 :   Gets or sets the settings.
 

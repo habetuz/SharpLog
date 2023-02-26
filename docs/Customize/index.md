@@ -25,7 +25,7 @@ The global format gets used when there is no other format is provided.
 The global level settings that get used when no other level setting is provided.
 
 !!! Tip
-    If you only want to change one or multiple level settings you only need to provide this level setting. The others still remain their default value.
+    Instead of providing all logging levels you can only specify the logging levels you want to change.
 
 === "sharplog.yml"
     ```yaml
@@ -77,14 +77,12 @@ The global outputs get used if there is no [tag that specifies outputs](#set-tag
 
 Settings specified for an output have the highest priority and overwrite every other defined setting.
 
-On default only a console output is set, but you can also add a file output.
-
 === "sharplog.yml"
     ```yaml
     outputs:
-      console:
+      - type: ConsoleOutput
         ...
-      file:
+      - type: FileOutput
         ...
     ```
 
@@ -99,7 +97,7 @@ On default only a console output is set, but you can also add a file output.
     !!! note inline end "Colors"
         `black` `blue` `cyan` `darkBlue` `darkCyan` `darkGray` `darkGreen` `darkMagenta` `darkRed` `darkYellow` `gray` `green` `magenta` `red` `white` `yellow`
     ```yaml
-    console:
+    - type: ConsoleOutput
       levels: null #(1)
       format: null #(2)
       color_enabled: true #(3)
@@ -140,7 +138,7 @@ On default only a console output is set, but you can also add a file output.
 
 === "sharplog.yml"
     ```yaml
-    file:
+    - type: FileOutput
       levels: null #(1)
       format: null #(2)
       path: .log #(3)
@@ -157,11 +155,11 @@ On default only a console output is set, but you can also add a file output.
     new FileOutput()
     ```
 
-### Set a email output
+### Set an email output
 
 === "sharplog.yml"
     ```yaml
-    email:
+    - type: EmailOutput
       levels: null
       format: null
       format_subject: '[$La{l}$] $C$'
@@ -233,9 +231,35 @@ On default only a console output is set, but you can also add a file output.
     };
     ```
 
+### Log using Spectre.Console
+
+You might want to use [AnsiConsoleOutput](../Reference/Outputs/AnsiConsoleOutput.md) for a more customizable console output.
+
+This output uses `AnsiConsole.MarkupLine(log)` from [Spectre.Console](https://spectreconsole.net) to log to the console. Read more about Spectre.Console markup [here](https://spectreconsole.net/markup).
+
+!!! Warning
+    Make sure your log messages or formats do not contain unwanted `[...]` because they will be interpreted as markdown! You can escape brackets by doubling them (`[...]` -> `[[...]]`) or by calling `Markup.Escape(yourLogMessage)`.
+
+=== "sharplog.yml"
+    ```yaml
+    - type: AnsiConsoleOutput
+      levels: null #(1)
+      format: null #(2)
+      ansi_error_print: false #(3)
+    ```
+
+    1. Level settings for the output. Read [here](#set-the-global-level-settings) for more information about level settings but **note that levels that are left blank will fallback to the global level settings instead of receiving a default value.**
+    2. A format for the output.
+    3. `true` if the [build in error logging capability](https://spectreconsole.net/exceptions) of Spectre.Console should be used. Do not [specify an exception placeholder](Formatting.md#list-of-placeholders) if you set this parameter to `true`, else the error will be logged twice.
+
+=== "C#"
+    ```c#
+    new FileOutput()
+    ```
+
 ### Set a custom output
 
-Create a class that extends the [`Outputs.Output`](Output.md) class.
+Create a class that extends the [`Output`](../Reference/Outputs/Output.md) or [`AsyncOutput`](../Reference/Outputs/AsyncOutput.md) class.
 
 === "Synchronous"
     ```c#
@@ -254,6 +278,12 @@ Create a class that extends the [`Outputs.Output`](Output.md) class.
     ```c#
     class CustomOutput : SharpLog.Outputs.AsyncOutput
     {
+        public CustomOutput()
+        {
+            base.OnStart += (_, _) => {}; //(2)
+            base.OnDispose += (_, _) => {}; //(3)
+        }
+
         public override void WriteNonBlocking((string, Log)[] logs)
         {
             //(1)
@@ -262,17 +292,19 @@ Create a class that extends the [`Outputs.Output`](Output.md) class.
     ```
 
     1. Write the formatted logs to your output. This method gets called asynchronously.
+    2. Attach to [`OnStart`](../Reference/Outputs/AsyncOutput.md#onstart) for your setup code.
+    3. Attach to [`OnDispose`](../Reference/Outputs/AsyncOutput.md#ondispose) for your dispose code. Waiting for your output to finish writing is handled automatically.
 
-Now you have to add the output to an [`OutputContainer`](OutputContainer.md).
+Now you have to add the output to an [`OutputContainer`](../Reference/Settings/OutputContainer.md).
 
 === "General output"
     ```c#
-    SettingsManager.Settings.Outputs.AddOutput(new CustomOutput())
+    SettingsManager.Settings.Outputs.Add(new CustomOutput())
     ```
 
 === "Tag output"
     ```c#
-    SettingsManager.Settings.Tags["YOUR_TAG"].Outputs.AddOutput(new CustomOutput())
+    SettingsManager.Settings.Tags["YOUR_TAG"].Outputs.Add(new CustomOutput())
     ```
 
 ## Set tag specific settings

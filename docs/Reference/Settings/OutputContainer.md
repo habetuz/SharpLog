@@ -11,37 +11,38 @@ public class OutputContainer : IDisposable
 [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object)<br>
 :material-subdirectory-arrow-right: [**OutputContainer**](./)
 
-*Implements*: [System.IDisposable](https://docs.microsoft.com/en-us/dotnet/api/system.idisposable)
+*Implements*: [System.IDisposable](https://docs.microsoft.com/en-us/dotnet/api/system.idisposable), [IList<Output>](https://learn.microsoft.com/de-de/dotnet/api/system.collections.generic.ilist-1)
 
-:   Container for the output settings.
+:   Container for output settings.
 
 ### Constructors
 
-| Name                                                                                                               |
-| ------------------------------------------------------------------------------------------------------------------ |
-| [OutputContainer()](#outputcontainer)                                                                              |
-| [OutputContainer(ConsoleOutput, FileOutput, List< Output >)](#outputcontainerconsoleoutput-fileoutput-list-output) |
+| Name                                  |
+| ------------------------------------- |
+| [OutputContainer()](#outputcontainer) |
 
 ### Properties
 
-| Name                | Type                              | GET                 | SET                 |
-| ------------------- | --------------------------------- | ------------------- | ------------------- |
-| [Console](#console) | [ConsoleOutput](ConsoleOutput.md) | :octicons-check-16: | :octicons-check-16: |
-| [File](#file)       | [FileOutput](FileOutput.md)       | :octicons-check-16: | :octicons-check-16: |
+| Name                                                                                                           | Type                           | GET                 | SET                 |
+| -------------------------------------------------------------------------------------------------------------- | ------------------------------ | ------------------- | ------------------- |
+| [Count](https://learn.microsoft.com/de-de/dotnet/api/system.collections.generic.icollection-1.count)           | [int][int]                     | :octicons-check-16: | :octicons-x-16:     |
+| [IsReadOnly](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.icollection-1.isreadonly) | [bool][bool]                   | :octicons-check-16: | :octicons-x-16:     |
+| [Item[int]](https://learn.microsoft.com/de-de/dotnet/api/system.collections.generic.ilist-1.item)              | [Output](../Outputs/Output.md) | :octicons-check-16: | :octicons-check-16: |
 
 ### Inherited methods
 
-| Name                                                                                | Modifiers     | Returns         |
-| ----------------------------------------------------------------------------------- | ------------- | --------------- |
-| [Dispose()](https://docs.microsoft.com/en-us/dotnet/api/system.idisposable.dispose) | `#!c# public` | :octicons-x-16: |
-
-### Methods
-
-| Name                                        | Modifiers     | Returns                          |
-| ------------------------------------------- | ------------- | -------------------------------- |
-| [AddOutput(Output)](#addoutputoutput)       | `#!c# public` | :octicons-x-16:                  |
-| [RemoveOutput(Output)](#removeoutputoutput) | `#!c# public` | :octicons-x-16:                  |
-| [GetOutputs()](#getoutputs)                 | `#!c# public` | [Output[]](../Outputs/Output.md) |
+| Name                                                                                                                  | Modifiers     | Returns                             |
+| --------------------------------------------------------------------------------------------------------------------- | ------------- | ----------------------------------- |
+| [Dispose()](https://docs.microsoft.com/en-us/dotnet/api/system.idisposable.dispose)                                   | `#!c# public` | :octicons-x-16:                     |
+| [Add(Output)](https://learn.microsoft.com/de-de/dotnet/api/system.collections.generic.icollection-1.add)              | `#!c# public` | :octicons-x-16:                     |
+| [Clear()](https://learn.microsoft.com/de-de/dotnet/api/system.collections.generic.icollection-1.clear)                | `#!c# public` | :octicons-x-16:                     |
+| [Contains(Output)](https://learn.microsoft.com/de-de/dotnet/api/system.collections.generic.icollection-1.contains)    | `#!c# public` | [bool][bool]                        |
+| [CopyTo(Output[], int)](https://learn.microsoft.com/de-de/dotnet/api/system.collections.generic.icollection-1.copyto) | `#!c# public` | :octicons-x-16:                     |
+| [GetEnumerator()](https://learn.microsoft.com/en-us/dotnet/api/system.collections.ienumerable.getenumerator)          | `#!c# public` | [IEnumerator<_Output_>][enumerator] |
+| [IndexOf(Output)](https://learn.microsoft.com/de-de/dotnet/api/system.collections.generic.ilist-1.indexof)            | `#!c# public` | [int][int]                          |
+| [Insert(int, Output)](https://learn.microsoft.com/de-de/dotnet/api/system.collections.generic.ilist-1.insert)         | `#!c# public` | :octicons-x-16:                     |
+| [Remove(Output)](https://learn.microsoft.com/de-de/dotnet/api/system.collections.generic.icollection-1.remove)        | `#!c# public` | [bool][bool]                        |
+| [RemoveAt(int)](https://learn.microsoft.com/de-de/dotnet/api/system.collections.generic.ilist-1.removeat)             | `#!c# public` | :octicons-x-16:                     |
 
 ## Constructors
 
@@ -49,92 +50,10 @@ public class OutputContainer : IDisposable
 
 ```c#
 public OutputContainer()
-    : this(null, null, null)
 ```
 
 :   Initializes a new instance of the [OutputContainer](./) class using default settings if not provided.
 
-### OutputContainer(ConsoleOutput, FileOutput, List< Output >)
-
-```c#
-public OutputContainer(
-    ConsoleOutput console = null,
-    FileOutput file = null,
-    List<Output> outputs = null)
-```
-
-:   Initializes a new instance of the [OutputContainer](./) class using default settings if not provided.
-
-#### Parameter
-
-`console` [ConsoleOutput](ConsoleOutput.md) · :octicons-milestone-16: `null`
-:   The console output.
-
-`file` [FileOutput](FileOutput.md) · :octicons-milestone-16: `null`
-:   The file output.
-
-`outputs` [List< Output >](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1) · :octicons-milestone-16: `null`
-:   The output list.
-
-## Properties
-
-### Console
-
-```c#
-public ConsoleOutput Console { get; set; }
-```
-
-Type: [ConsoleOutput](ConsoleOutput.md)
-
-:   Gets or sets the console output.
-
-### File
-
-```c#
-public FileOutput File { get; set; }
-```
-
-Type: [FileOutput](FileOutput.md)
-
-:   Gets or sets the file output.
-
-## Methods
-
-### AddOutput(Output)
-
-```c#
-public void AddOutput(Output output)
-```
-
-:   Adds an output and starts it if needed.
-
-#### Parameter
-
-`output` [Output](../Outputs/Output.md)  · :octicons-milestone-16: :octicons-x-16:
-:   The output.
-
-### RemoveOutput(Output)
-
-```c#
-public void RemoveOutput(Output output)
-```
-
-:   Removes and disposes an output.
-
-#### Parameter
-
-`output` [Output](../Outputs/Output.md)  · :octicons-milestone-16: :octicons-x-16:
-:   The output.
-
-### GetOutputs()
-
-```c#
-public Output[] GetOutputs()
-```
-
-:   Get the list with outputs.
-
-#### Returns
-
-Type: [Output[]](../Outputs/Output.md)
-:   Array containing the outputs.
+[int]: https://learn.microsoft.com/de-de/dotnet/api/system.int32
+[enumerator]: https://learn.microsoft.com/en-us/dotnet/api/system.collections.ienumerator
+[bool]: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool

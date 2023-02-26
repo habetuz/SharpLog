@@ -30,7 +30,7 @@ public struct Log
 | [`Message`](#message)            | [object](https://docs.microsoft.com/en-us/dotnet/api/system.object)                     | :octicons-check-16: | :octicons-check-16: |
 | [`Tag`](#tag)                    | [string](https://docs.microsoft.com/en-us/dotnet/api/system.string)                     | :octicons-check-16: | :octicons-check-16: |
 | [`Exception`](#exception)        | [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception)               | :octicons-check-16: | :octicons-check-16: |
-| [`LevelSettings`](levelsettings) | [Level](Level.md)                                                                       | :octicons-check-16: | :octicons-check-16: |
+| [`LevelSettings`](levelsettings) | [Level](/Settings/Settings/Level.md)                                                    | :octicons-check-16: | :octicons-check-16: |
 | [`Format`](#format)              | [string](https://docs.microsoft.com/en-us/dotnet/api/system.string)                     | :octicons-check-16: | :octicons-check-16: |
 | [`Time`](#time)                  | [DateTime](https://docs.microsoft.com/en-us/dotnet/api/system.datetime)                 | :octicons-check-16: | :octicons-check-16: |
 | [`StackTrace`](#stacktrace)      | [string](https://docs.microsoft.com/en-us/dotnet/api/system.string)                     | :octicons-check-16: | :octicons-check-16: |
@@ -75,7 +75,7 @@ public Log(
 `exception` [Exception](https://docs.microsoft.com/en-us/dotnet/api/system.exception)  · :octicons-milestone-16: :octicons-x-16:
 :   The exception.
 
-`levelSettings` [Level](Level.md)  · :octicons-milestone-16: :octicons-x-16:
+`levelSettings` [Level](Settings/Level.md)  · :octicons-milestone-16: :octicons-x-16:
 :   The level settings.
 
 `format` [string](https://docs.microsoft.com/en-us/dotnet/api/system.string)  · :octicons-milestone-16: :octicons-x-16:
@@ -165,7 +165,7 @@ Type: [string](https://docs.microsoft.com/en-us/dotnet/api/system.string)
 public Level LevelSettings { get; set; }
 ```
 
-Type: [Level](Level.md)
+Type: [Level](Settings/Level.md)
 
 :   Gets or sets the level settings.
 

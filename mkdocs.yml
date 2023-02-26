@@ -41,36 +41,5 @@ markdown_extensions:
       emoji_generator: !!python/name:materialx.emoji.to_svg
 plugins:
   - search
-  - autolinks
 extra_css:
   - stylesheets/extra.css
-nav:
-  - index.md
-  - Get started.md
-  - Customize:
-      - Customize/index.md
-      - Customize/Formatting.md
-      - Customize/Default settings.md
-  - Reference:
-      - Reference/index.md
-      - Reference/Logging.md
-      - Reference/LogLevel.md
-      - Reference/Log.md
-      - Reference/SettingsManager.md
-      - Outputs:
-          - Reference/Outputs/index.md
-          - Reference/Outputs/Output.md
-          - Reference/Outputs/AsyncOutput.md
-          - Reference/Outputs/AnsiConsoleOutput.md
-          - Reference/Outputs/ConsoleOutput.md
-          - Reference/Outputs/EmailOutput.md
-          - Reference/Outputs/FileOutput.md
-          - Reference/Outputs/MailAddress.md
-      - Settings:
-          - Reference/Settings/index.md
-          - Reference/Settings/BaseSettings.md
-          - Reference/Settings/Color.md
-          - Reference/Settings/LevelContainer.md
-          - Reference/Settings/Level.md
-          - Reference/Settings/OutputContainer.md
-          - Reference/Settings/Tag.md

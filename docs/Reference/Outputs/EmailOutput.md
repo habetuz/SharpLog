@@ -29,13 +29,13 @@ public class EmailOutput : AsyncOutput
 | Name                                      | Type                                                                                  | GET                 | SET                 |
 | ----------------------------------------- | ------------------------------------------------------------------------------------- | ------------------- | ------------------- |
 | [Format](Output.md#format)                | [string](https://docs.microsoft.com/en-us/dotnet/api/system.string)                   | :octicons-check-16: | :octicons-check-16: |
-| [Levels](Output.md#levels)                | [LevelContainer](LevelContainer.md)                                                   | :octicons-check-16: | :octicons-check-16: |
+| [Levels](Output.md#levels)                | [LevelContainer](../Settings/LevelContainer.md)                                       | :octicons-check-16: | :octicons-check-16: |
 | [SuspendTime](AsyncOutput.md#suspendtime) | [int](https://docs.microsoft.com/en-us/dotnet/api/system.int32)                       | :octicons-check-16: | :octicons-check-16: |
 | [Client](#client)                         | [SmtpClient](https://learn.microsoft.com/en-us/dotnet/api/system.net.mail.smtpclient) | :octicons-check-16: | :octicons-check-16: |
-| [From](#from)                             | [MailAddress](MailAddress.md)                                                         | :octicons-check-16: | :octicons-check-16: |
-| [To](#to)                                 | [MailAddress[]](MailAddress.md)                                                       | :octicons-check-16: | :octicons-check-16: |
-| [Bcc](#bcc)                               | [MailAddress[]](MailAddress.md)                                                       | :octicons-check-16: | :octicons-check-16: |
-| [CC](#cc)                                 | [MailAddress[]](MailAddress.md)                                                       | :octicons-check-16: | :octicons-check-16: |
+| [From](#from)                             | [MailAddress](../Settings/Wrapper/MailAddress.md)                                     | :octicons-check-16: | :octicons-check-16: |
+| [To](#to)                                 | [MailAddress[]](../Settings/Wrapper/MailAddress.md)                                   | :octicons-check-16: | :octicons-check-16: |
+| [Bcc](#bcc)                               | [MailAddress[]](../Settings/Wrapper/MailAddress.md)                                   | :octicons-check-16: | :octicons-check-16: |
+| [CC](#cc)                                 | [MailAddress[]](../Settings/Wrapper/MailAddress.md)                                   | :octicons-check-16: | :octicons-check-16: |
 | [SubjectFormat](#subjectformat)           | [string](https://docs.microsoft.com/en-us/dotnet/api/system.string)                   | :octicons-check-16: | :octicons-check-16: |
 
 ### Inherited Methods
@@ -81,16 +81,16 @@ public EmailOutput(
 `client` [SmtpClient](https://learn.microsoft.com/en-us/dotnet/api/system.net.mail.smtpclient) · :octicons-milestone-16: :octicons-x-16:
 :   The smtp client.
 
-`from` [MailAddress](MailAddress.md) · :octicons-milestone-16: :octicons-x-16:
+`from` [MailAddress](../Settings/Wrapper/MailAddress.md) · :octicons-milestone-16: :octicons-x-16:
 :   The email from field.
 
-`to` [MailAddress[]](MailAddress.md) · :octicons-milestone-16: `null`
+`to` [MailAddress[]](../Settings/Wrapper/MailAddress.md) · :octicons-milestone-16: `null`
 :   The email to field.
 
-`bcc` [MailAddress[]](MailAddress.md) · :octicons-milestone-16: `null`
+`bcc` [MailAddress[]](../Settings/Wrapper/MailAddress.md) · :octicons-milestone-16: `null`
 :   The email bcc field.
 
-`cc` [MailAddress[]](MailAddress.md) · :octicons-milestone-16: `null`
+`cc` [MailAddress[]](../Settings/Wrapper/MailAddress.md) · :octicons-milestone-16: `null`
 :   The email cc field.
 
 `formatSubject` [string](https://docs.microsoft.com/en-us/dotnet/api/system.string) · :octicons-milestone-16: `"[$La{l}$] $C$"`
@@ -102,7 +102,7 @@ public EmailOutput(
 `format` [string](https://docs.microsoft.com/en-us/dotnet/api/system.string) · :octicons-milestone-16: `null`
 :   The format.
 
-`levels` [LevelContainer](LevelContainer.md) · :octicons-milestone-16: `null`
+`levels` [LevelContainer](../Settings/LevelContainer.md) · :octicons-milestone-16: `null`
 :   The level settings.
 
 ## Properties
@@ -123,7 +123,7 @@ Type: [SmtpClient](https://learn.microsoft.com/en-us/dotnet/api/system.net.mail.
 public MailAddress From { get; set; }
 ```
 
-Type: [MailAddress](MailAddress.md)
+Type: [MailAddress](../Settings/Wrapper/MailAddress.md)
 
 :   Gets or sets the email from field.
 
@@ -133,7 +133,7 @@ Type: [MailAddress](MailAddress.md)
 public MailAddress[] To { get; set; }
 ```
 
-Type: [MailAddress[]](MailAddress.md)
+Type: [MailAddress[]](../Settings/Wrapper/MailAddress.md)
 
 :   Gets or sets the email to field.
 
@@ -143,7 +143,7 @@ Type: [MailAddress[]](MailAddress.md)
 public MailAddress[] Bcc { get; set; }
 ```
 
-Type: [MailAddress[]](MailAddress.md)
+Type: [MailAddress[]](../Settings/Wrapper/MailAddress.md)
 
 :   Gets or sets the email bcc field.
 
@@ -153,7 +153,7 @@ Type: [MailAddress[]](MailAddress.md)
 public MailAddress[] CC { get; set; }
 ```
 
-Type: [MailAddress[]](MailAddress.md)
+Type: [MailAddress[]](../Settings/Wrapper/MailAddress.md)
 
 :   Gets or sets the email cc field.
 

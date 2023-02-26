@@ -17,18 +17,18 @@ public class BaseSettings : IDisposable
 
 ### Constructors
 
-| Name                                                                                                                                                      |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [BaseSettings(string, LevelContainer, OutputContainer, Dictionary< string, Tag >)](#basesettingsstring-levelContainer-outputContainer-dictionary-string-tag) |
+| Name                                                                                                                                                         |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [BaseSettings(string, LevelContainer, OutputContainer, Dictionary<_string, Tag_>)](#basesettingsstring-levelContainer-outputContainer-dictionary-string-tag) |
 
 ### Properties
 
-| Name                | Type                                                                                                           | GET                 | SET                 |
-| ------------------- | -------------------------------------------------------------------------------------------------------------- | ------------------- | ------------------- |
-| [Format](#format)   | [string](https://docs.microsoft.com/en-us/dotnet/api/system.string)                                            | :octicons-check-16: | :octicons-check-16: |
-| [Levels](#levels)   | [LevelContainer](LevelContainer.md)                                                                            | :octicons-check-16: | :octicons-check-16: |
-| [Outputs](#outputs) | [OutputContainer](OutputContainer.md)                                                                          | :octicons-check-16: | :octicons-check-16: |
-| [Tags](#tags)       | [Dictionary< string, Tag >](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2) | :octicons-check-16: | :octicons-check-16: |
+| Name                | Type                                                                                                             | GET                 | SET                 |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------- | ------------------- | ------------------- |
+| [Format](#format)   | [string](https://docs.microsoft.com/en-us/dotnet/api/system.string)                                              | :octicons-check-16: | :octicons-check-16: |
+| [Levels](#levels)   | [LevelContainer](LevelContainer.md)                                                                              | :octicons-check-16: | :octicons-check-16: |
+| [Outputs](#outputs) | [OutputContainer](OutputContainer.md)                                                                            | :octicons-check-16: | :octicons-check-16: |
+| [Tags](#tags)       | [Dictionary<_string, Tag_>](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2) | :octicons-check-16: | :octicons-check-16: |
 
 ### Inherited methods
 
@@ -38,7 +38,7 @@ public class BaseSettings : IDisposable
 
 ## Constructors
 
-### BaseSettings(string, LevelContainer, OutputContainer, Dictionary< string, Tag >)
+### BaseSettings(string, LevelContainer, OutputContainer, Dictionary<_string, Tag_>)
 
 ```c#
 public BaseSettings(
@@ -61,7 +61,7 @@ public BaseSettings(
 `outputs` [OutputContainer](OutputContainer.md) · :octicons-milestone-16: `null`
 :   The outputs.
 
-`tags` [Dictionary< string, Tag >](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2) · :octicons-milestone-16: `null`
+`tags` [Dictionary<_string, Tag_>](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2) · :octicons-milestone-16: `null`
 :   The tags.
 
 ## Properties
@@ -102,6 +102,6 @@ Type: [OutputContainer](OutputContainer.md)
 public Dictionary<string, Tag> Tags { get; set; }
 ```
 
-Type: [Dictionary< string, Tag >](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2)
+Type: [Dictionary<_string, Tag_>](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2)
 
 :   Gets or sets the tags.

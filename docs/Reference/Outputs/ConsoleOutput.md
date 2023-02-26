@@ -9,7 +9,7 @@ public class ConsoleOutput : Output
 ```
 
 [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object)<br>
-:material-subdirectory-arrow-right: [Output](Output.md)
+:material-subdirectory-arrow-right: [Output](Output.md)<br>
 &emsp;&ensp;:material-subdirectory-arrow-right: [**ConsoleOutput**](./)
 
 :   Output using the default console output.
@@ -19,16 +19,16 @@ public class ConsoleOutput : Output
 | Name                                                                                                                                             |
 | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [ConsoleOutput()](#consoleoutput)                                                                                                                |
-| [ConsoleOutput(bool, string, LevelContainer, Dictionary< LogLevel, Color >)](#consoleoutputbool-string-levelcontainer-dictionary-loglevel-color) |
+| [ConsoleOutput(bool, string, LevelContainer, Dictionary<_LogLevel, Color_>)](#consoleoutputbool-string-levelcontainer-dictionary-loglevel-color) |
 
 ### Properties
 
 | Name                          | Type                                                                                                                 | GET                 | SET                 |
 | ----------------------------- | -------------------------------------------------------------------------------------------------------------------- | ------------------- | ------------------- |
 | [Format](Output.md#format)    | [string](https://docs.microsoft.com/en-us/dotnet/api/system.string)                                                  | :octicons-check-16: | :octicons-check-16: |
-| [Levels](Output.md#levels)    | [LevelContainer](LevelContainer.md)                                                                                  | :octicons-check-16: | :octicons-check-16: |
+| [Levels](Output.md#levels)    | [LevelContainer](../Settings/LevelContainer.md)                                                                      | :octicons-check-16: | :octicons-check-16: |
 | [ColorEnabled](#colorenabled) | [bool](https://docs.microsoft.com/en-us/dotnet/api/system.boolean)                                                   | :octicons-check-16: | :octicons-check-16: |
-| [Colors](#colors)             | [Dictionary< LogLevel, Color >](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2) | :octicons-check-16: | :octicons-check-16: |
+| [Colors](#colors)             | [Dictionary<_LogLevel, Color_>](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2) | :octicons-check-16: | :octicons-check-16: |
 
 ### Inherited Methods
 
@@ -47,7 +47,7 @@ public ConsoleOutput()
 
 :   Initializes a new instance of the [ConsoleOutput](./) class.
 
-### ConsoleOutput(bool, string, LevelContainer, Dictionary< LogLevel, Color >)
+### ConsoleOutput(bool, string, LevelContainer, Dictionary<_LogLevel, Color_>)
 
 ```c#
 public ConsoleOutput(
@@ -67,10 +67,10 @@ public ConsoleOutput(
 `format` [string](https://docs.microsoft.com/en-us/dotnet/api/system.string) · :octicons-milestone-16: `null`
 :   The format.
 
-`levels` [LevelContainer](LevelContainer.md) · :octicons-milestone-16: `null`
+`levels` [LevelContainer](../Settings/LevelContainer.md) · :octicons-milestone-16: `null`
 :   The level settings.
 
-`colors` [Dictionary< LogLevel, Color >](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2)
+`colors` [Dictionary<_LogLevel, Color_>](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2)
 :   The colors.
 
 ## Properties
@@ -91,6 +91,6 @@ Type: [bool](https://docs.microsoft.com/en-us/dotnet/api/system.boolean)
 public LevelContainer Levels { get; set; }
 ```
 
-Type: [Dictionary< LogLevel, Color >](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2)
+Type: [Dictionary<_LogLevel, Color_>](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2)
 
 :   Gets or sets the colors for each log level.

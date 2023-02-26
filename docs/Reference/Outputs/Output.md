@@ -24,7 +24,7 @@ public abstract class Output
 | Name              | Type                                                                | GET                 | SET                 |
 | ----------------- | ------------------------------------------------------------------- | ------------------- | ------------------- |
 | [Format](#format) | [string](https://docs.microsoft.com/en-us/dotnet/api/system.string) | :octicons-check-16: | :octicons-check-16: |
-| [Levels](#levels) | [LevelContainer](LevelContainer.md)                                 | :octicons-check-16: | :octicons-check-16: |
+| [Levels](#levels) | [LevelContainer](../Settings/LevelContainer.md)                     | :octicons-check-16: | :octicons-check-16: |
 
 ### Methods
 
@@ -49,7 +49,7 @@ public Output(
 `format` [string](https://docs.microsoft.com/en-us/dotnet/api/system.string) · :octicons-milestone-16: `null`
 :   The format.
 
-`levels` [LevelContainer](LevelContainer.md) · :octicons-milestone-16: `null`
+`levels` [LevelContainer](../Settings/LevelContainer.md) · :octicons-milestone-16: `null`
 :   The level settings.
 
 ## Properties
@@ -70,7 +70,7 @@ Type: [string](https://docs.microsoft.com/en-us/dotnet/api/system.string)
 public LevelContainer Levels { get; set; }
 ```
 
-Type: [LevelContainer](LevelContainer.md)
+Type: [LevelContainer](../Settings/LevelContainer.md)
 
 :   Gets or sets the level settings for the output.
 
@@ -89,5 +89,5 @@ public abstract void Write(string formattedLog, Log log)
 `formattedLog` [string](https://docs.microsoft.com/en-us/dotnet/api/system.string)  · :octicons-milestone-16: :octicons-x-16:
 :   The formatted log.
 
-`log` [Log](Log.md)  · :octicons-milestone-16: :octicons-x-16:
+`log` [Log](../Log.md)  · :octicons-milestone-16: :octicons-x-16:
 :   The log information.

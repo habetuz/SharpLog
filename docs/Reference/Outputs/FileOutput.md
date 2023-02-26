@@ -27,7 +27,7 @@
 | Name                                      | Type                                                                | GET                 | SET                 |
 | ----------------------------------------- | ------------------------------------------------------------------- | ------------------- | ------------------- |
 | [Format](Output.md#format)                | [string](https://docs.microsoft.com/en-us/dotnet/api/system.string) | :octicons-check-16: | :octicons-check-16: |
-| [Levels](Output.md#levels)                | [LevelContainer](LevelContainer.md)                                 | :octicons-check-16: | :octicons-check-16: |
+| [Levels](Output.md#levels)                | [LevelContainer](../Settings/LevelContainer.md)                     | :octicons-check-16: | :octicons-check-16: |
 | [SuspendTime](AsyncOutput.md#suspendtime) | [int](https://docs.microsoft.com/en-us/dotnet/api/system.int32)     | :octicons-check-16: | :octicons-check-16: |
 | [Path](#path)                             | [string](https://docs.microsoft.com/en-us/dotnet/api/system.string) | :octicons-check-16: | :octicons-check-16: |
 
@@ -74,7 +74,7 @@ public FileOutput(
 `format` [string](https://docs.microsoft.com/en-us/dotnet/api/system.string) · :octicons-milestone-16: `null`
 :   The format.
 
-`levels` [LevelContainer](LevelContainer.md) · :octicons-milestone-16: `null`
+`levels` [LevelContainer](../Settings/LevelContainer.md) · :octicons-milestone-16: `null`
 :   The level settings.
 
 ## Properties

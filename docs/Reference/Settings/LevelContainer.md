@@ -22,14 +22,14 @@ public class LevelContainer
 
 ### Properties
 
-| Name            | Type              | GET                 | SET                 |
-| --------------- | ----------------- | ------------------- | ------------------- |
-| [Debug](#debug) | [Level](Level.md) | :octicons-check-16: | :octicons-check-16: |
-| [Trace](#trace) | [Level](Level.md) | :octicons-check-16: | :octicons-check-16: |
-| [Info](#info)   | [Level](Level.md) | :octicons-check-16: | :octicons-check-16: |
-| [Warning](#warning)   | [Level](Level.md) | :octicons-check-16: | :octicons-check-16: |
-| [Error](#error) | [Level](Level.md) | :octicons-check-16: | :octicons-check-16: |
-| [Fatal](#fatal) | [Level](Level.md) | :octicons-check-16: | :octicons-check-16: |
+| Name                | Type              | GET                 | SET                 |
+| ------------------- | ----------------- | ------------------- | ------------------- |
+| [Debug](#debug)     | [Level](Level.md) | :octicons-check-16: | :octicons-check-16: |
+| [Trace](#trace)     | [Level](Level.md) | :octicons-check-16: | :octicons-check-16: |
+| [Info](#info)       | [Level](Level.md) | :octicons-check-16: | :octicons-check-16: |
+| [Warning](#warning) | [Level](Level.md) | :octicons-check-16: | :octicons-check-16: |
+| [Error](#error)     | [Level](Level.md) | :octicons-check-16: | :octicons-check-16: |
+| [Fatal](#fatal)     | [Level](Level.md) | :octicons-check-16: | :octicons-check-16: |
 
 ### Methods
 
@@ -156,7 +156,7 @@ public Level GetLevel(LogLevel level)
 
 #### Parameter
 
-`level` [LogLevel](LogLevel.md)  · :octicons-milestone-16: :octicons-x-16:
+`level` [LogLevel](../LogLevel.md)  · :octicons-milestone-16: :octicons-x-16:
 :   The level the settings should be returned from.
 
 #### Returns

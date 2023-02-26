@@ -79,7 +79,8 @@ tags:
       error:
       fatal:
     outputs:
-      - ansi_error_print: true
+      - type: AnsiConsoleOutput
+        ansi_error_print: true
         format:
         levels:
           debug:

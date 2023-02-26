@@ -5,7 +5,7 @@
 `#!c# namespace Sharplog.Outputs`
 
 ``` c#
-public abstract class AsyncOutput
+public abstract class AsyncOutput : Output, IDisposable
 ```
 
 [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object)<br>
@@ -28,7 +28,7 @@ public abstract class AsyncOutput
 | --------------------------- | ------------------------------------------------------------------- | ------------------- | ------------------- |
 | [SuspendTime](#suspendtime) | [int](https://docs.microsoft.com/en-us/dotnet/api/system.int32)     | :octicons-check-16: | :octicons-check-16: |
 | [Format](Output.md#format)  | [string](https://docs.microsoft.com/en-us/dotnet/api/system.string) | :octicons-check-16: | :octicons-check-16: |
-| [Levels](Output.md#levels)  | [LevelContainer](LevelContainer.md)                                 | :octicons-check-16: | :octicons-check-16: |
+| [Levels](Output.md#levels)  | [LevelContainer](../Settings/LevelContainer.md)                     | :octicons-check-16: | :octicons-check-16: |
 
 ### Events
 
@@ -73,7 +73,7 @@ public AsyncOutput(
 `format` [string](https://docs.microsoft.com/en-us/dotnet/api/system.string) · :octicons-milestone-16: `null`
 :   The format.
 
-`levels` [LevelContainer](LevelContainer.md) · :octicons-milestone-16: `null`
+`levels` [LevelContainer](../Settings/LevelContainer.md) · :octicons-milestone-16: `null`
 :   The level settings.
 
 ## Properties

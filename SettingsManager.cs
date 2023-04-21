@@ -79,7 +79,7 @@ namespace SharpLog
                 ReloadSettings(false);
                 if (ex is FileNotFoundException || ex is DirectoryNotFoundException)
                 {
-                    Logging.LogWarning("Settings file (sharplog.yml) not found, [red]using default settings[/].", "SHARPLOG_INTERNAL", ex);
+                    Logging.LogInfo("Settings file (sharplog.yml) not found, [red]using default settings[/].", "SHARPLOG_INTERNAL", ex);
                 }
                 else if (ex is UnauthorizedAccessException || ex is SecurityException)
                 {

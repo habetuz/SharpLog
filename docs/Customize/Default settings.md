@@ -64,15 +64,15 @@ tags:
     format:
     levels:
       debug:
-        enabled: true
+        enabled: false
         format:
         short: "\0"
       trace:
-        enabled: true
+        enabled: false
         format:
         short: "\0"
       info:
-        enabled: true
+        enabled: false
         format:
         short: "\0"
       warning:

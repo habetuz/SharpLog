@@ -5,7 +5,7 @@
 `#!c# namespace Sharplog.Settings`
 
 ``` c#
-public class OutputContainer : IDisposable
+public class OutputContainer : IDisposable, IList<Output>
 ```
 
 [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object)<br>

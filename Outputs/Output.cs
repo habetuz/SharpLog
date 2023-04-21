@@ -64,7 +64,7 @@ namespace SharpLog.Outputs
                 return;
             }
 
-            if (levelSettings?.Short is not null or '\0')
+            if (levelSettings?.Short is not null and not '\0')
             {
                 log.Short = levelSettings.Short;
             }
